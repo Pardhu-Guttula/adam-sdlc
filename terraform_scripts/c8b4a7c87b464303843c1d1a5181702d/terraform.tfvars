@@ -1,0 +1,13 @@
+
+aws_region = "us-east-1"
+frontend_ami = "ami-0123456789abcdef0"
+backend_ami = "ami-0987654321abcdef0"
+key_name = "my-key-pair"
+db_name = "bankdb"
+db_user = "admin"
+db_password = "SuperSecretPassword"
+vpc_id = "vpc-0123456789abcdef0"
+public_subnet_cidr = "10.0.1.0/24"
+public_subnet_az = "us-east-1a"
+private_subnet_cidr = "10.0.2.0/24"
+private_subnet_az = "us-east-1b"
