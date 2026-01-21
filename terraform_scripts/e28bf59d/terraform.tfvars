@@ -1,0 +1,6 @@
+resource_group_name = "example-resources"
+location           = "East US"
+app_service_plan_name = "example-appserviceplan"
+app_service_name = "example-appservice"
+storage_account_name = "examplestorageacc"
+key_vault_name = "examplekeyvault"
