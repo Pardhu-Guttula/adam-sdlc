@@ -1,0 +1,5 @@
+sql_admin_user = "adminuser"
+sql_admin_password = "P@ssw0rd123"
+cdn_profile_name = "example-cdnprofile"
+origin_hostname = "example.azurewebsites.net"
+namespace_name = "example-namespacenotification"
