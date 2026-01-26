@@ -1,0 +1,6 @@
+resource_group_name = "example-resources"
+location = "West Europe"
+sql_server_name = "examplesqlserver"
+sql_administrator_login = "sqladmin"
+sql_administrator_password = "H@Sh1CoR3!"
+ssh_public_key_path = "/path/to/ssh_public_key"
