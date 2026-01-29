@@ -1,1 +1,0 @@
-{"repo_owner":"Pardhu-Guttula","repo_name":"adam-sdlc","branch_name":"main","usecase":"Banking usecase","project_name":"Banking website","access_users":["pardhu.guttula@brillio.com","lokesh.kadi@brillio.com"]}
