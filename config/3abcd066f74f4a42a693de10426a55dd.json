@@ -92,5 +92,127 @@
         "EPIC-7"
       ]
     }
+  ],
+  "user_stories": [
+    {
+      "epic_title": "Secure Authentication and Access Management",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement multi-factor authentication for user login",
+      "description": "As a customer, I want to log in using multi-factor authentication, so that my account is secure.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Multi-factor authentication involving a password and a second factor such as a mobile app or SMS code.",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "User must successfully authenticate using both a password and a second factor.",
+      "test_cases": "Given a valid password, When the user inputs the correct second factor, Then the user should be successfully authenticated."
+    },
+    {
+      "epic_title": "Secure Authentication and Access Management",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Ensure secure storage of user passwords",
+      "description": "As a system, I want to store user passwords securely, so that sensitive data is protected.",
+      "priority_business_value": "Critical",
+      "attributes_and_rules": "Passwords must be hashed using a strong one-way hashing algorithm, such as bcrypt.",
+      "core_domain_objects": "User, Password",
+      "acceptance_criteria": "Passwords should never be stored in plain text and must be encrypted before storage.",
+      "test_cases": "Given a new user registration, When the user creates a password, Then the password should be hashed and stored securely."
+    },
+    {
+      "epic_title": "Secure Authentication and Access Management",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Implement session management policies",
+      "description": "As a user, I want my session to be managed securely, so that unauthorized access is prevented.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Sessions must timeout after a period of inactivity and require re-authentication.",
+      "core_domain_objects": "Session, User",
+      "acceptance_criteria": "User sessions should automatically expire after a defined period of inactivity.",
+      "test_cases": "Given an active session, When the session remains idle for the specified duration, Then the session should expire and require re-authentication."
+    },
+    {
+      "epic_title": "Secure Authentication and Access Management",
+      "epic_key": "EPIC-1",
+      "number": 4,
+      "title": "Implement audit logging for login events",
+      "description": "As an administrator, I want to audit login events, so that security incidents can be traced.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "All login events must be logged with timestamp, user ID, and IP address.",
+      "core_domain_objects": "Audit Log, Login Event",
+      "acceptance_criteria": "Each login event should be recorded with the necessary details for auditing purposes.",
+      "test_cases": "Given a login attempt, When the user logs in, Then the event should be logged with timestamp, user ID, and IP address."
+    },
+    {
+      "epic_title": "Personalized Dashboard and User Experience",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Display user-specific account summaries",
+      "description": "As a user, I want to see a summary of my accounts, so that I can quickly view my banking status.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Account summaries should include balances, recent transactions, and alerts.",
+      "core_domain_objects": "Account, Transaction, Reminder",
+      "acceptance_criteria": "User should see an accurate summary of their accounts upon logging into the dashboard.",
+      "test_cases": "Given a logged-in user, When the dashboard loads, Then the user should see a summary of all their accounts with current balances and recent transactions."
+    },
+    {
+      "epic_title": "Personalized Dashboard and User Experience",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Present personalized product offers",
+      "description": "As a user, I want to see personalized product offers, so that I can find relevant banking services quickly.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Offers must be tailored based on user profile and transaction history.",
+      "core_domain_objects": "Product Offer, User Profile",
+      "acceptance_criteria": "User should see product offers that are relevant to their demographics and banking behavior.",
+      "test_cases": "Given a logged-in user, When the dashboard loads, Then the user should see personalized product offers."
+    },
+    {
+      "epic_title": "Personalized Dashboard and User Experience",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "Ensure dashboard is responsive and accessible",
+      "description": "As a user, I want a responsive dashboard interface, so that I can access it on any device.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Layout must adapt to different screen sizes, and interface elements must be accessible as per WCAG standards.",
+      "core_domain_objects": "User Interface",
+      "acceptance_criteria": "Dashboard should function seamlessly across desktop, tablet, and mobile devices.",
+      "test_cases": "Given different devices, When the user accesses the dashboard, Then the interface should adapt for usability and maintain accessibility features."
+    },
+    {
+      "epic_title": "Account Opening and Service Management Workflows",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Enable new account request through guided workflow",
+      "description": "As a customer, I want to request a new account through a guided workflow, so that the process is simple and clear.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Workflow includes form validations, progress tracking, and final submission to backend systems.",
+      "core_domain_objects": "Account, Workflow, Validation",
+      "acceptance_criteria": "User should be able to complete a new account request with guided steps.",
+      "test_cases": "Given the new account request workflow, When the user follows the guided steps, Then the account request should be processed and tracked."
+    },
+    {
+      "epic_title": "Account Opening and Service Management Workflows",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Support service modification requests through workflows",
+      "description": "As a customer, I want to modify my banking services through guided workflows, so that my requests are handled efficiently.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Workflows must validate input and ensure minimal steps for completion.",
+      "core_domain_objects": "Service Request, Workflow",
+      "acceptance_criteria": "User should be able to request service modifications with minimal and clear steps.",
+      "test_cases": "Given a service modification request workflow, When the user follows the steps, Then the service modification should be processed and validated."
+    },
+    {
+      "epic_title": "Account Opening and Service Management Workflows",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "Implement document uploads in workflows",
+      "description": "As a customer, I want to upload required documents in workflows, so that my requests are processed without delays.",
+      "priority_business_value": "Critical",
+      "attributes_and_rules": "Document uploads should support validations and secure storage.",
+      "core_domain_objects": "Document, Workflow, Validation",
+      "acceptance_criteria": "User should be able to upload required documents securely during workflow steps.",
+      "test_cases": "Given the upload requirement in a workflow, When the user uploads a document, Then the document should be validated and stored securely."
+    }
   ]
 }
