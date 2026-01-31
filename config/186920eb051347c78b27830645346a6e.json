@@ -74,5 +74,127 @@
         "EPIC-3"
       ]
     }
+  ],
+  "user_stories": [
+    {
+      "epic_title": "User Authentication and Security Setup",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement multi-factor authentication",
+      "description": "As a customer, I want to use multi-factor authentication, so that my account is securely protected.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Must support SMS and email-based OTPs, TOTP apps like Google Authenticator.",
+      "core_domain_objects": "Authentication, Security",
+      "acceptance_criteria": "The system should prompt for an additional authentication factor after entering the password.",
+      "test_cases": "Given a customer, when logging in with the correct password, then the system should request a second authentication factor."
+    },
+    {
+      "epic_title": "User Authentication and Security Setup",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Implement secure user login",
+      "description": "As a customer, I want to securely log in to the portal, so that my data remains protected.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Use encryption for user credentials, secure session handling.",
+      "core_domain_objects": "User, Session",
+      "acceptance_criteria": "User should be able to securely log in and have an encrypted session.",
+      "test_cases": "Given a customer, when logging in, then the system should establish a secure session."
+    },
+    {
+      "epic_title": "Responsive User Interface and Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Design responsive web interface",
+      "description": "As a user, I want a responsive web interface, so that I can access the portal on any device.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Should be accessible from desktops, tablets, and mobile devices.",
+      "core_domain_objects": "UI, Dashboard",
+      "acceptance_criteria": "The interface should adjust based on device screen size.",
+      "test_cases": "Given a user, when accessing the portal on different devices, then the interface should be responsive."
+    },
+    {
+      "epic_title": "Responsive User Interface and Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Develop personalized dashboard",
+      "description": "As a user, I want a personalized dashboard, so that I can see relevant information based on my profile.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Display account summaries, products, and services relevant to user profiles.",
+      "core_domain_objects": "Dashboard, User Profile",
+      "acceptance_criteria": "The dashboard should display information tailored to the user profile.",
+      "test_cases": "Given a user, when logged in, then the dashboard should show personalized information."
+    },
+    {
+      "epic_title": "Core Banking System Integration",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Integrate with core banking systems",
+      "description": "As a customer, I want my data to be synchronized, so that I have up-to-date information in the portal.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Use secure APIs, ensure data consistency and privacy.",
+      "core_domain_objects": "Integration, Customer Data",
+      "acceptance_criteria": "Data should be synchronized in real-time between portal and core banking systems.",
+      "test_cases": "Given a customer update, when integrated, then the data should be consistent across systems."
+    },
+    {
+      "epic_title": "Account Opening and Service Modification Workflows",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Implement account opening workflow",
+      "description": "As a customer, I want to open a new account online, so that I can save time.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Minimize manual input, include document upload capabilities.",
+      "core_domain_objects": "Workflow, Account, Document",
+      "acceptance_criteria": "Customers should be able to complete an account application online.",
+      "test_cases": "Given a customer, when applying for a new account, then they should be able to complete the process online."
+    },
+    {
+      "epic_title": "Real-Time Notifications and Status Tracking",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Enable real-time status updates",
+      "description": "As a customer, I want real-time updates on my applications, so that I stay informed about the progress.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Implement email and in-app notification mechanisms.",
+      "core_domain_objects": "Notification, Application",
+      "acceptance_criteria": "Customers should receive real-time updates on their applications.",
+      "test_cases": "Given an application, when its status changes, then the customer should receive a notification."
+    },
+    {
+      "epic_title": "Interaction History and Data Management",
+      "epic_key": "EPIC-6",
+      "number": 1,
+      "title": "Record and access interaction logs",
+      "description": "As a user, I want to view my interaction history, so that I can track my activities.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Compliance with data protection and retention policies.",
+      "core_domain_objects": "History, Interaction, User Data",
+      "acceptance_criteria": "Users should be able to view and access their interaction history.",
+      "test_cases": "Given a user, when accessing the portal, then they should be able to view their interaction history."
+    },
+    {
+      "epic_title": "Role-Based Access Control Implementation",
+      "epic_key": "EPIC-7",
+      "number": 1,
+      "title": "Implement role-based access control",
+      "description": "As an administrator, I want to manage user permissions, so that access is controlled based on roles.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Define access policies for different roles.",
+      "core_domain_objects": "Access Control, Role",
+      "acceptance_criteria": "Users should only access services and data based on their roles.",
+      "test_cases": "Given a role, when accessing the portal, then access should be controlled accordingly."
+    },
+    {
+      "epic_title": "Performance Optimization and Scalability",
+      "epic_key": "EPIC-8",
+      "number": 1,
+      "title": "Optimize portal performance",
+      "description": "As a user, I want fast loading times, so that I have a smooth experience.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Minimize latency, enhance responsiveness.",
+      "core_domain_objects": "Performance, Scalability",
+      "acceptance_criteria": "The portal should load quickly and handle high traffic loads efficiently.",
+      "test_cases": "Given high traffic, when accessing the portal, then it should load quickly and stay responsive."
+    }
   ]
 }
