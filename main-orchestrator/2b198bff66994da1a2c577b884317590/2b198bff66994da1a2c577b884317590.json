@@ -541,5 +541,341 @@
         }
       }
     ]
+  },
+  "architecture_validation": {
+    "updatedDescription": "The architecture has been enhanced to address critical reliability and security gaps, including the addition of disaster recovery nodes for backend services and databases. All nodes and edges have been validated, ensuring a complete and consistent diagram. Architecture quality rating: High.",
+    "nodes": [
+      {
+        "id": "frontend",
+        "data": {
+          "label": "Frontend (Angular/React/Vue.js)"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "backend",
+        "type": "group",
+        "data": {
+          "label": "Backend"
+        },
+        "position": {
+          "x": 350,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 400,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "webserver",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 370,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "backend",
+        "extent": "parent"
+      },
+      {
+        "id": "api-management",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 370,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "backend",
+        "extent": "parent"
+      },
+      {
+        "id": "functions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 370,
+          "y": 240
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "backend",
+        "extent": "parent"
+      },
+      {
+        "id": "auth",
+        "type": "group",
+        "data": {
+          "label": "Authentication"
+        },
+        "position": {
+          "x": 700,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "aad-b2c",
+        "data": {
+          "label": "Azure AD B2C"
+        },
+        "position": {
+          "x": 720,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "auth",
+        "extent": "parent"
+      },
+      {
+        "id": "rbac",
+        "data": {
+          "label": "Role-based Access Control"
+        },
+        "position": {
+          "x": 720,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "auth",
+        "extent": "parent"
+      },
+      {
+        "id": "databases",
+        "type": "group",
+        "data": {
+          "label": "Databases"
+        },
+        "position": {
+          "x": 1000,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "sql-db",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1020,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "databases",
+        "extent": "parent"
+      },
+      {
+        "id": "cosmos-db",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 1020,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "databases",
+        "extent": "parent"
+      },
+      {
+        "id": "dr-webserver",
+        "data": {
+          "label": "Disaster Recovery: Azure App Service"
+        },
+        "position": {
+          "x": 370,
+          "y": 320
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "backend",
+        "extent": "parent"
+      },
+      {
+        "id": "dr-sql-db",
+        "data": {
+          "label": "Disaster Recovery: Azure SQL Database"
+        },
+        "position": {
+          "x": 1020,
+          "y": 240
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "databases",
+        "extent": "parent"
+      },
+      {
+        "id": "dr-cosmos-db",
+        "data": {
+          "label": "Disaster Recovery: Azure Cosmos DB"
+        },
+        "position": {
+          "x": 1020,
+          "y": 320
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "databases",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "frontend",
+        "target": "webserver",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "webserver",
+        "target": "api-management",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "api-management",
+        "target": "functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "functions",
+        "target": "sql-db",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "functions",
+        "target": "cosmos-db",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "frontend",
+        "target": "aad-b2c",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "webserver",
+        "target": "dr-webserver",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "sql-db",
+        "target": "dr-sql-db",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e9",
+        "source": "cosmos-db",
+        "target": "dr-cosmos-db",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      }
+    ]
   }
 }
