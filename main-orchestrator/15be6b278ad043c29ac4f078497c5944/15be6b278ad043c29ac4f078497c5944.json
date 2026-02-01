@@ -185,5 +185,313 @@
       "acceptance_criteria": "1. Interface meets WCAG compliance.\n2. Assistive technologies can navigate the interface smoothly.",
       "test_cases": "Given an interface, when tested with assistive tech, then it must be navigable and comply with WCAG standards."
     }
-  ]
+  ],
+  "architecture_generation": {
+    "description": "This architecture defines a modern bank self-service portal leveraging various Azure services including Azure AD B2C for authentication, Azure App Services for backend, and Azure SQL Database for data storage. It ensures security, compliance, and high availability through integrated tools such as Azure Key Vault and Azure Front Door.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "User Frontend (React/Angular/Vue.js)"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-Auth",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Security"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 170,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "AAD",
+        "data": {
+          "label": "Azure AD B2C"
+        },
+        "position": {
+          "x": 310,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Auth",
+        "extent": "parent"
+      },
+      {
+        "id": "KeyVault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 310,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Auth",
+        "extent": "parent"
+      },
+      {
+        "id": "SSL",
+        "data": {
+          "label": "SSL"
+        },
+        "position": {
+          "x": 310,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Auth",
+        "extent": "parent"
+      },
+      {
+        "id": "group-Gateway",
+        "type": "group",
+        "data": {
+          "label": "Gateway and Load Balancing"
+        },
+        "position": {
+          "x": 650,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 100,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "AppGateway",
+        "data": {
+          "label": "Azure App Gateway"
+        },
+        "position": {
+          "x": 660,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Gateway",
+        "extent": "parent"
+      },
+      {
+        "id": "FrontDoor",
+        "data": {
+          "label": "Azure Front Door"
+        },
+        "position": {
+          "x": 660,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Gateway",
+        "extent": "parent"
+      },
+      {
+        "id": "group-Backend",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 1000,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 100,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "AppServices",
+        "data": {
+          "label": "Azure App Services"
+        },
+        "position": {
+          "x": 1010,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Backend",
+        "extent": "parent"
+      },
+      {
+        "id": "Functions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 1010,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Backend",
+        "extent": "parent"
+      },
+      {
+        "id": "group-Database",
+        "type": "group",
+        "data": {
+          "label": "Database and Storage"
+        },
+        "position": {
+          "x": 1350,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQLDatabase",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1360,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Database",
+        "extent": "parent"
+      },
+      {
+        "id": "BlobStorage",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 1360,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Database",
+        "extent": "parent"
+      },
+      {
+        "id": "CosmosDB",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 1360,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Database",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "Frontend",
+        "target": "AAD",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "AAD",
+        "target": "AppGateway",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "AppGateway",
+        "target": "AppServices",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "AppServices",
+        "target": "SQLDatabase",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
 }
