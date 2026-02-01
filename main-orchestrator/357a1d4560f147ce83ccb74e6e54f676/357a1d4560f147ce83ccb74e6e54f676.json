@@ -89,5 +89,127 @@
         "EPIC-9"
       ]
     }
+  ],
+  "user_stories": [
+    {
+      "epic_title": "User Authentication and Multi-Factor Login",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement Username and Password Authentication",
+      "description": "As a user, I want to securely log in using a username and password, so that my account is protected from unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "User can log in using a valid username and password.",
+      "test_cases": "Given a registered user, when they enter the correct username and password, then they should be logged in successfully."
+    },
+    {
+      "epic_title": "User Authentication and Multi-Factor Login",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Implement Multi-Factor Authentication",
+      "description": "As a user, I want to use multi-factor authentication, so that my account has an additional layer of security.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "User is prompted for a second factor (OTP, biometric, or token-based) after entering username and password.",
+      "test_cases": "Given a logged-in user, when they attempt to access secure areas, then they must provide a second factor for authentication."
+    },
+    {
+      "epic_title": "User Authentication and Multi-Factor Login",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Implement Password Recovery Workflow",
+      "description": "As a user, I want to recover my account in case I forget my password, so that I can regain access without starting over.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "User can recover account via email or SMS code.",
+      "test_cases": "Given a user who forgot their password, when they request recovery, then they should receive a code via email or SMS to create a new password."
+    },
+    {
+      "epic_title": "User Profile Management and Role-Based Access Control",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Allow Users to Update Profile Details",
+      "description": "As a user, I want to update my profile details, so that my personal information remains current and accurate.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "",
+      "core_domain_objects": "User, Profile",
+      "acceptance_criteria": "User can view and edit their personal profile details.",
+      "test_cases": "Given a user, when they access their profile, then they should be able to update their personal details and save changes."
+    },
+    {
+      "epic_title": "User Profile Management and Role-Based Access Control",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Implement Role-Based Access Control",
+      "description": "As an administrator, I want to assign roles and permissions, so that access to data and features is controlled based on user type.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "",
+      "core_domain_objects": "User, Role",
+      "acceptance_criteria": "Admin can assign roles and set permissions; users have access only to allowed features.",
+      "test_cases": "Given a user with a specific role, when they log in, then they should only see features and data relevant to their role."
+    },
+    {
+      "epic_title": "Responsive and Adaptive UI Design",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Design Responsive Interface for Multiple Devices",
+      "description": "As a user, I want the portal interface to adapt to my device, so that I have a consistent experience regardless of the device I use.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "",
+      "core_domain_objects": "UI Design",
+      "acceptance_criteria": "User interface adapts fluidly across desktop, tablet, and mobile screens.",
+      "test_cases": "Given a user on any device, when they access the portal, then the interface should be responsive and user-friendly."
+    },
+    {
+      "epic_title": "Personalized Dashboard and Product Display",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Display Personalized Dashboard",
+      "description": "As a user, I want to see a personalized dashboard, so that I can quickly access relevant products and services.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "",
+      "core_domain_objects": "Dashboard, Product",
+      "acceptance_criteria": "User sees tailored products and services based on their profile and eligibility.",
+      "test_cases": "Given a user with a set profile, when they log in, then the dashboard should display personalized products and services."
+    },
+    {
+      "epic_title": "Account Opening and Service Modification Workflows",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Enable Account Opening Workflows",
+      "description": "As a user, I want to open a new account easily, so that I can start using banking services quickly.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "",
+      "core_domain_objects": "Account, Workflow",
+      "acceptance_criteria": "User can initiate and complete new account opening with minimal steps.",
+      "test_cases": "Given a user, when they start the account opening process, then they should be guided through completion with all necessary validations."
+    },
+    {
+      "epic_title": "Document Upload and Application Continuation",
+      "epic_key": "EPIC-6",
+      "number": 1,
+      "title": "Allow Secure Document Uploads",
+      "description": "As a user, I want to upload required documents securely, so that my applications are processed without physical visits.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "",
+      "core_domain_objects": "Document",
+      "acceptance_criteria": "User can upload documents securely linked to their applications.",
+      "test_cases": "Given a user, when they upload a document, then it should be encrypted and linked to the relevant workflow."
+    },
+    {
+      "epic_title": "Real-Time Notifications and Request Tracking",
+      "epic_key": "EPIC-7",
+      "number": 1,
+      "title": "Provide Real-Time Request Tracking",
+      "description": "As a user, I want to track my service requests in real time, so that I am always aware of their status.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "",
+      "core_domain_objects": "Request, Notification",
+      "acceptance_criteria": "User can view real-time status updates of their requests.",
+      "test_cases": "Given a user with a pending request, when they check the status, then they should see the latest processing details and timestamps."
+    }
   ]
 }
