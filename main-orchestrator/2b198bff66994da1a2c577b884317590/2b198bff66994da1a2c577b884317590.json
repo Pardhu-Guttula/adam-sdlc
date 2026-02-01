@@ -89,5 +89,199 @@
         "EPIC-9"
       ]
     }
+  ],
+  "user_stories": [
+    {
+      "epic_title": "Multi-Factor Authentication and Secure Login",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Secure login with multi-factor authentication",
+      "description": "As a user, I want to log in using multi-factor authentication, so that I can ensure secure access to my account.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Support for OTP, biometrics, and security tokens. Credentials must be encrypted.",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "User can log in with multi-factor authentication, including OTP, biometrics, or tokens.",
+      "test_cases": "Given a user, when they log in, then they should complete multi-factor authentication to gain access."
+    },
+    {
+      "epic_title": "Multi-Factor Authentication and Secure Login",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Automatic logout after inactivity",
+      "description": "As a user, I want the system to automatically log me out after inactivity, so that I can prevent unauthorized access to my account.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Automatic logout should occur after a predefined period of inactivity.",
+      "core_domain_objects": "Session, User",
+      "acceptance_criteria": "User is logged out automatically after inactivity period.",
+      "test_cases": "Given an inactive user session, when the inactivity period is reached, then the user should be logged out automatically."
+    },
+    {
+      "epic_title": "Multi-Factor Authentication and Secure Login",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Integration with identity management systems",
+      "description": "As a system administrator, I want to integrate multi-factor authentication with existing identity management systems, so that I can streamline user authentication.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Seamless integration with existing identity management systems.",
+      "core_domain_objects": "Identity Management, Authentication",
+      "acceptance_criteria": "Multi-factor authentication is integrated with current identity management systems.",
+      "test_cases": "Given the integration, when a user authenticates, then they should pass through the new multi-factor authentication process seamlessly."
+    },
+    {
+      "epic_title": "User Profile and Role-Based Access Control",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Profile management for updating personal information",
+      "description": "As a user, I want to manage and update my personal information, so that I can keep my profile up-to-date.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Users must be able to view and edit personal information.",
+      "core_domain_objects": "User Profile",
+      "acceptance_criteria": "Users can view and update their personal information.",
+      "test_cases": "Given a user, when they access the profile management section, then they should be able to view and update their personal information."
+    },
+    {
+      "epic_title": "User Profile and Role-Based Access Control",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Role-based access control",
+      "description": "As a system administrator, I want to implement role-based access control, so that I can restrict visibility and access based on user privileges.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Roles must determine access privileges and visibility.",
+      "core_domain_objects": "Role, Access Control",
+      "acceptance_criteria": "Access and visibility are governed by user roles.",
+      "test_cases": "Given a user role, when accessing different sections, then permissions and visibility should align with the role's privileges."
+    },
+    {
+      "epic_title": "User Profile and Role-Based Access Control",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "Audit logs for role changes and login activity",
+      "description": "As a compliance officer, I want to monitor changes to user roles and login activities, so that I can ensure compliance.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Audit logs must capture role changes and login details for compliance.",
+      "core_domain_objects": "Audit Log, User",
+      "acceptance_criteria": "Role changes and login activities are logged for compliance.",
+      "test_cases": "Given a role change or login, when an event occurs, then it should be recorded in the audit logs."
+    },
+    {
+      "epic_title": "Responsive User Interface Design",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Adaptive UI for different devices",
+      "description": "As a user, I want a responsive UI, so that I can have a consistent experience on any device.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "UI must adapt to desktop, tablet, and mobile viewports.",
+      "core_domain_objects": "User Interface",
+      "acceptance_criteria": "UI adapts seamlessly across devices.",
+      "test_cases": "Given a device (desktop, tablet, mobile), when accessing the portal, then the UI should provide an optimal user experience."
+    },
+    {
+      "epic_title": "Responsive User Interface Design",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Accessibility compliance",
+      "description": "As a user with disabilities, I want an accessible UI, so that I can navigate the portal without barriers.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Compliance with accessibility standards (e.g., WCAG).",
+      "core_domain_objects": "Accessibility",
+      "acceptance_criteria": "UI meets accessibility standards.",
+      "test_cases": "Given the need for accessibility, when navigating the portal, then the UI should comply with WCAG standards."
+    },
+    {
+      "epic_title": "Responsive User Interface Design",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "Usability testing for UI refinement",
+      "description": "As a UX designer, I want to conduct usability testing, so that I can refine navigation and responsiveness.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Conduct usability tests to improve UI.",
+      "core_domain_objects": "User Interface",
+      "acceptance_criteria": "UI refinements based on usability testing feedback.",
+      "test_cases": "Given user feedback, when usability tests are conducted, then navigation and responsiveness should be refined."
+    },
+    {
+      "epic_title": "Personalized Dashboard and Product Display",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Personalized dashboard for active accounts",
+      "description": "As a customer, I want a personalized dashboard, so that I can see my active accounts and relevant offerings.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Dashboard displays active accounts and products based on customer profile.",
+      "core_domain_objects": "Dashboard, User Profile",
+      "acceptance_criteria": "Dashboard shows active accounts and relevant products.",
+      "test_cases": "Given a customer, when accessing the dashboard, then it should display active accounts and tailored offerings."
+    },
+    {
+      "epic_title": "Personalized Dashboard and Product Display",
+      "epic_key": "EPIC-4",
+      "number": 2,
+      "title": "Quick access to recent activities and balances",
+      "description": "As a customer, I want quick access to my recent activities and balances, so that I can conveniently monitor my account.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Dashboard includes recent activities and current balances.",
+      "core_domain_objects": "Dashboard, Account",
+      "acceptance_criteria": "Recent activities and balances are displayed on the dashboard.",
+      "test_cases": "Given a customer, when viewing the dashboard, then recent activities and balances should be readily available."
+    },
+    {
+      "epic_title": "Personalized Dashboard and Product Display",
+      "epic_key": "EPIC-4",
+      "number": 3,
+      "title": "Next-step suggestions for product engagement",
+      "description": "As a customer, I want suggestions for next steps, so that I can engage with relevant products and services.",
+      "priority_business_value": "Low",
+      "attributes_and_rules": "Dashboard offers next-step suggestions based on user profile.",
+      "core_domain_objects": "Dashboard, User Profile",
+      "acceptance_criteria": "Dashboard provides next-step suggestions for customer engagement.",
+      "test_cases": "Given a customer profile, when viewing the dashboard, then next-step suggestions should be displayed."
+    },
+    {
+      "epic_title": "Account Opening and Service Modification Workflows",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Guided workflows for account opening",
+      "description": "As a user, I want a guided workflow for account opening, so that I can easily complete the process.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Workflow should minimize clicks and provide pre-filled fields for existing data.",
+      "core_domain_objects": "Workflow, Account",
+      "acceptance_criteria": "Users can open accounts through a guided, efficient process.",
+      "test_cases": "Given a user, when starting an account opening workflow, then the process should be guided and user-friendly."
+    },
+    {
+      "epic_title": "Account Opening and Service Modification Workflows",
+      "epic_key": "EPIC-5",
+      "number": 2,
+      "title": "Service modification workflows",
+      "description": "As a user, I want to modify my services through guided workflows, so that I can update my account efficiently.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Workflows should support service updates with real-time validation and pre-filled data.",
+      "core_domain_objects": "Workflow, Service",
+      "acceptance_criteria": "Users can modify services through guided workflows.",
+      "test_cases": "Given a user, when modifying services, then the process should be guided and efficient."
+    },
+    {
+      "epic_title": "Document Upload and Application Continuation",
+      "epic_key": "EPIC-6",
+      "number": 1,
+      "title": "Document upload functionality",
+      "description": "As a user, I want to upload documents securely, so that I can provide necessary supporting documentation.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Support secure upload, preview, and management of documents with encryption during transit and at rest.",
+      "core_domain_objects": "Document, Security",
+      "acceptance_criteria": "Users can securely upload and manage documents.",
+      "test_cases": "Given a user, when uploading a document, then it should be securely transmitted and stored."
+    },
+    {
+      "epic_title": "Document Upload and Application Continuation",
+      "epic_key": "EPIC-6",
+      "number": 2,
+      "title": "Resume in-progress applications",
+      "description": "As a user, I want to save incomplete applications and resume later, so that I can continue without starting over.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Support save functionality and secure resumption of incomplete applications.",
+      "core_domain_objects": "Application, Session",
+      "acceptance_criteria": "Users can save and resume incomplete applications.",
+      "test_cases": "Given an incomplete application, when the user logs back in, then they should be able to continue from where they left off."
+    }
   ]
 }
