@@ -1,3 +1,93 @@
 {
-  "user_prompt": "As a bank customer, I require a modern, user-friendly self-service portal that allows me to efficiently manage my banking needs without visiting physical branches. I need to securely log in using multi-factor authentication and access a personalized dashboard displaying available banking products and services based on my profile and eligibility. The portal must enable me to submit account opening requests and service modifications through streamlined workflows requiring minimal clicks. I expect to receive real-time status updates and email notifications regarding my submitted requests. The system should maintain a comprehensive history of all my interactions while ensuring my sensitive financial data remains secure. The portal must be responsive across various devices, providing a consistent experience whether I access it via desktop, tablet, or mobile phone. I should be able to save incomplete applications and return to them later, with the ability to upload necessary documentation directly through the interface. The solution must integrate seamlessly with the bank's existing core banking system while maintaining its own database to ensure optimal performance and reliability. Role-based access controls must be implemented to ensure I can only view and access services appropriate to my profile and authorization level."
+  "user_prompt": "As a bank customer, I require a modern, user-friendly self-service portal that allows me to efficiently manage my banking needs without visiting physical branches. I need to securely log in using multi-factor authentication and access a personalized dashboard displaying available banking products and services based on my profile and eligibility. The portal must enable me to submit account opening requests and service modifications through streamlined workflows requiring minimal clicks. I expect to receive real-time status updates and email notifications regarding my submitted requests. The system should maintain a comprehensive history of all my interactions while ensuring my sensitive financial data remains secure. The portal must be responsive across various devices, providing a consistent experience whether I access it via desktop, tablet, or mobile phone. I should be able to save incomplete applications and return to them later, with the ability to upload necessary documentation directly through the interface. The solution must integrate seamlessly with the bank's existing core banking system while maintaining its own database to ensure optimal performance and reliability. Role-based access controls must be implemented to ensure I can only view and access services appropriate to my profile and authorization level.",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication and Multi-Factor Login",
+      "summary": "Implement a secure login system with multi-factor authentication.",
+      "description": "Develop a secure authentication mechanism that includes username, password, and multi-factor verification (such as OTP, biometric, or token-based authentication). Ensure encryption of sensitive credentials, session management, and automatic logout after inactivity. The system should integrate with existing identity management tools and support password recovery workflows.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "User Profile Management and Role-Based Access Control",
+      "summary": "Enable users to manage their profiles and implement role-based access control.",
+      "description": "Create a module for profile management allowing users to view and update their personal details. Implement role-based access controls to limit data visibility and feature accessibility based on user type and authorization level. Ensure that changes to roles and permissions are tracked for audit purposes.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Responsive and Adaptive UI Design",
+      "summary": "Design a responsive interface for desktop, tablet, and mobile platforms.",
+      "description": "Deliver a consistent and intuitive user interface that adapts fluidly to various device types and screen sizes. The interface should emphasize simplicity, fast navigation, and clear organization of banking services. Conduct usability testing to validate user-friendly interactions and visual consistency.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Personalized Dashboard and Product Display",
+      "summary": "Create a personalized dashboard showing eligible products and services.",
+      "description": "Develop a personalized dashboard that displays relevant banking products, accounts, loan offers, and services tailored to the user’s profile and eligibility. Integrate data from the core banking system to show real-time balances, account summaries, and product recommendations.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Account Opening and Service Modification Workflows",
+      "summary": "Enable users to submit new account requests and modify existing services.",
+      "description": "Build streamlined workflows allowing customers to initiate new account openings and request service modifications with minimal input. Include digital forms, embedded validation, and guided steps for completion. Ensure each workflow supports partial completion and continuation at a later time, with uploaded documents saved securely.",
+      "dependencies": [
+        "EPIC-4"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Document Upload and Application Continuation",
+      "summary": "Allow users to upload documents and resume incomplete applications.",
+      "description": "Implement a feature for users to securely upload required documents and save in-progress applications. Ensure that all uploaded files are encrypted and linked to respective workflows, with the ability to resume submission at any time without data loss.",
+      "dependencies": [
+        "EPIC-5"
+      ]
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Real-Time Notifications and Request Tracking",
+      "summary": "Provide real-time updates and notifications for user requests.",
+      "description": "Develop a system for tracking submitted applications and service requests in real time. Integrate email and portal-based notifications to inform users of status changes. Provide a central place within the dashboard for viewing current and historical requests with timestamps and processing details.",
+      "dependencies": [
+        "EPIC-5"
+      ]
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Interaction History and Activity Logging",
+      "summary": "Maintain a detailed record of user interactions and activities.",
+      "description": "Implement an audit trail that stores all customer interactions and actions within the portal, including login events, submissions, updates, and downloads. Ensure this history is accessible to the user for transparency and to administrators for compliance monitoring.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Core Banking System Integration",
+      "summary": "Integrate self-service portal with existing banking systems.",
+      "description": "Build robust APIs and middleware to allow seamless data exchange between the self-service portal and the bank’s core banking system. Synchronize customer data, product eligibility, and transaction information while maintaining performance through local caching and database optimization.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5"
+      ]
+    },
+    {
+      "id": "EPIC-10",
+      "title": "Data Security, Compliance, and Performance Optimization",
+      "summary": "Ensure data security, compliance, and optimal portal performance.",
+      "description": "Implement strong encryption, data masking, and compliance measures in accordance with banking standards (e.g., PCI DSS, GDPR). Include vulnerability scanning, penetration testing, and performance optimization to maintain reliability and response speed under heavy load.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-9"
+      ]
+    }
+  ]
 }
