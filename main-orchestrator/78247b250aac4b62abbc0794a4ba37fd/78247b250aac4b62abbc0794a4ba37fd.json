@@ -97,5 +97,139 @@
         "EPIC-10"
       ]
     }
+  ],
+  "user_stories": [
+    {
+      "epic_title": "Secure Multi-Factor Authentication",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement multi-factor authentication for customer login",
+      "description": "As a customer, I want to use multi-factor authentication for login, so that my account can remain secure.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The system must support multiple verification factors such as password plus OTP, biometrics, or authenticator apps. Ensure compliance with banking security standards.",
+      "core_domain_objects": "Authentication, Customer, Credentials",
+      "acceptance_criteria": "1. User must enter password and a second authentication factor\n2. Successful login only occurs if both factors are verified\n3. Failed attempts must follow account lockout policies",
+      "test_cases": "Given a registered customer\nWhen the customer logs in with their password and an OTP\nThen the system should allow access only if both are correct"
+    },
+    {
+      "epic_title": "Personalized User Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Design a personalized dashboard for customers",
+      "description": "As a customer, I want a personalized dashboard, so that I can see my relevant account details and services quickly.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "The dashboard should fetch data securely via APIs. It must display account details, balances, eligible products, and shortcuts.",
+      "core_domain_objects": "Dashboard, Account, API",
+      "acceptance_criteria": "1. Display customer-specific account details\n2. Show eligible products and services\n3. Ensure secure data fetching and presentation",
+      "test_cases": "Given a logged-in customer\nWhen the customer accesses the dashboard\nThen the system should display personalized account details"
+    },
+    {
+      "epic_title": "Responsive Front-End Design",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Implement responsive design for the user interface",
+      "description": "As a customer, I want a responsive design, so that I can use the portal seamlessly across all my devices.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The interface must be consistent and functional across desktop, tablet, and mobile devices. It should support accessibility standards.",
+      "core_domain_objects": "UI, Layout, Device",
+      "acceptance_criteria": "1. Provide a consistent layout across devices\n2. Ensure usability and intuitive interactions\n3. Maintain accessibility compliance",
+      "test_cases": "Given a customer using any device\nWhen the customer accesses the portal\nThen the interface should adapt to the device's screen size"
+    },
+    {
+      "epic_title": "Account Opening and Service Modification Workflows",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Enable account opening through guided workflows",
+      "description": "As a customer, I want to open new accounts through the portal, so that I can benefit from online self-service.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Workflows should minimize clicks and support data validation at every step. Connect to back-office systems for verification and processing.",
+      "core_domain_objects": "Account, Workflow, Validation",
+      "acceptance_criteria": "1. Guided workflow minimizes user effort\n2. Prefill known information\n3. Validate data at each step and connect to backend systems",
+      "test_cases": "Given a customer initiating new account opening\nWhen the customer follows the guided workflow\nThen the system should validate inputs and complete the process"
+    },
+    {
+      "epic_title": "Document Upload and Management System",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Develop secure document upload and management",
+      "description": "As a customer, I want to upload and manage documents, so that I can complete my account applications easily.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Support file validation, encryption, secure transfer, and metadata tagging. Comply with banking retention policies.",
+      "core_domain_objects": "Document, Upload, Metadata",
+      "acceptance_criteria": "1. Allow secure upload and management of documents\n2. Validate file types and ensure encryption\n3. Link documents to corresponding workflows",
+      "test_cases": "Given a customer uploading a document\nWhen the upload is initiated\nThen the system should validate and securely store the document"
+    },
+    {
+      "epic_title": "Save and Resume Incomplete Applications",
+      "epic_key": "EPIC-6",
+      "number": 1,
+      "title": "Allow customers to save and resume incomplete applications",
+      "description": "As a customer, I want to save incomplete applications, so that I can resume them later without data loss.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Include auto-save, secure storage, and session management. Allow resumption of workflows anytime.",
+      "core_domain_objects": "Application, Session, Auto-Save",
+      "acceptance_criteria": "1. Save application progress securely\n2. Auto-save at regular intervals\n3. Allow resumption from last saved state",
+      "test_cases": "Given an incomplete application\nWhen the customer saves and logs out\nThen the system should allow resumption from the saved state"
+    },
+    {
+      "epic_title": "Real-Time Request Tracking and Notifications",
+      "epic_key": "EPIC-7",
+      "number": 1,
+      "title": "Provide real-time status tracking and notifications",
+      "description": "As a customer, I want real-time notifications about my requests, so that I can stay updated on their progress.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Integrate email and in-portal notification channels. Ensure notifications are triggered by backend events.",
+      "core_domain_objects": "Notification, Request, Tracking",
+      "acceptance_criteria": "1. Provide real-time updates for requests\n2. Support email and in-portal notifications\n3. Allow user-configurable preferences",
+      "test_cases": "Given a customer request\nWhen the workflow status changes\nThen the system should send a notification with the update"
+    },
+    {
+      "epic_title": "Comprehensive Interaction History",
+      "epic_key": "EPIC-8",
+      "number": 1,
+      "title": "Maintain a complete record of customer activities",
+      "description": "As a customer, I want to view my interaction history, so that I can keep track of my activities and transactions.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Provide detailed logs with advanced filtering and search. Ensure logs are tamper-proof and auditable.",
+      "core_domain_objects": "Interaction, Log, History",
+      "acceptance_criteria": "1. Log all user interactions and transactions\n2. Provide advanced search and filter options\n3. Ensure tamper-proof and auditable logs",
+      "test_cases": "Given a customer viewing their history\nWhen searching or filtering interactions\nThen the system should display accurate and complete logs"
+    },
+    {
+      "epic_title": "Role-Based Access Control",
+      "epic_key": "EPIC-9",
+      "number": 1,
+      "title": "Implement granular access controls using RBAC",
+      "description": "As a customer, I want my access to be controlled based on my role, so that I only see relevant features and services.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Link roles to credentials and control feature visibility dynamically. Support expansion for different customer categories.",
+      "core_domain_objects": "Role, Access Control, Authorization",
+      "acceptance_criteria": "1. Control access based on user roles\n2. Dynamically adjust feature visibility\n3. Support future expansions",
+      "test_cases": "Given a customer with a specific role\nWhen the customer logs in\nThen the system should display features relevant to the role"
+    },
+    {
+      "epic_title": "Core Banking and Database Integration",
+      "epic_key": "EPIC-10",
+      "number": 1,
+      "title": "Integrate the portal with core banking and database",
+      "description": "As a system, I need to integrate with the core banking system, so that I can synchronize customer and transactional data.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Use secure APIs for real-time synchronization. Implement caching, data encryption, and integrity checks.",
+      "core_domain_objects": "Integration, API, Database",
+      "acceptance_criteria": "1. Establish secure integration with core banking\n2. Ensure real-time data synchronization\n3. Implement caching and data integrity",
+      "test_cases": "Given a data synchronization event\nWhen the data changes in the core banking system\nThen update the portal in real-time"
+    },
+    {
+      "epic_title": "End-to-End Security and Compliance Implementation",
+      "epic_key": "EPIC-11",
+      "number": 1,
+      "title": "Ensure comprehensive security and compliance",
+      "description": "As a system, I need to enforce security and compliance, so that I meet banking standards and protect data.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Include encryption, intrusion detection, data masking, and vulnerability assessments. Comply with standards like PCI-DSS and GDPR.",
+      "core_domain_objects": "Security, Compliance, Data Protection",
+      "acceptance_criteria": "1. Implement system-wide security controls\n2. Ensure compliance with standards\n3. Deploy monitoring tools for anomaly detection",
+      "test_cases": "Given the compliance audit\nWhen assessing the system security\nThen all controls should meet the required standards"
+    }
   ]
 }
