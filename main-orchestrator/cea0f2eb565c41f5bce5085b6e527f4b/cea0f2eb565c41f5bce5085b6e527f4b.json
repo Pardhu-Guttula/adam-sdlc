@@ -97,5 +97,103 @@
         "EPIC-10"
       ]
     }
+  ],
+  "user_stories": [
+    {
+      "epic_title": "Multi-Factor Authentication and Secure Login",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement MFA using SMS OTP",
+      "description": "As a customer, I want to log in using SMS OTP, so that I can enhance the security of my account.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "OTP should be sent to the registered mobile number.",
+      "core_domain_objects": "SMS OTP, User account",
+      "acceptance_criteria": "The system sends an OTP to the user's phone upon login attempt.",
+      "test_cases": "Given the user has entered their credentials, When the user clicks on login, Then an OTP should be sent to the user's registered mobile number."
+    },
+    {
+      "epic_title": "Multi-Factor Authentication and Secure Login",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Implement MFA using Authenticator Apps",
+      "description": "As a customer, I want to log in using an authenticator app, so that I can enhance the security of my account.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Customers should be able to link their accounts with popular authenticator apps.",
+      "core_domain_objects": "Authenticator app, User account",
+      "acceptance_criteria": "The system should generate a QR code for linking with an authenticator app.",
+      "test_cases": "Given the user has entered their credentials, When the user selects authenticator app for MFA, Then a QR code should be generated for linking the app."
+    },
+    {
+      "epic_title": "Multi-Factor Authentication and Secure Login",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Implement biometric validation for MFA",
+      "description": "As a customer, I want to log in using biometric validation, so that I can enhance the security of my account.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "System should support fingerprint and facial recognition technologies.",
+      "core_domain_objects": "Biometric data, User account",
+      "acceptance_criteria": "Customers should be able to use biometrics for login if supported by their device.",
+      "test_cases": "Given the user has entered their credentials, When the user selects biometric validation for MFA, Then the system should authenticate using the biometric data."
+    },
+    {
+      "epic_title": "Personalized Customer Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Display account information",
+      "description": "As a customer, I want to view my account information, so that I can monitor my finances.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Fetch and display account balances and recent transactions.",
+      "core_domain_objects": "Account, Transaction",
+      "acceptance_criteria": "The dashboard displays account balances and recent transactions.",
+      "test_cases": "Given the user is logged in, When the user accesses the dashboard, Then account balances and recent transactions should be displayed."
+    },
+    {
+      "epic_title": "Responsive and Accessible User Interface",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Ensure device adaptability",
+      "description": "As a customer, I want a consistent experience across devices, so that I can use the portal efficiently on any device.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "The UI should adapt to different screen sizes without breaking.",
+      "core_domain_objects": "User interface",
+      "acceptance_criteria": "The UI elements should reflow correctly on different devices.",
+      "test_cases": "Given the user accesses the portal on different devices, When the user interacts with the portal, Then the UI should adapt to the screen size."
+    },
+    {
+      "epic_title": "Account Opening and Service Modification Workflows",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Simplify account opening workflow",
+      "description": "As a customer, I want a simplified account opening workflow, so that I can open a new account easily.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The workflow should guide users clearly and require minimal steps.",
+      "core_domain_objects": "Account, User account",
+      "acceptance_criteria": "Users can open a new account with minimal steps.",
+      "test_cases": "Given the user wants to open a new account, When the user follows the account opening workflow, Then the user should be able to complete the process with few steps."
+    },
+    {
+      "epic_title": "Document Upload and Verification",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Enable secure document upload",
+      "description": "As a customer, I want to upload required documents securely, so that my account application is verified.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Ensure encryption in transit and at rest for uploaded documents.",
+      "core_domain_objects": "Document, User account",
+      "acceptance_criteria": "Users can securely upload documents with encryption.",
+      "test_cases": "Given the user needs to upload a document, When the user selects and uploads a file, Then the document should be encrypted during transfer and storage."
+    },
+    {
+      "epic_title": "Real-Time Status Updates and Notifications",
+      "epic_key": "EPIC-7",
+      "number": 1,
+      "title": "Provide real-time updates",
+      "description": "As a customer, I want real-time updates on my application status, so that I am informed promptly.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "The system should send real-time notifications via email or SMS.",
+      "core_domain_objects": "Application, Notification",
+      "acceptance_criteria": "Users receive real-time updates on their application status.",
+      "test_cases": "Given the user submits an application, When the application's status changes, Then a real-time notification should be sent to the user."
+    }
   ]
 }
