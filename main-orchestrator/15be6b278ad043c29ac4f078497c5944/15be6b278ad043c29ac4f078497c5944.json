@@ -99,5 +99,91 @@
         "EPIC-10"
       ]
     }
+  ],
+  "user_stories": [
+    {
+      "epic_title": "Secure Customer Authentication and Access Control",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement multi-factor authentication",
+      "description": "As a customer, I want to use multi-factor authentication, so that my account is more secure.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Supports password, OTP, biometrics, and app-based verification.",
+      "core_domain_objects": "Credentials, Authentication System",
+      "acceptance_criteria": "1. Customer can enroll in MFA during account setup.\n2. System validates OTPs and biometric input accurately.",
+      "test_cases": "Given a customer has set up MFA, when they log in, then they must complete MFA to gain access."
+    },
+    {
+      "epic_title": "Secure Customer Authentication and Access Control",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Implement role-based access control",
+      "description": "As a customer, I want role-based access control, so that I can access only the features and services authorized for my role.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "RBAC must align with user profiles.",
+      "core_domain_objects": "User Roles, Access Control System",
+      "acceptance_criteria": "1. Users can only see features they are authorized to access.\n2. Changes to roles update access permissions instantly.",
+      "test_cases": "Given a user with a specific role, when they log in, then they must only see authorized features."
+    },
+    {
+      "epic_title": "Secure Customer Authentication and Access Control",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Use encryption for all credentials",
+      "description": "As a system administrator, I want all credentials to be encrypted, so that they are protected against unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Encryption must use industry standards.",
+      "core_domain_objects": "Encryption System",
+      "acceptance_criteria": "1. All credentials are encrypted in transit and at rest.\n2. Only authorized systems can decrypt the credentials.",
+      "test_cases": "Given stored credentials, when accessed, then they must be encrypted."
+    },
+    {
+      "epic_title": "Personalized Customer Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Create dynamic personalized dashboard",
+      "description": "As a customer, I want a personalized dashboard, so that I can see relevant account information and product eligibility.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Dashboard must integrate with core banking system.",
+      "core_domain_objects": "Customer Profile, Dashboard",
+      "acceptance_criteria": "1. Dashboard presents customized information based on user profile.\n2. Data shown is updated in real-time.",
+      "test_cases": "Given a customer's profile, when they log in, then the dashboard must display relevant and updated information."
+    },
+    {
+      "epic_title": "Personalized Customer Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Integrate personalized widgets",
+      "description": "As a customer, I want personalized widgets on my dashboard, so that I have enhanced user engagement.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Widgets must support various customer needs.",
+      "core_domain_objects": "Widgets, Dashboard",
+      "acceptance_criteria": "1. Widgets are customizable based on user preferences.\n2. Widgets are interactive and provide detailed insights.",
+      "test_cases": "Given a customer on their dashboard, when customizing widgets, then they must see options relevant to their profile."
+    },
+    {
+      "epic_title": "Responsive and Accessible User Interface",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Design responsive front-end",
+      "description": "As a user, I want a responsive user interface, so that I can use the portal across all my devices.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Interface must adapt to desktops, tablets, and smartphones.",
+      "core_domain_objects": "User Interface",
+      "acceptance_criteria": "1. Interface adapts to various screen sizes.\n2. Navigation and layout remain consistent across devices.",
+      "test_cases": "Given a user accessing the portal, when changing device, then the interface must adjust accordingly."
+    },
+    {
+      "epic_title": "Responsive and Accessible User Interface",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Ensure accessibility compliance",
+      "description": "As a user, I want an accessible user interface, so that I can use the portal regardless of my abilities.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Comply with WCAG standards, support assistive technologies.",
+      "core_domain_objects": "Accessibility Features",
+      "acceptance_criteria": "1. Interface meets WCAG compliance.\n2. Assistive technologies can navigate the interface smoothly.",
+      "test_cases": "Given an interface, when tested with assistive tech, then it must be navigable and comply with WCAG standards."
+    }
   ]
 }
