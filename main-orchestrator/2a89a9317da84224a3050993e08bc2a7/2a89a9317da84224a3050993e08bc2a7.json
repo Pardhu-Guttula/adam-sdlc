@@ -65,5 +65,187 @@
         "EPIC-6"
       ]
     }
+  ],
+  "user_stories": [
+    {
+      "epic_title": "Set Up Azure Infrastructure for Banking Website",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Provision Azure Resource Groups and Virtual Networks",
+      "description": "As a cloud engineer, I want to provision Azure Resource Groups and Virtual Networks, so that I can create isolated environments for different services.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Resources must be within specified regions. Networks must ensure low latency and high availability.",
+      "core_domain_objects": "Azure Resource Group, Virtual Network",
+      "acceptance_criteria": "Azure Resource Groups and Virtual Networks created successfully. Verified using Azure Portal and CLI.",
+      "test_cases": "Given proper permissions, When provisioning resources, Then the Resource Groups and Virtual Networks should be created as specified."
+    },
+    {
+      "epic_title": "Set Up Azure Infrastructure for Banking Website",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Configure Subnets and Application Gateways",
+      "description": "As a network administrator, I want to configure Subnets and Application Gateways, so that traffic can be routed efficiently and securely.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Subnets must be designed for scalability. Gateways must support SSL termination.",
+      "core_domain_objects": "Subnet, Application Gateway",
+      "acceptance_criteria": "Subnets and Application Gateways configured as designed. Verification through architecture validation.",
+      "test_cases": "Given subnet designs, When configuring, Then the subnets and gateways should be validated for performance."
+    },
+    {
+      "epic_title": "Configure Secure Azure Database Services",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Set Up Azure SQL Database with Security Features",
+      "description": "As a database administrator, I want to set up Azure SQL Database with security features, so that data is protected from unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Use Transparent Data Encryption and Always Encrypted. Configure Network Security Groups as per guidelines.",
+      "core_domain_objects": "Azure SQL Database, Network Security Group",
+      "acceptance_criteria": "Database set up with specified security features. Verification through security audit.",
+      "test_cases": "Given security requirements, When setting up the database, Then it should be protected as specified."
+    },
+    {
+      "epic_title": "Configure Secure Azure Database Services",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Implement Role-Based Access Control (RBAC)",
+      "description": "As a security officer, I want to implement Role-Based Access Control, so that access to the database is properly managed.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Adhere to the principle of least privilege. Configure roles and permissions accordingly.",
+      "core_domain_objects": "Role-Based Access Control",
+      "acceptance_criteria": "RBAC implemented successfully. Verification through role and access validation tests.",
+      "test_cases": "Given role requirements, When configuring RBAC, Then access should be restricted as per roles."
+    },
+    {
+      "epic_title": "Develop Core Banking Website Features",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Build User Registration and Login Modules",
+      "description": "As a user, I want to register and log in, so that I can access my online banking account.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Registration form must include all required fields. Login must be secure and use HTTPS.",
+      "core_domain_objects": "User, Registration, Login",
+      "acceptance_criteria": "Users should be able to register and log in successfully. Verification through user flow tests.",
+      "test_cases": "Given user details, When registering/logging in, Then users should be authenticated and redirected appropriately."
+    },
+    {
+      "epic_title": "Develop Core Banking Website Features",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Implement Account Overview and Transaction History",
+      "description": "As a user, I want to view my account overview and transaction history, so that I can manage my finances.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Details must be accurate and displayed clearly. Must support multiple account types.",
+      "core_domain_objects": "Account, Transaction",
+      "acceptance_criteria": "Account overview and transaction history should be displayed correctly. Verification through UI and data integrity tests.",
+      "test_cases": "Given an account, When viewing overview/history, Then data should be displayed accurately."
+    },
+    {
+      "epic_title": "Develop Core Banking Website Features",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "Enable Fund Transfers between Accounts",
+      "description": "As a user, I want to transfer funds between my accounts, so that I can manage my money flow.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Transfers must be secure. Ensure proper validation and confirmation steps.",
+      "core_domain_objects": "Fund Transfer",
+      "acceptance_criteria": "Funds should be transferable between accounts. Verification through transaction tests.",
+      "test_cases": "Given valid accounts, When initiating a transfer, Then funds should be moved accordingly."
+    },
+    {
+      "epic_title": "Implement Multi-Layer Security and Identity Management",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Integrate Azure Active Directory for Authentication",
+      "description": "As a security engineer, I want to integrate Azure Active Directory, so that I can manage user authentication and access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Implement SSO, MFA, and role-based authorization. Adhere to identity protection standards.",
+      "core_domain_objects": "Azure Active Directory",
+      "acceptance_criteria": "AAD integrated successfully. Verification through access and authentication tests.",
+      "test_cases": "Given user credentials, When authenticating, Then access should be granted as per roles."
+    },
+    {
+      "epic_title": "Implement Multi-Layer Security and Identity Management",
+      "epic_key": "EPIC-4",
+      "number": 2,
+      "title": "Configure Multifactor Authentication and Conditional Access",
+      "description": "As a security officer, I want to configure multifactor authentication and conditional access, so that user access is secure and based on risk levels.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Enforce MFA for all users. Configure conditional access policies based on user roles and risk assessment.",
+      "core_domain_objects": "Multifactor Authentication, Conditional Access",
+      "acceptance_criteria": "MFA and conditional access configured. Verification through security audits.",
+      "test_cases": "Given access policies, When logging in, Then users should be prompted for MFA based on risk."
+    },
+    {
+      "epic_title": "Enable Monitoring, Logging, and Compliance Controls",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Set Up Azure Monitor and Application Insights",
+      "description": "As an operations manager, I want to set up Azure Monitor and Application Insights, so that I can monitor system health and performance.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Monitor infrastructure and application performance. Configure alerts and dashboards for real-time monitoring.",
+      "core_domain_objects": "Azure Monitor, Application Insights",
+      "acceptance_criteria": "Monitoring tools configured. Verification through dashboard and alert tests.",
+      "test_cases": "Given monitoring setup, When system health degrades, Then alerts should be triggered."
+    },
+    {
+      "epic_title": "Enable Monitoring, Logging, and Compliance Controls",
+      "epic_key": "EPIC-5",
+      "number": 2,
+      "title": "Implement Compliance and Audit Logs",
+      "description": "As a compliance officer, I want to implement compliance and audit logs, so that all activities are tracked and compliant with regulations.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Logs must be tamper-evident. Adhere to data retention policies and regulatory standards.",
+      "core_domain_objects": "Audit Log, Compliance",
+      "acceptance_criteria": "Audit logs implemented. Verification through compliance checks and audits.",
+      "test_cases": "Given audit policies, When logging activities, Then logs should be compliant and reviewable."
+    },
+    {
+      "epic_title": "Perform Security Testing and Hardening",
+      "epic_key": "EPIC-6",
+      "number": 1,
+      "title": "Conduct Penetration Testing",
+      "description": "As a security analyst, I want to conduct penetration testing, so that I can identify and fix security vulnerabilities.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Tests must cover all critical components. Ensure timely remediation of vulnerabilities.",
+      "core_domain_objects": "Penetration Test",
+      "acceptance_criteria": "Penetration testing completed. Verification through vulnerability scans post-remediation.",
+      "test_cases": "Given a target system, When performing tests, Then vulnerabilities should be reported and fixed."
+    },
+    {
+      "epic_title": "Perform Security Testing and Hardening",
+      "epic_key": "EPIC-6",
+      "number": 2,
+      "title": "Harden Systems and Apply Security Patches",
+      "description": "As a systems administrator, I want to harden systems and apply security patches, so that they are protected against known exploits.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Patches must be applied promptly. Systems must be configured as per hardening guidelines.",
+      "core_domain_objects": "Security Patch, System Hardening",
+      "acceptance_criteria": "Systems hardened and patched. Verification through configuration audits.",
+      "test_cases": "Given security updates, When applying patches, Then systems should be secured as per guidelines."
+    },
+    {
+      "epic_title": "Deploy and Optimize Production Environment",
+      "epic_key": "EPIC-7",
+      "number": 1,
+      "title": "Deploy Application to Production Environment",
+      "description": "As a release manager, I want to deploy the application to the production environment, so that it is available to end users.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Follow deployment best practices. Ensure zero downtime and optimal performance.",
+      "core_domain_objects": "Application Deployment",
+      "acceptance_criteria": "Application deployed successfully. Verification through end-to-end testing.",
+      "test_cases": "Given the deployment plan, When executing deployment, Then the application should be live without issues."
+    },
+    {
+      "epic_title": "Deploy and Optimize Production Environment",
+      "epic_key": "EPIC-7",
+      "number": 2,
+      "title": "Configure Autoscaling and Disaster Recovery",
+      "description": "As a cloud architect, I want to configure autoscaling and disaster recovery, so that the application can handle varying loads and recover from failures.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Set up autoscaling policies. Ensure DR setup complies with RTO and RPO objectives.",
+      "core_domain_objects": "Autoscaling, Disaster Recovery",
+      "acceptance_criteria": "Autoscaling and DR configured. Verification through scaling tests and DR drills.",
+      "test_cases": "Given load scenarios, When scaling, Then the application should adjust resources accordingly."
+    }
   ]
 }
