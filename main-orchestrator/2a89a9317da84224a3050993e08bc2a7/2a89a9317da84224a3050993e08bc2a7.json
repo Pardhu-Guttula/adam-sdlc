@@ -415,5 +415,221 @@
         }
       }
     ]
+  },
+  "architecture_validation": {
+    "updatedDescription": "The architecture has been updated to address critical reliability issues by adding disaster recovery and multi-region support for Azure SQL Database and Azure Cosmos DB. All nodes and edges have been validated, and placeholders have been added where necessary to ensure a complete and consistent diagram. The architecture now adheres more closely to Azure Well-Architected Framework guidelines, improving reliability and scalability. Quality rating: High.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "Azure App Service (Frontend)"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "g-1",
+        "type": "group",
+        "data": {
+          "label": "Backend"
+        },
+        "position": {
+          "x": 300,
+          "y": 300
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "BackendAPI",
+        "data": {
+          "label": "Azure Functions (API)"
+        },
+        "position": {
+          "x": 10,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-1",
+        "extent": "parent"
+      },
+      {
+        "id": "BackendManagement",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 10,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-1",
+        "extent": "parent"
+      },
+      {
+        "id": "g-2",
+        "type": "group",
+        "data": {
+          "label": "Database"
+        },
+        "position": {
+          "x": 600,
+          "y": 300
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQLDatabase",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 10,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-2",
+        "extent": "parent"
+      },
+      {
+        "id": "CosmosDB",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 10,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-2",
+        "extent": "parent"
+      },
+      {
+        "id": "SQLDatabase-DR",
+        "data": {
+          "label": "Azure SQL Database (Disaster Recovery)"
+        },
+        "position": {
+          "x": 900,
+          "y": 300
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "CosmosDB-DR",
+        "data": {
+          "label": "Azure Cosmos DB (Disaster Recovery)"
+        },
+        "position": {
+          "x": 900,
+          "y": 400
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1-BackendAPI-SQLDatabase",
+        "source": "BackendAPI",
+        "target": "SQLDatabase",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-Frontend-BackendAPI",
+        "source": "Frontend",
+        "target": "BackendAPI",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3-Frontend-BackendManagement",
+        "source": "Frontend",
+        "target": "BackendManagement",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-BackendManagement-CosmosDB",
+        "source": "BackendManagement",
+        "target": "CosmosDB",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5-SQLDatabase-SQLDatabase-DR",
+        "source": "SQLDatabase",
+        "target": "SQLDatabase-DR",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6-CosmosDB-CosmosDB-DR",
+        "source": "CosmosDB",
+        "target": "CosmosDB-DR",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
   }
 }
