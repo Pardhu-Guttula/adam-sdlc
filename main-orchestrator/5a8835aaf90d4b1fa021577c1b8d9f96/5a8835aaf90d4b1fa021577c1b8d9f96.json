@@ -202,5 +202,153 @@
       "acceptance_criteria": "1. Portal handles high concurrency efficiently. 2. Performance is optimal during peak usage.",
       "test_cases": "Given high user traffic, When accessing the portal, Then performance should remain stable and reliable."
     }
-  ]
+  ],
+  "architecture_generation": {
+    "description": "This architecture diagram represents a scalable, secure, and user-friendly self-service banking portal including user interface, authentication and authorization, business logic, data management, integration, notifications, security, monitoring, storage, session management, DevOps, analytics, high availability, backup, and disaster recovery.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "Web Front-End (React.js or Angular)"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-auth",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Authorization"
+        },
+        "position": {
+          "x": 300,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "auth-child-1",
+        "data": {
+          "label": "Azure Active Directory"
+        },
+        "position": {
+          "x": 10,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-auth",
+        "extent": "parent"
+      },
+      {
+        "id": "auth-child-2",
+        "data": {
+          "label": "Multi-Factor Authentication (MFA)"
+        },
+        "position": {
+          "x": 10,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-auth",
+        "extent": "parent"
+      },
+      {
+        "id": "group-app",
+        "type": "group",
+        "data": {
+          "label": "Application and Business Logic"
+        },
+        "position": {
+          "x": 650,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "app-child-1",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 10,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-app",
+        "extent": "parent"
+      },
+      {
+        "id": "app-child-2",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 10,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-app",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-front-auth",
+        "source": "Frontend",
+        "target": "auth-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-auth-app",
+        "source": "auth-child-1",
+        "target": "app-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
 }
