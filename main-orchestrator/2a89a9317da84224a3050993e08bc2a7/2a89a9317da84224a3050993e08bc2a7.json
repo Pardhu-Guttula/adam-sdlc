@@ -1,3 +1,69 @@
 {
-  "user_prompt": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application"
+  "user_prompt": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "Set Up Azure Infrastructure for Banking Website",
+      "summary": "Provision and configure Azure resources for hosting the banking application",
+      "description": "Establish the foundational Azure infrastructure required to host the banking website. This EPIC will cover setting up Azure Resource Groups, Virtual Networks, Subnets, Application Gateways, and Load Balancers. Additionally, define network architecture ensuring scalability, redundancy, and region-based failover capabilities to support future growth.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Configure Secure Azure Database Services",
+      "summary": "Implement and secure database layer on Azure for banking transactions",
+      "description": "Configure Azure SQL Database and associated data storage systems with appropriate security features such as Transparent Data Encryption, Always Encrypted, and Network Security Groups. Ensure access policies are aligned with least privilege principles, establish role-based access control (RBAC), and enable Azure Defender for the database layer to maintain secure transactional data management.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Develop Core Banking Website Features",
+      "summary": "Build user interfaces and core features for the online banking platform",
+      "description": "Design and implement core functionalities of the banking website, including user registration, login, account overview, fund transfers, and transaction history. Create a responsive and user-friendly front-end using modern web frameworks and ensure secure communication between client and server through HTTPS and Azure Application Gateway.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Implement Multi-Layer Security and Identity Management",
+      "summary": "Integrate authentication, authorization, and secure user access management",
+      "description": "Integrate Azure Active Directory (AAD) for authentication and role-based authorization. Implement multifactor authentication (MFA), conditional access policies, and identity protection. Enforce secure session handling, token-based authentication, and regular security audits to ensure only authorized personnel can access sensitive areas of the system.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Enable Monitoring, Logging, and Compliance Controls",
+      "summary": "Implement end-to-end observability and compliance frameworks on Azure",
+      "description": "Set up Azure Monitor, Application Insights, and Log Analytics for comprehensive monitoring of application and infrastructure health. Implement alerts, dashboards, and automated responses for fault management. Ensure compliance with financial regulations by configuring audit logs, data retention policies, and routine vulnerability assessments using Azure Security Center.",
+      "dependencies": [
+        "EPIC-3",
+        "EPIC-4"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Perform Security Testing and Hardening",
+      "summary": "Conduct penetration testing, vulnerability scanning, and system hardening",
+      "description": "Execute in-depth security testing including penetration tests, security code scans, and configuration audits. Apply patches, harden operating systems and web servers, and remediate vulnerabilities discovered. Establish a secure CI/CD pipeline using Azure DevOps with security gates to block insecure builds from production deployment.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5"
+      ]
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Deploy and Optimize Production Environment",
+      "summary": "Launch the banking website on the live Azure environment with optimal performance",
+      "description": "Deploy the fully integrated and secured banking application to Azure Production environment. Optimize performance, configure autoscaling policies, and ensure smooth failover and disaster recovery setup. Validate end-to-end system readiness through final smoke tests and go-live readiness checks while maintaining operational security monitoring.",
+      "dependencies": [
+        "EPIC-6"
+      ]
+    }
+  ]
 }
