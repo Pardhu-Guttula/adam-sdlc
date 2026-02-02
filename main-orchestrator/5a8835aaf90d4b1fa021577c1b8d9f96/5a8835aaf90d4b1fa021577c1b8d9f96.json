@@ -350,5 +350,338 @@
         }
       }
     ]
+  },
+  "architecture_validation": {
+    "updatedDescription": "The updated architecture diagram includes enhancements for reliability, security, and disaster recovery. New nodes for Azure Web Application Firewall (WAF), Azure Monitor, Azure Security Center, Azure Backup, and Azure Site Recovery have been added. All edges and hierarchies are validated, ensuring a robust and secure self-service banking portal. Architecture quality rating: High.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "Web Front-End (React.js or Angular)"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-auth",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Authorization"
+        },
+        "position": {
+          "x": 300,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "auth-child-1",
+        "data": {
+          "label": "Azure Active Directory"
+        },
+        "position": {
+          "x": 10,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-auth",
+        "extent": "parent"
+      },
+      {
+        "id": "auth-child-2",
+        "data": {
+          "label": "Multi-Factor Authentication (MFA)"
+        },
+        "position": {
+          "x": 10,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-auth",
+        "extent": "parent"
+      },
+      {
+        "id": "group-app",
+        "type": "group",
+        "data": {
+          "label": "Application and Business Logic"
+        },
+        "position": {
+          "x": 650,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "app-child-1",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 10,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-app",
+        "extent": "parent"
+      },
+      {
+        "id": "app-child-2",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 10,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-app",
+        "extent": "parent"
+      },
+      {
+        "id": "Azure-WAF",
+        "data": {
+          "label": "Azure Web Application Firewall (WAF)"
+        },
+        "position": {
+          "x": 150,
+          "y": 50
+        },
+        "style": {
+          "border": "1px solid #000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "Azure-Monitor",
+        "data": {
+          "label": "Azure Monitor"
+        },
+        "position": {
+          "x": 500,
+          "y": 300
+        },
+        "style": {
+          "border": "1px solid #000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "Azure-Security-Center",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 500,
+          "y": 400
+        },
+        "style": {
+          "border": "1px solid #000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "Azure-Backup",
+        "data": {
+          "label": "Azure Backup"
+        },
+        "position": {
+          "x": 800,
+          "y": 300
+        },
+        "style": {
+          "border": "1px solid #000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "Azure-Site-Recovery",
+        "data": {
+          "label": "Azure Site Recovery"
+        },
+        "position": {
+          "x": 800,
+          "y": 400
+        },
+        "style": {
+          "border": "1px solid #000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-front-auth",
+        "source": "Frontend",
+        "target": "auth-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-auth-app",
+        "source": "auth-child-1",
+        "target": "app-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-front-waf",
+        "source": "Frontend",
+        "target": "Azure-WAF",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-waf-auth",
+        "source": "Azure-WAF",
+        "target": "auth-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-monitor-security",
+        "source": "Azure-Monitor",
+        "target": "Azure-Security-Center",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-monitor-auth1",
+        "source": "Azure-Monitor",
+        "target": "auth-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-monitor-auth2",
+        "source": "Azure-Monitor",
+        "target": "auth-child-2",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-monitor-app1",
+        "source": "Azure-Monitor",
+        "target": "app-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-monitor-app2",
+        "source": "Azure-Monitor",
+        "target": "app-child-2",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-backup-app1",
+        "source": "Azure-Backup",
+        "target": "app-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-backup-app2",
+        "source": "Azure-Backup",
+        "target": "app-child-2",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-recovery-app1",
+        "source": "Azure-Site-Recovery",
+        "target": "app-child-1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-recovery-app2",
+        "source": "Azure-Site-Recovery",
+        "target": "app-child-2",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
   }
 }
