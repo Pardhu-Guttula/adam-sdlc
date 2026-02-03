@@ -1,0 +1,17 @@
+{
+  "repo_owner": "Pardhu-Guttula",
+  "repo_name": "adam-sdlc",
+  "branch_name": "main",
+  "usecase": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application",
+  "project_name": "CloudOptics",
+  "access_users": [
+    "Anoop.Kumar@brillio.com",
+    "Ravi.P@brillio.com"
+  ],
+  "user_names": [
+    "Anoop Kumar",
+    "Ravi P"
+  ],
+  "jira_board": "ADAM-SDLC",
+  "jira_user": "drpardhu007@gmail.com"
+}
