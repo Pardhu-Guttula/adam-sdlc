@@ -4,24 +4,24 @@
     {
       "id": "EPIC-1",
       "title": "Azure Infrastructure Setup for Banking Website",
-      "summary": "Set up foundational Azure infrastructure components for the banking website.",
-      "description": "This epic involves setting up the core Azure infrastructure required to host and manage the banking website. It includes provisioning Azure Resource Groups, App Services, Virtual Networks, Load Balancers, and managing configuration through Infrastructure as Code using tools like Azure Bicep or Terraform. Proper environment segregation (Dev, QA, Prod) should be established, along with monitoring and cost management configurations.",
+      "summary": "Provision core Azure resources required for hosting the banking website.",
+      "description": "This epic involves creating and configuring foundational Azure infrastructure components that will serve as the base for the banking website. Tasks include setting up Virtual Networks, Resource Groups, App Services, Load Balancers, and management of staging and production environments. Infrastructure as Code (IaC) will be applied using Terraform or Bicep for repeatable, consistent deployments across environments.",
       "dependencies": []
     },
     {
       "id": "EPIC-2",
-      "title": "Database and Storage Configuration",
-      "summary": "Configure secure database and storage solutions for banking data.",
-      "description": "This epic focuses on the database architecture and storage layer configuration for securely managing customer and transactional data. It includes setting up Azure SQL Database or PostgreSQL with encryption, backup policies, failover setup, and Azure Blob Storage with appropriate access controls. Role-based access, data masking, and compliance with PCI-DSS and GDPR should be implemented to ensure data security.",
+      "title": "Secure Database and Storage Configuration",
+      "summary": "Implement secure and compliant data storage solutions using Azure services.",
+      "description": "This epic focuses on setting up secure and scalable databases and storage services for banking data. It includes configuration of Azure SQL Database with Transparent Data Encryption (TDE), backup and restore policies, failover strategies, and Azure Blob Storage with role-based access control. The solution should comply with PCI-DSS standards, ensure encryption at rest and in transit, and implement data retention and auditing policies.",
       "dependencies": [
         "EPIC-1"
       ]
     },
     {
       "id": "EPIC-3",
-      "title": "Application Backend Development",
-      "summary": "Develop core backend services for banking operations.",
-      "description": "This epic covers the design and development of backend APIs to support customer registration, authentication, account management, transactions, and reporting. The services will be developed using a secure and scalable framework (such as .NET Core or Node.js) and deployed on Azure App Services or Azure Kubernetes Service. It must incorporate secure APIs with token-based authentication and input validation.",
+      "title": "Backend Service Development",
+      "summary": "Develop backend services to support banking operations and transactions.",
+      "description": "This epic covers development of the server-side logic for key banking functionalities, including customer registration, authentication, transactions, account management, and reporting. These APIs will be developed using secure frameworks like ASP.NET Core or Node.js, with RESTful design, proper exception handling, and input validation. The services will be deployed to Azure App Services or Azure Kubernetes Service with CI/CD integration.",
       "dependencies": [
         "EPIC-1",
         "EPIC-2"
@@ -29,18 +29,18 @@
     },
     {
       "id": "EPIC-4",
-      "title": "Frontend UI Development",
-      "summary": "Build user interface for bank customers and administrators.",
-      "description": "This epic involves designing and developing responsive web interfaces for different user roles, including retail customers, administrators, and auditors. The frontend should be developed using modern frameworks such as React or Angular, integrate seamlessly with backend APIs, and ensure adherence to accessibility, usability, and security best practices.",
+      "title": "Frontend Interface Development",
+      "summary": "Design and develop customer-facing and administrative user interfaces.",
+      "description": "This epic involves the design and implementation of intuitive and responsive web interfaces using modern frameworks such as React or Angular. The UI will support different roles such as customers, administrators, and auditors, and will be integrated with backend APIs securely over HTTPS. Adherence to accessibility, usability, and security best practices will be mandatory during the implementation.",
       "dependencies": [
         "EPIC-3"
       ]
     },
     {
       "id": "EPIC-5",
-      "title": "Security Implementation and Compliance",
-      "summary": "Implement robust security layers and compliance for the banking platform.",
-      "description": "This epic covers the deployment of multiple security layers across the application and infrastructure. It includes Azure Security Center setup, network security groups, firewalls, encryption protocols (TLS 1.3), application gateway with WAF, and DDoS protection. Additionally, it ensures compliance with regulatory frameworks like PCI-DSS, ISO 27001, and GDPR. Security monitoring, auditing, and incident response procedures will be established for continuous protection.",
+      "title": "Security and Compliance Implementation",
+      "summary": "Apply multilayered security protections and regulatory compliance for the banking application.",
+      "description": "This epic focuses on enforcing securities across all layers of the Azure banking application. It includes configuring Azure Security Center, Network Security Groups, and Application Gateway with Web Application Firewall. TLS 1.3 encryption, DDoS protection, and strict IAM policies will be implemented. Periodic vulnerability assessments and security audits will ensure compliance with PCI-DSS, ISO 27001, and GDPR requirements.",
       "dependencies": [
         "EPIC-1",
         "EPIC-2",
@@ -49,9 +49,9 @@
     },
     {
       "id": "EPIC-6",
-      "title": "User Authentication and Authorization",
-      "summary": "Establish secure access control mechanisms for users and admins.",
-      "description": "This epic ensures robust authentication and authorization flows across the application. It includes integration with Azure Active Directory B2C for customer identity management, Multi-Factor Authentication (MFA), OAuth2 and OpenID Connect implementation, and session management with secure token handling. The system must maintain detailed access logs and role-based permissions in line with banking compliance requirements.",
+      "title": "Authentication and Access Management",
+      "summary": "Implement strong authentication and role-based access control mechanisms.",
+      "description": "This epic ensures secure and compliant authentication and authorization mechanisms for all users. It includes integrating Azure AD B2C for identity management, enabling Multi-Factor Authentication (MFA), and using OAuth2.0 / OpenID Connect for secure session handling. Role-based and least privilege access models will be used to ensure separation of duties between customers and internal staff.",
       "dependencies": [
         "EPIC-3",
         "EPIC-5"
@@ -59,9 +59,9 @@
     },
     {
       "id": "EPIC-7",
-      "title": "Monitoring, Logging, and Incident Response",
-      "summary": "Implement monitoring, logging, and alerts across the Azure banking environment.",
-      "description": "This epic focuses on establishing proactive monitoring and incident response mechanisms. It includes configuring Azure Monitor, Application Insights, and Log Analytics for metric tracking and centralized log management. Automated alerts will be configured for performance degradation, security breaches, or anomalies. An incident response plan and reporting workflow will be documented to ensure rapid recovery and compliance.",
+      "title": "Monitoring, Logging, and Security Auditing",
+      "summary": "Implement end-to-end observability and auditing measures.",
+      "description": "This epic includes configuring Azure Monitor, Log Analytics, and Application Insights for centralized monitoring and performance tracking. Logging and telemetry will be integrated across application and infrastructure layers to detect anomalies and potential security incidents. Robust alerting and reporting mechanisms will be established to support ongoing audits and compliance checks.",
       "dependencies": [
         "EPIC-1",
         "EPIC-5"
@@ -69,9 +69,9 @@
     },
     {
       "id": "EPIC-8",
-      "title": "Performance Optimization and Scalability",
-      "summary": "Optimize performance and enable scalability for peak banking operations.",
-      "description": "This epic includes optimizing application performance, database queries, caching, and load distribution. Azure Autoscale and Content Delivery Networks (CDNs) will be configured to ensure smooth scaling under varying load conditions. Regular load tests and stress tests will be conducted, and tuning recommendations will be implemented to guarantee consistent uptime and user experience.",
+      "title": "Performance Optimization and Scalability Planning",
+      "summary": "Optimize performance and scalability of the banking website.",
+      "description": "This epic aims at enhancing application performance through code optimization, caching, and appropriate use of Azure services. Azure Content Delivery Network (CDN), Auto-Scaling, and Load Balancing will be used to ensure smooth performance under varying loads. Regular load and stress tests will be performed, with optimization recommendations documented and applied.",
       "dependencies": [
         "EPIC-3",
         "EPIC-4"
@@ -79,9 +79,9 @@
     },
     {
       "id": "EPIC-9",
-      "title": "Disaster Recovery and Backup Strategy",
-      "summary": "Implement backup and disaster recovery solutions for banking infrastructure.",
-      "description": "This epic ensures data integrity and business continuity through comprehensive backup and recovery strategies. It includes configuring Azure Backup, Azure Site Recovery, geo-redundant storage, and replication strategies for databases and application services. Regular disaster recovery (DR) drills will be performed to validate recovery objectives (RPO/RTO) and maintain compliance with financial regulations.",
+      "title": "Backup, Disaster Recovery, and Business Continuity",
+      "summary": "Establish backup and disaster recovery mechanisms for critical banking components.",
+      "description": "This epic focuses on ensuring business continuity through planned backup and disaster recovery strategies. Azure Backup and Site Recovery will be configured for critical workloads. Geo-redundant storage and automated failover mechanisms will ensure minimal downtime. Regular recovery drills will be performed to validate recovery objectives and maintain compliance.",
       "dependencies": [
         "EPIC-1",
         "EPIC-2",
