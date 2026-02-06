@@ -1,3 +1,78 @@
 {
-  "user_prompt": "use case"
+  "user_prompt": "use case",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "Use Case Identification and Requirement Gathering",
+      "summary": "Define the use case scope and gather system requirements",
+      "description": "This epic focuses on identifying and documenting the core use case. It involves understanding problem statements, defining success criteria, collecting user requirements, and clarifying business objectives. The goal is to ensure every stakeholder has a mutual understanding of what the system aims to achieve and how it fits into the business context.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "System Design and Technical Planning",
+      "summary": "Design the architecture and plan technical implementation",
+      "description": "This epic is dedicated to designing system architecture, database models, and user interface layouts. It also includes defining technology stacks, integration methods, and security protocols. Deliverables include architectural diagrams, data models, and design prototypes that establish a solid foundation before development begins.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Implementation of Core Use Case Functionality",
+      "summary": "Develop main modules that fulfill the use case objectives",
+      "description": "This epic focuses on building the primary functional modules that represent the heart of the use case. It includes creating backend logic, data processing flows, user-facing components, and integration points. The main goal is to deliver a working prototype showcasing the use case end-to-end functionality.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-4",
+      "title": "User Management and Access Control",
+      "summary": "Implement user registration, authentication, and access management",
+      "description": "This epic involves implementing authentication logic such as sign-up, login, logout, and password recovery. It also includes defining user roles, permission levels, and session management to ensure secure and compliant access to different system components.",
+      "dependencies": [
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Enhancement with Advanced Features",
+      "summary": "Develop optional enhancements that complement the main use case",
+      "description": "This epic includes designing and developing additional features such as analytics, notifications, automation, and external API integrations. Its goal is to add depth and usability to the existing solution, making it more efficient and user-friendly while expanding its capabilities.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Testing, Validation, and Quality Assurance",
+      "summary": "Perform thorough testing to validate system reliability",
+      "description": "This epic covers all testing phases, including unit testing, integration testing, security analysis, and performance optimization. It ensures the platform meets stability, usability, and compliance standards before moving into deployment.",
+      "dependencies": [
+        "EPIC-3",
+        "EPIC-4"
+      ]
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Deployment and Monitoring for the Use Case Solution",
+      "summary": "Deploy the use case solution to production and monitor performance",
+      "description": "This epic involves the final deployment of the built solution into a production environment, setting up continuous integration and delivery pipelines, and ensuring proper monitoring and logging are in place. The purpose is to guarantee reliability, scalability, and ongoing system health.",
+      "dependencies": [
+        "EPIC-6"
+      ]
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Feedback Collection and Iterative Improvement",
+      "summary": "Gather user feedback and continuously refine the system",
+      "description": "This epic aims to collect real user feedback after deployment, analyze system performance, and plan improvements for subsequent versions. It focuses on iterative refinement, user-driven enhancements, and technical optimizations that increase overall satisfaction and performance.",
+      "dependencies": [
+        "EPIC-7"
+      ]
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
 }
