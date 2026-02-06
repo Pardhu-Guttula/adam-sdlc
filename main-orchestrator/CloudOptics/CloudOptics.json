@@ -1,3 +1,36 @@
 {
-  "user_prompt": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application"
+  "user_prompt": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application",
+  "epics": [
+    {
+      "id": "12465",
+      "key": "KAN-1886",
+      "self": "https://drpardhu007-gmail-com.atlassian.net/rest/api/2/issue/12465"
+    },
+    {
+      "id": "12466",
+      "key": "KAN-1887",
+      "self": "https://drpardhu007-gmail-com.atlassian.net/rest/api/2/issue/12466"
+    },
+    {
+      "id": "12467",
+      "key": "KAN-1888",
+      "self": "https://drpardhu007-gmail-com.atlassian.net/rest/api/2/issue/12467"
+    },
+    {
+      "id": "12468",
+      "key": "KAN-1889",
+      "self": "https://drpardhu007-gmail-com.atlassian.net/rest/api/2/issue/12468"
+    },
+    {
+      "id": "12469",
+      "key": "KAN-1890",
+      "self": "https://drpardhu007-gmail-com.atlassian.net/rest/api/2/issue/12469"
+    },
+    {
+      "id": "12470",
+      "key": "KAN-1891",
+      "self": "https://drpardhu007-gmail-com.atlassian.net/rest/api/2/issue/12470"
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
 }
