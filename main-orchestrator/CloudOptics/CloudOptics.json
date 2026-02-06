@@ -1,3 +1,5 @@
 {
-  "user_prompt": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application"
+  "user_prompt": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application",
+  "epics": [],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
 }
