@@ -1,3 +1,73 @@
 {
-  "user_prompt": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application"
+  "user_prompt": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "Azure Infrastructure Foundation Setup",
+      "summary": "Provision and configure the base Azure environment for the banking platform.",
+      "description": "This epic establishes the core cloud environment required to host the banking application. Activities include creating Azure Resource Groups, Virtual Networks, Subnets, Load Balancers, and configuring Storage Accounts. Network segmentation and Virtual Network (VNet) peering will ensure secure and isolated environments for development, testing, and production. The result is a structured, scalable, and secure foundation for further application deployment.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Secure Database Design and Deployment",
+      "summary": "Design and deploy a resilient and secure database system for financial operations.",
+      "description": "This epic includes data modeling and deployment of Azure SQL Database or Cosmos DB for storing sensitive financial information and customer data. Key tasks include encryption at rest and in transit, implementation of replication and backup policies, data access restrictions, and connection with Azure Key Vault for credential management. The setup will ensure compliance with regulatory requirements and guarantee data integrity and high availability.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Backend Services Development on Azure",
+      "summary": "Develop core application logic and secure APIs for banking functions.",
+      "description": "This epic involves developing the backend microservices for account management, transactions, payments, and authentication. The services will be built as RESTful APIs and deployed through Azure Kubernetes Service (AKS) or App Services, integrated with Azure Active Directory for identity and access management. Emphasis will be placed on secure coding, service scalability, and integration with the database and other Azure resources.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Frontend Application and User Experience",
+      "summary": "Design and build the customer-facing web interface for the banking application.",
+      "description": "This epic centers on developing the website interface using a modern framework such as Angular or React. It includes implementing secure login flows, dashboards for account viewing, transaction features, and customer support interactions. All communications between frontend and backend will use HTTPS and JWT tokens for session management. The interface will be optimized for accessibility, responsiveness, and a seamless digital banking experience.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Comprehensive Security and Compliance Layer",
+      "summary": "Implement advanced security layers and ensure compliance with financial data standards.",
+      "description": "This epic ensures the enforcement of security controls across all components. It includes enabling Azure Firewall, Web Application Firewall, and DDoS Protection, implementing Secure DevOps policies, and integrating Azure Security Center for threat detection. Identity management will leverage Azure AD B2C or AD DS. Compliance checks will align the application with PCI DSS, SOC 2, and GDPR standards to secure customer and transaction data end-to-end.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-3",
+        "EPIC-4"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Monitoring, Logging, and Incident Management",
+      "summary": "Integrate observability and response systems for proactive detection and resolution.",
+      "description": "This epic includes configuring Azure Monitor, Application Insights, and Log Analytics to track performance metrics and errors. Azure Sentinel will be integrated for SIEM capabilities, offering real-time security event analysis and response. Alerts and dashboards will be created for monitoring application performance, infrastructure health, and possible security breaches. Incident management workflows will automate response to ensure operational stability and data protection.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-5"
+      ]
+    },
+    {
+      "id": "EPIC-7",
+      "title": "End-to-End Testing and Production Deployment",
+      "summary": "Validate functionality, performance, and security before public release.",
+      "description": "This epic encompasses testing and optimization to ensure system reliability and performance at scale. It includes load testing, penetration testing, and failover checks. CI/CD pipelines will automate deployment through Azure DevOps, ensuring traceable version control and rollback strategies. Once validated, the banking website will be launched to production on Azure, supported by defined maintenance and update processes.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5",
+        "EPIC-6"
+      ]
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
 }
