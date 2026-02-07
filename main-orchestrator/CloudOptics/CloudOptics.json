@@ -181,5 +181,187 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
+  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "user_stories": [
+    {
+      "epic_title": "Environment Setup and Project Initialization",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Set up repository and define coding conventions",
+      "description": "As a developer, I want a consistent repository setup and clear coding conventions, so that collaboration is efficient and code integrity is maintained.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Repository should use Git, have branches such as main, develop, and feature. Coding conventions must be documented and agreed upon by the team.",
+      "core_domain_objects": "Repository, Branches, Coding conventions",
+      "acceptance_criteria": "Repository initialized and conventions documented.",
+      "test_cases": "Given a new project, When the repository is set up, Then coding conventions should be accessible to all team members."
+    },
+    {
+      "epic_title": "Environment Setup and Project Initialization",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Configure Continuous Integration and Continuous Deployment",
+      "description": "As a developer, I want a CI/CD pipeline set up, so that testing and deployment processes are automated.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "CI/CD pipeline should use tools such as GitHub Actions, Jenkins, or GitLab CI. It must handle build, testing, and deployment workflows.",
+      "core_domain_objects": "CI/CD pipeline",
+      "acceptance_criteria": "CI/CD pipeline set up and tested.",
+      "test_cases": "Given a commit to the repository, When the CI/CD pipeline triggers, Then the build, test, and deployment processes should execute."
+    },
+    {
+      "epic_title": "Environment Setup and Project Initialization",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Define and manage environment variables and configuration",
+      "description": "As a developer, I want environment variables and configuration managed, so that consistency is maintained across environments.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Configuration files for development, staging, and production environments must be created. Secrets should be managed securely.",
+      "core_domain_objects": "Environment variables, Configuration files",
+      "acceptance_criteria": "Environment configurations documented and securely managed.",
+      "test_cases": "Given different environments, When the application is deployed, Then the appropriate configuration settings should be applied."
+    },
+    {
+      "epic_title": "User Authentication and Account Management",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Create user registration and email verification",
+      "description": "As a user, I want to register with an email verification step, so that my account is secure.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Registration form and email/phone verification must be implemented. User data validations and error handling must be in place.",
+      "core_domain_objects": "User, Registration form, Email verification",
+      "acceptance_criteria": "User registration and verification process functional.",
+      "test_cases": "Given an invalid email, When a user tries to register, Then an appropriate error message should be displayed."
+    },
+    {
+      "epic_title": "User Authentication and Account Management",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Develop login and logout functionality",
+      "description": "As a user, I want to log in and log out securely, so that my sessions are managed properly.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Use JWT or OAuth for authentication. Ensure that user sessions are managed securely.",
+      "core_domain_objects": "User, JWT, OAuth, Sessions",
+      "acceptance_criteria": "Login and logout functionalities implemented and secure.",
+      "test_cases": "Given an incorrect password, When a user tries to log in, Then access should be denied and an error message should be shown."
+    },
+    {
+      "epic_title": "User Authentication and Account Management",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "Implement password reset and recovery",
+      "description": "As a user, I want to reset my password securely, so that I can regain access to my account.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Password reset flow should use one-time links or verification codes sent via email or phone.",
+      "core_domain_objects": "User, Password reset",
+      "acceptance_criteria": "Password reset process is secure and functional.",
+      "test_cases": "Given a legitimate password reset request, When a user follows the provided link, Then they should be able to securely reset their password."
+    },
+    {
+      "epic_title": "Core Feature Development",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Design and implement database schema",
+      "description": "As a developer, I want a well-designed database schema, so that the core functionality of the application is supported.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Database should include defined entities, relationships, and constraints. Schema migrations must be version controlled.",
+      "core_domain_objects": "Database, Schema, Entities",
+      "acceptance_criteria": "Database schema designed, implemented, and version controlled.",
+      "test_cases": "Given a new entity, When the model is defined, Then it should be correctly reflected in the database schema."
+    },
+    {
+      "epic_title": "Core Feature Development",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Develop core business logic APIs",
+      "description": "As an API consumer, I want robust backend endpoints, so that I can perform CRUD operations for the main functionalities.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Implement REST or GraphQL APIs with endpoints for CRUD operations, validation, and error handling.",
+      "core_domain_objects": "API, CRUD operations",
+      "acceptance_criteria": "Core API endpoints implemented and tested.",
+      "test_cases": "Given valid data, When a CRUD operation is performed, Then it should be executed correctly and produce expected results."
+    },
+    {
+      "epic_title": "Core Feature Development",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "Integrate core user flows in the frontend",
+      "description": "As a user, I want seamless interaction with core features, so that my experience is smooth and error-free.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Ensure that frontend communicates seamlessly with backend APIs and user workflows are smooth.",
+      "core_domain_objects": "User workflows, Frontend, Backend APIs",
+      "acceptance_criteria": "Core user flows are smooth and error-free.",
+      "test_cases": "Given a correctly implemented backend, When a user interacts with the frontend, Then the data should be correctly retrieved and displayed without errors."
+    },
+    {
+      "epic_title": "User Interface and Usability Enhancements",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Design and apply global styles and reusable components",
+      "description": "As a UI/UX designer, I want consistent global styles and components, so that the application’s UI is uniform.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Develop reusable UI components such as buttons, forms, modals, and follow a unified design system.",
+      "core_domain_objects": "UI components, Design system",
+      "acceptance_criteria": "Global styles and reusable components created.",
+      "test_cases": "Given the global styles, When applied to the application, Then the UI should be consistent and follow the design system."
+    },
+    {
+      "epic_title": "User Interface and Usability Enhancements",
+      "epic_key": "EPIC-4",
+      "number": 2,
+      "title": "Improve mobile responsiveness",
+      "description": "As a user, I want the application to work well on all devices, so that my experience is optimal regardless of screen size.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Implement responsive design patterns and refactor layouts for different screen sizes.",
+      "core_domain_objects": "Responsive design, Layouts",
+      "acceptance_criteria": "Application is responsive across devices.",
+      "test_cases": "Given different devices, When the application is viewed, Then it should be optimally displayed on each screen size."
+    },
+    {
+      "epic_title": "User Interface and Usability Enhancements",
+      "epic_key": "EPIC-4",
+      "number": 3,
+      "title": "Enhance accessibility",
+      "description": "As an accessibility advocate, I want the application to be usable by all users, including those with disabilities.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Implement WCAG guidelines like proper color contrasts, keyboard navigation, and screen reader compatibility.",
+      "core_domain_objects": "Accessibility, WCAG guidelines",
+      "acceptance_criteria": "Application meets accessibility standards.",
+      "test_cases": "Given accessibility requirements, When using the application, Then it should be compliant with WCAG guidelines."
+    },
+    {
+      "epic_title": "Performance, Analytics, and Deployment",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Implement application performance monitoring",
+      "description": "As an operations engineer, I want to track system performance, so I can detect and resolve bottlenecks proactively.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Integrate monitoring tools to capture application metrics and detect performance issues.",
+      "core_domain_objects": "Monitoring tools, Performance metrics",
+      "acceptance_criteria": "Performance monitoring integrated and functional.",
+      "test_cases": "Given monitoring tools, When performance metrics are captured, Then performance issues should be detectable in real-time."
+    },
+    {
+      "epic_title": "Performance, Analytics, and Deployment",
+      "epic_key": "EPIC-5",
+      "number": 2,
+      "title": "Set up an analytics dashboard",
+      "description": "As a business analyst, I want visibility into system and business metrics, so we can make informed decisions.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Develop an analytics dashboard displaying real-time metrics using tools or built-in modules.",
+      "core_domain_objects": "Analytics dashboard, Metrics",
+      "acceptance_criteria": "Analytics dashboard set up and functional.",
+      "test_cases": "Given various metrics, When displayed on the dashboard, Then it should reflect real-time data accurately."
+    },
+    {
+      "epic_title": "Performance, Analytics, and Deployment",
+      "epic_key": "EPIC-5",
+      "number": 3,
+      "title": "Prepare and execute production deployment",
+      "description": "As a release manager, I want to deploy the application smoothly, so that users experience minimal downtime.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Set up production configurations, test releases, and ensure rollback strategy is in place.",
+      "core_domain_objects": "Production deployment, Rollback strategy",
+      "acceptance_criteria": "Production deployment prepared and executed with minimal downtime.",
+      "test_cases": "Given production environment, When deploying the application, Then downtime should be minimized and rollback plan ready."
+    }
+  ]
 }
