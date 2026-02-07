@@ -1,3 +1,60 @@
 {
-  "user_prompt": "create epics and user stories for the use case"
+  "user_prompt": "create epics and user stories for the use case",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "Project Setup and Infrastructure Configuration",
+      "summary": "Establish development infrastructure and foundational setup",
+      "description": "Initiate the project by creating repositories, configuring build tools, selecting technologies, and setting up continuous integration and deployment pipelines. Prepare cloud environments and define version control strategies. This ensures a stable base for further development across all modules and teams.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "User Authentication and Role Management",
+      "summary": "Develop secure login, registration, and role-based access control",
+      "description": "Implement authentication mechanisms including registration, login, logout, and password recovery. Configure encrypted password storage and role-based access management to safeguard sensitive application areas. Integrate external authentication providers (e.g., OAuth, SSO) for seamless onboarding.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Core Feature Implementation",
+      "summary": "Develop main functional modules based on business requirements",
+      "description": "Create the central modules that represent the primary functionality of the system. Define entities, design workflows, and implement CRUD operations and analytics logic. Integrate with APIs and data storage layers to ensure performance, scalability, and reliability in handling real-time application use cases.",
+      "dependencies": [
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Frontend UI/UX Development",
+      "summary": "Design and build a seamless, user-friendly interface",
+      "description": "Develop the frontend interface using modern libraries and frameworks to enhance usability and engagement. Focus on accessibility, responsiveness, and performance across devices. Implement consistent component design, intuitive navigation, and responsive layouts adhering to brand and accessibility guidelines.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Integrations, Notifications, and Reports",
+      "summary": "Enable third-party system integrations and advanced features",
+      "description": "Integrate with external systems such as payment gateways, email and SMS services, and analytics platforms. Implement in-app or push notifications and reporting tools to analyze user activity and system performance. Ensure secure API interactions and compliance with data exchange standards.",
+      "dependencies": [
+        "EPIC-3",
+        "EPIC-4"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Quality Assurance, Deployment, and Maintenance",
+      "summary": "Test system functionality and manage production release",
+      "description": "Execute unit, integration, and acceptance testing to validate software reliability. Optimize system performance and fix critical issues. Deploy the solution to staging and production environments with automated pipelines. Post-deployment, establish application monitoring, error tracking, and routine maintenance activities.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5"
+      ]
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
 }
