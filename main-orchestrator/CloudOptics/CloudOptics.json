@@ -1,3 +1,59 @@
 {
-  "user_prompt": "create epics and user stories for the use case"
+  "user_prompt": "create epics and user stories for the use case",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "Project Setup and Architecture Design",
+      "summary": "Establish foundational structure and technical stack",
+      "description": "Set up the project repository, configure the development environment, define the architecture and select the technology stack required for successful project implementation. Define the folder structure, module organization, and CI/CD pipeline setup to ensure scalability and maintainability of the project.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "User Authentication and Authorization",
+      "summary": "Implement secure user login, logout, and registration functionality",
+      "description": "Develop secure user authentication and authorization features, including user registration, login, password encryption, session handling, and role-based access control. Integrate with a backend authentication service such as OAuth or JWT for a robust and secure validation process.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Core Application Functionality Development",
+      "summary": "Build main product features and core workflows",
+      "description": "Implement the primary business logic and key features that define the application's purpose. Ensure proper CRUD operations, validations, and back-end integrations that enable end-users to perform their core tasks efficiently. Include comprehensive error handling and test coverage for core modules.",
+      "dependencies": [
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-4",
+      "title": "User Interface and Experience Design",
+      "summary": "Design and develop responsive and intuitive user interfaces",
+      "description": "Design and develop UI components that provide a seamless, visually appealing user experience. Implement responsive layouts, consistent design elements, and accessibility features following modern UI/UX design standards. Integrate front-end frameworks such as React or Vue for dynamic interfaces.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Data Analytics and Insights Module",
+      "summary": "Implement advanced data reporting and insights visualization",
+      "description": "Develop analytical dashboards and reporting features that transform raw data into actionable insights. Integrate analytical tools or build custom data visualization components to track user engagement, performance metrics, and system health in real-time.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Deployment and Monitoring",
+      "summary": "Setup production-ready environments and monitoring tools",
+      "description": "Deploy the completed application to a production environment with optimized configuration. Set up monitoring tools for performance, error tracking, and uptime checks. Implement automated deployment through CI/CD workflows to ensure reliability and efficiency in future releases.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5"
+      ]
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
 }
