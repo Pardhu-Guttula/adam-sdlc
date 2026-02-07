@@ -4,75 +4,163 @@
   "epics": [
     {
       "id": "EPIC-1",
-      "title": "Project Setup and Architecture",
-      "summary": "Establish foundational project structure and technology stack.",
-      "description": "Set up the initial framework for the project, including repository creation, folder structure, environment configuration, and base dependency management. Define architecture patterns, coding guidelines, and continuous integration pipelines to ensure scalability and maintainability.",
+      "title": "Project Foundation and Environment Setup",
+      "summary": "Establish initial setup and development environment for the project.",
+      "description": "This epic covers the essential groundwork needed to begin the project. It includes setting up the repository, configuring environments, selecting the tech stack, and defining architecture guidelines. The outcome of this epic ensures that all team members have a consistent, ready-to-use foundation for development.",
       "dependencies": []
     },
     {
-      "id": "EPIC-2",
-      "title": "User Authentication and Authorization",
-      "summary": "Implement secure user login, registration, and role management.",
-      "description": "Develop user authentication functionality with sign-up, sign-in, password reset, and session management. Introduce role-based access control to differentiate between user types such as admins and regular users. Integrate with industry-standard authentication systems for data security.",
+      "id": "EPIC-1-US-1",
+      "title": "Create Version Control Repository",
+      "summary": "Set up a centralized code repository.",
+      "description": "As a developer, I want to create and configure a version control repository so that all project code can be stored, tracked, and collaboratively developed.",
       "dependencies": [
         "EPIC-1"
       ]
     },
     {
-      "id": "EPIC-3",
-      "title": "Core Feature Development",
-      "summary": "Build core functional modules based on the primary business requirements.",
-      "description": "Implement main features that define the project’s core purpose. This includes feature flows, business logic, and user interfaces. Ensure data flow between front-end and back-end systems is seamless and test for performance and correctness across workflows.",
+      "id": "EPIC-1-US-2",
+      "title": "Set Up Development Environments",
+      "summary": "Prepare local and cloud-based environments.",
+      "description": "As a team, we need consistent development, testing, and staging environments configured to match the production setup so the deployment process is smooth and error-free.",
       "dependencies": [
-        "EPIC-1",
+        "EPIC-1"
+      ]
+    },
+    {
+      "id": "EPIC-2",
+      "title": "User Authentication and Profiles",
+      "summary": "Implement secure sign-up, login, and profile management.",
+      "description": "This epic focuses on developing a secure authentication system, user registration, multi-factor authentication, password recovery, and profile management features. The goal is to ensure a reliable, safe, and seamless login experience for all users.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    },
+    {
+      "id": "EPIC-2-US-1",
+      "title": "User Registration",
+      "summary": "Enable new users to register.",
+      "description": "As a new user, I want to register using my credentials or social login so that I can access application features after authentication.",
+      "dependencies": [
         "EPIC-2"
       ]
     },
     {
-      "id": "EPIC-4",
-      "title": "Data Persistence and API Integration",
-      "summary": "Develop robust back-end services and database integration.",
-      "description": "Design and integrate necessary APIs to handle CRUD operations and data exchange. Establish connections with the database layer, ensuring efficient data modeling, schema management, and query performance. Implement validation and error-handling mechanisms to ensure reliability.",
+      "id": "EPIC-2-US-2",
+      "title": "Password Reset Functionality",
+      "summary": "Allow users to reset their password securely.",
+      "description": "As a user, I want to reset my password securely via an email or SMS verification process so that I can regain access to my account without compromising security.",
       "dependencies": [
-        "EPIC-1"
+        "EPIC-2"
       ]
     },
     {
-      "id": "EPIC-5",
-      "title": "User Interface and Experience Enhancement",
-      "summary": "Refine and optimize the user interface for better usability and design.",
-      "description": "Focus on front-end improvements by introducing responsive layouts, optimized loading patterns, and accessible design elements. Incorporate user feedback to refine workflows and ensure the interface aligns with brand guidelines and intuitive navigation principles.",
+      "id": "EPIC-3",
+      "title": "Core Business Features Development",
+      "summary": "Develop main application functionalities supporting the business purpose.",
+      "description": "This epic encompasses the creation of the project's core functionalities that fulfill the main business objectives. It includes building the internal logic, feature modules, and supporting workflows needed for users to achieve their goals effectively.",
+      "dependencies": [
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-3-US-1",
+      "title": "Feature Implementation",
+      "summary": "Develop the main functional module.",
+      "description": "As a user, I want to perform the core actions that the application enables so that I can achieve the intended tasks efficiently and accurately.",
       "dependencies": [
         "EPIC-3"
       ]
     },
     {
-      "id": "EPIC-6",
-      "title": "Testing, Quality Assurance, and Deployment",
-      "summary": "Ensure product quality through testing and prepare for production release.",
-      "description": "Conduct unit, integration, and user acceptance testing to validate all modules. Fix identified defects and optimize for speed and reliability. Prepare deployment pipelines, staging environments, and documentation to ensure a stable release into production.",
+      "id": "EPIC-3-US-2",
+      "title": "Error Handling and Validation",
+      "summary": "Ensure all user inputs and workflows are validated.",
+      "description": "As a user, I want the application to validate my input and provide clear error messages so that I can easily correct mistakes and continue using the system seamlessly.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-4",
+      "title": "User Interface and Experience",
+      "summary": "Deliver a responsive, user-friendly, and engaging interface.",
+      "description": "This epic is focused on building intuitive and visually appealing user interfaces that enhance usability. The scope includes responsive layouts, accessibility compliance, consistent styling, and improved navigation flows.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-4-US-1",
+      "title": "Responsive Design Implementation",
+      "summary": "Ensure layouts work across all devices.",
+      "description": "As a user, I want the interface to adapt seamlessly to my device so that I can use the application whether I'm on a mobile, tablet, or desktop.",
+      "dependencies": [
+        "EPIC-4"
+      ]
+    },
+    {
+      "id": "EPIC-4-US-2",
+      "title": "Accessibility Compliance",
+      "summary": "Ensure the platform is accessible to all users.",
+      "description": "As a user with disabilities, I want to interact with the system through accessible features like keyboard navigation and screen reader support so that I have an equitable user experience.",
+      "dependencies": [
+        "EPIC-4"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Testing, Quality Assurance, and Release Preparation",
+      "summary": "Test, refine, and prepare the application for release.",
+      "description": "This epic covers the implementation of comprehensive quality assurance procedures, including unit, integration, and user acceptance testing. The goal is to ensure all modules work correctly and the product is stable and deployable.",
       "dependencies": [
         "EPIC-3",
         "EPIC-4"
       ]
     },
     {
-      "id": "EPIC-7",
-      "title": "Analytics and Performance Monitoring",
-      "summary": "Integrate analytics tools and implement performance monitoring systems.",
-      "description": "Deploy analytics and monitoring systems to track user behavior, system performance, and errors in real time. Use data insights to enhance the application’s responsiveness and identify scalability opportunities for future versions.",
+      "id": "EPIC-5-US-1",
+      "title": "Functional Testing",
+      "summary": "Perform testing on all features.",
+      "description": "As a QA engineer, I want to validate that all developed features behave as expected under various conditions so that the system remains robust.",
+      "dependencies": [
+        "EPIC-5"
+      ]
+    },
+    {
+      "id": "EPIC-5-US-2",
+      "title": "User Acceptance Testing",
+      "summary": "Confirm product readiness before release.",
+      "description": "As a stakeholder, I want to review the system against requirements so that I can approve the product for deployment.",
+      "dependencies": [
+        "EPIC-5"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Deployment, Analytics, and Monitoring",
+      "summary": "Deploy the system and establish performance tracking.",
+      "description": "This epic focuses on the deployment of the production-ready system. It includes setting up CI/CD pipelines, integrating monitoring tools, and implementing analytics to monitor performance, user engagement, and potential system bottlenecks post-launch.",
+      "dependencies": [
+        "EPIC-5"
+      ]
+    },
+    {
+      "id": "EPIC-6-US-1",
+      "title": "Application Deployment",
+      "summary": "Deploy the tested application into production.",
+      "description": "As a DevOps engineer, I want to deploy the stable build of the application into production so that users can begin using the live system.",
       "dependencies": [
         "EPIC-6"
       ]
     },
     {
-      "id": "EPIC-8",
-      "title": "Advanced Features and Continuous Improvement",
-      "summary": "Introduce advanced functionalities and ongoing project optimization.",
-      "description": "Implement advanced or optional features that enhance the user experience and project capabilities. Continuously refine system components based on analytics feedback and emerging requirements, ensuring ongoing value delivery and system evolution.",
+      "id": "EPIC-6-US-2",
+      "title": "Integrate Analytics",
+      "summary": "Enable tracking of user behavior and system metrics.",
+      "description": "As a product manager, I want analytics integrated into the system to monitor engagement and performance so that I can make informed decisions for future improvements.",
       "dependencies": [
-        "EPIC-5",
-        "EPIC-7"
+        "EPIC-6"
       ]
     }
   ],
