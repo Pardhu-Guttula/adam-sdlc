@@ -74,567 +74,211 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
-      "epic_title": "Project Foundation and Environment Setup",
+      "epic_title": "Project Setup and Requirements Gathering",
       "epic_key": "EPIC-1",
       "number": 1,
-      "title": "Set Up Version Control Repository",
-      "description": "As a developer, I want to set up and configure a version control repository so that all project code can be stored and collaboratively developed.",
+      "title": "Establish Project Foundation",
+      "description": "As a Project Manager, I want to set up development environments and define key objectives, so that the project can start on a solid foundation.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Repository must support branching and merging, and be accessible by all team members.",
-      "core_domain_objects": "Repository, Branch",
-      "acceptance_criteria": "1. Repository is created and accessible by the team. 2. Repo supports branching, merging, and version history.",
-      "test_cases": "Given the repository setup is complete, When a developer tries to push code, Then the repository must accept the code and version it."
+      "attributes_and_rules": "Key objectives and scope must be clearly defined and approved by stakeholders.",
+      "core_domain_objects": "Development Environment, Objectives, Scope",
+      "acceptance_criteria": "Development environments are set up, objectives are documented and approved, project scope is confirmed.",
+      "test_cases": "Given the project is initiated, When the development environments are ready and objectives are defined, Then the project scope is confirmed with stakeholders."
     },
     {
-      "epic_title": "Project Foundation and Environment Setup",
+      "epic_title": "Project Setup and Requirements Gathering",
       "epic_key": "EPIC-1",
       "number": 2,
-      "title": "Set Up Development Environments",
-      "description": "As a team, we need consistent development, testing, and staging environments configured to match the production setup so the deployment process is smooth and error-free.",
+      "title": "Gather Business Requirements",
+      "description": "As a Business Analyst, I want to gather and document business requirements, so that we can ensure the project aligns with business goals.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Environments must mirror production setup as close as possible; all services and databases must be replicated.",
-      "core_domain_objects": "Dev Environment, Test Environment, Staging Environment",
-      "acceptance_criteria": "1. Development, testing, and staging environments are set up and tested. 2. Environments are accessible and functional.",
-      "test_cases": "Given the environments are set up, When a developer runs tests, Then the tests must pass similarly across all environments."
+      "attributes_and_rules": "Requirements must be gathered from all key stakeholders and documented clearly.",
+      "core_domain_objects": "Business Requirements, Stakeholders",
+      "acceptance_criteria": "All business requirements are gathered, documented and approved by stakeholders.",
+      "test_cases": "Given the requirements gathering phase, When all stakeholders provide their input, Then the business requirements are documented and approved."
     },
     {
-      "epic_title": "User Authentication and Profiles",
+      "epic_title": "User Account Management",
       "epic_key": "EPIC-2",
       "number": 1,
-      "title": "Implement User Registration Capability",
-      "description": "As a new user, I want to register using my credentials or social login so that I can access application features after authentication.",
+      "title": "Implement User Registration",
+      "description": "As a User, I want to register on the platform, so that I can create an account.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Support email/password and social logins (e.g., Google, Facebook).",
-      "core_domain_objects": "User, Registration",
-      "acceptance_criteria": "1. Users can register using an email and password. 2. Users can register using social login.",
-      "test_cases": "Given a new user, When they attempt to register, Then the registration should be successful using both methods (email/password, social login)."
+      "attributes_and_rules": "Registration process must be secure and user-friendly.",
+      "core_domain_objects": "User Account",
+      "acceptance_criteria": "Users can register successfully with required information.",
+      "test_cases": "Given the registration page, When a user fills in the required information and submits, Then the user account is created."
     },
     {
-      "epic_title": "User Authentication and Profiles",
+      "epic_title": "User Account Management",
       "epic_key": "EPIC-2",
       "number": 2,
-      "title": "Implement Password Reset Functionality",
-      "description": "As a user, I want to reset my password securely via an email or SMS verification process so that I can regain access to my account without compromising security.",
+      "title": "Implement User Login",
+      "description": "As a User, I want to log into the platform, so that I can access my account.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Password reset must be secure; use email or SMS for verification.",
-      "core_domain_objects": "User, Password, Verification",
-      "acceptance_criteria": "1. Users can request a password reset. 2. Users can reset the password using a verification code sent via email or SMS.",
-      "test_cases": "Given a user requesting a password reset, When they follow the reset link, Then they should be able to reset their password after verifying the code."
+      "attributes_and_rules": "Login process must be secure and reliable.",
+      "core_domain_objects": "User Account",
+      "acceptance_criteria": "Users can log in successfully with their credentials.",
+      "test_cases": "Given the login page, When a user provides valid credentials, Then the user is logged in."
     },
     {
-      "epic_title": "Core Business Features Development",
-      "epic_key": "EPIC-3",
-      "number": 1,
-      "title": "Develop Core Functionalities",
-      "description": "As a user, I want to perform the core actions that the application enables so that I can achieve the intended tasks efficiently and accurately.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "Core functionalities must cover critical user tasks.",
-      "core_domain_objects": "Core Functionality",
-      "acceptance_criteria": "1. Core actions are fully functional. 2. User workflows are smooth and intuitive.",
-      "test_cases": "Given the core functionalities developed, When a user performs a core action, Then it should execute smoothly and accurately."
-    },
-    {
-      "epic_title": "Core Business Features Development",
-      "epic_key": "EPIC-3",
-      "number": 2,
-      "title": "Validate User Inputs and Handle Errors",
-      "description": "As a user, I want the application to validate my input and provide clear error messages so that I can easily correct mistakes and continue using the system seamlessly.",
+      "epic_title": "User Account Management",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "Implement Password Recovery",
+      "description": "As a User, I want to recover my password, so that I can regain access to my account if I forget my password.",
       "priority_business_value": "Medium",
-      "attributes_and_rules": "All user inputs must be validated, and clear error messages should be shown.",
-      "core_domain_objects": "Input Validation, Error Handling",
-      "acceptance_criteria": "1. All inputs are validated. 2. Clear and helpful error messages are provided.",
-      "test_cases": "Given invalid user input, When the user submits the form, Then a clear error message should be displayed."
+      "attributes_and_rules": "Password recovery process must be secure and straightforward.",
+      "core_domain_objects": "User Account",
+      "acceptance_criteria": "Users can recover their password using the recovery process.",
+      "test_cases": "Given the password recovery page, When a user provides the necessary information, Then the user can reset their password."
     },
     {
-      "epic_title": "User Interface and Experience",
+      "epic_title": "Core Application Functionality",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Develop Backend Logic",
+      "description": "As a Developer, I want to create the backend logic, so that the core features of the application function correctly.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Backend logic must align with the business use case and be reliable.",
+      "core_domain_objects": "Application, Backend",
+      "acceptance_criteria": "Backend logic supports the operational workflows.",
+      "test_cases": "Given the backend environment, When the logic is implemented, Then it supports the application's core features."
+    },
+    {
+      "epic_title": "Core Application Functionality",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Set Up Database Structures",
+      "description": "As a Database Administrator, I want to set up database structures, so that the application data is stored and managed efficiently.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Database structures must be optimized and secure.",
+      "core_domain_objects": "Database, Application Data",
+      "acceptance_criteria": "Database structures support efficient data management required by the application.",
+      "test_cases": "Given the database setup phase, When the structures are implemented, Then they handle the application data effectively."
+    },
+    {
+      "epic_title": "User Interface and Experience Design",
       "epic_key": "EPIC-4",
       "number": 1,
+      "title": "Design User Interfaces",
+      "description": "As a UI/UX Designer, I want to design intuitive user interfaces, so that users find the application easy to use.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Interfaces must be consistent with the brand and usability goals.",
+      "core_domain_objects": "User Interface, Design",
+      "acceptance_criteria": "User interfaces are intuitive and align with design goals.",
+      "test_cases": "Given the design stage, When the user interfaces are created, Then they provide a consistent and intuitive experience."
+    },
+    {
+      "epic_title": "User Interface and Experience Design",
+      "epic_key": "EPIC-4",
+      "number": 2,
       "title": "Implement Responsive Design",
-      "description": "As a user, I want the interface to adapt seamlessly to my device so that I can use the application whether I'm on a mobile, tablet, or desktop.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "Responsive design must work across various devices.",
-      "core_domain_objects": "UI, Responsive Design",
-      "acceptance_criteria": "1. Interface adapts seamlessly to different devices. 2. Usability is consistent across devices.",
-      "test_cases": "Given different devices, When accessing the application, Then the interface should adapt seamlessly."
-    },
-    {
-      "epic_title": "User Interface and Experience",
-      "epic_key": "EPIC-4",
-      "number": 2,
-      "title": "Ensure Accessibility Compliance",
-      "description": "As a user with disabilities, I want to interact with the system through accessible features like keyboard navigation and screen reader support so that I have an equitable user experience.",
+      "description": "As a User, I want the application to be responsive, so that it works well on various devices.",
       "priority_business_value": "Medium",
-      "attributes_and_rules": "Support screen readers and keyboard navigation.",
-      "core_domain_objects": "Accessibility, UI",
-      "acceptance_criteria": "1. Application is usable with screen readers. 2. All actions can be performed using keyboard navigation.",
-      "test_cases": "Given accessibility tools, When using the application, Then navigation and usage should be seamless."
+      "attributes_and_rules": "Interfaces must adapt to different screen sizes.",
+      "core_domain_objects": "User Interface, Responsiveness",
+      "acceptance_criteria": "Application interfaces are responsive across devices.",
+      "test_cases": "Given different devices, When accessing the application, Then the interface adjusts accordingly."
     },
     {
-      "epic_title": "Testing, Quality Assurance, and Release Preparation",
+      "epic_title": "System Integrations and Extensions",
       "epic_key": "EPIC-5",
       "number": 1,
-      "title": "Perform Functional Testing",
-      "description": "As a QA engineer, I want to validate that all developed features behave as expected under various conditions so that the system remains robust.",
+      "title": "Integrate Payment Gateway",
+      "description": "As an Administrator, I want to integrate a payment gateway, so that users can make secure transactions.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Test cases should cover various conditions including edge cases.",
-      "core_domain_objects": "Testing, QA",
-      "acceptance_criteria": "1. Test cases are comprehensive and cover all features. 2. All tests pass successfully.",
-      "test_cases": "Given the test cases, When executed, Then all features should behave as expected."
+      "attributes_and_rules": "Integration must be secure and support various payment methods.",
+      "core_domain_objects": "Payment Gateway, Transactions",
+      "acceptance_criteria": "Payment gateway integration supports secure transactions.",
+      "test_cases": "Given a payment scenario, When a user makes a transaction, Then it is processed securely through the payment gateway."
     },
     {
-      "epic_title": "Testing, Quality Assurance, and Release Preparation",
+      "epic_title": "System Integrations and Extensions",
       "epic_key": "EPIC-5",
       "number": 2,
-      "title": "Conduct User Acceptance Testing",
-      "description": "As a stakeholder, I want to review the system against requirements so that I can approve the product for deployment.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "UAT must reflect real-world usage scenarios.",
-      "core_domain_objects": "UAT, Stakeholder",
-      "acceptance_criteria": "1. All requirements are met. 2. Stakeholders approve the functionality.",
-      "test_cases": "Given UAT scenarios, When stakeholders test the product, Then all requirements should be met satisfactorily."
+      "title": "Integrate Analytics Service",
+      "description": "As a Product Manager, I want to integrate an analytics service, so that we can track user behavior and application performance.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Integration must provide actionable insights.",
+      "core_domain_objects": "Analytics Service, User Data",
+      "acceptance_criteria": "Analytics service integration provides necessary data insights.",
+      "test_cases": "Given the analytics requirements, When the service is integrated, Then it tracks user behavior and performance effectively."
     },
     {
-      "epic_title": "Deployment, Analytics, and Monitoring",
+      "epic_title": "Testing and Quality Assurance",
       "epic_key": "EPIC-6",
       "number": 1,
-      "title": "Deploy Application to Production",
-      "description": "As a DevOps engineer, I want to deploy the stable build of the application into production so that users can begin using the live system.",
+      "title": "Conduct Unit Testing",
+      "description": "As a QA Engineer, I want to conduct unit testing, so that each component works correctly in isolation.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Deployment pipeline must ensure zero downtime and rollback capabilities.",
-      "core_domain_objects": "Deployment, CI/CD",
-      "acceptance_criteria": "1. Stable build is deployed successfully. 2. No downtime during deployment.",
-      "test_cases": "Given a stable build, When deploying to production, Then deployment should be successful with no downtime."
+      "attributes_and_rules": "Tests must cover all critical components.",
+      "core_domain_objects": "Component, Unit Test",
+      "acceptance_criteria": "Critical components pass unit tests.",
+      "test_cases": "Given the testing framework, When unit tests are executed, Then critical components pass the tests."
     },
     {
-      "epic_title": "Deployment, Analytics, and Monitoring",
+      "epic_title": "Testing and Quality Assurance",
       "epic_key": "EPIC-6",
       "number": 2,
-      "title": "Integrate Analytics for Monitoring",
-      "description": "As a product manager, I want analytics integrated into the system to monitor engagement and performance so that I can make informed decisions for future improvements.",
+      "title": "Conduct Integration Testing",
+      "description": "As a QA Engineer, I want to conduct integration testing, so that components work correctly together.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Tests must validate interactions between components.",
+      "core_domain_objects": "Component, Integration Test",
+      "acceptance_criteria": "Interacting components pass integration tests.",
+      "test_cases": "Given the testing framework, When integration tests are executed, Then interacting components pass the tests."
+    },
+    {
+      "epic_title": "Deployment and Production Readiness",
+      "epic_key": "EPIC-7",
+      "number": 1,
+      "title": "Set Up Production Environments",
+      "description": "As a DevOps Engineer, I want to set up production environments, so that the application can be deployed safely and reliably.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Environment setup must be secure and scalable.",
+      "core_domain_objects": "Production Environment, Infrastructure",
+      "acceptance_criteria": "Production environments are set up and ready for deployment.",
+      "test_cases": "Given the production setup phase, When environments are configured, Then they support safe and reliable deployments."
+    },
+    {
+      "epic_title": "Deployment and Production Readiness",
+      "epic_key": "EPIC-7",
+      "number": 2,
+      "title": "Configure Deployment Automation",
+      "description": "As a DevOps Engineer, I want to configure deployment automation, so that the application can be deployed efficiently with minimal downtime.",
       "priority_business_value": "Medium",
-      "attributes_and_rules": "Analytics should track user behavior and system performance metrics.",
-      "core_domain_objects": "Analytics, Monitoring",
-      "acceptance_criteria": "1. Analytics tool is integrated. 2. User behavior and performance metrics are tracked.",
-      "test_cases": "Given the integrated analytics, When monitoring user behavior, Then data should be available for analysis."
+      "attributes_and_rules": "Deployment automation processes must include rollback plans.",
+      "core_domain_objects": "Deployment, Automation",
+      "acceptance_criteria": "Deployment automation is set up with rollback plans.",
+      "test_cases": "Given the deployment automation setup, When the application is deployed, Then it completes efficiently with minimal downtime."
+    },
+    {
+      "epic_title": "Maintenance and Continuous Improvement",
+      "epic_key": "EPIC-8",
+      "number": 1,
+      "title": "Monitor System Performance",
+      "description": "As a System Administrator, I want to monitor system performance, so that any issues can be identified and addressed promptly.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Monitoring must include performance metrics and alert mechanisms.",
+      "core_domain_objects": "System Performance, Monitoring",
+      "acceptance_criteria": "System performance is monitored and alerts are set for key metrics.",
+      "test_cases": "Given the monitoring setup, When performance issues occur, Then alerts are triggered."
+    },
+    {
+      "epic_title": "Maintenance and Continuous Improvement",
+      "epic_key": "EPIC-8",
+      "number": 2,
+      "title": "Implement Feature Enhancements",
+      "description": "As a Product Manager, I want to implement feature enhancements, so that the application continually meets user needs and expectations.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Enhancements must be driven by user feedback and analytics.",
+      "core_domain_objects": "Feature Enhancement, User Feedback",
+      "acceptance_criteria": "New features and improvements are implemented based on feedback.",
+      "test_cases": "Given the continuous improvement phase, When user feedback is analyzed, Then enhancements are implemented accordingly."
     }
-  ],
-  "architecture_generation": {
-    "description": "Secure banking website built using Azure infrastructure with proper security layers applied throughout the application, involving multiple Azure services such as App Service, Front Door, SQL Database, Active Directory, and more.",
-    "nodes": [
-      {
-        "id": "Frontend",
-        "data": {
-          "label": "Frontend (App Service & CDN)"
-        },
-        "position": {
-          "x": 0,
-          "y": 0
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-Backend",
-        "type": "group",
-        "data": {
-          "label": "Backend Services"
-        },
-        "position": {
-          "x": 300,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Backend-AppService",
-        "data": {
-          "label": "Backend (App Service / AKS)"
-        },
-        "position": {
-          "x": 320,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-Backend",
-        "extent": "parent"
-      },
-      {
-        "id": "Backend-Functions",
-        "data": {
-          "label": "Functions"
-        },
-        "position": {
-          "x": 320,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-Backend",
-        "extent": "parent"
-      },
-      {
-        "id": "group-Database",
-        "type": "group",
-        "data": {
-          "label": "Database Services"
-        },
-        "position": {
-          "x": 650,
-          "y": 0
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Database-SQL",
-        "data": {
-          "label": "SQL Database"
-        },
-        "position": {
-          "x": 670,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-Database",
-        "extent": "parent"
-      },
-      {
-        "id": "Database-CosmosDB",
-        "data": {
-          "label": "Cosmos DB"
-        },
-        "position": {
-          "x": 670,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-Database",
-        "extent": "parent"
-      }
-    ],
-    "edges": [
-      {
-        "id": "e1-Backend",
-        "source": "Frontend",
-        "target": "Backend-AppService",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e2-Database",
-        "source": "Backend-AppService",
-        "target": "Database-SQL",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e3-CosmosDB",
-        "source": "Backend-AppService",
-        "target": "Database-CosmosDB",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4-Functions",
-        "source": "Backend-Functions",
-        "target": "Database-SQL",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      }
-    ]
-  },
-  "architecture_validation": {
-    "updatedDescription": "The diagram has been updated to address security and reliability concerns by adding a Web Application Firewall (WAF) for the frontend and a disaster recovery setup for critical components. The architecture now adheres more closely to the Azure Well-Architected Framework, improving security, reliability, and operational standards. Quality rating: High.",
-    "nodes": [
-      {
-        "id": "Frontend",
-        "data": {
-          "label": "Frontend (App Service & CDN)"
-        },
-        "position": {
-          "x": 0,
-          "y": 0
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "WAF",
-        "data": {
-          "label": "Web Application Firewall (WAF)"
-        },
-        "position": {
-          "x": -150,
-          "y": 0
-        },
-        "style": {
-          "border": "1px solid #FF0000",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-Backend",
-        "type": "group",
-        "data": {
-          "label": "Backend Services"
-        },
-        "position": {
-          "x": 300,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Backend-AppService",
-        "data": {
-          "label": "Backend (App Service / AKS)"
-        },
-        "position": {
-          "x": 320,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-Backend",
-        "extent": "parent"
-      },
-      {
-        "id": "Backend-Functions",
-        "data": {
-          "label": "Functions"
-        },
-        "position": {
-          "x": 320,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-Backend",
-        "extent": "parent"
-      },
-      {
-        "id": "group-Database",
-        "type": "group",
-        "data": {
-          "label": "Database Services"
-        },
-        "position": {
-          "x": 650,
-          "y": 0
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Database-SQL",
-        "data": {
-          "label": "SQL Database"
-        },
-        "position": {
-          "x": 670,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-Database",
-        "extent": "parent"
-      },
-      {
-        "id": "Database-CosmosDB",
-        "data": {
-          "label": "Cosmos DB"
-        },
-        "position": {
-          "x": 670,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-Database",
-        "extent": "parent"
-      },
-      {
-        "id": "Disaster-Recovery",
-        "data": {
-          "label": "Disaster Recovery (Multi-Region)"
-        },
-        "position": {
-          "x": 900,
-          "y": 0
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      }
-    ],
-    "edges": [
-      {
-        "id": "e1-WAF",
-        "source": "WAF",
-        "target": "Frontend",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#FF0000"
-        }
-      },
-      {
-        "id": "e1-Backend",
-        "source": "Frontend",
-        "target": "Backend-AppService",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e2-Database",
-        "source": "Backend-AppService",
-        "target": "Database-SQL",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e3-CosmosDB",
-        "source": "Backend-AppService",
-        "target": "Database-CosmosDB",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4-Functions",
-        "source": "Backend-Functions",
-        "target": "Database-SQL",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5-DisasterRecovery-SQL",
-        "source": "Database-SQL",
-        "target": "Disaster-Recovery",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6-DisasterRecovery-CosmosDB",
-        "source": "Database-CosmosDB",
-        "target": "Disaster-Recovery",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e7-DisasterRecovery-Backend",
-        "source": "Backend-AppService",
-        "target": "Disaster-Recovery",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e8-DisasterRecovery-Frontend",
-        "source": "Frontend",
-        "target": "Disaster-Recovery",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      }
-    ]
-  }
+  ]
 }
