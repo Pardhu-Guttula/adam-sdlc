@@ -310,5 +310,173 @@
       "acceptance_criteria": "1. Analytics tool is integrated. 2. User behavior and performance metrics are tracked.",
       "test_cases": "Given the integrated analytics, When monitoring user behavior, Then data should be available for analysis."
     }
-  ]
+  ],
+  "architecture_generation": {
+    "description": "Secure banking website built using Azure infrastructure with proper security layers applied throughout the application, involving multiple Azure services such as App Service, Front Door, SQL Database, Active Directory, and more.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "Frontend (App Service & CDN)"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-Backend",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Backend-AppService",
+        "data": {
+          "label": "Backend (App Service / AKS)"
+        },
+        "position": {
+          "x": 320,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Backend",
+        "extent": "parent"
+      },
+      {
+        "id": "Backend-Functions",
+        "data": {
+          "label": "Functions"
+        },
+        "position": {
+          "x": 320,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Backend",
+        "extent": "parent"
+      },
+      {
+        "id": "group-Database",
+        "type": "group",
+        "data": {
+          "label": "Database Services"
+        },
+        "position": {
+          "x": 650,
+          "y": 0
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Database-SQL",
+        "data": {
+          "label": "SQL Database"
+        },
+        "position": {
+          "x": 670,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Database",
+        "extent": "parent"
+      },
+      {
+        "id": "Database-CosmosDB",
+        "data": {
+          "label": "Cosmos DB"
+        },
+        "position": {
+          "x": 670,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Database",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1-Backend",
+        "source": "Frontend",
+        "target": "Backend-AppService",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-Database",
+        "source": "Backend-AppService",
+        "target": "Database-SQL",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3-CosmosDB",
+        "source": "Backend-AppService",
+        "target": "Database-CosmosDB",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-Functions",
+        "source": "Backend-Functions",
+        "target": "Database-SQL",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
 }
