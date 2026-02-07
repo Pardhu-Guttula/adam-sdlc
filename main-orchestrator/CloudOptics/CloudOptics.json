@@ -74,380 +74,127 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
-      "epic_title": "Project Setup and Requirements Gathering",
+      "epic_title": "Project Initiation and Requirement Gathering",
       "epic_key": "EPIC-1",
       "number": 1,
-      "title": "Establish Project Foundation",
-      "description": "As a Project Manager, I want to set up development environments and define key objectives, so that the project can start on a solid foundation.",
+      "title": "Identify and engage stakeholders",
+      "description": "As a project manager, I want to identify and engage stakeholders, so that I can define the project's vision, objectives, and scope.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Key objectives and scope must be clearly defined and approved by stakeholders.",
-      "core_domain_objects": "Development Environment, Objectives, Scope",
-      "acceptance_criteria": "Development environments are set up, objectives are documented and approved, project scope is confirmed.",
-      "test_cases": "Given the project is initiated, When the development environments are ready and objectives are defined, Then the project scope is confirmed with stakeholders."
+      "attributes_and_rules": "Include all relevant stakeholders such as users, sponsors, and domain experts.",
+      "core_domain_objects": "Vision, Objectives, Scope",
+      "acceptance_criteria": "Stakeholders identified and engaged.",
+      "test_cases": "Given a list of potential stakeholders, when they are engaged, then the stakeholders should be confirmed."
     },
     {
-      "epic_title": "Project Setup and Requirements Gathering",
+      "epic_title": "Project Initiation and Requirement Gathering",
       "epic_key": "EPIC-1",
       "number": 2,
-      "title": "Gather Business Requirements",
-      "description": "As a Business Analyst, I want to gather and document business requirements, so that we can ensure the project aligns with business goals.",
+      "title": "Document functional requirements",
+      "description": "As a business analyst, I want to document functional requirements, so that they can be clearly communicated to the development team.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Requirements must be gathered from all key stakeholders and documented clearly.",
-      "core_domain_objects": "Business Requirements, Stakeholders",
-      "acceptance_criteria": "All business requirements are gathered, documented and approved by stakeholders.",
-      "test_cases": "Given the requirements gathering phase, When all stakeholders provide their input, Then the business requirements are documented and approved."
+      "attributes_and_rules": "Ensure requirements are specific, measurable, and traceable.",
+      "core_domain_objects": "Functional Requirements",
+      "acceptance_criteria": "Functional requirements documented and approved.",
+      "test_cases": "Given the business needs, when functional requirements are documented, then they should be reviewed and approved by stakeholders."
     },
     {
-      "epic_title": "User Account Management",
+      "epic_title": "Project Initiation and Requirement Gathering",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Identify success metrics",
+      "description": "As a project manager, I want to identify success metrics, so that the project's progress and success can be effectively measured.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Metrics should be aligned with project objectives.",
+      "core_domain_objects": "Success Metrics",
+      "acceptance_criteria": "Success metrics identified and documented.",
+      "test_cases": "Given the project objectives, when success metrics are identified, then they should be documented and tracked."
+    },
+    {
+      "epic_title": "User Registration and Authentication",
       "epic_key": "EPIC-2",
       "number": 1,
-      "title": "Implement User Registration",
-      "description": "As a User, I want to register on the platform, so that I can create an account.",
+      "title": "Develop user registration functionality",
+      "description": "As an end user, I want to register on the platform, so that I can create an account for accessing its features.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Registration process must be secure and user-friendly.",
-      "core_domain_objects": "User Account",
-      "acceptance_criteria": "Users can register successfully with required information.",
-      "test_cases": "Given the registration page, When a user fills in the required information and submits, Then the user account is created."
+      "attributes_and_rules": "Allow users to register with a unique username and a valid email address.",
+      "core_domain_objects": "User Registration",
+      "acceptance_criteria": "User can successfully register with a unique username and valid email.",
+      "test_cases": "Given a new user, when they complete the registration form, then they should receive a confirmation email."
     },
     {
-      "epic_title": "User Account Management",
+      "epic_title": "User Registration and Authentication",
       "epic_key": "EPIC-2",
       "number": 2,
-      "title": "Implement User Login",
-      "description": "As a User, I want to log into the platform, so that I can access my account.",
+      "title": "Implement login functionality",
+      "description": "As a registered user, I want to log in, so that I can securely access my account and platform features.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Login process must be secure and reliable.",
-      "core_domain_objects": "User Account",
-      "acceptance_criteria": "Users can log in successfully with their credentials.",
-      "test_cases": "Given the login page, When a user provides valid credentials, Then the user is logged in."
+      "attributes_and_rules": "Ensure that user credentials are securely authenticated.",
+      "core_domain_objects": "User Authentication",
+      "acceptance_criteria": "User can successfully log in with valid credentials.",
+      "test_cases": "Given a registered user, when they enter their credentials, then they should be logged in and redirected to their dashboard."
     },
     {
-      "epic_title": "User Account Management",
+      "epic_title": "User Registration and Authentication",
       "epic_key": "EPIC-2",
       "number": 3,
-      "title": "Implement Password Recovery",
-      "description": "As a User, I want to recover my password, so that I can regain access to my account if I forget my password.",
+      "title": "Implement logout functionality",
+      "description": "As a logged-in user, I want to log out, so that I can securely end my session.",
       "priority_business_value": "Medium",
-      "attributes_and_rules": "Password recovery process must be secure and straightforward.",
-      "core_domain_objects": "User Account",
-      "acceptance_criteria": "Users can recover their password using the recovery process.",
-      "test_cases": "Given the password recovery page, When a user provides the necessary information, Then the user can reset their password."
+      "attributes_and_rules": "Ensure that all session data is cleared upon logout.",
+      "core_domain_objects": "User Logout",
+      "acceptance_criteria": "User can successfully log out, ending their session.",
+      "test_cases": "Given a logged-in user, when they log out, then their session data should be cleared."
     },
     {
-      "epic_title": "Core Application Functionality",
+      "epic_title": "Core Use Case Implementation",
       "epic_key": "EPIC-3",
       "number": 1,
-      "title": "Develop Backend Logic",
-      "description": "As a Developer, I want to create the backend logic, so that the core features of the application function correctly.",
+      "title": "Establish database models",
+      "description": "As a developer, I want to establish database models, so that we can store and manage data effectively.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Backend logic must align with the business use case and be reliable.",
-      "core_domain_objects": "Application, Backend",
-      "acceptance_criteria": "Backend logic supports the operational workflows.",
-      "test_cases": "Given the backend environment, When the logic is implemented, Then it supports the application's core features."
+      "attributes_and_rules": "Ensure data integrity and relationships between models.",
+      "core_domain_objects": "Database Models",
+      "acceptance_criteria": "Database models established and validated.",
+      "test_cases": "Given the data requirements, when database models are created, then they should be validated for integrity and relationships."
     },
     {
-      "epic_title": "Core Application Functionality",
+      "epic_title": "Core Use Case Implementation",
       "epic_key": "EPIC-3",
       "number": 2,
-      "title": "Set Up Database Structures",
-      "description": "As a Database Administrator, I want to set up database structures, so that the application data is stored and managed efficiently.",
+      "title": "Develop backend logic",
+      "description": "As a backend developer, I want to develop backend logic, so that it aligns with the business workflows.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Database structures must be optimized and secure.",
-      "core_domain_objects": "Database, Application Data",
-      "acceptance_criteria": "Database structures support efficient data management required by the application.",
-      "test_cases": "Given the database setup phase, When the structures are implemented, Then they handle the application data effectively."
+      "attributes_and_rules": "Ensure code is modular and follows best practices.",
+      "core_domain_objects": "Backend Logic",
+      "acceptance_criteria": "Backend logic developed and tested.",
+      "test_cases": "Given the business workflows, when backend logic is developed, then it should be unit tested for functionality."
     },
     {
       "epic_title": "User Interface and Experience Design",
       "epic_key": "EPIC-4",
       "number": 1,
-      "title": "Design User Interfaces",
-      "description": "As a UI/UX Designer, I want to design intuitive user interfaces, so that users find the application easy to use.",
+      "title": "Design intuitive user interface",
+      "description": "As a UI designer, I want to design an intuitive user interface, so that users can navigate the platform easily.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Interfaces must be consistent with the brand and usability goals.",
-      "core_domain_objects": "User Interface, Design",
-      "acceptance_criteria": "User interfaces are intuitive and align with design goals.",
-      "test_cases": "Given the design stage, When the user interfaces are created, Then they provide a consistent and intuitive experience."
+      "attributes_and_rules": "Ensure the design is user-centric and visually appealing.",
+      "core_domain_objects": "User Interface",
+      "acceptance_criteria": "User interface designs approved and usability tested.",
+      "test_cases": "Given design requirements, when the UI is designed, then it should pass usability testing with end users."
     },
     {
       "epic_title": "User Interface and Experience Design",
       "epic_key": "EPIC-4",
       "number": 2,
-      "title": "Implement Responsive Design",
-      "description": "As a User, I want the application to be responsive, so that it works well on various devices.",
+      "title": "Implement responsive design",
+      "description": "As a front-end developer, I want to implement responsive design, so that the platform is accessible on various devices.",
       "priority_business_value": "Medium",
-      "attributes_and_rules": "Interfaces must adapt to different screen sizes.",
-      "core_domain_objects": "User Interface, Responsiveness",
-      "acceptance_criteria": "Application interfaces are responsive across devices.",
-      "test_cases": "Given different devices, When accessing the application, Then the interface adjusts accordingly."
-    },
-    {
-      "epic_title": "System Integrations and Extensions",
-      "epic_key": "EPIC-5",
-      "number": 1,
-      "title": "Integrate Payment Gateway",
-      "description": "As an Administrator, I want to integrate a payment gateway, so that users can make secure transactions.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "Integration must be secure and support various payment methods.",
-      "core_domain_objects": "Payment Gateway, Transactions",
-      "acceptance_criteria": "Payment gateway integration supports secure transactions.",
-      "test_cases": "Given a payment scenario, When a user makes a transaction, Then it is processed securely through the payment gateway."
-    },
-    {
-      "epic_title": "System Integrations and Extensions",
-      "epic_key": "EPIC-5",
-      "number": 2,
-      "title": "Integrate Analytics Service",
-      "description": "As a Product Manager, I want to integrate an analytics service, so that we can track user behavior and application performance.",
-      "priority_business_value": "Medium",
-      "attributes_and_rules": "Integration must provide actionable insights.",
-      "core_domain_objects": "Analytics Service, User Data",
-      "acceptance_criteria": "Analytics service integration provides necessary data insights.",
-      "test_cases": "Given the analytics requirements, When the service is integrated, Then it tracks user behavior and performance effectively."
-    },
-    {
-      "epic_title": "Testing and Quality Assurance",
-      "epic_key": "EPIC-6",
-      "number": 1,
-      "title": "Conduct Unit Testing",
-      "description": "As a QA Engineer, I want to conduct unit testing, so that each component works correctly in isolation.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "Tests must cover all critical components.",
-      "core_domain_objects": "Component, Unit Test",
-      "acceptance_criteria": "Critical components pass unit tests.",
-      "test_cases": "Given the testing framework, When unit tests are executed, Then critical components pass the tests."
-    },
-    {
-      "epic_title": "Testing and Quality Assurance",
-      "epic_key": "EPIC-6",
-      "number": 2,
-      "title": "Conduct Integration Testing",
-      "description": "As a QA Engineer, I want to conduct integration testing, so that components work correctly together.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "Tests must validate interactions between components.",
-      "core_domain_objects": "Component, Integration Test",
-      "acceptance_criteria": "Interacting components pass integration tests.",
-      "test_cases": "Given the testing framework, When integration tests are executed, Then interacting components pass the tests."
-    },
-    {
-      "epic_title": "Deployment and Production Readiness",
-      "epic_key": "EPIC-7",
-      "number": 1,
-      "title": "Set Up Production Environments",
-      "description": "As a DevOps Engineer, I want to set up production environments, so that the application can be deployed safely and reliably.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "Environment setup must be secure and scalable.",
-      "core_domain_objects": "Production Environment, Infrastructure",
-      "acceptance_criteria": "Production environments are set up and ready for deployment.",
-      "test_cases": "Given the production setup phase, When environments are configured, Then they support safe and reliable deployments."
-    },
-    {
-      "epic_title": "Deployment and Production Readiness",
-      "epic_key": "EPIC-7",
-      "number": 2,
-      "title": "Configure Deployment Automation",
-      "description": "As a DevOps Engineer, I want to configure deployment automation, so that the application can be deployed efficiently with minimal downtime.",
-      "priority_business_value": "Medium",
-      "attributes_and_rules": "Deployment automation processes must include rollback plans.",
-      "core_domain_objects": "Deployment, Automation",
-      "acceptance_criteria": "Deployment automation is set up with rollback plans.",
-      "test_cases": "Given the deployment automation setup, When the application is deployed, Then it completes efficiently with minimal downtime."
-    },
-    {
-      "epic_title": "Maintenance and Continuous Improvement",
-      "epic_key": "EPIC-8",
-      "number": 1,
-      "title": "Monitor System Performance",
-      "description": "As a System Administrator, I want to monitor system performance, so that any issues can be identified and addressed promptly.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "Monitoring must include performance metrics and alert mechanisms.",
-      "core_domain_objects": "System Performance, Monitoring",
-      "acceptance_criteria": "System performance is monitored and alerts are set for key metrics.",
-      "test_cases": "Given the monitoring setup, When performance issues occur, Then alerts are triggered."
-    },
-    {
-      "epic_title": "Maintenance and Continuous Improvement",
-      "epic_key": "EPIC-8",
-      "number": 2,
-      "title": "Implement Feature Enhancements",
-      "description": "As a Product Manager, I want to implement feature enhancements, so that the application continually meets user needs and expectations.",
-      "priority_business_value": "Medium",
-      "attributes_and_rules": "Enhancements must be driven by user feedback and analytics.",
-      "core_domain_objects": "Feature Enhancement, User Feedback",
-      "acceptance_criteria": "New features and improvements are implemented based on feedback.",
-      "test_cases": "Given the continuous improvement phase, When user feedback is analyzed, Then enhancements are implemented accordingly."
+      "attributes_and_rules": "Ensure compatibility across different devices and browsers.",
+      "core_domain_objects": "Responsive Design",
+      "acceptance_criteria": "Responsive design implemented and tested.",
+      "test_cases": "Given multiple device types, when the responsive design is implemented, then it should render correctly on all devices."
     }
-  ],
-  "architecture_generation": {
-    "description": "This architecture is designed to create a secure banking website using Azure infrastructure, ensuring high availability, scalability, and security.",
-    "nodes": [
-      {
-        "id": "group-1",
-        "type": "group",
-        "data": {
-          "label": "Computation & Networking"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-2",
-        "type": "group",
-        "data": {
-          "label": "Storage"
-        },
-        "position": {
-          "x": 400,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "vm-node",
-        "data": {
-          "label": "Azure Virtual Machines (VMs)"
-        },
-        "position": {
-          "x": 120,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "app-service-node",
-        "data": {
-          "label": "Azure App Services"
-        },
-        "position": {
-          "x": 120,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "sql-db-node",
-        "data": {
-          "label": "Azure SQL Database"
-        },
-        "position": {
-          "x": 420,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "blob-storage-node",
-        "data": {
-          "label": "Azure Blob Storage"
-        },
-        "position": {
-          "x": 420,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "user-node",
-        "data": {
-          "label": "User"
-        },
-        "position": {
-          "x": 50,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      }
-    ],
-    "edges": [
-      {
-        "id": "e1",
-        "source": "user-node",
-        "target": "vm-node",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e2",
-        "source": "vm-node",
-        "target": "app-service-node",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e3",
-        "source": "app-service-node",
-        "target": "sql-db-node",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4",
-        "source": "sql-db-node",
-        "target": "blob-storage-node",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      }
-    ]
-  },
-  "architecture_validation": null
+  ]
 }
