@@ -1,5 +1,6 @@
 {
   "user_prompt": "create epics and user stories for the use case",
+  "repo_link": "https://github.com/Pardhu-Guttula/adam-sdlc",
   "epics": [
     {
       "id": "EPIC-1",
@@ -56,5 +57,199 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
+  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "user_stories": [
+    {
+      "epic_title": "Project Foundation and Setup",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Setup repository and tools",
+      "description": "As a developer, I want to setup repositories and tools, so that I have a reliable environment to start development.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Establish repositories, install necessary tools.",
+      "core_domain_objects": "Repository, Tools",
+      "acceptance_criteria": "Repositories and tools are setup and accessible.",
+      "test_cases": "Given a clean environment, when I setup repositories and tools, then they should be accessible and operational."
+    },
+    {
+      "epic_title": "Project Foundation and Setup",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Initial configurations",
+      "description": "As a developer, I want to configure initial settings, so that the project environment is standardized.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Configure continuous integration, environment variables, architecture guidelines, API standards, database standards.",
+      "core_domain_objects": "Configurations, Environment",
+      "acceptance_criteria": "Configurations comply with guidelines; CI pipeline is operational.",
+      "test_cases": "Given an unconfigured project, when initial configurations are done, then CI pipeline should work and standards should be established."
+    },
+    {
+      "epic_title": "User Authentication and Profile Management",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "User registration and login",
+      "description": "As a user, I want to register and login, so that I can access my account.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Include secure registration, login, encryption of credentials.",
+      "core_domain_objects": "User, Account",
+      "acceptance_criteria": "User should be able to register and login securely.",
+      "test_cases": "Given a new user, when they register, then their account should be created securely. Given a registered user, when they login correctly, then they should access their account."
+    },
+    {
+      "epic_title": "User Authentication and Profile Management",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Password recovery",
+      "description": "As a user, I want to recover my password, so that I can regain access if forgotten.",
+      "priority_business_value": 4,
+      "attributes_and_rules": "Implement token-based password recovery.",
+      "core_domain_objects": "User, Token",
+      "acceptance_criteria": "User can recover password securely using token.",
+      "test_cases": "Given a user has forgotten their password, when they initiate recovery, then they should be able to reset it using a token."
+    },
+    {
+      "epic_title": "User Authentication and Profile Management",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "User profile management",
+      "description": "As a user, I want to manage my profile, so that I can update my personal information.",
+      "priority_business_value": 3,
+      "attributes_and_rules": "Allow updating user details; ensure data encryption.",
+      "core_domain_objects": "User, Profile",
+      "acceptance_criteria": "User can update their profile securely.",
+      "test_cases": "Given a logged-in user, when they update their profile, then the changes should be saved and secured."
+    },
+    {
+      "epic_title": "Core Functional Module Development",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Define entities and workflows",
+      "description": "As a developer, I want to define core entities and workflows, so that the application structure is established.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Define key entities, establish workflows.",
+      "core_domain_objects": "Entity, Workflow",
+      "acceptance_criteria": "Core entities and workflows are defined and documented.",
+      "test_cases": "Given a new project, when entities and workflows are defined, then they should align with business requirements."
+    },
+    {
+      "epic_title": "Core Functional Module Development",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Data handling and validation",
+      "description": "As a developer, I want to implement data handling and validation, so that user inputs are managed correctly.",
+      "priority_business_value": 4,
+      "attributes_and_rules": "Ensure data validation, handle errors gracefully.",
+      "core_domain_objects": "Data, Validation",
+      "acceptance_criteria": "Data handling and validation mechanisms are in place.",
+      "test_cases": "Given user input, when data is processed, then it should be validated and errors handled appropriately."
+    },
+    {
+      "epic_title": "Core Functional Module Development",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "User flow across main features",
+      "description": "As a user, I want a seamless experience, so that I can complete tasks without issues.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Establish clear, error-free user flows.",
+      "core_domain_objects": "User Flow, Features",
+      "acceptance_criteria": "Users can navigate and use main features seamlessly.",
+      "test_cases": "Given the core features, when a user interacts, then they should complete tasks smoothly without errors."
+    },
+    {
+      "epic_title": "User Interface and Experience Design",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Responsive interface design",
+      "description": "As a user, I want a responsive interface, so that I can use the application on any device.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Implement responsive design using modern frameworks.",
+      "core_domain_objects": "UI, Device",
+      "acceptance_criteria": "The application is responsive and user-friendly across devices.",
+      "test_cases": "Given various devices, when the application is accessed, then it should be responsive and functional."
+    },
+    {
+      "epic_title": "User Interface and Experience Design",
+      "epic_key": "EPIC-4",
+      "number": 2,
+      "title": "UI component reusability",
+      "description": "As a developer, I want reusable UI components, so that I can maintain consistency and efficiency.",
+      "priority_business_value": 4,
+      "attributes_and_rules": "Design reusable UI components.",
+      "core_domain_objects": "UI Component",
+      "acceptance_criteria": "UI components are reusable and consistent.",
+      "test_cases": "Given UI guidelines, when components are developed, then they should be reusable and maintain design consistency."
+    },
+    {
+      "epic_title": "Analytics, Notifications, and Integrations",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Analytics implementation",
+      "description": "As a product manager, I want analytics dashboards, so that I can track performance metrics and user activities.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Implement analytics for tracking metrics.",
+      "core_domain_objects": "Analytics, Dashboard",
+      "acceptance_criteria": "Analytics dashboards show accurate metrics.",
+      "test_cases": "Given live data, when analytics are tracked, then dashboards should display accurate user activities and performance metrics."
+    },
+    {
+      "epic_title": "Analytics, Notifications, and Integrations",
+      "epic_key": "EPIC-5",
+      "number": 2,
+      "title": "Implement real-time notifications",
+      "description": "As a user, I want real-time notifications, so that I am immediately aware of important events.",
+      "priority_business_value": 4,
+      "attributes_and_rules": "Integrate real-time notifications system.",
+      "core_domain_objects": "Notification, Event",
+      "acceptance_criteria": "Notifications are received in real-time.",
+      "test_cases": "Given an event, when it occurs, then real-time notifications should be sent to users."
+    },
+    {
+      "epic_title": "Analytics, Notifications, and Integrations",
+      "epic_key": "EPIC-5",
+      "number": 3,
+      "title": "Third-party service integrations",
+      "description": "As a developer, I want to integrate third-party services, so that extended functionalities are available.",
+      "priority_business_value": 3,
+      "attributes_and_rules": "Implement APIs for third-party services.",
+      "core_domain_objects": "API, Service Integration",
+      "acceptance_criteria": "Third-party integrations work seamlessly.",
+      "test_cases": "Given third-party service APIs, when integration is done, then extended functionalities should be accessible."
+    },
+    {
+      "epic_title": "Testing, Deployment, and Maintenance",
+      "epic_key": "EPIC-6",
+      "number": 1,
+      "title": "End-to-end functionality testing",
+      "description": "As a QA engineer, I want to conduct end-to-end tests, so that product stability is ensured.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Automate and perform manual testing.",
+      "core_domain_objects": "Test, Functionality",
+      "acceptance_criteria": "All functionalities pass end-to-end tests.",
+      "test_cases": "Given complete features, when tested end-to-end, then all should function without defects."
+    },
+    {
+      "epic_title": "Testing, Deployment, and Maintenance",
+      "epic_key": "EPIC-6",
+      "number": 2,
+      "title": "Staging and production environment setup",
+      "description": "As a devops engineer, I want staging and production environments, so that deployments are managed efficiently.",
+      "priority_business_value": 5,
+      "attributes_and_rules": "Set up staging and production environments; use CI/CD pipelines.",
+      "core_domain_objects": "Environment, Deployment",
+      "acceptance_criteria": "Staging and production environments are functional.",
+      "test_cases": "Given a deployment pipeline, when environments are set up, then deployments should be manageable and efficient."
+    },
+    {
+      "epic_title": "Testing, Deployment, and Maintenance",
+      "epic_key": "EPIC-6",
+      "number": 3,
+      "title": "Monitoring and performance tuning",
+      "description": "As a system administrator, I want to monitor and tune performance, so that the system remains reliable post-deployment.",
+      "priority_business_value": 4,
+      "attributes_and_rules": "Implement monitoring tools, perform performance tuning.",
+      "core_domain_objects": "Monitoring, Performance",
+      "acceptance_criteria": "System performance is monitored and tuned continuously.",
+      "test_cases": "Given live production, when monitoring tools are in place, then system reliability and performance should be optimal."
+    }
+  ]
 }
