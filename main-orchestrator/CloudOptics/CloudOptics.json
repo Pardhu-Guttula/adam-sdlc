@@ -74,7 +74,7 @@
       ]
     }
   ],
-  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
       "epic_title": "Project Initialization and Requirement Discovery",
@@ -304,5 +304,7 @@
       "acceptance_criteria": "New iterations are planned and aligned with feedback and goals.",
       "test_cases": "Given the collected feedback, When planning new iterations, Then the product should continuously evolve based on user needs and business goals."
     }
-  ]
+  ],
+  "architecture_generation": null,
+  "architecture_validation": null
 }
