@@ -155,133 +155,127 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture illustrates a secure banking website using Azure services, ensuring high availability, security, and compliance.",
+    "description": "Architecture for a secure and robust banking website using Azure services to ensure scalability, reliability, and security.",
     "nodes": [
       {
-        "id": "WebLayerGroup",
-        "type": "group",
-        "data": {
-          "label": "Web Application Layer"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
-        },
-        "style": {
-          "width": 400,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "DataLayerGroup",
-        "type": "group",
-        "data": {
-          "label": "Data Layer"
-        },
-        "position": {
-          "x": 600,
-          "y": 100
-        },
-        "style": {
-          "width": 400,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "SecurityLayerGroup",
-        "type": "group",
-        "data": {
-          "label": "Security Layer"
-        },
-        "position": {
-          "x": 1100,
-          "y": 100
-        },
-        "style": {
-          "width": 400,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "NetworkingGroup",
-        "type": "group",
-        "data": {
-          "label": "Networking"
-        },
-        "position": {
-          "x": 600,
-          "y": 450
-        },
-        "style": {
-          "width": 400,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "AppService",
+        "id": "Frontend",
         "data": {
           "label": "Azure App Service (Web App)"
         },
         "position": {
-          "x": 150,
-          "y": 150
+          "x": 50,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "WebLayerGroup",
-        "extent": "parent"
+        }
       },
       {
-        "id": "FrontDoor",
+        "id": "CDN",
         "data": {
-          "label": "Azure Front Door"
+          "label": "Azure CDN"
         },
         "position": {
-          "x": 300,
-          "y": 150
+          "x": 150,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "WebLayerGroup",
+        "parentId": "Frontend",
         "extent": "parent"
       },
       {
-        "id": "SQLDatabase",
+        "id": "BackendGroup",
+        "type": "group",
+        "data": {
+          "label": "Backend"
+        },
+        "position": {
+          "x": 250,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "APIApp",
+        "data": {
+          "label": "Azure App Service (API App)"
+        },
+        "position": {
+          "x": 260,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "BackendGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "Functions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 370,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "BackendGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "DatabaseGroup",
+        "type": "group",
+        "data": {
+          "label": "Database"
+        },
+        "position": {
+          "x": 600,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQLDB",
         "data": {
           "label": "Azure SQL Database"
         },
         "position": {
-          "x": 650,
-          "y": 150
+          "x": 610,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "DataLayerGroup",
+        "parentId": "DatabaseGroup",
         "extent": "parent"
       },
       {
@@ -290,91 +284,23 @@
           "label": "Azure Cosmos DB"
         },
         "position": {
-          "x": 800,
-          "y": 150
+          "x": 720,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "DataLayerGroup",
-        "extent": "parent"
-      },
-      {
-        "id": "KeyVault",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 1150,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "SecurityLayerGroup",
-        "extent": "parent"
-      },
-      {
-        "id": "WAF",
-        "data": {
-          "label": "Azure Application Gateway with WAF"
-        },
-        "position": {
-          "x": 1250,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "SecurityLayerGroup",
-        "extent": "parent"
-      },
-      {
-        "id": "VNet",
-        "data": {
-          "label": "Azure Virtual Network (VNet)"
-        },
-        "position": {
-          "x": 650,
-          "y": 500
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "NetworkingGroup",
-        "extent": "parent"
-      },
-      {
-        "id": "NSG",
-        "data": {
-          "label": "Network Security Groups (NSGs)"
-        },
-        "position": {
-          "x": 800,
-          "y": 500
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "NetworkingGroup",
+        "parentId": "DatabaseGroup",
         "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "edge1",
-        "source": "AppService",
-        "target": "FrontDoor",
+        "source": "Frontend",
+        "target": "APIApp",
         "type": "default",
         "animated": true,
         "style": {
@@ -383,8 +309,8 @@
       },
       {
         "id": "edge2",
-        "source": "SQLDatabase",
-        "target": "CosmosDB",
+        "source": "APIApp",
+        "target": "SQLDB",
         "type": "default",
         "animated": true,
         "style": {
@@ -393,8 +319,8 @@
       },
       {
         "id": "edge3",
-        "source": "FrontDoor",
-        "target": "KeyVault",
+        "source": "APIApp",
+        "target": "CosmosDB",
         "type": "default",
         "animated": true,
         "style": {
@@ -403,18 +329,8 @@
       },
       {
         "id": "edge4",
-        "source": "KeyVault",
-        "target": "WAF",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge5",
-        "source": "NSG",
-        "target": "VNet",
+        "source": "Functions",
+        "target": "SQLDB",
         "type": "default",
         "animated": true,
         "style": {
