@@ -4,23 +4,25 @@
   "epics": [
     {
       "id": "EPIC-1",
-      "title": "Project Initialization and Requirement Discovery",
-      "summary": "Set up the project and identify all requirements",
-      "description": "Initiate the project by establishing goals, identifying stakeholders, and documenting use case requirements. Define the technical stack, environment setup, and delivery roadmap to guide product development effectively.",
+      "title": "Project Setup and Architecture Design",
+      "summary": "Establish the foundational architecture for the project.",
+      "description": "This epic covers setting up the project's foundational environment and architecture, including selecting the tech stack, defining infrastructure, establishing CI/CD pipelines, configuring environments, and setting coding standards. It ensures the team has a scalable, reliable, and maintainable base on which all other features can be built.",
       "dependencies": []
     },
     {
       "id": "EPIC-2",
-      "title": "User Account Setup and Authentication",
-      "summary": "Allow users to create and securely access accounts",
-      "description": "Develop registration, login, password management, and authentication flows. Implement encryption, token management, and access control to ensure data privacy and a secure login experience for all users.",
-      "dependencies": []
+      "title": "User Authentication and Authorization",
+      "summary": "Implement user registration, login, and role management.",
+      "description": "This epic focuses on creating a secure user authentication and authorization module. It includes features for user registration, login, password management, token handling, and role-based access control. The goal is to ensure user data privacy and controlled access to resources.",
+      "dependencies": [
+        "EPIC-1"
+      ]
     },
     {
       "id": "EPIC-3",
-      "title": "Core Use Case Functionality Implementation",
-      "summary": "Build the main features that realize the use case objective",
-      "description": "Develop backend and frontend components to deliver the core functional value of the project. Define user interactions, business rules, and workflows that enable the system to perform its primary purpose accurately and efficiently.",
+      "title": "Core Feature Development",
+      "summary": "Develop the main functional components of the application.",
+      "description": "This epic involves building the primary features that form the core purpose of the project. It includes designing and developing modules, implementing business logic, integrating services, and ensuring end-to-end functionality that delivers the main value proposition of the application.",
       "dependencies": [
         "EPIC-1",
         "EPIC-2"
@@ -28,49 +30,32 @@
     },
     {
       "id": "EPIC-4",
-      "title": "User Interface and Experience Design",
-      "summary": "Design and implement user-friendly interfaces",
-      "description": "Craft intuitive, accessible, and responsive interfaces ensuring that users can interact effectively with system features. Incorporate design standards, usability testing, and feedback iterations to achieve a cohesive and engaging user journey.",
+      "title": "User Interface and Experience",
+      "summary": "Design and implement an intuitive and user-friendly interface.",
+      "description": "This epic focuses on the visual and interactive elements of the project. It covers creating responsive designs, ensuring accessibility, establishing consistent UI patterns, improving usability, and performing user testing to optimize the overall user experience.",
       "dependencies": [
-        "EPIC-1"
+        "EPIC-1",
+        "EPIC-3"
       ]
     },
     {
       "id": "EPIC-5",
-      "title": "Integration and Feature Extensions",
-      "summary": "Enhance the system with external integrations",
-      "description": "Integrate external services such as third-party APIs, analytics tools, or notification systems to improve the platform’s capabilities. Add advanced, value-driven features that extend the usefulness of the core functionality.",
+      "title": "Advanced Features and Integrations",
+      "summary": "Incorporate advanced functionalities and external integrations.",
+      "description": "This epic adds advanced capabilities and integrates third-party systems as needed by the business or users. Examples include analytics dashboards, social media integration, notifications, payment gateways, or any other integration that enhances the application's value and competitiveness.",
       "dependencies": [
         "EPIC-3"
       ]
     },
     {
       "id": "EPIC-6",
-      "title": "Testing, Quality Assurance, and Refinement",
-      "summary": "Validate quality and refine features through testing",
-      "description": "Perform comprehensive testing activities including unit, integration, and acceptance testing to ensure reliability and performance. Refine the product based on identified issues and ensure it meets all defined business and technical requirements.",
+      "title": "Testing, Optimization, and Deployment",
+      "summary": "Ensure the product is tested, optimized, and ready for deployment.",
+      "description": "This epic includes quality assurance, performance optimization, bug fixes, and deployment preparation. It ensures that all product features have been tested thoroughly, the system performs optimally under expected loads, and a stable release is deployed to production successfully.",
       "dependencies": [
         "EPIC-3",
-        "EPIC-4"
-      ]
-    },
-    {
-      "id": "EPIC-7",
-      "title": "Deployment and Release Execution",
-      "summary": "Deploy the finalized product into production environments",
-      "description": "Prepare deployment architecture, set up automated CI/CD pipelines, and manage release processes. Execute a stable deployment strategy with monitoring and rollback mechanisms to secure a smooth production release.",
-      "dependencies": [
-        "EPIC-5",
-        "EPIC-6"
-      ]
-    },
-    {
-      "id": "EPIC-8",
-      "title": "Monitoring, Feedback, and Continuous Improvements",
-      "summary": "Monitor performance and evolve the product post-launch",
-      "description": "Monitor product health, gather real-time analytics, and collect user feedback. Continuously enhance functionality, fix emerging issues, and plan new iterations to align the solution with evolving business goals and user expectations.",
-      "dependencies": [
-        "EPIC-7"
+        "EPIC-4",
+        "EPIC-5"
       ]
     }
   ],
