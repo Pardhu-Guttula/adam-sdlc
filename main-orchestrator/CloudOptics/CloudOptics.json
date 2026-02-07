@@ -1,3 +1,150 @@
 {
-  "user_prompt": "generate the epics and stories"
+  "user_prompt": "generate the epics and stories",
+  "repo_link": null,
+  "epics": null,
+  "jira_link": null,
+  "user_stories": null,
+  "architecture_generation": {
+    "description": "This architecture is designed to create a secure banking website using Azure services, ensuring secure web hosting, data storage, and robust security measures.",
+    "nodes": [
+      {
+        "id": "group-web-hosting",
+        "type": "group",
+        "data": {
+          "label": "Web Hosting and Content Delivery"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "width": 400,
+          "height": 250,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-compute",
+        "type": "group",
+        "data": {
+          "label": "Compute"
+        },
+        "position": {
+          "x": 550,
+          "y": 100
+        },
+        "style": {
+          "width": 400,
+          "height": 250,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "azure-app-service",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 125,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-web-hosting",
+        "extent": "parent"
+      },
+      {
+        "id": "azure-front-door",
+        "data": {
+          "label": "Azure Front Door"
+        },
+        "position": {
+          "x": 300,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-web-hosting",
+        "extent": "parent"
+      },
+      {
+        "id": "azure-vm",
+        "data": {
+          "label": "Azure Virtual Machines"
+        },
+        "position": {
+          "x": 575,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-compute",
+        "extent": "parent"
+      },
+      {
+        "id": "azure-aks",
+        "data": {
+          "label": "Azure Kubernetes Service"
+        },
+        "position": {
+          "x": 750,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-compute",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-app-service-to-front-door",
+        "source": "azure-app-service",
+        "target": "azure-front-door",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-front-door-to-vm",
+        "source": "azure-front-door",
+        "target": "azure-vm",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-front-door-to-aks",
+        "source": "azure-front-door",
+        "target": "azure-aks",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
 }
