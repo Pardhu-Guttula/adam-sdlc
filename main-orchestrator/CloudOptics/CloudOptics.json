@@ -282,89 +282,40 @@
     }
   ],
   "architecture_generation": {
-    "description": "An architecture for a secure banking website using Azure infrastructure ensuring high availability, security, scalability, and performance.",
+    "description": "This architecture is designed to create a secure banking website using Azure infrastructure, ensuring high availability, scalability, and security.",
     "nodes": [
-      {
-        "id": "n1",
-        "data": {
-          "label": "Azure Front Door"
-        },
-        "position": {
-          "x": 50,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
       {
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Networking & Perimeter Security"
+          "label": "Computation & Networking"
         },
         "position": {
-          "x": 200,
+          "x": 100,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 400,
+          "width": 250,
+          "height": 300,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
-      },
-      {
-        "id": "n2",
-        "data": {
-          "label": "Azure Virtual Network (VNet)"
-        },
-        "position": {
-          "x": 220,
-          "y": 130
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "n3",
-        "data": {
-          "label": "Azure Firewall"
-        },
-        "position": {
-          "x": 220,
-          "y": 190
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
       },
       {
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Application Services"
+          "label": "Storage"
         },
         "position": {
-          "x": 550,
+          "x": 400,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 300,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -372,134 +323,94 @@
         }
       },
       {
-        "id": "n4",
+        "id": "vm-node",
         "data": {
-          "label": "Azure App Service"
+          "label": "Azure Virtual Machines (VMs)"
         },
         "position": {
-          "x": 570,
-          "y": 130
+          "x": 120,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "n5",
+        "id": "app-service-node",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Azure App Services"
         },
         "position": {
-          "x": 570,
-          "y": 190
+          "x": 120,
+          "y": 200
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "group-3",
-        "type": "group",
-        "data": {
-          "label": "Identity & Access Management"
-        },
-        "position": {
-          "x": 900,
-          "y": 100
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "n6",
-        "data": {
-          "label": "Azure Active Directory"
-        },
-        "position": {
-          "x": 920,
-          "y": 130
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "n7",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 920,
-          "y": 190
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "group-4",
-        "type": "group",
-        "data": {
-          "label": "Data Services"
-        },
-        "position": {
-          "x": 1250,
-          "y": 100
-        },
-        "style": {
-          "width": 300,
-          "height": 100,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "n8",
+        "id": "sql-db-node",
         "data": {
           "label": "Azure SQL Database"
         },
         "position": {
-          "x": 1270,
-          "y": 130
+          "x": 420,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-4",
+        "parentId": "group-2",
         "extent": "parent"
+      },
+      {
+        "id": "blob-storage-node",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 420,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "user-node",
+        "data": {
+          "label": "User"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "n1",
-        "target": "n2",
+        "source": "user-node",
+        "target": "vm-node",
         "type": "default",
         "animated": true,
         "style": {
@@ -508,8 +419,8 @@
       },
       {
         "id": "e2",
-        "source": "n2",
-        "target": "n3",
+        "source": "vm-node",
+        "target": "app-service-node",
         "type": "default",
         "animated": true,
         "style": {
@@ -518,8 +429,8 @@
       },
       {
         "id": "e3",
-        "source": "n3",
-        "target": "n4",
+        "source": "app-service-node",
+        "target": "sql-db-node",
         "type": "default",
         "animated": true,
         "style": {
@@ -528,38 +439,8 @@
       },
       {
         "id": "e4",
-        "source": "n4",
-        "target": "n5",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5",
-        "source": "n5",
-        "target": "n6",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6",
-        "source": "n6",
-        "target": "n7",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e7",
-        "source": "n7",
-        "target": "n8",
+        "source": "sql-db-node",
+        "target": "blob-storage-node",
         "type": "default",
         "animated": true,
         "style": {
