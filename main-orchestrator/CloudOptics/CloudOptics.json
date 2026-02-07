@@ -282,16 +282,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "Architecture for a secure Banking Website using Azure infrastructure, including Azure App Service, Azure Functions, AKS, VNet, Application Gateway, Azure Front Door, Azure Bastion, Azure AD, Azure Key Vault, Security Center, DDoS Protection, Azure Firewall, Azure Policy, SQL Database, Cosmos DB, Blob Storage, Data Lake Storage, Azure Monitor, Log Analytics, Alerts, Automation, Blueprints, ARM Templates, Backup, Site Recovery, DevOps, API Management, Logic Apps, Bot Services, Cognitive Services.",
+    "description": "An architecture for a secure banking website using Azure infrastructure ensuring high availability, security, scalability, and performance.",
     "nodes": [
       {
-        "id": "User",
+        "id": "n1",
         "data": {
-          "label": "User"
+          "label": "Azure Front Door"
         },
         "position": {
-          "x": 0,
-          "y": 0
+          "x": 50,
+          "y": 100
         },
         "style": {
           "border": "none",
@@ -300,18 +300,18 @@
         }
       },
       {
-        "id": "group-VNet",
+        "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Virtual Network"
+          "label": "Networking & Perimeter Security"
         },
         "position": {
-          "x": 300,
+          "x": 200,
           "y": 100
         },
         "style": {
           "width": 300,
-          "height": 300,
+          "height": 400,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -319,45 +319,187 @@
         }
       },
       {
-        "id": "AzureAppService",
+        "id": "n2",
+        "data": {
+          "label": "Azure Virtual Network (VNet)"
+        },
+        "position": {
+          "x": 220,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Azure Firewall"
+        },
+        "position": {
+          "x": 220,
+          "y": 190
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Application Services"
+        },
+        "position": {
+          "x": 550,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n4",
         "data": {
           "label": "Azure App Service"
         },
         "position": {
-          "x": 350,
-          "y": 140
+          "x": 570,
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-VNet",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "AzureFunctions",
+        "id": "n5",
         "data": {
-          "label": "Azure Functions"
+          "label": "Azure Blob Storage"
         },
         "position": {
-          "x": 350,
-          "y": 240
+          "x": 570,
+          "y": 190
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-VNet",
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Identity & Access Management"
+        },
+        "position": {
+          "x": 900,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "label": "Azure Active Directory"
+        },
+        "position": {
+          "x": 920,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "n7",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 920,
+          "y": 190
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Data Services"
+        },
+        "position": {
+          "x": 1250,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 100,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n8",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1270,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
         "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "User",
-        "target": "AzureAppService",
+        "source": "n1",
+        "target": "n2",
         "type": "default",
         "animated": true,
         "style": {
@@ -366,8 +508,58 @@
       },
       {
         "id": "e2",
-        "source": "AzureAppService",
-        "target": "AzureFunctions",
+        "source": "n2",
+        "target": "n3",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "n3",
+        "target": "n4",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "n4",
+        "target": "n5",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "n5",
+        "target": "n6",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "n6",
+        "target": "n7",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "n7",
+        "target": "n8",
         "type": "default",
         "animated": true,
         "style": {
