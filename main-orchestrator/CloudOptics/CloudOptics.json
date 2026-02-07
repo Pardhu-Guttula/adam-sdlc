@@ -84,5 +84,91 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
+  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "user_stories": [
+    {
+      "epic_title": "Project Setup and Infrastructure",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Set up project structure and repositories",
+      "description": "As a developer, I want to set up the project structure and repositories, so that the application's foundational environment is established for development and deployment.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Follow defined coding standards.",
+      "core_domain_objects": "Project structure, Repositories",
+      "acceptance_criteria": "1. Project structure configured. 2. Repositories created and accessible. 3. Coding standards document available.",
+      "test_cases": "Given a new project, when I initialize the structure and repositories, then they should be accessible and follow the coding standards."
+    },
+    {
+      "epic_title": "Project Setup and Infrastructure",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Configure source control and CI/CD pipelines",
+      "description": "As a DevOps engineer, I want to configure source control and CI/CD pipelines, so that code management and deployment are automated and consistent.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Use industry-standard CI/CD tools.",
+      "core_domain_objects": "Source control, CI/CD pipelines",
+      "acceptance_criteria": "1. Source control configured. 2. CI/CD pipelines set up. 3. Automated build and deploy process validated.",
+      "test_cases": "Given a configured repository, when code is pushed, then the CI/CD pipeline should automatically build and deploy the application."
+    },
+    {
+      "epic_title": "Project Setup and Infrastructure",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Choose and set up hosting solutions",
+      "description": "As a system architect, I want to choose and set up hosting solutions, so that the application is hosted on a reliable and scalable infrastructure.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Consider scalability and availability.",
+      "core_domain_objects": "Hosting solutions",
+      "acceptance_criteria": "1. Hosting solution selected. 2. Infrastructure set up and tested for scalability.",
+      "test_cases": "Given a list of hosting options, when a solution is chosen, then the infrastructure should be set up and scalable."
+    },
+    {
+      "epic_title": "User Authentication and Authorization",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Implement secure user sign-up and log-in",
+      "description": "As a user, I want to securely sign up and log in, so that I can access my account with authentication mechanisms like OAuth or JWT.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Ensure data encryption and validation.",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "1. Secure sign-up process implemented. 2. Log-in with OAuth or JWT. 3. Data encryption and validation accurate.",
+      "test_cases": "Given a new user, when they sign up, then their data should be securely stored and validated for log-in."
+    },
+    {
+      "epic_title": "User Authentication and Authorization",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Define user roles and permissions",
+      "description": "As an admin, I want to define user roles and permissions, so that access control is maintained within different parts of the system.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Roles must be configurable.",
+      "core_domain_objects": "User, Roles, Permissions",
+      "acceptance_criteria": "1. User roles defined. 2. Permissions aligned with roles. 3. Access control validated.",
+      "test_cases": "Given an admin, when roles and permissions are set, then access should be controlled based on these definitions."
+    },
+    {
+      "epic_title": "Core Application Features",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Design and develop key entities and workflows",
+      "description": "As a developer, I want to design and develop key entities and workflows, so that the main functionality of the application is clearly defined and user-friendly.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Ensure user-friendliness and reliability.",
+      "core_domain_objects": "Entities, Workflows",
+      "acceptance_criteria": "1. Key entities designed. 2. Workflows developed. 3. User-friendly interface tested.",
+      "test_cases": "Given the core application, when entities and workflows are defined, then the main functionality should be reliable and user-friendly."
+    },
+    {
+      "epic_title": "Core Application Features",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Ensure core features align with project objectives",
+      "description": "As a product owner, I want to ensure core features align with project objectives, so that the app drives user engagement and operational success.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Align features with objectives.",
+      "core_domain_objects": "Core features",
+      "acceptance_criteria": "1. Features documented. 2. Alignment with objectives validated. 3. Positive user feedback collected.",
+      "test_cases": "Given the project objectives, when core features are evaluated, then they should align with the predefined objectives."
+    }
+  ]
 }
