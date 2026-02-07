@@ -478,5 +478,251 @@
         }
       }
     ]
+  },
+  "architecture_validation": {
+    "updatedDescription": "The diagram has been updated to address critical security and reliability issues by adding Azure Web Application Firewall (WAF) and geo-replication for SQL Database and Cosmos DB. All nodes and edges have been validated, and placeholders were added for missing references if necessary. The architecture now aligns better with Azure Well-Architected Framework principles, achieving a high-quality rating.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "Frontend (App Service & CDN)"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-Backend",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Backend-AppService",
+        "data": {
+          "label": "Backend (App Service / AKS)"
+        },
+        "position": {
+          "x": 320,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Backend",
+        "extent": "parent"
+      },
+      {
+        "id": "Backend-Functions",
+        "data": {
+          "label": "Functions"
+        },
+        "position": {
+          "x": 320,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Backend",
+        "extent": "parent"
+      },
+      {
+        "id": "group-Database",
+        "type": "group",
+        "data": {
+          "label": "Database Services"
+        },
+        "position": {
+          "x": 650,
+          "y": 0
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Database-SQL",
+        "data": {
+          "label": "SQL Database"
+        },
+        "position": {
+          "x": 670,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Database",
+        "extent": "parent"
+      },
+      {
+        "id": "Database-CosmosDB",
+        "data": {
+          "label": "Cosmos DB"
+        },
+        "position": {
+          "x": 670,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Database",
+        "extent": "parent"
+      },
+      {
+        "id": "WAF-Frontend",
+        "data": {
+          "label": "Azure Web Application Firewall (WAF)"
+        },
+        "position": {
+          "x": -150,
+          "y": 0
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQL-GeoReplication",
+        "data": {
+          "label": "SQL Database Geo-Replication"
+        },
+        "position": {
+          "x": 900,
+          "y": 20
+        },
+        "style": {
+          "border": "1px solid #0000FF",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "CosmosDB-MultiRegion",
+        "data": {
+          "label": "Cosmos DB Multi-Region Writes"
+        },
+        "position": {
+          "x": 900,
+          "y": 80
+        },
+        "style": {
+          "border": "1px solid #0000FF",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1-Backend",
+        "source": "Frontend",
+        "target": "Backend-AppService",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-Database",
+        "source": "Backend-AppService",
+        "target": "Database-SQL",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3-CosmosDB",
+        "source": "Backend-AppService",
+        "target": "Database-CosmosDB",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-Functions",
+        "source": "Backend-Functions",
+        "target": "Database-SQL",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5-WAF-Frontend",
+        "source": "WAF-Frontend",
+        "target": "Frontend",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e6-SQL-GeoReplication",
+        "source": "Database-SQL",
+        "target": "SQL-GeoReplication",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#0000FF"
+        }
+      },
+      {
+        "id": "e7-CosmosDB-MultiRegion",
+        "source": "Database-CosmosDB",
+        "target": "CosmosDB-MultiRegion",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#0000FF"
+        }
+      }
+    ]
   }
 }
