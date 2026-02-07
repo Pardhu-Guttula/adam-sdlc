@@ -153,5 +153,274 @@
       "acceptance_criteria": "Automated tests and deployment pipelines are operational and ensure code quality.",
       "test_cases": "Given a code change, when it triggers the pipeline, then tests should run and deployment should be automated if they pass."
     }
-  ]
+  ],
+  "architecture_generation": {
+    "description": "This architecture illustrates a secure banking website using Azure services, ensuring high availability, security, and compliance.",
+    "nodes": [
+      {
+        "id": "WebLayerGroup",
+        "type": "group",
+        "data": {
+          "label": "Web Application Layer"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "width": 400,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "DataLayerGroup",
+        "type": "group",
+        "data": {
+          "label": "Data Layer"
+        },
+        "position": {
+          "x": 600,
+          "y": 100
+        },
+        "style": {
+          "width": 400,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SecurityLayerGroup",
+        "type": "group",
+        "data": {
+          "label": "Security Layer"
+        },
+        "position": {
+          "x": 1100,
+          "y": 100
+        },
+        "style": {
+          "width": 400,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "NetworkingGroup",
+        "type": "group",
+        "data": {
+          "label": "Networking"
+        },
+        "position": {
+          "x": 600,
+          "y": 450
+        },
+        "style": {
+          "width": 400,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "AppService",
+        "data": {
+          "label": "Azure App Service (Web App)"
+        },
+        "position": {
+          "x": 150,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "WebLayerGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "FrontDoor",
+        "data": {
+          "label": "Azure Front Door"
+        },
+        "position": {
+          "x": 300,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "WebLayerGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "SQLDatabase",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 650,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "DataLayerGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "CosmosDB",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 800,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "DataLayerGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "KeyVault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 1150,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "SecurityLayerGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "WAF",
+        "data": {
+          "label": "Azure Application Gateway with WAF"
+        },
+        "position": {
+          "x": 1250,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "SecurityLayerGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "VNet",
+        "data": {
+          "label": "Azure Virtual Network (VNet)"
+        },
+        "position": {
+          "x": 650,
+          "y": 500
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "NetworkingGroup",
+        "extent": "parent"
+      },
+      {
+        "id": "NSG",
+        "data": {
+          "label": "Network Security Groups (NSGs)"
+        },
+        "position": {
+          "x": 800,
+          "y": 500
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "NetworkingGroup",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge1",
+        "source": "AppService",
+        "target": "FrontDoor",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge2",
+        "source": "SQLDatabase",
+        "target": "CosmosDB",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge3",
+        "source": "FrontDoor",
+        "target": "KeyVault",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge4",
+        "source": "KeyVault",
+        "target": "WAF",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge5",
+        "source": "NSG",
+        "target": "VNet",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
 }
