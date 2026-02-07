@@ -74,7 +74,7 @@
       ]
     }
   ],
-  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
       "epic_title": "Project Initiation and Requirement Gathering",
@@ -196,5 +196,7 @@
       "acceptance_criteria": "Responsive design implemented and tested.",
       "test_cases": "Given multiple device types, when the responsive design is implemented, then it should render correctly on all devices."
     }
-  ]
+  ],
+  "architecture_generation": null,
+  "architecture_validation": null
 }
