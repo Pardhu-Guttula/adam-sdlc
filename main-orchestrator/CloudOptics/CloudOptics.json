@@ -57,7 +57,7 @@
       ]
     }
   ],
-  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_link": null,
   "user_stories": [
     {
       "epic_title": "Project Foundation and Setup",
