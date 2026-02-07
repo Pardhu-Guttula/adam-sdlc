@@ -280,5 +280,101 @@
       "acceptance_criteria": "New features and improvements are implemented based on feedback.",
       "test_cases": "Given the continuous improvement phase, When user feedback is analyzed, Then enhancements are implemented accordingly."
     }
-  ]
+  ],
+  "architecture_generation": {
+    "description": "Architecture for a secure Banking Website using Azure infrastructure, including Azure App Service, Azure Functions, AKS, VNet, Application Gateway, Azure Front Door, Azure Bastion, Azure AD, Azure Key Vault, Security Center, DDoS Protection, Azure Firewall, Azure Policy, SQL Database, Cosmos DB, Blob Storage, Data Lake Storage, Azure Monitor, Log Analytics, Alerts, Automation, Blueprints, ARM Templates, Backup, Site Recovery, DevOps, API Management, Logic Apps, Bot Services, Cognitive Services.",
+    "nodes": [
+      {
+        "id": "User",
+        "data": {
+          "label": "User"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-VNet",
+        "type": "group",
+        "data": {
+          "label": "Virtual Network"
+        },
+        "position": {
+          "x": 300,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "AzureAppService",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 350,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-VNet",
+        "extent": "parent"
+      },
+      {
+        "id": "AzureFunctions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 350,
+          "y": 240
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-VNet",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "User",
+        "target": "AzureAppService",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "AzureAppService",
+        "target": "AzureFunctions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
+  "architecture_validation": null
 }
