@@ -1,3 +1,59 @@
 {
-  "user_prompt": "create epics and user stories for the use case"
+  "user_prompt": "create epics and user stories for the use case",
+  "repo_link": "https://github.com/Pardhu-Guttula/adam-sdlc",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "Project Setup and Architecture Foundation",
+      "summary": "Establish the foundational architecture and development environment for the project",
+      "description": "Initialize the project by setting up repositories, environments, build configurations, and CI/CD pipelines. Define coding standards, select frameworks, and architect the system to ensure scalability and maintainability. This epic includes documentation and base setup for all teams to ensure smooth collaboration and code consistency.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "User Management and Authentication",
+      "summary": "Implement secure authentication and user role management",
+      "description": "Develop a secure user authentication module that supports sign-up, login, password recovery, and session management. Implement role-based access control for different user permissions to restrict and manage access across the platform. Ensure security compliance, encryption, and audit logging throughout the authentication process.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Core Business Feature Implementation",
+      "summary": "Develop and implement core modules supporting primary business functions",
+      "description": "Design and develop the main operational modules that fulfill the core business objectives. Define key workflows, implement CRUD operations, and integrate core services or APIs. Maintain separation of concerns between components and ensure efficient data handling through well-designed backend integration.",
+      "dependencies": [
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-4",
+      "title": "User Interface and Experience Design",
+      "summary": "Design an engaging, accessible, and responsive front-end interface",
+      "description": "Build the user interface that provides a seamless interaction experience. Implement responsive layouts, visually consistent components, and accessibility features for inclusiveness. Conduct usability testing and incorporate feedback to optimize user experience while maintaining performance across multiple devices.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Integration and Advanced Features",
+      "summary": "Integrate with external services and implement advanced functionality",
+      "description": "Develop system integrations with third-party services such as payment gateways, analytics, or communication APIs. Add advanced features including automated notifications, dashboards, and reporting systems. Optimize external API handling for reliability, performance, and security within integrated workflows.",
+      "dependencies": [
+        "EPIC-4"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Quality Assurance, Deployment, and Monitoring",
+      "summary": "Test, deploy, and monitor the application to ensure optimal performance",
+      "description": "Use automated testing, code reviews, and performance tests to validate functionality and reliability. Deploy the application in staging and production environments through automated pipelines. Implement monitoring tools for uptime tracking, logging, and error detection, ensuring continuous improvement and operational visibility.",
+      "dependencies": [
+        "EPIC-5"
+      ]
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog"
 }
