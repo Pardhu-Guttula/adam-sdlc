@@ -1,5 +1,5 @@
 {
-  "user_prompt": {
+  "$json": {
     "user_prompt": "create epics and user stories for the usecase",
     "repo_link": "https://github.com/Pardhu-Guttula/adam-sdlc",
     "epics": [
