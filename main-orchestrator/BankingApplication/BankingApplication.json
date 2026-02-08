@@ -99,7 +99,7 @@
       ]
     }
   ],
-  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
       "epic_title": "Secure Authentication and Access Management",
@@ -401,5 +401,7 @@
       "acceptance_criteria": "Access rules should be dynamically adjustable based on roles.",
       "test_cases": "Given an administrator, when they modify access rules, then the changes should apply based on user roles and profiles."
     }
-  ]
+  ],
+  "architecture_generation": null,
+  "architecture_validation": null
 }
