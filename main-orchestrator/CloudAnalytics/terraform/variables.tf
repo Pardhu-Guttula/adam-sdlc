@@ -1,23 +1,20 @@
-variable "location" {
-  description = "The location where resources will be created."
+variable "tenant_id" {
+  description = "The Tenant ID for the Service Principal"
   type        = string
-  default     = "East US"
 }
 
-variable "resource_group_name" {
-  description = "The name of the resource group."
+variable "subscription_id" {
+  description = "The Subscription ID for the Service Principal"
   type        = string
-  default     = "example-resources"
 }
 
-variable "app_service_plan_name" {
-  description = "The name of the App Service Plan."
+variable "client_id" {
+  description = "The Client ID for the Service Principal"
   type        = string
-  default     = "example-appserviceplan"
 }
 
-variable "app_service_name" {
-  description = "The name of the App Service."
+variable "client_secret" {
+  description = "The Client Secret for the Service Principal"
   type        = string
-  default     = "example-appservice"
+  sensitive   = true
 }
