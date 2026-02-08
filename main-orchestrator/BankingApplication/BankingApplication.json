@@ -95,8 +95,127 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
-  "user_stories": null,
-  "architecture_generation": null,
-  "architecture_validation": null
+  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "user_stories": [
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement Multi-Factor Authentication",
+      "description": "As a customer, I want to securely access the self-service portal using multi-factor authentication, so that my account remains protected from unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Ensure multi-factor authentication involves at least two methods of verification (e.g., password and one-time passcode).",
+      "core_domain_objects": "Authentication, Security",
+      "acceptance_criteria": "1. Multi-factor authentication must be prompted during user login.\n2. The system should support generating and validating one-time passcodes.",
+      "test_cases": "Given a user on the login page, when credentials are entered, then a prompt for a secondary verification method is displayed."
+    },
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Implement Secure Session Management",
+      "description": "As a customer, I want secure session handling, so that my session remains protected from unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Enforce secure session handling with appropriate session timeout and invalid session detection mechanisms.",
+      "core_domain_objects": "Session, Security",
+      "acceptance_criteria": "1. Sessions must timeout after a defined period of inactivity.\n2. The system should invalidate sessions immediately when a user logs out.",
+      "test_cases": "Given a user with an active session, when the session times out, then the user is logged out automatically."
+    },
+    {
+      "epic_title": "Personalized User Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Create a Personalized Dashboard",
+      "description": "As a customer, I want a personalized dashboard, so that I can view relevant products and services based on my profile.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The dashboard should display personalized content dynamically based on user profiles and usage patterns.",
+      "core_domain_objects": "Dashboard, Personalization",
+      "acceptance_criteria": "1. The dashboard must display personalized products and services.\n2. The interface should be intuitive with quick access to frequently used services.",
+      "test_cases": "Given a logged-in user, when the dashboard is displayed, then it shows personalized products and quick links based on the user's profile."
+    },
+    {
+      "epic_title": "Account and Service Request Workflows",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Implement Account Opening Workflow",
+      "description": "As a customer, I want an easy account opening workflow, so that I can open new accounts with minimal input.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The workflow must include data validation and form assistance to reduce user effort.",
+      "core_domain_objects": "Account, Workflow",
+      "acceptance_criteria": "1. The workflow should minimize required user input.\n2. All user inputs must be validated for accuracy.",
+      "test_cases": "Given a user starting the account opening process, when the form is partly completed, then the user is assisted with data validation and form suggestions."
+    },
+    {
+      "epic_title": "Real-time Notifications and Status Tracking",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Enable Real-time Status Tracking",
+      "description": "As a customer, I want to track the status of my requests in real-time, so that I stay informed about their progress.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Implement real-time status updates and notify users of any key status change.",
+      "core_domain_objects": "Notifications, Status Tracking",
+      "acceptance_criteria": "1. Users must receive real-time status updates on their requests.\n2. Notifications should be sent for key status changes.",
+      "test_cases": "Given a user with an active request, when the request status changes, then the user receives an update notification."
+    },
+    {
+      "epic_title": "Interaction History and Audit Trail",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "Maintain Comprehensive Interaction History",
+      "description": "As a customer, I want to access my interaction history, so that I can review all my activities and requests for accuracy.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Log all user activities and requests, including timestamps and action details, ensuring compliance and traceability.",
+      "core_domain_objects": "Interaction History, Audit Trail",
+      "acceptance_criteria": "1. All user activities must be logged with detailed action information.\n2. Users should be able to view their interaction history.",
+      "test_cases": "Given a user accessing their profile, when viewing interaction history, then a complete log of activities and requests is displayed."
+    },
+    {
+      "epic_title": "Document Upload and Management",
+      "epic_key": "EPIC-6",
+      "number": 1,
+      "title": "Implement Document Upload Functionality",
+      "description": "As a customer, I want to upload required documents, so that I can complete my applications and service requests.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Support multiple file formats, ensure secure uploads, and integrate virus scanning.",
+      "core_domain_objects": "Document Upload, Management",
+      "acceptance_criteria": "1. Users must be able to upload and manage documents securely.\n2. Virus scanning must be performed on all uploads.",
+      "test_cases": "Given a user completing an application, when uploading a document, then the document is securely uploaded and scanned for viruses."
+    },
+    {
+      "epic_title": "Draft Saving and Resume Functionality",
+      "epic_key": "EPIC-7",
+      "number": 1,
+      "title": "Enable Draft Saving for Incomplete Applications",
+      "description": "As a customer, I want to save and resume incomplete applications, so that I can continue them later without losing progress.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Provide intuitive draft saving and retrieval, preventing data loss.",
+      "core_domain_objects": "Draft, Save/Resume",
+      "acceptance_criteria": "1. Users must be able to save incomplete applications.\n2. Users should easily retrieve and continue saved drafts.",
+      "test_cases": "Given a user filling out an application, when saving progress, then the draft is saved and can be resumed later."
+    },
+    {
+      "epic_title": "Responsive Design and Cross-Device Accessibility",
+      "epic_key": "EPIC-8",
+      "number": 1,
+      "title": "Develop a Responsive User Interface",
+      "description": "As a customer, I want a consistent and optimized user experience across all devices, so that I can access the portal seamlessly.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Ensure responsive UI design supports various screen sizes, fast load times, and navigation.",
+      "core_domain_objects": "UI Design, Responsiveness",
+      "acceptance_criteria": "1. The portal must be fully responsive on desktops, tablets, and mobile devices.\n2. Performance and load times should be optimized.",
+      "test_cases": "Given a user accessing the portal on different devices, when adjusting screen size, then the interface resizes and navigates seamlessly."
+    },
+    {
+      "epic_title": "Core Banking System Integration",
+      "epic_key": "EPIC-9",
+      "number": 1,
+      "title": "Integrate with Core Banking System",
+      "description": "As a customer, I want real-time synchronization of my data, so that all my account information is up-to-date.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Utilize secure APIs for real-time, bidirectional data flow without performance compromise.",
+      "core_domain_objects": "Integration, Core Banking",
+      "acceptance_criteria": "1. Customer data must be synchronized in real-time.\n2. Secure APIs should be used for data exchange.",
+      "test_cases": "Given a user performing transactions, when sync is triggered, then data across the portal and core banking system is up-to-date."
+    }
+  ]
 }
