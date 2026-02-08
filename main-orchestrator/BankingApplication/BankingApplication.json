@@ -99,7 +99,7 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_link": null,
   "user_stories": [
     {
       "epic_title": "Secure Authentication and Access Management",
@@ -402,6 +402,327 @@
       "test_cases": "Given an administrator, when they modify access rules, then the changes should apply based on user roles and profiles."
     }
   ],
-  "architecture_generation": null,
+  "architecture_generation": {
+    "description": "This architecture ensures a secure, scalable, and highly available self-service banking portal that provides a seamless user experience across devices while maintaining integration with the existing core banking system.",
+    "nodes": [
+      {
+        "id": "User",
+        "data": {
+          "label": "User"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Authorization"
+        },
+        "position": {
+          "x": 200,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "nodes": [
+          {
+            "id": "AAD",
+            "data": {
+              "label": "Azure Active Directory B2C"
+            },
+            "position": {
+              "x": 210,
+              "y": 110
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "group-1",
+            "extent": "parent"
+          },
+          {
+            "id": "MFA",
+            "data": {
+              "label": "Multi-Factor Authentication"
+            },
+            "position": {
+              "x": 210,
+              "y": 180
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "group-1",
+            "extent": "parent"
+          }
+        ]
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "API and Integration Layer"
+        },
+        "position": {
+          "x": 500,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "nodes": [
+          {
+            "id": "API-Management",
+            "data": {
+              "label": "Azure API Management"
+            },
+            "position": {
+              "x": 510,
+              "y": 110
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "group-2",
+            "extent": "parent"
+          },
+          {
+            "id": "Core-Banking",
+            "data": {
+              "label": "Core Banking System"
+            },
+            "position": {
+              "x": 510,
+              "y": 180
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "group-2",
+            "extent": "parent"
+          }
+        ]
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Business Logic and Workflows"
+        },
+        "position": {
+          "x": 800,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "nodes": [
+          {
+            "id": "App-Services",
+            "data": {
+              "label": "Azure App Services"
+            },
+            "position": {
+              "x": 810,
+              "y": 110
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "group-3",
+            "extent": "parent"
+          },
+          {
+            "id": "Logic-Apps",
+            "data": {
+              "label": "Azure Logic Apps"
+            },
+            "position": {
+              "x": 810,
+              "y": 180
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "group-3",
+            "extent": "parent"
+          }
+        ]
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Monitoring and Logging"
+        },
+        "position": {
+          "x": 1100,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "nodes": [
+          {
+            "id": "Monitor",
+            "data": {
+              "label": "Azure Monitor"
+            },
+            "position": {
+              "x": 1110,
+              "y": 110
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "group-4",
+            "extent": "parent"
+          },
+          {
+            "id": "App-Insights",
+            "data": {
+              "label": "Azure Application Insights"
+            },
+            "position": {
+              "x": 1110,
+              "y": 180
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "group-4",
+            "extent": "parent"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "User",
+        "target": "AAD",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "AAD",
+        "target": "MFA",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "MFA",
+        "target": "API-Management",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "API-Management",
+        "target": "Core-Banking",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "Core-Banking",
+        "target": "App-Services",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "App-Services",
+        "target": "Logic-Apps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "Logic-Apps",
+        "target": "Monitor",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "Monitor",
+        "target": "App-Insights",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
   "architecture_validation": null
 }
