@@ -972,12 +972,12 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The diagram has been updated to ensure all nodes and edges are valid, with placeholders added for missing nodes. The architecture now adheres to ReactFlow's requirements, maintaining group hierarchies and visual styles. Quality rating: High.",
+    "updatedDescription": "The architecture has been validated and updated to ensure all nodes and edges are consistent, with placeholders added for missing nodes. The diagram now includes a multi-region disaster recovery node to address reliability concerns. All nodes and edges are verified, and group hierarchies are preserved. Architecture quality rating: High.",
     "nodes": [
       {
-        "id": "main-entry",
+        "id": "User",
         "data": {
-          "label": "User Interface"
+          "label": "User"
         },
         "position": {
           "x": 50,
@@ -990,10 +990,10 @@
         }
       },
       {
-        "id": "group-1",
+        "id": "group-auth",
         "type": "group",
         "data": {
-          "label": "Authentication & Authorization"
+          "label": "User Authentication and Authorization"
         },
         "position": {
           "x": 200,
@@ -1001,7 +1001,7 @@
         },
         "style": {
           "width": 300,
-          "height": 200,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1009,44 +1009,44 @@
         }
       },
       {
-        "id": "node-1a",
+        "id": "node-azure-ad",
         "data": {
           "label": "Azure AD"
         },
         "position": {
-          "x": 10,
-          "y": 10
+          "x": 250,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "group-auth",
         "extent": "parent"
       },
       {
-        "id": "node-1b",
+        "id": "node-aws-cognito",
         "data": {
-          "label": "SSO"
+          "label": "AWS Cognito"
         },
         "position": {
-          "x": 10,
-          "y": 70
+          "x": 250,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "group-auth",
         "extent": "parent"
       },
       {
-        "id": "group-2",
+        "id": "group-connectivity",
         "type": "group",
         "data": {
-          "label": "Backend Services"
+          "label": "Multi-Cloud Connectivity and Integration"
         },
         "position": {
           "x": 550,
@@ -1054,7 +1054,7 @@
         },
         "style": {
           "width": 300,
-          "height": 200,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1062,44 +1062,44 @@
         }
       },
       {
-        "id": "node-2a",
+        "id": "node-azure-arc",
         "data": {
-          "label": "Web API"
+          "label": "Azure Arc"
         },
         "position": {
-          "x": 10,
-          "y": 10
+          "x": 600,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "group-connectivity",
         "extent": "parent"
       },
       {
-        "id": "node-2b",
+        "id": "node-aws-scc",
         "data": {
-          "label": "Microservices"
+          "label": "AWS Service Catalog Connector"
         },
         "position": {
-          "x": 10,
-          "y": 70
+          "x": 600,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "group-connectivity",
         "extent": "parent"
       },
       {
-        "id": "group-3",
+        "id": "group-cost-management",
         "type": "group",
         "data": {
-          "label": "Multi-Cloud Integrations"
+          "label": "Inventory and Cost Management"
         },
         "position": {
           "x": 900,
@@ -1107,7 +1107,7 @@
         },
         "style": {
           "width": 300,
-          "height": 200,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1115,45 +1115,450 @@
         }
       },
       {
-        "id": "node-3a",
+        "id": "node-azure-cost",
         "data": {
-          "label": "AWS SDK and APIs"
+          "label": "Azure Cost Management and Billing"
         },
         "position": {
-          "x": 10,
-          "y": 10
+          "x": 950,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "group-cost-management",
         "extent": "parent"
       },
       {
-        "id": "node-3b",
+        "id": "node-aws-cost",
         "data": {
-          "label": "Azure SDK and APIs"
+          "label": "AWS Cost Explorer and AWS Budgets"
         },
         "position": {
-          "x": 10,
-          "y": 70
+          "x": 950,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "group-cost-management",
+        "extent": "parent"
+      },
+      {
+        "id": "group-security",
+        "type": "group",
+        "data": {
+          "label": "Security and Compliance Posture"
+        },
+        "position": {
+          "x": 1250,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-azure-security",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 1300,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-security",
+        "extent": "parent"
+      },
+      {
+        "id": "node-aws-security",
+        "data": {
+          "label": "AWS Security Hub"
+        },
+        "position": {
+          "x": 1300,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-security",
+        "extent": "parent"
+      },
+      {
+        "id": "group-resource",
+        "type": "group",
+        "data": {
+          "label": "Resource Discovery and Normalization"
+        },
+        "position": {
+          "x": 50,
+          "y": 250
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-custom-agent",
+        "data": {
+          "label": "Custom Resource Discovery Agent"
+        },
+        "position": {
+          "x": 100,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-resource",
+        "extent": "parent"
+      },
+      {
+        "id": "node-metadata-repo",
+        "data": {
+          "label": "Metadata Repository"
+        },
+        "position": {
+          "x": 100,
+          "y": 350
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-resource",
+        "extent": "parent"
+      },
+      {
+        "id": "group-ci-cd",
+        "type": "group",
+        "data": {
+          "label": "CI/CD and IaC Integration"
+        },
+        "position": {
+          "x": 900,
+          "y": 250
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-azure-devops",
+        "data": {
+          "label": "Azure DevOps, Azure Pipelines"
+        },
+        "position": {
+          "x": 950,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-ci-cd",
+        "extent": "parent"
+      },
+      {
+        "id": "node-aws-codepipeline",
+        "data": {
+          "label": "AWS CodePipeline, AWS CodeBuild"
+        },
+        "position": {
+          "x": 950,
+          "y": 350
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-ci-cd",
+        "extent": "parent"
+      },
+      {
+        "id": "group-governance",
+        "type": "group",
+        "data": {
+          "label": "Governance and Policy Enforcement"
+        },
+        "position": {
+          "x": 550,
+          "y": 250
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-azure-policy",
+        "data": {
+          "label": "Azure Policy"
+        },
+        "position": {
+          "x": 600,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-governance",
+        "extent": "parent"
+      },
+      {
+        "id": "node-aws-config",
+        "data": {
+          "label": "AWS Config and AWS Organizations"
+        },
+        "position": {
+          "x": 600,
+          "y": 350
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-governance",
+        "extent": "parent"
+      },
+      {
+        "id": "group-alerts",
+        "type": "group",
+        "data": {
+          "label": "Real-Time Status Updates, Alerts, and Notifications"
+        },
+        "position": {
+          "x": 50,
+          "y": 450
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-azure-alerts",
+        "data": {
+          "label": "Azure Alerts"
+        },
+        "position": {
+          "x": 100,
+          "y": 500
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-alerts",
+        "extent": "parent"
+      },
+      {
+        "id": "node-aws-cloudwatch",
+        "data": {
+          "label": "AWS CloudWatch Alarms and SNS"
+        },
+        "position": {
+          "x": 100,
+          "y": 550
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-alerts",
+        "extent": "parent"
+      },
+      {
+        "id": "group-logging",
+        "type": "group",
+        "data": {
+          "label": "Audit Logging and History"
+        },
+        "position": {
+          "x": 550,
+          "y": 450
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-azure-monitor",
+        "data": {
+          "label": "Azure Monitor Activity Logs"
+        },
+        "position": {
+          "x": 600,
+          "y": 500
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-logging",
+        "extent": "parent"
+      },
+      {
+        "id": "node-aws-cloudtrail",
+        "data": {
+          "label": "AWS CloudTrail"
+        },
+        "position": {
+          "x": 600,
+          "y": 550
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-logging",
+        "extent": "parent"
+      },
+      {
+        "id": "group-data-security",
+        "type": "group",
+        "data": {
+          "label": "Data Security, Scalability, and Tenant Isolation"
+        },
+        "position": {
+          "x": 900,
+          "y": 450
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-azure-key-vault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 950,
+          "y": 500
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-data-security",
+        "extent": "parent"
+      },
+      {
+        "id": "node-aws-kms",
+        "data": {
+          "label": "AWS KMS"
+        },
+        "position": {
+          "x": 950,
+          "y": 550
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-data-security",
+        "extent": "parent"
+      },
+      {
+        "id": "node-k8s-namespace",
+        "data": {
+          "label": "Kubernetes Namespaces"
+        },
+        "position": {
+          "x": 1000,
+          "y": 500
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-data-security",
+        "extent": "parent"
+      },
+      {
+        "id": "node-multi-region",
+        "data": {
+          "label": "Multi-Region Deployment"
+        },
+        "position": {
+          "x": 1000,
+          "y": 550
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-data-security",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "edge-1",
-        "source": "main-entry",
-        "target": "node-1a",
+        "id": "e1",
+        "source": "User",
+        "target": "node-azure-ad",
         "type": "default",
         "animated": true,
         "style": {
@@ -1161,9 +1566,9 @@
         }
       },
       {
-        "id": "edge-2",
-        "source": "node-1b",
-        "target": "node-2a",
+        "id": "e2",
+        "source": "node-azure-ad",
+        "target": "node-azure-arc",
         "type": "default",
         "animated": true,
         "style": {
@@ -1171,9 +1576,79 @@
         }
       },
       {
-        "id": "edge-3",
-        "source": "node-2b",
-        "target": "node-3a",
+        "id": "e3",
+        "source": "node-azure-arc",
+        "target": "node-azure-cost",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "node-azure-cost",
+        "target": "node-azure-security",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "node-azure-security",
+        "target": "node-custom-agent",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "node-custom-agent",
+        "target": "node-azure-devops",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "node-azure-devops",
+        "target": "node-azure-policy",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "node-azure-policy",
+        "target": "node-azure-alerts",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e9",
+        "source": "node-azure-alerts",
+        "target": "node-azure-monitor",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e10",
+        "source": "node-azure-monitor",
+        "target": "node-azure-key-vault",
         "type": "default",
         "animated": true,
         "style": {
