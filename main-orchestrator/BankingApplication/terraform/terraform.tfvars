@@ -1,1 +1,8 @@
-sql_password = 'P@ssw0rd!'
+resource_group_name = "example-rg"
+location = "West Europe"
+asp_name = "example-asp"
+app_service_name = "example-app-service"
+logic_app_name = "example-logic-app"
+diag_setting_name = "example-diag-setting"
+law_name = "example-law"
+app_insights_name = "example-app-insights"
