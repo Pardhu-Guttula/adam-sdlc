@@ -1,88 +1,86 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.56.0"
-    }
-  }
-}
-
 provider "azurerm" {
   features {}
 }
 
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
-  location = var.resource_group_location
+  location = var.location
 }
 
-resource "azurerm_app_service_plan" "app_service_plan" {
-  name                = var.app_service_plan_name
+resource "azurerm_app_service_plan" "asp" {
+  name                = "example-appserviceplan"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   sku {
-    tier = "Free"
-    size = "F1"
+    tier = "Standard"
+    size = "S1"
   }
 }
 
-resource "azurerm_app_service" "web_app" {
-  name                = var.web_app_name
+resource "azurerm_app_service" "app" {
+  name                = "example-app"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  app_service_plan_id = azurerm_app_service_plan.app_service_plan.id
+  app_service_plan_id = azurerm_app_service_plan.asp.id
 }
 
-resource "azurerm_application_insights" "app_insights" {
-  name                = var.app_insights_name
+resource "azurerm_function_app" "function" {
+  name                = "example-function"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  application_type    = "web"
+  app_service_plan_id = azurerm_app_service_plan.asp.id
+  storage_account_name = azurerm_storage_account.sa.name
+  storage_account_access_key = azurerm_storage_account.sa.primary_access_key
 }
 
-resource "azurerm_monitor_diagnostic_setting" "diagnostic_setting" {
-  name               = var.diagnostic_setting_name
-  target_resource_id = azurerm_app_service.web_app.id
-  log_analytics_workspace_id = var.log_analytics_workspace_id
+resource "azurerm_storage_account" "sa" {
+  name                     = "examplestorageacc"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+resource "azurerm_api_management" "api" {
+  name                = "example-apim"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  publisher_name   = "pub"
+  publisher_email  = "pub@example.com"
+  sku_name         = "Developer_1"
+}
+
+resource "azurerm_monitor_diagnostic_setting" "diag" {
+  name                       = "example-diagnostics"
+  target_resource_id         = azurerm_app_service.app.id
+  log_analytics_workspace_id = azurerm_log_analytics_workspace.law.id
 
   enabled_log {
     category = "AppServiceHTTPLogs"
     enabled  = true
   }
 
-  enabled_log {
-    category = "AppServiceConsoleLogs"
-    enabled  = true
-  }
-
   metric {
-    category = "AllMetrics"
+    category = "OverallMetrics"
     enabled  = true
   }
 }
 
-resource "azurerm_sql_server" "sql_server" {
-  name                         = var.sql_server_name
-  resource_group_name          = azurerm_resource_group.rg.name
-  location                     = azurerm_resource_group.rg.location
-  version                      = "12.0"
-  administrator_login          = var.sql_admin_username
-  administrator_login_password = var.sql_admin_password
-}
-
-resource "azurerm_sql_database" "sql_database" {
-  name                = var.sql_database_name
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
-  server_name         = azurerm_sql_server.sql_server.name
-  edition             = "Basic"
-  requested_service_objective_name = "Basic"
-}
-
-resource "azurerm_redis_cache" "redis_cache" {
-  name                = var.redis_cache_name
+resource "azurerm_log_analytics_workspace" "law" {
+  name                = "example-law"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  sku_name            = "Basic"
-  capacity            = 0
+  sku                 = "PerGB2018"
+}
+
+resource "azurerm_user_assigned_identity" "user_identity" {
+  name                = "example-identity"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+}
+
+resource "azurerm_role_assignment" "app_role_assign" {
+  principal_id   = azurerm_user_assigned_identity.user_identity.principal_id
+  role_definition_name = "Contributor"
+  scope          = azurerm_resource_group.rg.id
 }
