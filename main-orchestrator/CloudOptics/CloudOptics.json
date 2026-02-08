@@ -59,7 +59,7 @@
       ]
     }
   ],
-  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
       "epic_title": "Project Setup and Architecture Design",
@@ -181,5 +181,7 @@
       "acceptance_criteria": "The UI meets accessibility standards.",
       "test_cases": "Given the UI, when accessed by users with disabilities, then it remains usable."
     }
-  ]
+  ],
+  "architecture_generation": null,
+  "architecture_validation": null
 }
