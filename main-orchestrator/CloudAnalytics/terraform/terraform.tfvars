@@ -1,4 +1,4 @@
-location            = "East US"
-resource_group_name = "example-resources"
-app_service_plan_name  = "example-appserviceplan"
-app_service_name       = "example-appservice"
+tenant_id       = "YOUR_TENANT_ID"
+subscription_id = "YOUR_SUBSCRIPTION_ID"
+client_id       = "YOUR_CLIENT_ID"
+client_secret   = "YOUR_CLIENT_SECRET"
