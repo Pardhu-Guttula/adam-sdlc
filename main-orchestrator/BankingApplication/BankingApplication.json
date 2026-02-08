@@ -217,5 +217,657 @@
       "acceptance_criteria": "1. Customer data must be synchronized in real-time.\n2. Secure APIs should be used for data exchange.",
       "test_cases": "Given a user performing transactions, when sync is triggered, then data across the portal and core banking system is up-to-date."
     }
-  ]
+  ],
+  "architecture_generation": {
+    "description": "A comprehensive architecture for developing a user-friendly self-service banking portal using Azure services to ensure security, scalability, and seamless integration with the existing core banking system.",
+    "nodes": [
+      {
+        "id": "group-frontend",
+        "type": "group",
+        "data": {
+          "label": "Frontend Layer"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-web-portal",
+        "data": {
+          "label": "Responsive Web Portal"
+        },
+        "position": {
+          "x": 120,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
+        "extent": "parent"
+      },
+      {
+        "id": "group-auth-authz",
+        "type": "group",
+        "data": {
+          "label": "Authentication & Authorization Layer"
+        },
+        "position": {
+          "x": 450,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-aad-b2c",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 470,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-auth-authz",
+        "extent": "parent"
+      },
+      {
+        "id": "node-rbac",
+        "data": {
+          "label": "Role-Based Access Control"
+        },
+        "position": {
+          "x": 470,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-auth-authz",
+        "extent": "parent"
+      },
+      {
+        "id": "group-api-management",
+        "type": "group",
+        "data": {
+          "label": "API Management Layer"
+        },
+        "position": {
+          "x": 800,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-api-mgmt",
+        "data": {
+          "label": "Azure API Management Service"
+        },
+        "position": {
+          "x": 820,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-api-management",
+        "extent": "parent"
+      },
+      {
+        "id": "group-backend-services",
+        "type": "group",
+        "data": {
+          "label": "Backend Services Layer"
+        },
+        "position": {
+          "x": 1150,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-app-service",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 1170,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-backend-services",
+        "extent": "parent"
+      },
+      {
+        "id": "node-aks",
+        "data": {
+          "label": "Microservices on AKS"
+        },
+        "position": {
+          "x": 1170,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-backend-services",
+        "extent": "parent"
+      },
+      {
+        "id": "group-data-storage",
+        "type": "group",
+        "data": {
+          "label": "Data Storage Layer"
+        },
+        "position": {
+          "x": 1500,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 250,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-sql-db",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1520,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-data-storage",
+        "extent": "parent"
+      },
+      {
+        "id": "node-cosmos-db",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 1520,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-data-storage",
+        "extent": "parent"
+      },
+      {
+        "id": "node-blob-storage",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 1520,
+          "y": 220
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-data-storage",
+        "extent": "parent"
+      },
+      {
+        "id": "group-integration-layer",
+        "type": "group",
+        "data": {
+          "label": "Integration Layer"
+        },
+        "position": {
+          "x": 1850,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 250,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-logic-apps",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 1870,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-integration-layer",
+        "extent": "parent"
+      },
+      {
+        "id": "node-service-bus",
+        "data": {
+          "label": "Service Bus / Event Grid"
+        },
+        "position": {
+          "x": 1870,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-integration-layer",
+        "extent": "parent"
+      },
+      {
+        "id": "group-doc-management",
+        "type": "group",
+        "data": {
+          "label": "Document Management Layer"
+        },
+        "position": {
+          "x": 2200,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-blob-storage-docs",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 2220,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-doc-management",
+        "extent": "parent"
+      },
+      {
+        "id": "node-ocr-service",
+        "data": {
+          "label": "Azure OCR Service"
+        },
+        "position": {
+          "x": 2220,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-doc-management",
+        "extent": "parent"
+      },
+      {
+        "id": "group-notification-layer",
+        "type": "group",
+        "data": {
+          "label": "Notification Layer"
+        },
+        "position": {
+          "x": 2550,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-communication-services",
+        "data": {
+          "label": "Azure Communication Services"
+        },
+        "position": {
+          "x": 2570,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-notification-layer",
+        "extent": "parent"
+      },
+      {
+        "id": "group-monitoring-security",
+        "type": "group",
+        "data": {
+          "label": "Monitoring & Security Layer"
+        },
+        "position": {
+          "x": 2900,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-monitor",
+        "data": {
+          "label": "Azure Monitor"
+        },
+        "position": {
+          "x": 2920,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-monitoring-security",
+        "extent": "parent"
+      },
+      {
+        "id": "node-security-center",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 2920,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-monitoring-security",
+        "extent": "parent"
+      },
+      {
+        "id": "node-key-vault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 2920,
+          "y": 220
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-monitoring-security",
+        "extent": "parent"
+      },
+      {
+        "id": "group-devops-layer",
+        "type": "group",
+        "data": {
+          "label": "DevOps Layer"
+        },
+        "position": {
+          "x": 3300,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-devops",
+        "data": {
+          "label": "Azure DevOps"
+        },
+        "position": {
+          "x": 3320,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-devops-layer",
+        "extent": "parent"
+      },
+      {
+        "id": "group-caching-layer",
+        "type": "group",
+        "data": {
+          "label": "Caching Layer"
+        },
+        "position": {
+          "x": 3650,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-cache",
+        "data": {
+          "label": "Azure Cache for Redis"
+        },
+        "position": {
+          "x": 3670,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-caching-layer",
+        "extent": "parent"
+      },
+      {
+        "id": "User",
+        "data": {
+          "label": "User"
+        },
+        "position": {
+          "x": 20,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "Frontend Node"
+        },
+        "position": {
+          "x": 160,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-user-web",
+        "source": "User",
+        "target": "node-web-portal",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-web-auth",
+        "source": "node-web-portal",
+        "target": "node-aad-b2c",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-auth-api",
+        "source": "node-aad-b2c",
+        "target": "node-api-mgmt",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-api-backend",
+        "source": "node-api-mgmt",
+        "target": "node-app-service",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-backend-db",
+        "source": "node-app-service",
+        "target": "node-sql-db",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-backend-aks",
+        "source": "node-app-service",
+        "target": "node-aks",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-aks-storage",
+        "source": "node-aks",
+        "target": "node-blob-storage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-storage-notification",
+        "source": "node-blob-storage",
+        "target": "node-communication-services",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
+  "architecture_validation": null
 }
