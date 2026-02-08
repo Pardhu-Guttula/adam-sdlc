@@ -99,760 +99,307 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
-      "epic_title": "User Authentication and Security",
+      "epic_title": "Secure Authentication and Access Management",
       "epic_key": "EPIC-1",
       "number": 1,
-      "title": "Implement Multi-Factor Authentication",
-      "description": "As a customer, I want to securely access the self-service portal using multi-factor authentication, so that my account remains protected from unauthorized access.",
+      "title": "Multi-Factor Authentication",
+      "description": "As a customer, I want to enable multi-factor authentication so that I can securely log in to the self-service portal.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Ensure multi-factor authentication involves at least two methods of verification (e.g., password and one-time passcode).",
+      "attributes_and_rules": "Include OTP, authentication apps, or email verification.",
       "core_domain_objects": "Authentication, Security",
-      "acceptance_criteria": "1. Multi-factor authentication must be prompted during user login.\n2. The system should support generating and validating one-time passcodes.",
-      "test_cases": "Given a user on the login page, when credentials are entered, then a prompt for a secondary verification method is displayed."
+      "acceptance_criteria": "Multi-factor authentication setup should be available for customers.",
+      "test_cases": "Given a customer, when they set up multi-factor authentication, then they should have options for OTP, authentication apps, or email verification."
     },
     {
-      "epic_title": "User Authentication and Security",
+      "epic_title": "Secure Authentication and Access Management",
       "epic_key": "EPIC-1",
       "number": 2,
-      "title": "Implement Secure Session Management",
-      "description": "As a customer, I want secure session handling, so that my session remains protected from unauthorized access.",
+      "title": "Secure Password Policies",
+      "description": "As a customer, I want secure password policies so that my account credentials are protected.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Enforce secure session handling with appropriate session timeout and invalid session detection mechanisms.",
-      "core_domain_objects": "Session, Security",
-      "acceptance_criteria": "1. Sessions must timeout after a defined period of inactivity.\n2. The system should invalidate sessions immediately when a user logs out.",
-      "test_cases": "Given a user with an active session, when the session times out, then the user is logged out automatically."
+      "attributes_and_rules": "Implement complex password requirements and password expiration.",
+      "core_domain_objects": "Authentication, Security",
+      "acceptance_criteria": "Password policies must enforce complexity and expiration.",
+      "test_cases": "Given a customer, when they create a password, then the system should enforce complexity and expiration rules."
     },
     {
-      "epic_title": "Personalized User Dashboard",
+      "epic_title": "Secure Authentication and Access Management",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Session Timeout Mechanism",
+      "description": "As a customer, I want a session timeout mechanism so that my account remains secure when I am inactive.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Automatically log out after a period of inactivity.",
+      "core_domain_objects": "Authentication, Security",
+      "acceptance_criteria": "Session timeout should automatically log the user out after inactivity.",
+      "test_cases": "Given a customer, when they are inactive for a set period, then the system should automatically log them out."
+    },
+    {
+      "epic_title": "Secure Authentication and Access Management",
+      "epic_key": "EPIC-1",
+      "number": 4,
+      "title": "Data Encryption",
+      "description": "As a customer, I want my data to be encrypted so that my credentials are protected from unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Encrypt sensitive data like passwords and user information.",
+      "core_domain_objects": "Authentication, Security",
+      "acceptance_criteria": "Data should be encrypted both in transit and at rest.",
+      "test_cases": "Given a customer, when they provide their credentials, then the data should be encrypted in transit and at rest."
+    },
+    {
+      "epic_title": "Personalized Banking Dashboard",
       "epic_key": "EPIC-2",
       "number": 1,
-      "title": "Create a Personalized Dashboard",
-      "description": "As a customer, I want a personalized dashboard, so that I can view relevant products and services based on my profile.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "The dashboard should display personalized content dynamically based on user profiles and usage patterns.",
-      "core_domain_objects": "Dashboard, Personalization",
-      "acceptance_criteria": "1. The dashboard must display personalized products and services.\n2. The interface should be intuitive with quick access to frequently used services.",
-      "test_cases": "Given a logged-in user, when the dashboard is displayed, then it shows personalized products and quick links based on the user's profile."
+      "title": "Dynamic User Dashboard",
+      "description": "As a customer, I want a personalized dashboard so that I can view relevant banking products and information.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Display customer-specific details, offers, and service options.",
+      "core_domain_objects": "Dashboard, Customer Profile",
+      "acceptance_criteria": "The dashboard should be personalized based on user profile and usage.",
+      "test_cases": "Given a customer, when they log in, then the dashboard should display personalized information."
     },
     {
-      "epic_title": "Account and Service Request Workflows",
+      "epic_title": "Personalized Banking Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Real-Time Account Balances",
+      "description": "As a customer, I want to see real-time account balances so that I can monitor my financial status.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Include real-time widgets for account balances.",
+      "core_domain_objects": "Dashboard, Accounts",
+      "acceptance_criteria": "Real-time account balances should be displayed on the dashboard.",
+      "test_cases": "Given a customer, when they log in, then the dashboard should display real-time account balances."
+    },
+    {
+      "epic_title": "Account Opening and Service Modification Workflows",
       "epic_key": "EPIC-3",
       "number": 1,
-      "title": "Implement Account Opening Workflow",
-      "description": "As a customer, I want an easy account opening workflow, so that I can open new accounts with minimal input.",
-      "priority_business_value": "High",
-      "attributes_and_rules": "The workflow must include data validation and form assistance to reduce user effort.",
-      "core_domain_objects": "Account, Workflow",
-      "acceptance_criteria": "1. The workflow should minimize required user input.\n2. All user inputs must be validated for accuracy.",
-      "test_cases": "Given a user starting the account opening process, when the form is partly completed, then the user is assisted with data validation and form suggestions."
+      "title": "Optimized Account Creation Process",
+      "description": "As a customer, I want an easy and quick account creation process so that I can open a new account with minimal effort.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Pre-filled forms and minimal clicks for account creation.",
+      "core_domain_objects": "Accounts, Workflow",
+      "acceptance_criteria": "The account creation process should be streamlined for minimal clicks.",
+      "test_cases": "Given a customer, when they start creating an account, then the form should be pre-filled and require minimal clicks."
     },
     {
-      "epic_title": "Real-time Notifications and Status Tracking",
+      "epic_title": "Account Opening and Service Modification Workflows",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Service Modification Workflows",
+      "description": "As a customer, I want an intuitive workflow for modifying my services so that I can easily update my options.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Guided steps and easy approval processes for service modifications.",
+      "core_domain_objects": "Services, Workflow",
+      "acceptance_criteria": "Service modification workflows should be user-friendly and efficient.",
+      "test_cases": "Given a customer, when they modify a service, then the workflow should guide them through easy steps and approvals."
+    },
+    {
+      "epic_title": "Account Opening and Service Modification Workflows",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "Workflow Automation",
+      "description": "As a customer, I want automated workflows so that my service requests are processed efficiently.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Use workflow automation tools for validating and routing customer requests.",
+      "core_domain_objects": "Workflow, Automation",
+      "acceptance_criteria": "The automation should validate, route, and process requests efficiently.",
+      "test_cases": "Given a customer, when they submit a request, then the workflow automation should handle validation, routing, and processing."
+    },
+    {
+      "epic_title": "Real-Time Notifications and Request Status Tracking",
       "epic_key": "EPIC-4",
       "number": 1,
-      "title": "Enable Real-time Status Tracking",
-      "description": "As a customer, I want to track the status of my requests in real-time, so that I stay informed about their progress.",
-      "priority_business_value": "Medium",
-      "attributes_and_rules": "Implement real-time status updates and notify users of any key status change.",
-      "core_domain_objects": "Notifications, Status Tracking",
-      "acceptance_criteria": "1. Users must receive real-time status updates on their requests.\n2. Notifications should be sent for key status changes.",
-      "test_cases": "Given a user with an active request, when the request status changes, then the user receives an update notification."
+      "title": "Real-Time Request Status Dashboard",
+      "description": "As a customer, I want to track my request status in real-time so that I can stay informed about the progress.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Provide an intuitive dashboard for real-time request tracking.",
+      "core_domain_objects": "Dashboard, Requests",
+      "acceptance_criteria": "Customers should view request status in real-time on their dashboard.",
+      "test_cases": "Given a customer, when they check their request status, then the dashboard should display real-time updates."
     },
     {
-      "epic_title": "Interaction History and Audit Trail",
+      "epic_title": "Real-Time Notifications and Request Status Tracking",
+      "epic_key": "EPIC-4",
+      "number": 2,
+      "title": "Automated Notifications",
+      "description": "As a customer, I want to receive automated notifications for significant updates so that I can stay informed without visiting branches.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Send email and in-app notifications for updates.",
+      "core_domain_objects": "Notifications, Requests",
+      "acceptance_criteria": "Automated notifications should be sent for significant updates.",
+      "test_cases": "Given a customer, when there is a significant update, then they should receive an email or in-app notification."
+    },
+    {
+      "epic_title": "Interaction History and Audit Tracking",
       "epic_key": "EPIC-5",
       "number": 1,
-      "title": "Maintain Comprehensive Interaction History",
-      "description": "As a customer, I want to access my interaction history, so that I can review all my activities and requests for accuracy.",
-      "priority_business_value": "Medium",
-      "attributes_and_rules": "Log all user activities and requests, including timestamps and action details, ensuring compliance and traceability.",
-      "core_domain_objects": "Interaction History, Audit Trail",
-      "acceptance_criteria": "1. All user activities must be logged with detailed action information.\n2. Users should be able to view their interaction history.",
-      "test_cases": "Given a user accessing their profile, when viewing interaction history, then a complete log of activities and requests is displayed."
+      "title": "Consolidated History View",
+      "description": "As a customer, I want to view my interaction history so that I can track my transactions and service requests.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Display detailed interaction history for transparency.",
+      "core_domain_objects": "Transactions, Requests",
+      "acceptance_criteria": "The history view should display all interactions in detail.",
+      "test_cases": "Given a customer, when they view their history, then they should see all transactions and requests."
     },
     {
-      "epic_title": "Document Upload and Management",
+      "epic_title": "Interaction History and Audit Tracking",
+      "epic_key": "EPIC-5",
+      "number": 2,
+      "title": "Audit Trail Implementation",
+      "description": "As a customer, I want an audit trail for my activities so that there is accountability and transparency.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Capture event timestamps, action details, and approvals.",
+      "core_domain_objects": "Audit, Security",
+      "acceptance_criteria": "The system should maintain an accurate audit trail of all user activities.",
+      "test_cases": "Given a customer, when they perform an action, then an audit trail entry should be created with timestamps and details."
+    },
+    {
+      "epic_title": "Document Upload and File Management",
       "epic_key": "EPIC-6",
       "number": 1,
-      "title": "Implement Document Upload Functionality",
-      "description": "As a customer, I want to upload required documents, so that I can complete my applications and service requests.",
+      "title": "Secure Document Upload",
+      "description": "As a customer, I want to upload documents securely so that my application is processed without security concerns.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Support multiple file formats, ensure secure uploads, and integrate virus scanning.",
-      "core_domain_objects": "Document Upload, Management",
-      "acceptance_criteria": "1. Users must be able to upload and manage documents securely.\n2. Virus scanning must be performed on all uploads.",
-      "test_cases": "Given a user completing an application, when uploading a document, then the document is securely uploaded and scanned for viruses."
+      "attributes_and_rules": "Support common file formats, virus scanning, and encryption.",
+      "core_domain_objects": "Documents, Security",
+      "acceptance_criteria": "Customers should securely upload documents with virus scanning and encryption.",
+      "test_cases": "Given a customer, when they upload a document, then it should be scanned, encrypted, and supported in common formats."
     },
     {
-      "epic_title": "Draft Saving and Resume Functionality",
+      "epic_title": "Document Upload and File Management",
+      "epic_key": "EPIC-6",
+      "number": 2,
+      "title": "Document Management Functions",
+      "description": "As a customer, I want to preview and download uploaded documents so that I can verify them.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Provide preview and download functionalities.",
+      "core_domain_objects": "Documents, User Interaction",
+      "acceptance_criteria": "Uploaded documents should be available for preview and download.",
+      "test_cases": "Given a customer, when they upload a document, then they should be able to preview and download it."
+    },
+    {
+      "epic_title": "Draft and Resume Incomplete Applications",
       "epic_key": "EPIC-7",
       "number": 1,
-      "title": "Enable Draft Saving for Incomplete Applications",
-      "description": "As a customer, I want to save and resume incomplete applications, so that I can continue them later without losing progress.",
+      "title": "Save Incomplete Applications",
+      "description": "As a customer, I want to save my incomplete applications so that I can resume them later without losing data.",
       "priority_business_value": "Medium",
-      "attributes_and_rules": "Provide intuitive draft saving and retrieval, preventing data loss.",
-      "core_domain_objects": "Draft, Save/Resume",
-      "acceptance_criteria": "1. Users must be able to save incomplete applications.\n2. Users should easily retrieve and continue saved drafts.",
-      "test_cases": "Given a user filling out an application, when saving progress, then the draft is saved and can be resumed later."
+      "attributes_and_rules": "Implement autosave and clear prompts for incomplete tasks.",
+      "core_domain_objects": "Applications, User Interaction",
+      "acceptance_criteria": "Incomplete applications should be saved without data loss, and users should see clear prompts to resume.",
+      "test_cases": "Given a customer, when they save an incomplete application, then the data should be preserved, and they should be able to resume it later."
     },
     {
-      "epic_title": "Responsive Design and Cross-Device Accessibility",
+      "epic_title": "Draft and Resume Incomplete Applications",
+      "epic_key": "EPIC-7",
+      "number": 2,
+      "title": "Reminders for Pending Applications",
+      "description": "As a customer, I want reminders for my pending applications so that I can complete them in a timely manner.",
+      "priority_business_value": "Low",
+      "attributes_and_rules": "Send reminders for incomplete tasks.",
+      "core_domain_objects": "Notifications, User Interaction",
+      "acceptance_criteria": "Customers should receive reminders for pending applications.",
+      "test_cases": "Given a customer, when they have an incomplete application, then they should receive timely reminders to complete it."
+    },
+    {
+      "epic_title": "Responsive and Accessible Design",
       "epic_key": "EPIC-8",
       "number": 1,
-      "title": "Develop a Responsive User Interface",
-      "description": "As a customer, I want a consistent and optimized user experience across all devices, so that I can access the portal seamlessly.",
+      "title": "Responsive User Interface",
+      "description": "As a customer, I want a responsive user interface so that I can have a consistent experience across all devices.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Ensure responsive UI design supports various screen sizes, fast load times, and navigation.",
-      "core_domain_objects": "UI Design, Responsiveness",
-      "acceptance_criteria": "1. The portal must be fully responsive on desktops, tablets, and mobile devices.\n2. Performance and load times should be optimized.",
-      "test_cases": "Given a user accessing the portal on different devices, when adjusting screen size, then the interface resizes and navigates seamlessly."
+      "attributes_and_rules": "Maintain functional and visual consistency on desktops, tablets, and mobiles.",
+      "core_domain_objects": "UI/UX, Accessibility",
+      "acceptance_criteria": "The interface should be responsive across different devices.",
+      "test_cases": "Given a customer, when they access the portal from different devices, then the UI should maintain consistency."
+    },
+    {
+      "epic_title": "Responsive and Accessible Design",
+      "epic_key": "EPIC-8",
+      "number": 2,
+      "title": "Accessibility Standards",
+      "description": "As a customer with a disability, I want an accessible design so that I can use the portal seamlessly.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Implement accessibility standards for impaired users.",
+      "core_domain_objects": "UI/UX, Accessibility",
+      "acceptance_criteria": "The portal should meet accessibility standards for disabled users.",
+      "test_cases": "Given a customer with a disability, when they use the portal, then it should comply with accessibility standards."
     },
     {
       "epic_title": "Core Banking System Integration",
       "epic_key": "EPIC-9",
       "number": 1,
-      "title": "Integrate with Core Banking System",
-      "description": "As a customer, I want real-time synchronization of my data, so that all my account information is up-to-date.",
+      "title": "Two-Way Integration with Core System",
+      "description": "As a customer, I want real-time data synchronization so that my information is always current.",
       "priority_business_value": "High",
-      "attributes_and_rules": "Utilize secure APIs for real-time, bidirectional data flow without performance compromise.",
+      "attributes_and_rules": "Establish secure integration for real-time data exchange.",
       "core_domain_objects": "Integration, Core Banking",
-      "acceptance_criteria": "1. Customer data must be synchronized in real-time.\n2. Secure APIs should be used for data exchange.",
-      "test_cases": "Given a user performing transactions, when sync is triggered, then data across the portal and core banking system is up-to-date."
+      "acceptance_criteria": "Data should synchronize in real-time between the portal and the core banking system.",
+      "test_cases": "Given a customer, when they perform transactions, then the data should be updated in real-time on both systems."
+    },
+    {
+      "epic_title": "Core Banking System Integration",
+      "epic_key": "EPIC-9",
+      "number": 2,
+      "title": "Integration Middleware",
+      "description": "As a customer, I want stable performance when accessing services so that I can use the portal without issues.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Implement APIs or middleware for communication.",
+      "core_domain_objects": "Integration, Core Banking",
+      "acceptance_criteria": "Middleware should handle stable communication between systems.",
+      "test_cases": "Given a customer, when they use portal services, then the communication should be stable and consistent."
+    },
+    {
+      "epic_title": "Dedicated Portal Database and Performance Optimization",
+      "epic_key": "EPIC-10",
+      "number": 1,
+      "title": "High-Performance Database Architecture",
+      "description": "As an administrator, I want a dedicated database for the portal so that operations are efficient and reliable.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Design an optimized database with indexing, caching, and load balancing.",
+      "core_domain_objects": "Database, Performance",
+      "acceptance_criteria": "The portal should have a dedicated, high-performance database.",
+      "test_cases": "Given an administrator, when they manage the database, then it should perform efficiently and reliably."
+    },
+    {
+      "epic_title": "Dedicated Portal Database and Performance Optimization",
+      "epic_key": "EPIC-10",
+      "number": 2,
+      "title": "Database Backup and Recovery",
+      "description": "As an administrator, I want regular backups and recovery procedures so that data integrity is maintained.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Ensure regular backups and failover setups.",
+      "core_domain_objects": "Database, Backup",
+      "acceptance_criteria": "The system should have regular backups and data recovery procedures.",
+      "test_cases": "Given an administrator, when they check backups, then the database should have recent backups available."
+    },
+    {
+      "epic_title": "Role-Based Access Control (RBAC)",
+      "epic_key": "EPIC-11",
+      "number": 1,
+      "title": "Flexible Role Management",
+      "description": "As an administrator, I want to manage user roles and permissions so that access control is maintained securely.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Create and modify roles based on security and compliance needs.",
+      "core_domain_objects": "Roles, Security",
+      "acceptance_criteria": "The system should allow managing user roles and permissions flexibly.",
+      "test_cases": "Given an administrator, when they manage roles, then they should be able to create and modify roles securely."
+    },
+    {
+      "epic_title": "Role-Based Access Control (RBAC)",
+      "epic_key": "EPIC-11",
+      "number": 2,
+      "title": "Dynamic Access Rules",
+      "description": "As an administrator, I want to define dynamic access rules so that permissions are aligned with roles and responsibilities.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Adjust access rules dynamically for different user profiles.",
+      "core_domain_objects": "Roles, Security",
+      "acceptance_criteria": "Access rules should be dynamically adjustable based on roles.",
+      "test_cases": "Given an administrator, when they modify access rules, then the changes should apply based on user roles and profiles."
     }
-  ],
-  "architecture_generation": {
-    "description": "This modern self-service banking portal architecture includes all necessary frontend services, authentication mechanisms, backend integrations, storage solutions, workflow management, notifications, security, monitoring, and DevOps for a secure and efficient user experience.",
-    "nodes": [
-      {
-        "id": "User",
-        "data": {
-          "label": "Frontend"
-        },
-        "position": {
-          "x": 0,
-          "y": 0
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-1",
-        "type": "group",
-        "data": {
-          "label": "Authentication"
-        },
-        "position": {
-          "x": 300,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Auth1",
-        "data": {
-          "label": "Azure Active Directory B2C"
-        },
-        "position": {
-          "x": 320,
-          "y": 30
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "Auth2",
-        "data": {
-          "label": "Role-Based Access Control"
-        },
-        "position": {
-          "x": 320,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "group-2",
-        "type": "group",
-        "data": {
-          "label": "Backend Services"
-        },
-        "position": {
-          "x": 600,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "API",
-        "data": {
-          "label": "Azure API Management"
-        },
-        "position": {
-          "x": 620,
-          "y": 30
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "SQL",
-        "data": {
-          "label": "Azure SQL Database"
-        },
-        "position": {
-          "x": 620,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
-        "type": "group",
-        "data": {
-          "label": "Storage"
-        },
-        "position": {
-          "x": 900,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Blob",
-        "data": {
-          "label": "Azure Blob Storage"
-        },
-        "position": {
-          "x": 920,
-          "y": 30
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "Cognitive",
-        "data": {
-          "label": "Azure Cognitive Services"
-        },
-        "position": {
-          "x": 920,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "group-4",
-        "type": "group",
-        "data": {
-          "label": "Monitoring"
-        },
-        "position": {
-          "x": 1200,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Monitor",
-        "data": {
-          "label": "Azure Monitor"
-        },
-        "position": {
-          "x": 1220,
-          "y": 30
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
-        "extent": "parent"
-      },
-      {
-        "id": "Log",
-        "data": {
-          "label": "Azure Log Analytics"
-        },
-        "position": {
-          "x": 1220,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
-        "extent": "parent"
-      }
-    ],
-    "edges": [
-      {
-        "id": "e1",
-        "source": "User",
-        "target": "Auth1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e2",
-        "source": "Auth1",
-        "target": "API",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e3",
-        "source": "API",
-        "target": "Blob",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4",
-        "source": "Blob",
-        "target": "Monitor",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      }
-    ]
-  },
-  "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address security, reliability, and performance efficiency gaps by adding a Web Application Firewall (WAF), disaster recovery mechanisms, and caching. All nodes and edges are validated, and placeholders are added for missing references. The architecture now aligns better with Azure Well-Architected Framework principles.",
-    "nodes": [
-      {
-        "id": "User",
-        "data": {
-          "label": "Frontend"
-        },
-        "position": {
-          "x": 0,
-          "y": 0
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-1",
-        "type": "group",
-        "data": {
-          "label": "Authentication"
-        },
-        "position": {
-          "x": 300,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Auth1",
-        "data": {
-          "label": "Azure Active Directory B2C"
-        },
-        "position": {
-          "x": 320,
-          "y": 30
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "Auth2",
-        "data": {
-          "label": "Role-Based Access Control"
-        },
-        "position": {
-          "x": 320,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "group-2",
-        "type": "group",
-        "data": {
-          "label": "Backend Services"
-        },
-        "position": {
-          "x": 600,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "API",
-        "data": {
-          "label": "Azure API Management"
-        },
-        "position": {
-          "x": 620,
-          "y": 30
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "SQL",
-        "data": {
-          "label": "Azure SQL Database"
-        },
-        "position": {
-          "x": 620,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
-        "type": "group",
-        "data": {
-          "label": "Storage"
-        },
-        "position": {
-          "x": 900,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Blob",
-        "data": {
-          "label": "Azure Blob Storage"
-        },
-        "position": {
-          "x": 920,
-          "y": 30
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "Cognitive",
-        "data": {
-          "label": "Azure Cognitive Services"
-        },
-        "position": {
-          "x": 920,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "group-4",
-        "type": "group",
-        "data": {
-          "label": "Monitoring"
-        },
-        "position": {
-          "x": 1200,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Monitor",
-        "data": {
-          "label": "Azure Monitor"
-        },
-        "position": {
-          "x": 1220,
-          "y": 30
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
-        "extent": "parent"
-      },
-      {
-        "id": "Log",
-        "data": {
-          "label": "Azure Log Analytics"
-        },
-        "position": {
-          "x": 1220,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
-        "extent": "parent"
-      },
-      {
-        "id": "WAF",
-        "data": {
-          "label": "Web Application Firewall (WAF)"
-        },
-        "position": {
-          "x": 450,
-          "y": -100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Redis",
-        "data": {
-          "label": "Azure Cache for Redis"
-        },
-        "position": {
-          "x": 750,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "DR",
-        "data": {
-          "label": "Disaster Recovery (Geo-Replication)"
-        },
-        "position": {
-          "x": 1050,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      }
-    ],
-    "edges": [
-      {
-        "id": "e1",
-        "source": "User",
-        "target": "Auth1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e2",
-        "source": "Auth1",
-        "target": "API",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e3",
-        "source": "API",
-        "target": "Blob",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4",
-        "source": "Blob",
-        "target": "Monitor",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5",
-        "source": "WAF",
-        "target": "Auth1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6",
-        "source": "WAF",
-        "target": "API",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e7",
-        "source": "SQL",
-        "target": "Redis",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e8",
-        "source": "Blob",
-        "target": "DR",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      }
-    ]
-  }
+  ]
 }
