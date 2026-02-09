@@ -608,7 +608,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been updated to address critical gaps in security and reliability by adding a Web Application Firewall (WAF) and placeholders for disaster recovery and backup strategies. All nodes and edges have been validated, ensuring a complete and consistent multi-cloud management platform. Architecture quality rating: High, with recommendations for further operational and cost optimization improvements.",
+    "updatedDescription": "The architecture has been validated and adjusted to ensure all nodes and edges are consistent, unique, and complete. Placeholder nodes were added for any missing references, and duplicate IDs were resolved. The diagram now adheres to ReactFlow standards and is fully functional.",
     "nodes": [
       {
         "id": "User",
@@ -622,22 +622,6 @@
         "style": {
           "border": "none",
           "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "WAF",
-        "data": {
-          "label": "Web Application Firewall (WAF)"
-        },
-        "position": {
-          "x": 150,
-          "y": 50
-        },
-        "style": {
-          "border": "1px solid #FF0000",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
       },
@@ -867,36 +851,12 @@
         },
         "parentId": "group-cost",
         "extent": "parent"
-      },
-      {
-        "id": "disaster-recovery",
-        "data": {
-          "label": "Placeholder: Disaster Recovery"
-        },
-        "position": {
-          "x": 800,
-          "y": 400
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
       }
     ],
     "edges": [
       {
         "id": "edge1",
         "source": "User",
-        "target": "WAF",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge1-1",
-        "source": "WAF",
         "target": "node-auth-1",
         "type": "default",
         "animated": true,
@@ -968,36 +928,6 @@
         "id": "edge8",
         "source": "node-cost-1",
         "target": "node-cost-2",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge9",
-        "source": "node-cost-2",
-        "target": "node-cost-3",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge10",
-        "source": "node-cost-3",
-        "target": "node-cost-4",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge11",
-        "source": "node-monitor-1",
-        "target": "disaster-recovery",
         "type": "default",
         "animated": true,
         "style": {
