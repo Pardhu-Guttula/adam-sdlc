@@ -279,21 +279,36 @@
     }
   ],
   "architecture_generation": {
-    "description": "Architecture for a secure and comprehensive cloud operations platform managing resources across AWS, Azure, GCP, and IBM Cloud. Incorporates Authentication, User Interface, Cloud Integration, Cost Management, Security, Governance, Monitoring, Logging, and Storage.",
+    "description": "This architecture provides a secure, self-service multi-cloud management platform using Azure as the default environment. It encompasses identity management, data integration, cost management, security, monitoring, CI/CD, real-time updates, governance, scalability, data security, and tenant isolation.",
     "nodes": [
       {
-        "id": "group-auth",
+        "id": "User",
+        "data": {
+          "label": "Frontend Web Application"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Authentication and Access Management"
+          "label": "Cloud Providers"
         },
         "position": {
           "x": 100,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 400,
+          "height": 250,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -301,71 +316,52 @@
         }
       },
       {
-        "id": "idp-node",
+        "id": "Azure",
         "data": {
-          "label": "Identity Provider (IdP)"
+          "label": "Azure"
         },
         "position": {
-          "x": 120,
-          "y": 120
+          "x": 10,
+          "y": 10
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-auth",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "group-ui",
-        "type": "group",
+        "id": "AWS",
         "data": {
-          "label": "User Interface and Dashboards"
+          "label": "AWS"
         },
         "position": {
-          "x": 400,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "web-app-node",
-        "data": {
-          "label": "Centralized Web Application"
-        },
-        "position": {
-          "x": 420,
-          "y": 120
+          "x": 10,
+          "y": 70
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-ui",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "group-integration",
+        "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Cloud Provider Integration"
+          "label": "Identity Management"
         },
         "position": {
-          "x": 700,
+          "x": 600,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 400,
+          "height": 250,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -373,35 +369,52 @@
         }
       },
       {
-        "id": "api-integration-node",
+        "id": "Azure AD",
         "data": {
-          "label": "API Integrations"
+          "label": "Azure AD"
         },
         "position": {
-          "x": 720,
-          "y": 120
+          "x": 10,
+          "y": 10
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-integration",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "group-cost",
-        "type": "group",
+        "id": "AWS IAM",
         "data": {
-          "label": "Cost Management"
+          "label": "AWS IAM"
         },
         "position": {
-          "x": 1000,
+          "x": 10,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Data Integration"
+        },
+        "position": {
+          "x": 1100,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 400,
+          "height": 250,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -409,28 +422,45 @@
         }
       },
       {
-        "id": "cost-analysis-node",
+        "id": "Azure Data Factory",
         "data": {
-          "label": "Cost Analysis Tools"
+          "label": "Azure Data Factory"
         },
         "position": {
-          "x": 1020,
-          "y": 120
+          "x": 10,
+          "y": 10
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-cost",
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Azure Functions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 10,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "edge-idp-web-app",
-        "source": "idp-node",
-        "target": "web-app-node",
+        "id": "e1",
+        "source": "User",
+        "target": "Azure",
         "type": "default",
         "animated": true,
         "style": {
@@ -438,9 +468,9 @@
         }
       },
       {
-        "id": "edge-web-app-api",
-        "source": "web-app-node",
-        "target": "api-integration-node",
+        "id": "e2",
+        "source": "User",
+        "target": "AWS",
         "type": "default",
         "animated": true,
         "style": {
@@ -448,9 +478,59 @@
         }
       },
       {
-        "id": "edge-api-cost",
-        "source": "api-integration-node",
-        "target": "cost-analysis-node",
+        "id": "e3",
+        "source": "User",
+        "target": "Azure AD",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "User",
+        "target": "AWS IAM",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "Azure",
+        "target": "Azure Data Factory",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "Azure",
+        "target": "Azure Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "AWS",
+        "target": "Azure Data Factory",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "AWS",
+        "target": "Azure Functions",
         "type": "default",
         "animated": true,
         "style": {
