@@ -1,3 +1,5 @@
-sql_admin_username = "YOUR_SQL_ADMIN_USERNAME"
-sql_admin_password = "YOUR_SQL_ADMIN_PASSWORD"
-b2c_directory_name = "YOUR_B2C_DIRECTORY_NAME"
+resource_group_name = "banking-portal-rg"
+location           = "East US"
+sql_admin_username = "adminuser"
+sql_admin_password = "P@ssw0rd1234!"
+tenant_id          = "00000000-0000-0000-0000-000000000000"
