@@ -279,16 +279,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram is for building a secure, multi-cloud resource management platform with a unified experience for cloud operations users. It includes multiple services categorized under Authentication & Authorization, Unified Dashboard, Integration Layer, Monitoring & Alerts, Cost Management, Security & Compliance, CI/CD & IaC, Data Storage & Processing, Governance & Automation, Notification Services, and Audit Logging.",
+    "description": "This architecture outlines a secure self-service multi-cloud management platform integrating Azure, AWS, Google Cloud, and IBM Cloud to provide comprehensive resource management, cost control, security, governance, and automation. All core functionalities such as authentication, data aggregation, CI/CD, notifications, and API management leverage Azure services as the central backbone.",
     "nodes": [
       {
-        "id": "main-entry",
+        "id": "User",
         "data": {
-          "label": "Frontend"
+          "label": "Web Application (Azure App Service)"
         },
         "position": {
-          "x": 0,
-          "y": 0
+          "x": 50,
+          "y": 50
         },
         "style": {
           "border": "none",
@@ -300,15 +300,15 @@
         "id": "group-auth",
         "type": "group",
         "data": {
-          "label": "Authentication & Authorization"
+          "label": "Authentication and Authorization"
         },
         "position": {
-          "x": 200,
-          "y": 0
+          "x": 300,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 150,
+          "width": 280,
+          "height": 160,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -318,11 +318,11 @@
       {
         "id": "node-auth-1",
         "data": {
-          "label": "Enterprise SSO"
+          "label": "Azure AD"
         },
         "position": {
-          "x": 210,
-          "y": 10
+          "x": 310,
+          "y": 120
         },
         "style": {
           "border": "none",
@@ -335,11 +335,11 @@
       {
         "id": "node-auth-2",
         "data": {
-          "label": "Role-Based Access Control"
+          "label": "RBAC"
         },
         "position": {
-          "x": 210,
-          "y": 70
+          "x": 310,
+          "y": 220
         },
         "style": {
           "border": "none",
@@ -350,18 +350,18 @@
         "extent": "parent"
       },
       {
-        "id": "group-dashboard",
+        "id": "group-monitor",
         "type": "group",
         "data": {
-          "label": "Unified Dashboard"
+          "label": "Multi-Cloud Resource Management"
         },
         "position": {
-          "x": 550,
-          "y": 0
+          "x": 600,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 150,
+          "width": 320,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -369,158 +369,86 @@
         }
       },
       {
-        "id": "node-dashboard-1",
+        "id": "node-monitor-1",
         "data": {
-          "label": "Frontend Framework"
+          "label": "Azure Monitor"
         },
         "position": {
-          "x": 560,
-          "y": 10
+          "x": 610,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-dashboard",
+        "parentId": "group-monitor",
         "extent": "parent"
       },
       {
-        "id": "node-dashboard-2",
+        "id": "node-monitor-2",
         "data": {
-          "label": "Backend for Frontend"
+          "label": "AWS CloudWatch"
         },
         "position": {
-          "x": 560,
-          "y": 70
+          "x": 610,
+          "y": 170
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-dashboard",
+        "parentId": "group-monitor",
         "extent": "parent"
       },
       {
-        "id": "group-integration",
-        "type": "group",
+        "id": "node-monitor-3",
         "data": {
-          "label": "Integration Layer"
+          "label": "Google Stackdriver"
         },
         "position": {
-          "x": 900,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-integration-1",
-        "data": {
-          "label": "API Gateway"
-        },
-        "position": {
-          "x": 910,
-          "y": 10
+          "x": 610,
+          "y": 220
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-integration",
+        "parentId": "group-monitor",
         "extent": "parent"
       },
       {
-        "id": "node-integration-2",
+        "id": "node-monitor-4",
         "data": {
-          "label": "Middleware Services"
+          "label": "IBM Cloud Monitoring"
         },
         "position": {
-          "x": 910,
-          "y": 70
+          "x": 610,
+          "y": 270
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-integration",
-        "extent": "parent"
-      },
-      {
-        "id": "group-monitoring",
-        "type": "group",
-        "data": {
-          "label": "Monitoring & Alerts"
-        },
-        "position": {
-          "x": 1250,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-monitoring-1",
-        "data": {
-          "label": "ELK Stack, Prometheus"
-        },
-        "position": {
-          "x": 1260,
-          "y": 10
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-monitoring",
-        "extent": "parent"
-      },
-      {
-        "id": "node-monitoring-2",
-        "data": {
-          "label": "PagerDuty, OpsGenie"
-        },
-        "position": {
-          "x": 1260,
-          "y": 70
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-monitoring",
+        "parentId": "group-monitor",
         "extent": "parent"
       },
       {
         "id": "group-cost",
         "type": "group",
         "data": {
-          "label": "Cost Management"
+          "label": "Inventory and Cost Management"
         },
         "position": {
-          "x": 1600,
-          "y": 0
+          "x": 950,
+          "y": 100
         },
         "style": {
           "width": 300,
-          "height": 150,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -530,11 +458,11 @@
       {
         "id": "node-cost-1",
         "data": {
-          "label": "Centralized Cost Management"
+          "label": "Azure Cost Management"
         },
         "position": {
-          "x": 1610,
-          "y": 40
+          "x": 960,
+          "y": 120
         },
         "style": {
           "border": "none",
@@ -545,345 +473,61 @@
         "extent": "parent"
       },
       {
-        "id": "group-security",
-        "type": "group",
+        "id": "node-cost-2",
         "data": {
-          "label": "Security & Compliance"
+          "label": "AWS Cost Explorer"
         },
         "position": {
-          "x": 1950,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-security-1",
-        "data": {
-          "label": "Policy Engine"
-        },
-        "position": {
-          "x": 1960,
-          "y": 10
+          "x": 960,
+          "y": 170
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-security",
+        "parentId": "group-cost",
         "extent": "parent"
       },
       {
-        "id": "node-security-2",
+        "id": "node-cost-3",
         "data": {
-          "label": "Compliance Tools"
+          "label": "Google Cloud Billing"
         },
         "position": {
-          "x": 1960,
-          "y": 70
+          "x": 960,
+          "y": 220
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-security",
+        "parentId": "group-cost",
         "extent": "parent"
       },
       {
-        "id": "group-ci",
-        "type": "group",
+        "id": "node-cost-4",
         "data": {
-          "label": "CI/CD & IaC"
+          "label": "IBM Cloud Cost Management"
         },
         "position": {
-          "x": 2300,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-ci-1",
-        "data": {
-          "label": "Jenkins, GitLab CI"
-        },
-        "position": {
-          "x": 2310,
-          "y": 10
+          "x": 960,
+          "y": 270
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-ci",
-        "extent": "parent"
-      },
-      {
-        "id": "node-ci-2",
-        "data": {
-          "label": "Terraform, Pulumi"
-        },
-        "position": {
-          "x": 2310,
-          "y": 70
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-ci",
-        "extent": "parent"
-      },
-      {
-        "id": "group-data",
-        "type": "group",
-        "data": {
-          "label": "Data Storage & Processing"
-        },
-        "position": {
-          "x": 2650,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-data-1",
-        "data": {
-          "label": "Azure Data Lake"
-        },
-        "position": {
-          "x": 2660,
-          "y": 10
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-data",
-        "extent": "parent"
-      },
-      {
-        "id": "node-data-2",
-        "data": {
-          "label": "AWS Redshift, BigQuery"
-        },
-        "position": {
-          "x": 2660,
-          "y": 70
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-data",
-        "extent": "parent"
-      },
-      {
-        "id": "group-governance",
-        "type": "group",
-        "data": {
-          "label": "Governance & Automation"
-        },
-        "position": {
-          "x": 3000,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-governance-1",
-        "data": {
-          "label": "Apache Airflow"
-        },
-        "position": {
-          "x": 3010,
-          "y": 10
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-governance",
-        "extent": "parent"
-      },
-      {
-        "id": "node-governance-2",
-        "data": {
-          "label": "Policy Enforcement"
-        },
-        "position": {
-          "x": 3010,
-          "y": 70
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-governance",
-        "extent": "parent"
-      },
-      {
-        "id": "group-notification",
-        "type": "group",
-        "data": {
-          "label": "Notification Services"
-        },
-        "position": {
-          "x": 3350,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-notification-1",
-        "data": {
-          "label": "Email/SMS"
-        },
-        "position": {
-          "x": 3360,
-          "y": 10
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-notification",
-        "extent": "parent"
-      },
-      {
-        "id": "node-notification-2",
-        "data": {
-          "label": "Slack, Teams"
-        },
-        "position": {
-          "x": 3360,
-          "y": 70
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-notification",
-        "extent": "parent"
-      },
-      {
-        "id": "group-audit",
-        "type": "group",
-        "data": {
-          "label": "Audit Logging"
-        },
-        "position": {
-          "x": 3700,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-audit-1",
-        "data": {
-          "label": "AWS CloudTrail"
-        },
-        "position": {
-          "x": 3710,
-          "y": 10
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-audit",
-        "extent": "parent"
-      },
-      {
-        "id": "node-audit-2",
-        "data": {
-          "label": "Azure Log Analytics"
-        },
-        "position": {
-          "x": 3710,
-          "y": 70
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-audit",
-        "extent": "parent"
-      },
-      {
-        "id": "node-audit-3",
-        "data": {
-          "label": "GCP Cloud Logging"
-        },
-        "position": {
-          "x": 3710,
-          "y": 130
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-audit",
+        "parentId": "group-cost",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "main-entry",
+        "id": "edge1",
+        "source": "User",
         "target": "node-auth-1",
         "type": "default",
         "animated": true,
@@ -892,9 +536,9 @@
         }
       },
       {
-        "id": "e2",
+        "id": "edge2",
         "source": "node-auth-1",
-        "target": "node-dashboard-1",
+        "target": "node-auth-2",
         "type": "default",
         "animated": true,
         "style": {
@@ -902,9 +546,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "node-dashboard-1",
-        "target": "node-integration-1",
+        "id": "edge3",
+        "source": "node-auth-1",
+        "target": "node-monitor-1",
         "type": "default",
         "animated": true,
         "style": {
@@ -912,9 +556,9 @@
         }
       },
       {
-        "id": "e4",
-        "source": "node-integration-1",
-        "target": "node-monitoring-1",
+        "id": "edge4",
+        "source": "node-monitor-1",
+        "target": "node-monitor-2",
         "type": "default",
         "animated": true,
         "style": {
@@ -922,8 +566,28 @@
         }
       },
       {
-        "id": "e5",
-        "source": "node-monitoring-1",
+        "id": "edge5",
+        "source": "node-monitor-2",
+        "target": "node-monitor-3",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge6",
+        "source": "node-monitor-3",
+        "target": "node-monitor-4",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge7",
+        "source": "node-monitor-1",
         "target": "node-cost-1",
         "type": "default",
         "animated": true,
@@ -932,29 +596,9 @@
         }
       },
       {
-        "id": "e6",
+        "id": "edge8",
         "source": "node-cost-1",
-        "target": "node-security-1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e7",
-        "source": "node-security-1",
-        "target": "node-ci-1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e8",
-        "source": "node-ci-1",
-        "target": "node-data-1",
+        "target": "node-cost-2",
         "type": "default",
         "animated": true,
         "style": {
