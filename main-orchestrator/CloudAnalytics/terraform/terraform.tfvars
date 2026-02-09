@@ -1,3 +1,5 @@
-resource_group_name = "example-resource-group"
-location            = "East US"
-aws_region          = "us-east-1"
+azure_location = "East US"
+aws_region     = "us-east-1"
+google_project = "your-gcp-project-id"
+google_region  = "us-central1"
+ibm_location   = "us-south"
