@@ -348,36 +348,21 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been updated to ensure all nodes and edges are valid, with placeholders added for missing nodes. Group hierarchies and visual styles have been preserved. The architecture now adheres to ReactFlow's requirements and is ready for rendering.",
+    "updatedDescription": "The architecture has been enhanced to address security, reliability, and operational excellence gaps. New nodes for Network Security Groups (NSGs), Web Application Firewall (WAF), Azure Backup, and Azure Site Recovery have been added. Monitoring and logging recommendations are noted but do not require new nodes. The architecture now aligns more closely with Azure Well-Architected Framework principles, achieving a high-quality rating.",
     "nodes": [
       {
-        "id": "frontend",
-        "data": {
-          "label": "Frontend (React)"
-        },
-        "position": {
-          "x": 50,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "g-security",
+        "id": "group-UI",
         "type": "group",
         "data": {
-          "label": "Security"
+          "label": "User Interface"
         },
         "position": {
-          "x": 300,
-          "y": 50
+          "x": 0,
+          "y": 0
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -385,52 +370,35 @@
         }
       },
       {
-        "id": "azure-ad",
+        "id": "node-UI-frontend",
         "data": {
-          "label": "Azure AD"
+          "label": "Responsive Web Application"
         },
         "position": {
-          "x": 310,
-          "y": 70
+          "x": 0,
+          "y": 40
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-security",
+        "parentId": "group-UI",
         "extent": "parent"
       },
       {
-        "id": "azure-mfa",
-        "data": {
-          "label": "Azure MFA"
-        },
-        "position": {
-          "x": 310,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-security",
-        "extent": "parent"
-      },
-      {
-        "id": "g-backend",
+        "id": "group-Auth",
         "type": "group",
         "data": {
-          "label": "Backend Services"
+          "label": "Authentication and Authorization"
         },
         "position": {
-          "x": 650,
-          "y": 50
+          "x": 260,
+          "y": 0
         },
         "style": {
-          "width": 300,
-          "height": 250,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -438,62 +406,168 @@
         }
       },
       {
-        "id": "azure-app-service",
+        "id": "node-Auth-MFA",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 260,
+          "y": 40
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-Auth",
+        "extent": "parent"
+      },
+      {
+        "id": "group-Compute",
+        "type": "group",
+        "data": {
+          "label": "Compute"
+        },
+        "position": {
+          "x": 520,
+          "y": 0
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-Compute-AppService",
         "data": {
           "label": "Azure App Service"
         },
         "position": {
-          "x": 660,
-          "y": 70
+          "x": 520,
+          "y": 40
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-backend",
+        "parentId": "group-Compute",
         "extent": "parent"
       },
       {
-        "id": "azure-functions",
+        "id": "node-Compute-NSG",
         "data": {
-          "label": "Azure Functions"
+          "label": "Network Security Group (NSG)"
         },
         "position": {
-          "x": 660,
-          "y": 150
+          "x": 520,
+          "y": 100
         },
         "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+          "border": "1px solid #000",
+          "borderRadius": "8px",
+          "backgroundColor": "#FFF8E1"
         },
-        "parentId": "g-backend",
+        "parentId": "group-Compute",
         "extent": "parent"
       },
       {
-        "id": "api-management",
+        "id": "node-Compute-WAF",
         "data": {
-          "label": "API Management"
+          "label": "Web Application Firewall (WAF)"
         },
         "position": {
-          "x": 660,
-          "y": 230
+          "x": 520,
+          "y": 140
+        },
+        "style": {
+          "border": "1px solid #000",
+          "borderRadius": "8px",
+          "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "group-Compute",
+        "extent": "parent"
+      },
+      {
+        "id": "group-Storage",
+        "type": "group",
+        "data": {
+          "label": "Storage"
+        },
+        "position": {
+          "x": 780,
+          "y": 0
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-Storage-SQLDatabase",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 780,
+          "y": 40
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-backend",
+        "parentId": "group-Storage",
+        "extent": "parent"
+      },
+      {
+        "id": "node-Storage-Backup",
+        "data": {
+          "label": "Azure Backup"
+        },
+        "position": {
+          "x": 780,
+          "y": 100
+        },
+        "style": {
+          "border": "1px solid #000",
+          "borderRadius": "8px",
+          "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "group-Storage",
+        "extent": "parent"
+      },
+      {
+        "id": "node-Storage-SiteRecovery",
+        "data": {
+          "label": "Azure Site Recovery"
+        },
+        "position": {
+          "x": 780,
+          "y": 140
+        },
+        "style": {
+          "border": "1px solid #000",
+          "borderRadius": "8px",
+          "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "group-Storage",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e-frontend-to-azure-ad",
-        "source": "frontend",
-        "target": "azure-ad",
+        "id": "e1",
+        "source": "node-UI-frontend",
+        "target": "node-Auth-MFA",
         "type": "default",
         "animated": true,
         "style": {
@@ -501,9 +575,9 @@
         }
       },
       {
-        "id": "e-azure-ad-to-azure-app-service",
-        "source": "azure-ad",
-        "target": "azure-app-service",
+        "id": "e2",
+        "source": "node-Auth-MFA",
+        "target": "node-Compute-AppService",
         "type": "default",
         "animated": true,
         "style": {
@@ -511,9 +585,49 @@
         }
       },
       {
-        "id": "e-azure-app-service-to-api-management",
-        "source": "azure-app-service",
-        "target": "api-management",
+        "id": "e3",
+        "source": "node-Compute-AppService",
+        "target": "node-Storage-SQLDatabase",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "node-Compute-AppService",
+        "target": "node-Compute-NSG",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "node-Compute-NSG",
+        "target": "node-Compute-WAF",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "node-Storage-SQLDatabase",
+        "target": "node-Storage-Backup",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "node-Storage-SQLDatabase",
+        "target": "node-Storage-SiteRecovery",
         "type": "default",
         "animated": true,
         "style": {
