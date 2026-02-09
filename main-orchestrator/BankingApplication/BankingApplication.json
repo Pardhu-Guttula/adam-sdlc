@@ -4,25 +4,25 @@
   "epics": [
     {
       "id": "EPIC-1",
-      "title": "Secure Multi-Factor Authentication and Role-Based Access Control",
-      "summary": "Implement secure login using multi-factor authentication and enforce role-based access to protect user data.",
-      "description": "This epic focuses on establishing a robust authentication system for the banking self-service portal, ensuring all users authenticate securely using multi-factor authentication methods such as one-time passwords, biometric confirmation, or app-based tokens. It will enforce role-based access control (RBAC) so that customers, employees, and administrators have defined permissions aligned with their roles and profiles. The implementation will include secure session handling, encrypted data transmission, and compliance with banking security standards, ensuring protection against unauthorized access and fraud.",
+      "title": "Multi-Factor Authentication and Role-Based Access Control",
+      "summary": "Implement secure login using multi-factor authentication and role-based controls to protect user data.",
+      "description": "This epic focuses on the implementation of a secure authentication system using multi-factor authentication (MFA) to verify user identities before granting access to the self-service banking portal. It also ensures proper role-based access control (RBAC), allowing users to access only products and services relevant to their profiles and authorization levels. Encryption of customer credentials, secure session management, and compliance with banking security standards will form the foundation of this module to protect sensitive financial information.",
       "dependencies": []
     },
     {
       "id": "EPIC-2",
-      "title": "Personalized Dashboard and Profile Management",
-      "summary": "Develop a customer-specific dashboard that displays personalized banking products, services, and insights.",
-      "description": "This epic covers the creation of an intuitive, user-centric dashboard that adapts dynamically to the customer’s profile and eligibility. It will show key account balances, personalized product recommendations, transaction summaries, and service shortcuts. The dashboard will integrate with data analytics to present relevant content based on behavior and preferences. It will also allow customers to manage their profile details, ensuring seamless updates and a consistent personalized experience across all sessions and devices.",
+      "title": "Personalized Dashboard and Customer Profile Management",
+      "summary": "Design a personalized dashboard showing customer-specific products, services, and account information.",
+      "description": "This epic includes developing a dynamic and personalized dashboard where customers can view information related to their accounts, eligible products, and tailored banking services. The dashboard will integrate customer profile data and apply logic to display only applicable options based on the user’s account type, history, and eligibility. Real-time data synchronization will ensure accuracy of displayed information. It will serve as the central hub for accessing portal features, providing an intuitive interface for navigation and interaction.",
       "dependencies": [
         "EPIC-1"
       ]
     },
     {
       "id": "EPIC-3",
-      "title": "Account Opening and Service Modification Workflows",
-      "summary": "Enable customers to open new accounts and request service modifications through guided digital workflows.",
-      "description": "This epic involves designing and implementing a streamlined, guided workflow system that simplifies the process of opening new accounts and submitting service modification requests. The workflows will include real-time data validation, document upload capability, and logic-driven steps to reduce user effort and clicks. Customers should be able to save progress, resume incomplete applications, and finalize requests without redundant information entry. The solution will connect to the bank’s backend and workflow management systems for efficient processing and automated routing.",
+      "title": "Digital Account Opening and Service Modification Workflows",
+      "summary": "Enable digital workflows for account openings and service modification with efficient customer guidance.",
+      "description": "This epic introduces guided workflows designed to simplify the process of opening new accounts or modifying existing services. Customers will experience step-by-step guidance with real-time data validation, contextual help, and automated checks against eligibility criteria. The system will allow document uploads, auto-saving of partial progress, and resumption of incomplete applications. The workflow engine will integrate with backend systems to ensure fast and accurate processing, reducing manual intervention and branch dependencies.",
       "dependencies": [
         "EPIC-1",
         "EPIC-2"
@@ -30,18 +30,18 @@
     },
     {
       "id": "EPIC-4",
-      "title": "Real-Time Request Status and Notifications",
-      "summary": "Implement real-time updates and notifications for customer requests and transactions.",
-      "description": "This epic ensures customers are informed about their application and request statuses through a real-time tracking system integrated with the core banking workflows. It will feature progress indicators and milestone updates displayed in the portal dashboard. Automated notifications will be delivered through email or in-app messages for submissions, approvals, rejections, or additional document requirements. Notification templates and frequency management will be configurable for compliance and user preference management, creating transparency and trust in the system.",
+      "title": "Real-Time Request Tracking and Notifications",
+      "summary": "Provide tracking and notification mechanisms to keep customers informed about their requests.",
+      "description": "This epic ensures that customers receive real-time updates and notifications for every lifecycle stage of their submitted requests or account activities. The backend system will push updates through the portal, email, and optional SMS channels. Templates will be designed for submission confirmations, approvals, and information requests. The functionality aims to enhance transparency and customer trust by providing easily accessible tracking details and automated status alerts.",
       "dependencies": [
         "EPIC-3"
       ]
     },
     {
       "id": "EPIC-5",
-      "title": "Comprehensive Interaction History and Data Audit",
-      "summary": "Maintain a detailed log of all customer interactions and transactions to enhance transparency and compliance.",
-      "description": "This epic establishes a data logging and audit system that records all customer interactions within the self-service portal. It includes logging of logins, account actions, uploads, request submissions, and modifications in a secure, tamper-proof format. The feature will allow users to view their past actions and enable administrators to audit events for security and compliance purposes. Historical data retention policies, encryption mechanisms, and access control measures will ensure integrity and compliance with legal and regulatory requirements.",
+      "title": "Comprehensive Interaction History and Data Security",
+      "summary": "Maintain a detailed and secure history of all customer interactions and transactions within the portal.",
+      "description": "This epic focuses on recording all user interactions within the self-service platform, ensuring every action—logins, document uploads, service requests, and approvals—is tracked in a secure audit trail. The history module will allow customers to review their past activities for clarity and accountability while administrators can access logs for compliance and monitoring. Data encryption, access control, and adherence to data privacy regulations will ensure protection of sensitive information at all times.",
       "dependencies": [
         "EPIC-1",
         "EPIC-3"
@@ -49,18 +49,18 @@
     },
     {
       "id": "EPIC-6",
-      "title": "Responsive and Accessible Interface Design",
-      "summary": "Deliver a consistent, accessible, and responsive user interface for all devices and screen sizes.",
-      "description": "This epic focuses on developing a responsive web design framework ensuring seamless performance and user experience across desktops, tablets, and mobile devices. The design will comply with accessibility standards including WCAG 2.1, ensuring usability for all customers. Adaptive layouts, optimized media, and lightweight frontend components will enhance loading speeds and interaction performance. The focus will be on intuitive navigation, consistent styling, and user-friendly interactions, ensuring accessibility and inclusivity as core design principles.",
+      "title": "Responsive and Accessible User Interface Design",
+      "summary": "Deliver an adaptive and accessible portal interface optimized across desktop, tablet, and mobile devices.",
+      "description": "This epic covers the creation of a fully responsive and accessible front-end design that ensures a consistent and optimal user experience across all device types. The interface will adhere to modern design principles, focus on clarity, efficiency, and accessibility compliance (WCAG 2.1), and support multiple languages if required. By leveraging responsive frameworks, the system will provide uniform navigation, fast load times, and seamless user experiences for desktop, tablet, and mobile users.",
       "dependencies": [
         "EPIC-2"
       ]
     },
     {
       "id": "EPIC-7",
-      "title": "Core Banking Integration and Data Management Layer",
-      "summary": "Integrate the self-service portal with core banking systems using secure APIs and maintain an independent database.",
-      "description": "This epic encompasses the design and implementation of backend integration with the bank’s core systems for real-time data synchronization. Secure APIs or middleware services will be established for seamless data exchange between the portal and the core banking environment. The portal will maintain its own dedicated database for session management, workflow handling, and caching to improve speed and reliability. Data flow controls, encryption protocols, and transaction consistency mechanisms will ensure integrity, performance, and fault tolerance.",
+      "title": "Core Banking Integration and Independent Data Management",
+      "summary": "Integrate seamlessly with core banking systems while managing portal-specific operations independently.",
+      "description": "This epic ensures a robust integration between the self-service portal and the existing core banking systems through secure APIs or middleware services. It will handle real-time data synchronization, allowing accurate reflection of account details, product offerings, and status updates. The portal will also maintain an independent, high-performance database for caching and workflow management to optimize performance and reliability. Security measures, transaction consistency, and error handling frameworks will guarantee smooth, reliable, and compliant operations.",
       "dependencies": [
         "EPIC-1",
         "EPIC-3"
