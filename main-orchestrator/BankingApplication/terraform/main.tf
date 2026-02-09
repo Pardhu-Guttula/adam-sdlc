@@ -1,86 +1,58 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 4.56.0"
+    }
+  }
+  required_version = ">= 1.0.0"
+}
+
 provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg" {
-  name     = var.resource_group_name
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
   location = var.location
 }
 
-resource "azurerm_app_service_plan" "asp" {
+resource "azurerm_app_service_plan" "example" {
   name                = "example-appserviceplan"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
   sku {
-    tier = "Standard"
-    size = "S1"
+    tier = "Basic"
+    size = "B1"
   }
 }
 
-resource "azurerm_app_service" "app" {
-  name                = "example-app"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  app_service_plan_id = azurerm_app_service_plan.asp.id
+resource "azurerm_app_service" "example" {
+  name                = "example-appservice"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  app_service_plan_id = azurerm_app_service_plan.example.id
 }
 
-resource "azurerm_function_app" "function" {
-  name                = "example-function"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  app_service_plan_id = azurerm_app_service_plan.asp.id
-  storage_account_name = azurerm_storage_account.sa.name
-  storage_account_access_key = azurerm_storage_account.sa.primary_access_key
+resource "azurerm_sql_server" "example" {
+  name                         = "examplesqlserver"
+  resource_group_name          = azurerm_resource_group.example.name
+  location                     = azurerm_resource_group.example.location
+  version                      = "12.0"
+  administrator_login          = var.sql_admin_username
+  administrator_login_password = var.sql_admin_password
 }
 
-resource "azurerm_storage_account" "sa" {
-  name                     = "examplestorageacc"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+resource "azurerm_sql_database" "example" {
+  name                = "exampledatabase"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  server_name         = azurerm_sql_server.example.name
+  sku_name            = "S0"
 }
 
-resource "azurerm_api_management" "api" {
-  name                = "example-apim"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  publisher_name   = "pub"
-  publisher_email  = "pub@example.com"
-  sku_name         = "Developer_1"
-}
-
-resource "azurerm_monitor_diagnostic_setting" "diag" {
-  name                       = "example-diagnostics"
-  target_resource_id         = azurerm_app_service.app.id
-  log_analytics_workspace_id = azurerm_log_analytics_workspace.law.id
-
-  enabled_log {
-    category = "AppServiceHTTPLogs"
-    enabled  = true
-  }
-
-  metric {
-    category = "OverallMetrics"
-    enabled  = true
-  }
-}
-
-resource "azurerm_log_analytics_workspace" "law" {
-  name                = "example-law"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  sku                 = "PerGB2018"
-}
-
-resource "azurerm_user_assigned_identity" "user_identity" {
-  name                = "example-identity"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-}
-
-resource "azurerm_role_assignment" "app_role_assign" {
-  principal_id   = azurerm_user_assigned_identity.user_identity.principal_id
-  role_definition_name = "Contributor"
-  scope          = azurerm_resource_group.rg.id
+resource "azurerm_b2c_directory" "example" {
+  name                = var.b2c_directory_name
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
 }
