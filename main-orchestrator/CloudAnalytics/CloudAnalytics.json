@@ -279,19 +279,21 @@
     }
   ],
   "architecture_generation": {
-    "description": "A comprehensive multi-cloud management platform to manage user authentication, cost, security, resource discovery, governance, monitoring, audit logging, API integration, and ensuring performance scalability and data security across Azure, AWS, Google Cloud, and IBM Cloud.",
+    "description": "This architecture diagram illustrates a comprehensive multi-cloud self-service cloud management platform utilizing services and resources from Azure, AWS, Google Cloud Platform, and IBM Cloud to provide a unified, secure, scalable, and efficient solution for enterprise needs.",
     "nodes": [
       {
-        "id": "group-1",
+        "id": "group-auth",
         "type": "group",
         "data": {
-          "label": "Authentication and Access Control"
+          "label": "User Authentication and Authorization"
         },
         "position": {
-          "x": 100,
+          "x": 0,
           "y": 100
         },
         "style": {
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -299,50 +301,52 @@
         }
       },
       {
-        "id": "node-1a",
+        "id": "node-azure-ad",
         "data": {
-          "label": "Azure AD"
+          "label": "Azure Active Directory"
         },
         "position": {
-          "x": 10,
-          "y": 20
+          "x": 20,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "group-auth",
         "extent": "parent"
       },
       {
-        "id": "node-1b",
+        "id": "node-sso",
         "data": {
-          "label": "AWS IAM Identity Center"
+          "label": "SSO Integration"
         },
         "position": {
-          "x": 10,
-          "y": 70
+          "x": 170,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "group-auth",
         "extent": "parent"
       },
       {
-        "id": "group-2",
+        "id": "group-ui",
         "type": "group",
         "data": {
-          "label": "User Interface and Interaction"
+          "label": "User Interface"
         },
         "position": {
           "x": 400,
           "y": 100
         },
         "style": {
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -350,50 +354,52 @@
         }
       },
       {
-        "id": "node-2a",
+        "id": "node-azure-app-service",
         "data": {
-          "label": "ReactJS/Angular"
+          "label": "Azure App Service"
         },
         "position": {
-          "x": 10,
-          "y": 20
+          "x": 420,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "group-ui",
         "extent": "parent"
       },
       {
-        "id": "node-2b",
+        "id": "node-azure-front-door",
         "data": {
-          "label": "API Gateway"
+          "label": "Azure Front Door"
         },
         "position": {
-          "x": 10,
-          "y": 70
+          "x": 570,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "group-ui",
         "extent": "parent"
       },
       {
-        "id": "group-3",
+        "id": "group-api",
         "type": "group",
         "data": {
-          "label": "Cloud Inventory and Cost Management"
+          "label": "API and Business Logic Layer"
         },
         "position": {
-          "x": 700,
+          "x": 800,
           "y": 100
         },
         "style": {
+          "width": 350,
+          "height": 250,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -401,45 +407,149 @@
         }
       },
       {
-        "id": "node-3a",
+        "id": "node-azure-functions",
         "data": {
-          "label": "Azure Cost Management + Billing"
+          "label": "Azure Functions"
         },
         "position": {
-          "x": 10,
-          "y": 20
+          "x": 820,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "group-api",
         "extent": "parent"
       },
       {
-        "id": "node-3b",
+        "id": "node-api-management",
         "data": {
-          "label": "AWS Cost Explorer"
+          "label": "API Management"
         },
         "position": {
-          "x": 10,
-          "y": 70
+          "x": 970,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "group-api",
+        "extent": "parent"
+      },
+      {
+        "id": "node-azure-logic-apps",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 900,
+          "y": 230
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-api",
+        "extent": "parent"
+      },
+      {
+        "id": "group-multi-cloud",
+        "type": "group",
+        "data": {
+          "label": "Multi-Cloud Resource Management"
+        },
+        "position": {
+          "x": 1200,
+          "y": 100
+        },
+        "style": {
+          "width": 400,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-arm",
+        "data": {
+          "label": "Azure Resource Manager"
+        },
+        "position": {
+          "x": 1220,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-multi-cloud",
+        "extent": "parent"
+      },
+      {
+        "id": "node-aws-sdks",
+        "data": {
+          "label": "AWS SDKs"
+        },
+        "position": {
+          "x": 1370,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-multi-cloud",
+        "extent": "parent"
+      },
+      {
+        "id": "node-google-cloud-sdk",
+        "data": {
+          "label": "Google Cloud SDK"
+        },
+        "position": {
+          "x": 1220,
+          "y": 230
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-multi-cloud",
+        "extent": "parent"
+      },
+      {
+        "id": "node-ibm-cloud-sdk",
+        "data": {
+          "label": "IBM Cloud SDK"
+        },
+        "position": {
+          "x": 1370,
+          "y": 230
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-multi-cloud",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1-1a",
-        "source": "node-1a",
-        "target": "node-2a",
+        "id": "edge-1",
+        "source": "node-azure-ad",
+        "target": "node-sso",
         "type": "default",
         "animated": true,
         "style": {
@@ -447,9 +557,9 @@
         }
       },
       {
-        "id": "e1-1b",
-        "source": "node-1b",
-        "target": "node-2b",
+        "id": "edge-2",
+        "source": "node-sso",
+        "target": "node-azure-app-service",
         "type": "default",
         "animated": true,
         "style": {
@@ -457,9 +567,9 @@
         }
       },
       {
-        "id": "e2-3a",
-        "source": "node-2a",
-        "target": "node-3a",
+        "id": "edge-3",
+        "source": "node-azure-app-service",
+        "target": "node-azure-front-door",
         "type": "default",
         "animated": true,
         "style": {
@@ -467,9 +577,49 @@
         }
       },
       {
-        "id": "e2-3b",
-        "source": "node-2b",
-        "target": "node-3b",
+        "id": "edge-4",
+        "source": "node-azure-front-door",
+        "target": "node-azure-functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-5",
+        "source": "node-azure-functions",
+        "target": "node-api-management",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-6",
+        "source": "node-api-management",
+        "target": "node-azure-logic-apps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-7",
+        "source": "node-azure-logic-apps",
+        "target": "node-arm",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-8",
+        "source": "node-arm",
+        "target": "node-aws-sdks",
         "type": "default",
         "animated": true,
         "style": {
