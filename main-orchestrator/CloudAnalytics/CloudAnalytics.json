@@ -279,36 +279,21 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture outlines a secure self-service multi-cloud management platform integrating Azure, AWS, Google Cloud, and IBM Cloud to provide comprehensive resource management, cost control, security, governance, and automation. All core functionalities such as authentication, data aggregation, CI/CD, notifications, and API management leverage Azure services as the central backbone.",
+    "description": "Architecture for a secure and comprehensive cloud operations platform managing resources across AWS, Azure, GCP, and IBM Cloud. Incorporates Authentication, User Interface, Cloud Integration, Cost Management, Security, Governance, Monitoring, Logging, and Storage.",
     "nodes": [
-      {
-        "id": "User",
-        "data": {
-          "label": "Web Application (Azure App Service)"
-        },
-        "position": {
-          "x": 50,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
       {
         "id": "group-auth",
         "type": "group",
         "data": {
-          "label": "Authentication and Authorization"
+          "label": "Authentication and Access Management"
         },
         "position": {
-          "x": 300,
+          "x": 100,
           "y": 100
         },
         "style": {
-          "width": 280,
-          "height": 160,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -316,12 +301,12 @@
         }
       },
       {
-        "id": "node-auth-1",
+        "id": "idp-node",
         "data": {
-          "label": "Azure AD"
+          "label": "Identity Provider (IdP)"
         },
         "position": {
-          "x": 310,
+          "x": 120,
           "y": 120
         },
         "style": {
@@ -333,35 +318,18 @@
         "extent": "parent"
       },
       {
-        "id": "node-auth-2",
-        "data": {
-          "label": "RBAC"
-        },
-        "position": {
-          "x": 310,
-          "y": 220
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-auth",
-        "extent": "parent"
-      },
-      {
-        "id": "group-monitor",
+        "id": "group-ui",
         "type": "group",
         "data": {
-          "label": "Multi-Cloud Resource Management"
+          "label": "User Interface and Dashboards"
         },
         "position": {
-          "x": 600,
+          "x": 400,
           "y": 100
         },
         "style": {
-          "width": 320,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -369,12 +337,12 @@
         }
       },
       {
-        "id": "node-monitor-1",
+        "id": "web-app-node",
         "data": {
-          "label": "Azure Monitor"
+          "label": "Centralized Web Application"
         },
         "position": {
-          "x": 610,
+          "x": 420,
           "y": 120
         },
         "style": {
@@ -382,73 +350,58 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-monitor",
+        "parentId": "group-ui",
         "extent": "parent"
       },
       {
-        "id": "node-monitor-2",
+        "id": "group-integration",
+        "type": "group",
         "data": {
-          "label": "AWS CloudWatch"
+          "label": "Cloud Provider Integration"
         },
         "position": {
-          "x": 610,
-          "y": 170
+          "x": 700,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "api-integration-node",
+        "data": {
+          "label": "API Integrations"
+        },
+        "position": {
+          "x": 720,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-monitor",
-        "extent": "parent"
-      },
-      {
-        "id": "node-monitor-3",
-        "data": {
-          "label": "Google Stackdriver"
-        },
-        "position": {
-          "x": 610,
-          "y": 220
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-monitor",
-        "extent": "parent"
-      },
-      {
-        "id": "node-monitor-4",
-        "data": {
-          "label": "IBM Cloud Monitoring"
-        },
-        "position": {
-          "x": 610,
-          "y": 270
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-monitor",
+        "parentId": "group-integration",
         "extent": "parent"
       },
       {
         "id": "group-cost",
         "type": "group",
         "data": {
-          "label": "Inventory and Cost Management"
+          "label": "Cost Management"
         },
         "position": {
-          "x": 950,
+          "x": 1000,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -456,64 +409,13 @@
         }
       },
       {
-        "id": "node-cost-1",
+        "id": "cost-analysis-node",
         "data": {
-          "label": "Azure Cost Management"
+          "label": "Cost Analysis Tools"
         },
         "position": {
-          "x": 960,
+          "x": 1020,
           "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-cost",
-        "extent": "parent"
-      },
-      {
-        "id": "node-cost-2",
-        "data": {
-          "label": "AWS Cost Explorer"
-        },
-        "position": {
-          "x": 960,
-          "y": 170
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-cost",
-        "extent": "parent"
-      },
-      {
-        "id": "node-cost-3",
-        "data": {
-          "label": "Google Cloud Billing"
-        },
-        "position": {
-          "x": 960,
-          "y": 220
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-cost",
-        "extent": "parent"
-      },
-      {
-        "id": "node-cost-4",
-        "data": {
-          "label": "IBM Cloud Cost Management"
-        },
-        "position": {
-          "x": 960,
-          "y": 270
         },
         "style": {
           "border": "none",
@@ -526,9 +428,9 @@
     ],
     "edges": [
       {
-        "id": "edge1",
-        "source": "User",
-        "target": "node-auth-1",
+        "id": "edge-idp-web-app",
+        "source": "idp-node",
+        "target": "web-app-node",
         "type": "default",
         "animated": true,
         "style": {
@@ -536,9 +438,9 @@
         }
       },
       {
-        "id": "edge2",
-        "source": "node-auth-1",
-        "target": "node-auth-2",
+        "id": "edge-web-app-api",
+        "source": "web-app-node",
+        "target": "api-integration-node",
         "type": "default",
         "animated": true,
         "style": {
@@ -546,59 +448,9 @@
         }
       },
       {
-        "id": "edge3",
-        "source": "node-auth-1",
-        "target": "node-monitor-1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge4",
-        "source": "node-monitor-1",
-        "target": "node-monitor-2",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge5",
-        "source": "node-monitor-2",
-        "target": "node-monitor-3",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge6",
-        "source": "node-monitor-3",
-        "target": "node-monitor-4",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge7",
-        "source": "node-monitor-1",
-        "target": "node-cost-1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge8",
-        "source": "node-cost-1",
-        "target": "node-cost-2",
+        "id": "edge-api-cost",
+        "source": "api-integration-node",
+        "target": "cost-analysis-node",
         "type": "default",
         "animated": true,
         "style": {
