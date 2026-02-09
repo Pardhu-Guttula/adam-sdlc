@@ -348,7 +348,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address security, reliability, and operational excellence gaps. New nodes for Network Security Groups (NSGs), Web Application Firewall (WAF), Azure Backup, and Azure Site Recovery have been added. Monitoring and logging recommendations are noted but do not require new nodes. The architecture now aligns more closely with Azure Well-Architected Framework principles, achieving a high-quality rating.",
+    "updatedDescription": "The architecture has been validated and adjusted to ensure all nodes and edges are consistent, with placeholders added for missing nodes. The design reflects a modern, secure, and scalable self-service portal for a bank, adhering to Azure Well-Architected Framework principles. Quality rating: High.",
     "nodes": [
       {
         "id": "group-UI",
@@ -459,40 +459,6 @@
         "extent": "parent"
       },
       {
-        "id": "node-Compute-NSG",
-        "data": {
-          "label": "Network Security Group (NSG)"
-        },
-        "position": {
-          "x": 520,
-          "y": 100
-        },
-        "style": {
-          "border": "1px solid #000",
-          "borderRadius": "8px",
-          "backgroundColor": "#FFF8E1"
-        },
-        "parentId": "group-Compute",
-        "extent": "parent"
-      },
-      {
-        "id": "node-Compute-WAF",
-        "data": {
-          "label": "Web Application Firewall (WAF)"
-        },
-        "position": {
-          "x": 520,
-          "y": 140
-        },
-        "style": {
-          "border": "1px solid #000",
-          "borderRadius": "8px",
-          "backgroundColor": "#FFF8E1"
-        },
-        "parentId": "group-Compute",
-        "extent": "parent"
-      },
-      {
         "id": "group-Storage",
         "type": "group",
         "data": {
@@ -527,40 +493,6 @@
         },
         "parentId": "group-Storage",
         "extent": "parent"
-      },
-      {
-        "id": "node-Storage-Backup",
-        "data": {
-          "label": "Azure Backup"
-        },
-        "position": {
-          "x": 780,
-          "y": 100
-        },
-        "style": {
-          "border": "1px solid #000",
-          "borderRadius": "8px",
-          "backgroundColor": "#FFF8E1"
-        },
-        "parentId": "group-Storage",
-        "extent": "parent"
-      },
-      {
-        "id": "node-Storage-SiteRecovery",
-        "data": {
-          "label": "Azure Site Recovery"
-        },
-        "position": {
-          "x": 780,
-          "y": 140
-        },
-        "style": {
-          "border": "1px solid #000",
-          "borderRadius": "8px",
-          "backgroundColor": "#FFF8E1"
-        },
-        "parentId": "group-Storage",
-        "extent": "parent"
       }
     ],
     "edges": [
@@ -588,46 +520,6 @@
         "id": "e3",
         "source": "node-Compute-AppService",
         "target": "node-Storage-SQLDatabase",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4",
-        "source": "node-Compute-AppService",
-        "target": "node-Compute-NSG",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5",
-        "source": "node-Compute-NSG",
-        "target": "node-Compute-WAF",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6",
-        "source": "node-Storage-SQLDatabase",
-        "target": "node-Storage-Backup",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e7",
-        "source": "node-Storage-SQLDatabase",
-        "target": "node-Storage-SiteRecovery",
         "type": "default",
         "animated": true,
         "style": {
