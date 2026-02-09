@@ -1,11 +1,24 @@
-variable "resource_group_name" {
-  description = "The name of the resource group"
+variable "aws_region" {
+  description = "The AWS region to deploy resources"
   type        = string
-  default     = "example-resources"
 }
 
-variable "resource_group_location" {
-  description = "The location of the resource group"
+variable "gcp_project" {
+  description = "The GCP project ID"
   type        = string
-  default     = "West Europe"
+}
+
+variable "gcp_region" {
+  description = "The GCP region to deploy resources"
+  type        = string
+}
+
+variable "resource_group_name" {
+  description = "The Azure Resource Group name"
+  type        = string
+}
+
+variable "location" {
+  description = "The Azure region to deploy resources"
+  type        = string
 }
