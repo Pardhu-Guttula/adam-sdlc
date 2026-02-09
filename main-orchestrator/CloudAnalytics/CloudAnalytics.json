@@ -279,36 +279,19 @@
     }
   ],
   "architecture_generation": {
-    "description": "Architecture for a multi-cloud management platform with integration, security, compliance, and monitoring capabilities.",
+    "description": "A comprehensive multi-cloud management platform to manage user authentication, cost, security, resource discovery, governance, monitoring, audit logging, API integration, and ensuring performance scalability and data security across Azure, AWS, Google Cloud, and IBM Cloud.",
     "nodes": [
-      {
-        "id": "Frontend",
-        "data": {
-          "label": "User Interface (Web App)"
-        },
-        "position": {
-          "x": 50,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
       {
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "APIs and Integrations"
+          "label": "Authentication and Access Control"
         },
         "position": {
-          "x": 300,
+          "x": 100,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -318,11 +301,11 @@
       {
         "id": "node-1a",
         "data": {
-          "label": "SDKs/APIs (AWS, Azure, GCP, IBM)"
+          "label": "Azure AD"
         },
         "position": {
-          "x": 320,
-          "y": 140
+          "x": 10,
+          "y": 20
         },
         "style": {
           "border": "none",
@@ -335,11 +318,11 @@
       {
         "id": "node-1b",
         "data": {
-          "label": "CI/CD Integration"
+          "label": "AWS IAM Identity Center"
         },
         "position": {
-          "x": 320,
-          "y": 180
+          "x": 10,
+          "y": 70
         },
         "style": {
           "border": "none",
@@ -353,15 +336,13 @@
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Cloud Management"
+          "label": "User Interface and Interaction"
         },
         "position": {
-          "x": 700,
+          "x": 400,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -371,11 +352,11 @@
       {
         "id": "node-2a",
         "data": {
-          "label": "Cloud Inventory Management"
+          "label": "ReactJS/Angular"
         },
         "position": {
-          "x": 720,
-          "y": 140
+          "x": 10,
+          "y": 20
         },
         "style": {
           "border": "none",
@@ -388,11 +369,11 @@
       {
         "id": "node-2b",
         "data": {
-          "label": "Automated Discovery"
+          "label": "API Gateway"
         },
         "position": {
-          "x": 720,
-          "y": 180
+          "x": 10,
+          "y": 70
         },
         "style": {
           "border": "none",
@@ -401,31 +382,62 @@
         },
         "parentId": "group-2",
         "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Cloud Inventory and Cost Management"
+        },
+        "position": {
+          "x": 700,
+          "y": 100
+        },
+        "style": {
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-3a",
+        "data": {
+          "label": "Azure Cost Management + Billing"
+        },
+        "position": {
+          "x": 10,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "node-3b",
+        "data": {
+          "label": "AWS Cost Explorer"
+        },
+        "position": {
+          "x": 10,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "e1-1a",
-        "source": "Frontend",
-        "target": "node-1a",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e1-1b",
-        "source": "Frontend",
-        "target": "node-1b",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e1-2a",
         "source": "node-1a",
         "target": "node-2a",
         "type": "default",
@@ -435,9 +447,29 @@
         }
       },
       {
-        "id": "e1-2b",
+        "id": "e1-1b",
         "source": "node-1b",
         "target": "node-2b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-3a",
+        "source": "node-2a",
+        "target": "node-3a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-3b",
+        "source": "node-2b",
+        "target": "node-3b",
         "type": "default",
         "animated": true,
         "style": {
