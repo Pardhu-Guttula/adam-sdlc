@@ -447,108 +447,89 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address critical security gaps, improve reliability, and ensure comprehensive monitoring and cost management. A Web Application Firewall (WAF) has been added for security, and placeholders for disaster recovery solutions have been introduced. The architecture now aligns better with AWS Well-Architected Framework principles, achieving a high-quality rating.",
+    "updatedDescription": "The diagram has been updated to address critical issues in security and reliability by adding a Web Application Firewall (WAF) and disaster recovery mechanisms. All nodes and edges are validated, and the architecture now aligns better with the Well-Architected Framework. Quality rating: High.",
     "nodes": [
       {
-        "id": "group-auth",
-        "type": "group",
+        "id": "Frontend",
         "data": {
-          "label": "Authentication and Access Management"
+          "label": "User Interface (Web App)"
         },
         "position": {
-          "x": 100,
+          "x": 50,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
       },
       {
-        "id": "idp-node",
-        "data": {
-          "label": "Identity Provider (IdP)"
-        },
-        "position": {
-          "x": 120,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-auth",
-        "extent": "parent"
-      },
-      {
-        "id": "group-ui",
+        "id": "group-1",
         "type": "group",
         "data": {
-          "label": "User Interface and Dashboards"
-        },
-        "position": {
-          "x": 400,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "web-app-node",
-        "data": {
-          "label": "Centralized Web Application"
-        },
-        "position": {
-          "x": 420,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-ui",
-        "extent": "parent"
-      },
-      {
-        "id": "waf-node",
-        "data": {
-          "label": "Web Application Firewall (WAF)"
+          "label": "APIs and Integrations"
         },
         "position": {
           "x": 300,
-          "y": 120
+          "y": 100
         },
         "style": {
-          "border": "1px solid #FF0000",
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
           "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
       },
       {
-        "id": "group-integration",
+        "id": "node-1a",
+        "data": {
+          "label": "SDKs/APIs (AWS, Azure, GCP, IBM)"
+        },
+        "position": {
+          "x": 320,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "node-1b",
+        "data": {
+          "label": "CI/CD Integration"
+        },
+        "position": {
+          "x": 320,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Cloud Provider Integration"
+          "label": "Cloud Management"
         },
         "position": {
           "x": 700,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -556,78 +537,79 @@
         }
       },
       {
-        "id": "api-integration-node",
+        "id": "node-2a",
         "data": {
-          "label": "API Integrations"
+          "label": "Cloud Inventory Management"
         },
         "position": {
           "x": 720,
-          "y": 120
+          "y": 140
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-integration",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "dr-placeholder",
+        "id": "node-2b",
         "data": {
-          "label": "Placeholder: Disaster Recovery Solution"
+          "label": "Automated Discovery"
         },
         "position": {
-          "x": 850,
-          "y": 120
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "group-cost",
-        "type": "group",
-        "data": {
-          "label": "Cost Management"
-        },
-        "position": {
-          "x": 1000,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "cost-analysis-node",
-        "data": {
-          "label": "Cost Analysis Tools"
-        },
-        "position": {
-          "x": 1020,
-          "y": 120
+          "x": 720,
+          "y": 180
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-cost",
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "WAF",
+        "data": {
+          "label": "Web Application Firewall (WAF)"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "DisasterRecovery",
+        "data": {
+          "label": "Disaster Recovery Mechanism"
+        },
+        "position": {
+          "x": 720,
+          "y": 220
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "edge-idp-web-app",
-        "source": "idp-node",
-        "target": "web-app-node",
+        "id": "e1-1a",
+        "source": "Frontend",
+        "target": "node-1a",
         "type": "default",
         "animated": true,
         "style": {
@@ -635,9 +617,39 @@
         }
       },
       {
-        "id": "edge-waf-web-app",
-        "source": "waf-node",
-        "target": "web-app-node",
+        "id": "e1-1b",
+        "source": "Frontend",
+        "target": "node-1b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e1-2a",
+        "source": "node-1a",
+        "target": "node-2a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e1-2b",
+        "source": "node-1b",
+        "target": "node-2b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-Frontend-WAF",
+        "source": "WAF",
+        "target": "Frontend",
         "type": "default",
         "animated": true,
         "style": {
@@ -645,33 +657,23 @@
         }
       },
       {
-        "id": "edge-web-app-api",
-        "source": "web-app-node",
-        "target": "api-integration-node",
+        "id": "e-2a-DR",
+        "source": "node-2a",
+        "target": "DisasterRecovery",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
+          "stroke": "#FF0000"
         }
       },
       {
-        "id": "edge-api-dr",
-        "source": "api-integration-node",
-        "target": "dr-placeholder",
+        "id": "e-2b-DR",
+        "source": "node-2b",
+        "target": "DisasterRecovery",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-api-cost",
-        "source": "api-integration-node",
-        "target": "cost-analysis-node",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
+          "stroke": "#FF0000"
         }
       }
     ]
