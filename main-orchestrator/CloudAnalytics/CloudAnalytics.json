@@ -279,16 +279,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture provides a secure, self-service multi-cloud management platform using Azure as the default environment. It encompasses identity management, data integration, cost management, security, monitoring, CI/CD, real-time updates, governance, scalability, data security, and tenant isolation.",
+    "description": "Architecture for a multi-cloud management platform with integration, security, compliance, and monitoring capabilities.",
     "nodes": [
       {
-        "id": "User",
+        "id": "Frontend",
         "data": {
-          "label": "Frontend Web Application"
+          "label": "User Interface (Web App)"
         },
         "position": {
           "x": 50,
-          "y": 50
+          "y": 100
         },
         "style": {
           "border": "none",
@@ -300,15 +300,15 @@
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Cloud Providers"
+          "label": "APIs and Integrations"
         },
         "position": {
-          "x": 100,
+          "x": 300,
           "y": 100
         },
         "style": {
-          "width": 400,
-          "height": 250,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -316,13 +316,13 @@
         }
       },
       {
-        "id": "Azure",
+        "id": "node-1a",
         "data": {
-          "label": "Azure"
+          "label": "SDKs/APIs (AWS, Azure, GCP, IBM)"
         },
         "position": {
-          "x": 10,
-          "y": 10
+          "x": 320,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -333,13 +333,13 @@
         "extent": "parent"
       },
       {
-        "id": "AWS",
+        "id": "node-1b",
         "data": {
-          "label": "AWS"
+          "label": "CI/CD Integration"
         },
         "position": {
-          "x": 10,
-          "y": 70
+          "x": 320,
+          "y": 180
         },
         "style": {
           "border": "none",
@@ -353,15 +353,15 @@
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Identity Management"
+          "label": "Cloud Management"
         },
         "position": {
-          "x": 600,
+          "x": 700,
           "y": 100
         },
         "style": {
-          "width": 400,
-          "height": 250,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -369,13 +369,13 @@
         }
       },
       {
-        "id": "Azure AD",
+        "id": "node-2a",
         "data": {
-          "label": "Azure AD"
+          "label": "Cloud Inventory Management"
         },
         "position": {
-          "x": 10,
-          "y": 10
+          "x": 720,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -386,13 +386,13 @@
         "extent": "parent"
       },
       {
-        "id": "AWS IAM",
+        "id": "node-2b",
         "data": {
-          "label": "AWS IAM"
+          "label": "Automated Discovery"
         },
         "position": {
-          "x": 10,
-          "y": 70
+          "x": 720,
+          "y": 180
         },
         "style": {
           "border": "none",
@@ -400,67 +400,14 @@
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
         "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
-        "type": "group",
-        "data": {
-          "label": "Data Integration"
-        },
-        "position": {
-          "x": 1100,
-          "y": 100
-        },
-        "style": {
-          "width": 400,
-          "height": 250,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Azure Data Factory",
-        "data": {
-          "label": "Azure Data Factory"
-        },
-        "position": {
-          "x": 10,
-          "y": 10
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "Azure Functions",
-        "data": {
-          "label": "Azure Functions"
-        },
-        "position": {
-          "x": 10,
-          "y": 70
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "User",
-        "target": "Azure",
+        "id": "e1-1a",
+        "source": "Frontend",
+        "target": "node-1a",
         "type": "default",
         "animated": true,
         "style": {
@@ -468,9 +415,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "User",
-        "target": "AWS",
+        "id": "e1-1b",
+        "source": "Frontend",
+        "target": "node-1b",
         "type": "default",
         "animated": true,
         "style": {
@@ -478,9 +425,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "User",
-        "target": "Azure AD",
+        "id": "e1-2a",
+        "source": "node-1a",
+        "target": "node-2a",
         "type": "default",
         "animated": true,
         "style": {
@@ -488,49 +435,9 @@
         }
       },
       {
-        "id": "e4",
-        "source": "User",
-        "target": "AWS IAM",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5",
-        "source": "Azure",
-        "target": "Azure Data Factory",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6",
-        "source": "Azure",
-        "target": "Azure Functions",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e7",
-        "source": "AWS",
-        "target": "Azure Data Factory",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e8",
-        "source": "AWS",
-        "target": "Azure Functions",
+        "id": "e1-2b",
+        "source": "node-1b",
+        "target": "node-2b",
         "type": "default",
         "animated": true,
         "style": {
