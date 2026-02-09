@@ -1,30 +1,11 @@
 variable "aws_region" {
-  description = "AWS region"
+  description = "The AWS region."
   type        = string
-  default     = "us-west-1"
+  default     = "us-east-1"
 }
 
-variable "gcp_project" {
-  description = "GCP project ID"
+variable "azure_location" {
+  description = "The Azure location."
   type        = string
-}
-
-variable "assume_role_policy" {
-  description = "IAM assume role policy"
-  type        = string
-}
-
-variable "subscription_id" {
-  description = "Azure Subscription ID"
-  type        = string
-}
-
-variable "principal_id" {
-  description = "Azure Principal ID"
-  type        = string
-}
-
-variable "ibm_iam_id" {
-  description = "IBM IAM ID"
-  type        = string
+  default     = "East US"
 }
