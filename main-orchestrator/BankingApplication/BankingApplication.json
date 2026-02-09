@@ -4,66 +4,82 @@
   "epics": [
     {
       "id": "EPIC-1",
-      "title": "Secure Multi-Factor Authentication and Role-Based Access Control",
-      "summary": "Establish secure login with multi-factor authentication and manage user permissions through role-based access control.",
-      "description": "This epic aims to provide a robust authentication and authorization framework for the self-service portal. It will implement multi-factor authentication (MFA) methods such as OTP, biometric verification, or app-based authentication to enhance security. Role-Based Access Control (RBAC) will also be enforced to ensure that users only access data and services permitted for their role or profile type. Security measures including encryption, tokenization, and session timeouts will be incorporated to maintain compliance with banking security standards and safeguard customer data integrity.",
+      "title": "User Authentication and Security Framework",
+      "summary": "Implement secure multi-factor authentication and data protection mechanisms.",
+      "description": "Develop a robust authentication system supporting multi-factor authentication to ensure secure access to the portal. The implementation should follow best practices for password encryption, session management, and protection against common threats such as phishing or brute force attacks. Users should be able to log in seamlessly while maintaining high security standards, ensuring compliance with regulatory requirements for financial data protection.",
       "dependencies": []
     },
     {
       "id": "EPIC-2",
-      "title": "Personalized Dashboard and Customer Experience Management",
-      "summary": "Develop a user-centric dashboard that presents personalized banking products and services.",
-      "description": "This epic focuses on building a highly intuitive and personalized customer dashboard. It will display available products, active accounts, eligibility-based offers, and relevant service shortcuts based on the customer's banking profile and transaction behavior. The system will employ dynamic content rendering and personalization algorithms to tailor the dashboard for each user. A focus on user-centric navigation, performance optimization, and real-time updates will ensure rapid access to essential banking functions from a unified interface.",
+      "title": "Responsive User Interface and Experience Design",
+      "summary": "Design a modern, user-friendly responsive interface for the customer portal.",
+      "description": "Create an intuitive, visually appealing, and responsive interface that provides a consistent user experience across desktop, tablet, and mobile devices. The UI should prioritize ease of navigation, quick access to key banking functions, and alignment with the bank’s branding guidelines. Accessibility features should be included to support all users, including those with disabilities.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Personalized Dashboard Development",
+      "summary": "Develop a dashboard displaying user-specific banking products and services.",
+      "description": "Implement a personalized dashboard for authenticated users that dynamically displays banking products and services based on their profile, eligibility, and preferences. The dashboard should present real-time balances, shortcuts to common tasks, and personalized recommendations for appropriate financial products or services.",
       "dependencies": [
         "EPIC-1"
       ]
     },
     {
-      "id": "EPIC-3",
-      "title": "Digital Account Opening and Service Request Workflows",
-      "summary": "Enable guided digital workflows for new account openings and service modifications with minimal user effort.",
-      "description": "This epic will implement streamlined workflows for submitting account opening requests and managing service modifications. These processes will feature guided step-by-step interactions, auto-fill capabilities, and real-time input validation. Customers will be able to upload required documents securely, save incomplete applications, and resume from where they left off. Integration with the bank’s internal systems will ensure that the submission, verification, and approval processes are automated to optimize efficiency and reduce manual handling.",
-      "dependencies": [
-        "EPIC-1",
-        "EPIC-2"
-      ]
-    },
-    {
       "id": "EPIC-4",
-      "title": "Real-Time Status Tracking and Notifications",
-      "summary": "Provide real-time updates and notifications to keep customers informed of their request statuses.",
-      "description": "This epic implements real-time tracking and communication mechanisms within the self-service portal. Customers will be notified instantly of updates such as application submissions, document verifications, approvals, or rejections via both email and on-screen notifications. An event-driven architecture will be used to trigger updates automatically, ensuring timely status changes. Notification templates will be customizable for compliance with communication policies while enhancing customer engagement and transparency.",
+      "title": "Account Opening and Service Request Workflows",
+      "summary": "Enable account opening and service modification requests through automated workflows.",
+      "description": "Build guided workflows allowing users to initiate and complete requests such as new account openings and service modifications through an intuitive interface. Each workflow should minimize the number of clicks required and provide clear instructions at every step. The workflows should integrate with the bank’s internal systems for processing and approval.",
       "dependencies": [
         "EPIC-3"
       ]
     },
     {
       "id": "EPIC-5",
-      "title": "Comprehensive Interaction History and Audit Management",
-      "summary": "Maintain a full record of user interactions, ensuring transparency, traceability, and data protection.",
-      "description": "This epic will establish functionality to record and display a detailed history of customer activities and interactions within the self-service portal. It includes tracking login events, service requests, data updates, and document submissions, enabling customers to review their past activities. Administrators will have access to these logs for compliance and auditing purposes. All historical records will be encrypted and immutable to ensure integrity, confidentiality, and regulatory adherence to banking and data protection standards.",
+      "title": "Request Tracking and Notification System",
+      "summary": "Provide real-time status updates and email notifications for customer requests.",
+      "description": "Implement a request tracking module that enables users to monitor the progress of their submitted applications and service requests in real time. Integrate email and in-portal notifications to inform users about status changes such as approvals, rejections, or additional information requirements.",
       "dependencies": [
-        "EPIC-1",
-        "EPIC-3"
+        "EPIC-4"
       ]
     },
     {
       "id": "EPIC-6",
-      "title": "Responsive and Accessible User Interface Design",
-      "summary": "Develop a device-agnostic interface that ensures a consistent and accessible user experience.",
-      "description": "This epic focuses on designing a responsive, mobile-first interface that provides a seamless experience across all devices including desktops, tablets, and smartphones. The design will comply with WCAG 2.1 accessibility guidelines to cater to users with varying needs. Optimizations such as adaptive layouts, fluid grids, lazy loading, and performance-tuned front-end components will ensure smooth interactions across platforms. This ensures customers can manage their banking needs anytime, anywhere, without usability barriers.",
+      "title": "Document Upload and Application Persistence",
+      "summary": "Allow users to upload required documentation and save incomplete applications.",
+      "description": "Design features that let customers upload necessary documents securely and save partial application progress, enabling them to resume later. The system should store incomplete submissions securely, ensuring data integrity and session recovery even after logout or timeout.",
       "dependencies": [
-        "EPIC-2"
+        "EPIC-4"
       ]
     },
     {
       "id": "EPIC-7",
-      "title": "Core Banking Integration and Independent Data Layer",
-      "summary": "Integrate the portal securely with existing core banking systems while maintaining an independent operational database.",
-      "description": "This epic establishes a secure integration layer between the self-service portal and the bank’s core banking systems. It will define standardized APIs or use middleware to exchange data in real time while maintaining transactional integrity. To ensure performance and resilience, the portal will operate with its own independent data store for managing portal-specific activities, caching, and session details. The integration will prioritize data synchronization, encryption, and failure recovery protocols, ensuring accuracy and uptime across systems.",
+      "title": "Interaction History and Activity Log",
+      "summary": "Maintain a comprehensive record of all user interactions and actions.",
+      "description": "Develop a module that records all user activities and interactions within the portal, including transactions, requests, and communications. The data should be easily retrievable and presented in a user-friendly format, providing transparency and traceability for both users and administrators.",
+      "dependencies": [
+        "EPIC-5",
+        "EPIC-6"
+      ]
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Core Banking System Integration",
+      "summary": "Seamlessly integrate the portal with the bank’s core systems for real-time data synchronization.",
+      "description": "Integrate the portal with the existing core banking systems to ensure smooth data flow, synchronization of transactions, and access to up-to-date customer information. Proper APIs or middleware should be developed to maintain performance and avoid service disruptions while guaranteeing security during data transfers.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-7"
+      ]
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Role-Based Access Control Implementation",
+      "summary": "Restrict access to services and data based on user roles and authorization levels.",
+      "description": "Implement a robust role-based access control (RBAC) system that ensures users can only view or access services appropriate to their roles and authorization levels. Administrators should be able to configure and manage roles efficiently, and all access control policies should be enforced consistently across modules.",
       "dependencies": [
         "EPIC-1",
-        "EPIC-3"
+        "EPIC-8"
       ]
     }
   ],
