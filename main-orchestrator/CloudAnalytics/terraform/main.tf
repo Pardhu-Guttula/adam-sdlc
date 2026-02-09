@@ -1,67 +1,25 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.56.0"
-    }
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 4.0"
-    }
-    ibm = {
-      source = "IBM-Cloud/ibm"
-      version = "~> 2.0"
-    }
-  }
-
-  backend "local" {
-    path = "terraform.tfstate"
-  }
-}
-
-provider "aws" {
-  region = var.aws_region
-}
-
 provider "azurerm" {
   features {}
 }
 
-provider "google" {
-  project = var.gcp_project
+provider "aws" {
+  region = "us-east-1"
 }
 
-provider "ibm" {}
-
-resource "aws_iam_role" "example" {
-  name               = "example-role"
-  assume_role_policy = var.assume_role_policy
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "East US"
 }
 
-resource "azurerm_role_assignment" "example" {
-  scope                = var.subscription_id
-  role_definition_name = "Owner"
-  principal_id         = var.principal_id
+resource "azurerm_storage_account" "example" {
+  name                     = "examplestoracc"
+  resource_group_name      = azurerm_resource_group.example.name
+  location                 = azurerm_resource_group.example.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
 }
 
-resource "google_service_account" "default" {
-  account_id   = "service-account"
-  display_name = "Service Account"
-}
-
-resource "ibm_iam_policy" "example" {
-  name         = "example-polency"
-  description  = "Example policy"
-  policy_type  = "access"
-  policy_roles = ["Editor"]
-  policy_subjects = [
-    {
-      attribute   = "iam_id"
-      value       = var.ibm_iam_id
-    }
-  ]
+resource "aws_s3_bucket" "example" {
+  bucket = "example-bucket"
+  acl    = "private"
 }
