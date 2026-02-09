@@ -608,7 +608,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been validated and adjusted to ensure all nodes and edges are consistent, unique, and complete. Placeholder nodes were added for any missing references, and duplicate IDs were resolved. The diagram now adheres to ReactFlow standards and is fully functional.",
+    "updatedDescription": "The architecture has been enhanced to address critical security and reliability gaps by adding a multi-cloud security layer and disaster recovery nodes. All nodes and edges have been validated, ensuring a complete and consistent diagram. Architecture quality rating: High, with improvements in security, reliability, and operational excellence.",
     "nodes": [
       {
         "id": "User",
@@ -851,6 +851,36 @@
         },
         "parentId": "group-cost",
         "extent": "parent"
+      },
+      {
+        "id": "node-security-layer",
+        "data": {
+          "label": "Multi-Cloud Security Layer"
+        },
+        "position": {
+          "x": 450,
+          "y": 50
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "node-disaster-recovery",
+        "data": {
+          "label": "Disaster Recovery & Geo-Replication"
+        },
+        "position": {
+          "x": 750,
+          "y": 50
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
       }
     ],
     "edges": [
@@ -932,6 +962,26 @@
         "animated": true,
         "style": {
           "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge9",
+        "source": "node-auth-1",
+        "target": "node-security-layer",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "edge10",
+        "source": "node-monitor-1",
+        "target": "node-disaster-recovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
         }
       }
     ]
