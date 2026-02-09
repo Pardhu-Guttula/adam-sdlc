@@ -804,7 +804,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram for the banking self-service portal has been enhanced to address reliability, security, and performance recommendations. Placeholder nodes were added for missing references, and all edges were validated. The architecture now aligns better with Azure Well-Architected Framework principles, achieving a high-quality rating.",
+    "updatedDescription": "The architecture diagram has been updated to address critical security and reliability issues by adding a Web Application Firewall (WAF) and disaster recovery components. All nodes and edges have been validated, and placeholders were added for missing references. The architecture now aligns more closely with the Azure Well-Architected Framework, achieving a high-quality rating for security, reliability, and performance.",
     "nodes": [
       {
         "id": "Frontend",
@@ -1255,6 +1255,36 @@
         },
         "parentId": "Frontend",
         "extent": "parent"
+      },
+      {
+        "id": "WAF",
+        "data": {
+          "label": "Azure Web Application Firewall"
+        },
+        "position": {
+          "x": 320,
+          "y": 250
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(255,0,0,0.5)"
+        }
+      },
+      {
+        "id": "DR",
+        "data": {
+          "label": "Disaster Recovery (Geo-Replication)"
+        },
+        "position": {
+          "x": 720,
+          "y": 200
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(255,0,0,0.5)"
+        }
       }
     ],
     "edges": [
@@ -1336,6 +1366,36 @@
         "animated": true,
         "style": {
           "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-9",
+        "source": "backend-2",
+        "target": "WAF",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e-10",
+        "source": "db-1",
+        "target": "DR",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e-11",
+        "source": "db-2",
+        "target": "DR",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
         }
       }
     ]
