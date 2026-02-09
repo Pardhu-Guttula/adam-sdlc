@@ -1,20 +1,9 @@
 terraform {
+  required_version = ">= 1.0.0"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 4.56.0"
-    }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 4.0"
-    }
-    ibm = {
-      source  = "IBM-Cloud/ibm"
-      version = "~> 1.0"
     }
   }
 }
@@ -23,45 +12,64 @@ provider "azurerm" {
   features {}
 }
 
-provider "aws" {
-  region = var.aws_region
+resource "azurerm_active_directory_domain_service" "example" {
+  name                = var.aad_domain_name
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  domain_name         = var.aad_domain_name
+  sku                 = "Standard"
 }
 
-provider "google" {
-  project = var.google_project
-  region  = var.google_region
+resource "azurerm_sql_server" "example" {
+  name                         = var.sql_server_name
+  resource_group_name          = var.resource_group_name
+  location                     = var.location
+  version                      = "12.0"
+  administrator_login          = var.sql_administrator_login
+  administrator_login_password = var.sql_administrator_password
 }
 
-provider "ibm" {
+resource "azurerm_cosmosdb_account" "example" {
+  name                = var.cosmosdb_account_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  offer_type          = "Standard"
+  kind                = "GlobalDocumentDB"
+  consistency_policy {
+    consistency_level = "BoundedStaleness"
+  }
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = var.azure_location
+resource "azurerm_security_center_subscription_pricing" "example" {
+  tier = var.security_center_tier
 }
 
-resource "azurerm_storage_account" "example" {
-  name                     = "examplestoracc"
-  resource_group_name      = azurerm_resource_group.example.name
-  location                 = azurerm_resource_group.example.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+resource "azurerm_policy_assignment" "example" {
+  name                 = var.policy_assignment_name
+  scope                = azurerm_resource_group.example.id
+  policy_definition_id = var.policy_definition_id
+  description          = var.policy_description
+  display_name         = var.policy_display_name
 }
 
-resource "aws_s3_bucket" "example" {
-  bucket = "example-bucket"
-  acl    = "private"
+resource "azurerm_cost_management_export" "example" {
+  name                = var.cost_management_export_name
+  scope               = var.subscription_id
+  storage_account_id  = var.storage_account_id
+  recurrence_period {
+    from = var.recurrence_from
+    to   = var.recurrence_to
+  }
 }
 
-resource "google_storage_bucket" "example" {
-  name     = "example-bucket"
-  location = var.google_region
+resource "azurerm_devops_project" "example" {
+  name                = var.devops_project_name
+  description         = var.devops_project_description
 }
 
-resource "ibm_resource_instance" "example" {
-  name          = "example-instance"
-  service       = "cloud-object-storage"
-  plan          = "lite"
-  location      = var.ibm_location
-  resource_group = "Default"
+resource "azurerm_log_analytics_workspace" "example" {
+  name                = var.log_analytics_workspace_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  sku                 = "PerGB2018"
 }
