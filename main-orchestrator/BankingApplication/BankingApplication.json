@@ -112,7 +112,7 @@
       ]
     }
   ],
-  "jira_link": null,
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
       "epic_title": "Secure Authentication and Role-Based Access Control",
