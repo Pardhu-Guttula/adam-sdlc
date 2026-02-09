@@ -1,20 +1,19 @@
-variable "tenant_id" {
-  description = "The Tenant ID for the Service Principal"
+variable "aws_region" {
+  description = "The AWS region to create resources in."
   type        = string
 }
 
-variable "subscription_id" {
-  description = "The Subscription ID for the Service Principal"
+variable "resource_group_name" {
+  description = "The name of the resource group in Azure."
   type        = string
 }
 
-variable "client_id" {
-  description = "The Client ID for the Service Principal"
+variable "storage_account_id" {
+  description = "The ID of the storage account for cost export in Azure."
   type        = string
 }
 
-variable "client_secret" {
-  description = "The Client Secret for the Service Principal"
-  type        = string
-  sensitive   = true
+variable "recurrence_year" {
+  description = "The year for the recurrence of cost export in Azure."
+  type        = number
 }
