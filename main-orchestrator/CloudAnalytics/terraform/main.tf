@@ -1,3 +1,20 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 4.56.0"
+    }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 4.0"
+    }
+  }
+}
+
 provider "azurerm" {
   features {}
 }
@@ -7,38 +24,51 @@ provider "aws" {
 }
 
 provider "google" {
-  project = var.gcp_project
-  region  = var.gcp_region
+  project = var.google_project
+  region  = var.google_region
 }
 
-resource "azurerm_storage_account" "example" {
-  name                     = "examplestoracc"
-  resource_group_name      = var.resource_group_name
-  location                 = var.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+resource "azurerm_app_service_plan" "asp" {
+  name                = "example-appserviceplan"
+  location            = var.azure_location
+  resource_group_name = var.azure_rg
+  sku {
+    tier = "Standard"
+    size = "S1"
+  }
 }
 
-resource "aws_s3_bucket" "example" {
-  bucket = "example-bucket"
-  acl    = "private"
+resource "azurerm_app_service" "app" {
+  name                = "example-app"
+  location            = var.azure_location
+  resource_group_name = var.azure_rg
+  app_service_plan_id = azurerm_app_service_plan.asp.id
+  site_config {
+    dotnet_framework_version = "v4.0"
+  }
+  app_settings = {
+    "WEBSITE_RUN_FROM_PACKAGE" = "1"
+  }
 }
 
-resource "google_storage_bucket" "example" {
-  name                        = "example-bucket"
-  location                    = var.gcp_region
-  force_destroy               = true
-  storage_class               = "STANDARD"
+resource "azurerm_monitor_diagnostic_setting" "example" {
+  name                       = "example"
+  target_resource_id         = azurerm_app_service.app.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+  enabled_log {
+    category      = "AppServiceHTTPLogs"
+    enabled       = true
+    retention_policy_days = 0
+  }
+  metric {
+    category = "AllMetrics"
+    enabled  = true
+    retention_policy_days = 0
+  }
 }
 
-output "azurerm_storage_account_primary_endpoint" {
-  value = azurerm_storage_account.example.primary_endpoint
-}
-
-output "aws_s3_bucket_arn" {
-  value = aws_s3_bucket.example.arn
-}
-
-output "google_storage_bucket_url" {
-  value = google_storage_bucket.example.url
+resource "azurerm_role_assignment" "example" {
+  principal_id   = var.principal_id
+  role_definition_name = "Contributor"
+  scope          = azurerm_app_service.app.id
 }
