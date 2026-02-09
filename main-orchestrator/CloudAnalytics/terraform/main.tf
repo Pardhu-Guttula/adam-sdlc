@@ -1,74 +1,67 @@
 terraform {
   required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.56.0"
-    }
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.0"
+    }
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 4.56.0"
     }
     google = {
       source  = "hashicorp/google"
       version = "~> 4.0"
     }
+    ibm = {
+      source = "IBM-Cloud/ibm"
+      version = "~> 2.0"
+    }
   }
-}
 
-provider "azurerm" {
-  features {}
+  backend "local" {
+    path = "terraform.tfstate"
+  }
 }
 
 provider "aws" {
   region = var.aws_region
 }
 
+provider "azurerm" {
+  features {}
+}
+
 provider "google" {
-  project = var.google_project
-  region  = var.google_region
+  project = var.gcp_project
 }
 
-resource "azurerm_app_service_plan" "asp" {
-  name                = "example-appserviceplan"
-  location            = var.azure_location
-  resource_group_name = var.azure_rg
-  sku {
-    tier = "Standard"
-    size = "S1"
-  }
-}
+provider "ibm" {}
 
-resource "azurerm_app_service" "app" {
-  name                = "example-app"
-  location            = var.azure_location
-  resource_group_name = var.azure_rg
-  app_service_plan_id = azurerm_app_service_plan.asp.id
-  site_config {
-    dotnet_framework_version = "v4.0"
-  }
-  app_settings = {
-    "WEBSITE_RUN_FROM_PACKAGE" = "1"
-  }
-}
-
-resource "azurerm_monitor_diagnostic_setting" "example" {
-  name                       = "example"
-  target_resource_id         = azurerm_app_service.app.id
-  log_analytics_workspace_id = var.log_analytics_workspace_id
-  enabled_log {
-    category      = "AppServiceHTTPLogs"
-    enabled       = true
-    retention_policy_days = 0
-  }
-  metric {
-    category = "AllMetrics"
-    enabled  = true
-    retention_policy_days = 0
-  }
+resource "aws_iam_role" "example" {
+  name               = "example-role"
+  assume_role_policy = var.assume_role_policy
 }
 
 resource "azurerm_role_assignment" "example" {
-  principal_id   = var.principal_id
-  role_definition_name = "Contributor"
-  scope          = azurerm_app_service.app.id
+  scope                = var.subscription_id
+  role_definition_name = "Owner"
+  principal_id         = var.principal_id
+}
+
+resource "google_service_account" "default" {
+  account_id   = "service-account"
+  display_name = "Service Account"
+}
+
+resource "ibm_iam_policy" "example" {
+  name         = "example-polency"
+  description  = "Example policy"
+  policy_type  = "access"
+  policy_roles = ["Editor"]
+  policy_subjects = [
+    {
+      attribute   = "iam_id"
+      value       = var.ibm_iam_id
+    }
+  ]
 }
