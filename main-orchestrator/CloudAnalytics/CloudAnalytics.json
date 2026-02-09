@@ -279,16 +279,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "A secure self-service cross-cloud platform providing a unified interface for cloud operations, incorporating authentication, resource discovery, cost management, security posture management, governance, UI dashboard, storage, and performance scalability across AWS, Azure, GCP, and IBM Cloud.",
+    "description": "This architecture enables a secure, self-service platform for managing cloud resources across multiple providers (AWS, Azure, GCP, IBM Cloud). It includes identity and access management, multi-cloud integration, resource discovery, cost management, security, monitoring, governance, user interface, data storage, audit logging, and performance scalability.",
     "nodes": [
       {
-        "id": "main-entry",
+        "id": "User",
         "data": {
-          "label": "Main Entry Node"
+          "label": "User Interface (UI)"
         },
         "position": {
           "x": 0,
-          "y": 100
+          "y": 0
         },
         "style": {
           "border": "none",
@@ -297,18 +297,18 @@
         }
       },
       {
-        "id": "group-1",
+        "id": "g-1",
         "type": "group",
         "data": {
-          "label": "Authentication and Access Control"
+          "label": "Identity and Access Management"
         },
         "position": {
           "x": 200,
-          "y": 50
+          "y": 0
         },
         "style": {
           "width": 300,
-          "height": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -316,52 +316,35 @@
         }
       },
       {
-        "id": "auth-1",
+        "id": "node-1a",
         "data": {
-          "label": "Azure Active Directory"
+          "label": "Azure Active Directory (Azure AD)"
         },
         "position": {
-          "x": 250,
-          "y": 100
+          "x": 220,
+          "y": 20
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "g-1",
         "extent": "parent"
       },
       {
-        "id": "auth-2",
-        "data": {
-          "label": "AWS IAM"
-        },
-        "position": {
-          "x": 250,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "group-2",
+        "id": "g-2",
         "type": "group",
         "data": {
-          "label": "Cost Management"
+          "label": "Multi-Cloud Integration"
         },
         "position": {
-          "x": 600,
-          "y": 50
+          "x": 550,
+          "y": 0
         },
         "style": {
           "width": 300,
-          "height": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -369,52 +352,35 @@
         }
       },
       {
-        "id": "cost-1",
+        "id": "node-2a",
         "data": {
-          "label": "Azure Cost Management"
+          "label": "Azure Arc"
         },
         "position": {
-          "x": 650,
-          "y": 100
+          "x": 570,
+          "y": 20
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "g-2",
         "extent": "parent"
       },
       {
-        "id": "cost-2",
-        "data": {
-          "label": "AWS Cost Explorer"
-        },
-        "position": {
-          "x": 650,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
+        "id": "g-3",
         "type": "group",
         "data": {
-          "label": "Security Management"
+          "label": "Resource Discovery and Normalization"
         },
         "position": {
-          "x": 1000,
-          "y": 50
+          "x": 900,
+          "y": 0
         },
         "style": {
           "width": 300,
-          "height": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -422,45 +388,64 @@
         }
       },
       {
-        "id": "security-1",
+        "id": "node-3a",
         "data": {
-          "label": "Azure Security Center"
+          "label": "Azure Resource Graph"
         },
         "position": {
-          "x": 1050,
-          "y": 100
+          "x": 920,
+          "y": 20
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "g-3",
         "extent": "parent"
       },
       {
-        "id": "security-2",
+        "id": "g-4",
+        "type": "group",
         "data": {
-          "label": "AWS Security Hub"
+          "label": "Cost Management & Optimization"
         },
         "position": {
-          "x": 1050,
-          "y": 150
+          "x": 1250,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-4a",
+        "data": {
+          "label": "Azure Cost Management and Billing"
+        },
+        "position": {
+          "x": 1270,
+          "y": 20
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "g-4",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "main-entry",
-        "target": "auth-1",
+        "id": "e1-1",
+        "source": "User",
+        "target": "node-1a",
         "type": "default",
         "animated": true,
         "style": {
@@ -468,9 +453,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "auth-1",
-        "target": "auth-2",
+        "id": "e1-2",
+        "source": "node-1a",
+        "target": "node-2a",
         "type": "default",
         "animated": true,
         "style": {
@@ -478,9 +463,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "auth-2",
-        "target": "cost-1",
+        "id": "e2-3",
+        "source": "node-2a",
+        "target": "node-3a",
         "type": "default",
         "animated": true,
         "style": {
@@ -488,29 +473,9 @@
         }
       },
       {
-        "id": "e4",
-        "source": "cost-1",
-        "target": "cost-2",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5",
-        "source": "cost-2",
-        "target": "security-1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6",
-        "source": "security-1",
-        "target": "security-2",
+        "id": "e3-4",
+        "source": "node-3a",
+        "target": "node-4a",
         "type": "default",
         "animated": true,
         "style": {
