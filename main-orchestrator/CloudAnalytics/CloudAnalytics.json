@@ -279,17 +279,32 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram illustrates a comprehensive multi-cloud self-service cloud management platform utilizing services and resources from Azure, AWS, Google Cloud Platform, and IBM Cloud to provide a unified, secure, scalable, and efficient solution for enterprise needs.",
+    "description": "This architecture provides a unified cloud management platform for managing resources across AWS, Azure, GCP, and IBM Cloud, including API integrations, authentication, data management, security, cost management, automation, scalability, and connectivity.",
     "nodes": [
       {
-        "id": "group-auth",
-        "type": "group",
+        "id": "MainEntry",
         "data": {
-          "label": "User Authentication and Authorization"
+          "label": "Main Entry Point"
         },
         "position": {
-          "x": 0,
-          "y": 100
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "User and Authentication Group"
+        },
+        "position": {
+          "x": 200,
+          "y": 50
         },
         "style": {
           "width": 300,
@@ -301,48 +316,48 @@
         }
       },
       {
-        "id": "node-azure-ad",
+        "id": "AAD",
         "data": {
           "label": "Azure Active Directory"
         },
         "position": {
-          "x": 20,
-          "y": 150
+          "x": 100,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-auth",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "node-sso",
+        "id": "SSO",
         "data": {
-          "label": "SSO Integration"
+          "label": "Single Sign-On"
         },
         "position": {
-          "x": 170,
-          "y": 150
+          "x": 100,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-auth",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "group-ui",
+        "id": "group-2",
         "type": "group",
         "data": {
-          "label": "User Interface"
+          "label": "Data Aggregation and Normalization Group"
         },
         "position": {
-          "x": 400,
-          "y": 100
+          "x": 550,
+          "y": 50
         },
         "style": {
           "width": 300,
@@ -354,122 +369,52 @@
         }
       },
       {
-        "id": "node-azure-app-service",
+        "id": "SQL",
         "data": {
-          "label": "Azure App Service"
+          "label": "Azure SQL Database"
         },
         "position": {
-          "x": 420,
-          "y": 150
+          "x": 100,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-ui",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "node-azure-front-door",
+        "id": "CosmosDB",
         "data": {
-          "label": "Azure Front Door"
+          "label": "Cosmos DB"
         },
         "position": {
-          "x": 570,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-ui",
-        "extent": "parent"
-      },
-      {
-        "id": "group-api",
-        "type": "group",
-        "data": {
-          "label": "API and Business Logic Layer"
-        },
-        "position": {
-          "x": 800,
+          "x": 100,
           "y": 100
         },
         "style": {
-          "width": 350,
-          "height": 250,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-azure-functions",
-        "data": {
-          "label": "Azure Functions"
-        },
-        "position": {
-          "x": 820,
-          "y": 150
-        },
-        "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-api",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "node-api-management",
+        "id": "group-3",
+        "type": "group",
         "data": {
-          "label": "API Management"
-        },
-        "position": {
-          "x": 970,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-api",
-        "extent": "parent"
-      },
-      {
-        "id": "node-azure-logic-apps",
-        "data": {
-          "label": "Azure Logic Apps"
+          "label": "Security and Compliance Group"
         },
         "position": {
           "x": 900,
-          "y": 230
+          "y": 50
         },
         "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-api",
-        "extent": "parent"
-      },
-      {
-        "id": "group-multi-cloud",
-        "type": "group",
-        "data": {
-          "label": "Multi-Cloud Resource Management"
-        },
-        "position": {
-          "x": 1200,
-          "y": 100
-        },
-        "style": {
-          "width": 400,
-          "height": 300,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -477,79 +422,204 @@
         }
       },
       {
-        "id": "node-arm",
+        "id": "SecurityCenter",
         "data": {
-          "label": "Azure Resource Manager"
+          "label": "Azure Security Center"
         },
         "position": {
-          "x": 1220,
-          "y": 150
+          "x": 100,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-multi-cloud",
+        "parentId": "group-3",
         "extent": "parent"
       },
       {
-        "id": "node-aws-sdks",
+        "id": "Policies",
         "data": {
-          "label": "AWS SDKs"
+          "label": "Azure Policy"
         },
         "position": {
-          "x": 1370,
-          "y": 150
+          "x": 100,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-multi-cloud",
+        "parentId": "group-3",
         "extent": "parent"
       },
       {
-        "id": "node-google-cloud-sdk",
+        "id": "group-4",
+        "type": "group",
         "data": {
-          "label": "Google Cloud SDK"
+          "label": "Cost Management Group"
         },
         "position": {
-          "x": 1220,
-          "y": 230
+          "x": 1250,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "CostManagement",
+        "data": {
+          "label": "Azure Cost Management"
+        },
+        "position": {
+          "x": 100,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-multi-cloud",
+        "parentId": "group-4",
         "extent": "parent"
       },
       {
-        "id": "node-ibm-cloud-sdk",
+        "id": "OptimizationTools",
         "data": {
-          "label": "IBM Cloud SDK"
+          "label": "Cost Optimization Tools"
         },
         "position": {
-          "x": 1370,
-          "y": 230
+          "x": 100,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-multi-cloud",
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "group-5",
+        "type": "group",
+        "data": {
+          "label": "Automation and CI/CD Group"
+        },
+        "position": {
+          "x": 1600,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "DevOpsPipelines",
+        "data": {
+          "label": "Azure DevOps Pipelines"
+        },
+        "position": {
+          "x": 100,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      },
+      {
+        "id": "Terraform",
+        "data": {
+          "label": "Terraform"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      },
+      {
+        "id": "group-6",
+        "type": "group",
+        "data": {
+          "label": "Audit and Logging Group"
+        },
+        "position": {
+          "x": 1950,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "LogAnalytics",
+        "data": {
+          "label": "Azure Log Analytics"
+        },
+        "position": {
+          "x": 100,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-6",
+        "extent": "parent"
+      },
+      {
+        "id": "ELKStack",
+        "data": {
+          "label": "Centralized Logging Platform (ELK)"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-6",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "edge-1",
-        "source": "node-azure-ad",
-        "target": "node-sso",
+        "id": "e1",
+        "source": "MainEntry",
+        "target": "AAD",
         "type": "default",
         "animated": true,
         "style": {
@@ -557,9 +627,9 @@
         }
       },
       {
-        "id": "edge-2",
-        "source": "node-sso",
-        "target": "node-azure-app-service",
+        "id": "e2",
+        "source": "AAD",
+        "target": "SQL",
         "type": "default",
         "animated": true,
         "style": {
@@ -567,9 +637,9 @@
         }
       },
       {
-        "id": "edge-3",
-        "source": "node-azure-app-service",
-        "target": "node-azure-front-door",
+        "id": "e3",
+        "source": "SQL",
+        "target": "SecurityCenter",
         "type": "default",
         "animated": true,
         "style": {
@@ -577,9 +647,9 @@
         }
       },
       {
-        "id": "edge-4",
-        "source": "node-azure-front-door",
-        "target": "node-azure-functions",
+        "id": "e4",
+        "source": "SecurityCenter",
+        "target": "CostManagement",
         "type": "default",
         "animated": true,
         "style": {
@@ -587,9 +657,9 @@
         }
       },
       {
-        "id": "edge-5",
-        "source": "node-azure-functions",
-        "target": "node-api-management",
+        "id": "e5",
+        "source": "CostManagement",
+        "target": "DevOpsPipelines",
         "type": "default",
         "animated": true,
         "style": {
@@ -597,29 +667,9 @@
         }
       },
       {
-        "id": "edge-6",
-        "source": "node-api-management",
-        "target": "node-azure-logic-apps",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-7",
-        "source": "node-azure-logic-apps",
-        "target": "node-arm",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-8",
-        "source": "node-arm",
-        "target": "node-aws-sdks",
+        "id": "e6",
+        "source": "DevOpsPipelines",
+        "target": "LogAnalytics",
         "type": "default",
         "animated": true,
         "style": {
