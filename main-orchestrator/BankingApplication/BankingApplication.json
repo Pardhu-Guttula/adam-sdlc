@@ -83,7 +83,7 @@
       ]
     }
   ],
-  "jira_link": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": [
     {
       "epic_title": "Secure Authentication and User Access Management",
