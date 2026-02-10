@@ -204,74 +204,38 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture represents a modern, user-friendly self-service banking portal integrating various Azure services for UI, security, API management, backend services, data storage, notifications, real-time updates, core banking system integration, monitoring, logging, RBAC, CI/CD, and compliance.",
+    "description": "This architecture diagram represents a modern, user-friendly self-service banking portal leveraging various Azure services for frontend, backend, security, data management, and integration.",
     "nodes": [
       {
-        "id": "group-UI",
-        "type": "group",
+        "id": "Frontend",
         "data": {
-          "label": "User Interface"
+          "label": "Frontend"
         },
         "position": {
-          "x": 50,
+          "x": 100,
           "y": 100
         },
         "style": {
-          "width": 300,
+          "width": 250,
           "height": 150,
-          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
       },
       {
-        "id": "WebApp",
-        "data": {
-          "label": "Web Application"
-        },
-        "position": {
-          "x": 75,
-          "y": 125
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-UI",
-        "extent": "parent"
-      },
-      {
-        "id": "ResponsiveDesign",
-        "data": {
-          "label": "Responsive Design"
-        },
-        "position": {
-          "x": 200,
-          "y": 125
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-UI",
-        "extent": "parent"
-      },
-      {
-        "id": "group-Security",
+        "id": "g-security",
         "type": "group",
         "data": {
-          "label": "Security and Authentication"
+          "label": "Authentication and Security"
         },
         "position": {
           "x": 400,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 150,
+          "width": 250,
+          "height": 250,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -279,52 +243,52 @@
         }
       },
       {
-        "id": "AzureAD",
+        "id": "azure-ad-b2c",
         "data": {
-          "label": "Azure AD B2C"
+          "label": "Azure Active Directory B2C"
         },
         "position": {
-          "x": 425,
-          "y": 125
+          "x": 410,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-Security",
+        "parentId": "g-security",
         "extent": "parent"
       },
       {
-        "id": "OAuth2",
+        "id": "azure-key-vault",
         "data": {
-          "label": "OAuth2 / OpenID"
+          "label": "Azure Key Vault"
         },
         "position": {
-          "x": 550,
-          "y": 125
+          "x": 410,
+          "y": 160
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-Security",
+        "parentId": "g-security",
         "extent": "parent"
       },
       {
-        "id": "group-API",
+        "id": "g-backend",
         "type": "group",
         "data": {
-          "label": "API Management and Integration"
+          "label": "Backend Services"
         },
         "position": {
-          "x": 750,
+          "x": 700,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 150,
+          "width": 250,
+          "height": 350,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -332,45 +296,98 @@
         }
       },
       {
-        "id": "APIGateway",
+        "id": "azure-app-services",
         "data": {
-          "label": "API Gateway"
+          "label": "Azure App Services"
         },
         "position": {
-          "x": 775,
-          "y": 125
+          "x": 710,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-API",
+        "parentId": "g-backend",
         "extent": "parent"
       },
       {
-        "id": "APIManagement",
+        "id": "azure-functions",
         "data": {
-          "label": "API Management"
+          "label": "Azure Functions"
         },
         "position": {
-          "x": 900,
-          "y": 125
+          "x": 710,
+          "y": 160
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-API",
+        "parentId": "g-backend",
+        "extent": "parent"
+      },
+      {
+        "id": "g-data-management",
+        "type": "group",
+        "data": {
+          "label": "Data Management"
+        },
+        "position": {
+          "x": 1000,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "azure-sql-db",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1010,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-data-management",
+        "extent": "parent"
+      },
+      {
+        "id": "azure-cosmos-db",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 1010,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-data-management",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "edge-1",
-        "source": "WebApp",
-        "target": "ResponsiveDesign",
+        "id": "e1",
+        "source": "Frontend",
+        "target": "azure-ad-b2c",
         "type": "default",
         "animated": true,
         "style": {
@@ -378,9 +395,9 @@
         }
       },
       {
-        "id": "edge-2",
-        "source": "AzureAD",
-        "target": "OAuth2",
+        "id": "e2",
+        "source": "azure-ad-b2c",
+        "target": "azure-key-vault",
         "type": "default",
         "animated": true,
         "style": {
@@ -388,9 +405,9 @@
         }
       },
       {
-        "id": "edge-3",
-        "source": "APIGateway",
-        "target": "APIManagement",
+        "id": "e3",
+        "source": "azure-key-vault",
+        "target": "azure-app-services",
         "type": "default",
         "animated": true,
         "style": {
@@ -398,9 +415,9 @@
         }
       },
       {
-        "id": "edge-4",
-        "source": "ResponsiveDesign",
-        "target": "AzureAD",
+        "id": "e4",
+        "source": "azure-app-services",
+        "target": "azure-functions",
         "type": "default",
         "animated": true,
         "style": {
@@ -408,9 +425,9 @@
         }
       },
       {
-        "id": "edge-5",
-        "source": "OAuth2",
-        "target": "APIGateway",
+        "id": "e5",
+        "source": "azure-functions",
+        "target": "azure-sql-db",
         "type": "default",
         "animated": true,
         "style": {
@@ -418,9 +435,9 @@
         }
       },
       {
-        "id": "edge-6",
-        "source": "APIManagement",
-        "target": "WebApp",
+        "id": "e6",
+        "source": "azure-sql-db",
+        "target": "azure-cosmos-db",
         "type": "default",
         "animated": true,
         "style": {
