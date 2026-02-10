@@ -1,75 +1,69 @@
 terraform {
-  required_version = ">= 1.0.0"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 4.56.0"
     }
   }
+  backend "local" {}
 }
 
 provider "azurerm" {
   features {}
 }
 
-resource "azurerm_active_directory_domain_service" "example" {
-  name                = var.aad_domain_name
-  resource_group_name = var.resource_group_name
-  location            = var.location
-  domain_name         = var.aad_domain_name
-  sku                 = "Standard"
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "West Europe"
 }
 
-resource "azurerm_sql_server" "example" {
-  name                         = var.sql_server_name
-  resource_group_name          = var.resource_group_name
-  location                     = var.location
-  version                      = "12.0"
-  administrator_login          = var.sql_administrator_login
-  administrator_login_password = var.sql_administrator_password
-}
-
-resource "azurerm_cosmosdb_account" "example" {
-  name                = var.cosmosdb_account_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
-  offer_type          = "Standard"
-  kind                = "GlobalDocumentDB"
-  consistency_policy {
-    consistency_level = "BoundedStaleness"
+resource "azurerm_monitor_diagnostic_setting" "diagnostic" {
+  name               = "example-diagnostic"
+  target_resource_id = azurerm_resource_group.example.id
+  enabled_log {
+    category = "Administrative"
+  }
+  metric {
+    category = "AllMetrics"
+    enabled  = true
   }
 }
 
-resource "azurerm_security_center_subscription_pricing" "example" {
-  tier = var.security_center_tier
-}
-
-resource "azurerm_policy_assignment" "example" {
-  name                 = var.policy_assignment_name
-  scope                = azurerm_resource_group.example.id
-  policy_definition_id = var.policy_definition_id
-  description          = var.policy_description
-  display_name         = var.policy_display_name
+resource "azurerm_security_center_contact" "example" {
+  email       = "example@example.com"
+  phone       = "+1-555-555-5555"
+  alert_notifications = true
+  alerts_to_admins    = true
 }
 
 resource "azurerm_cost_management_export" "example" {
-  name                = var.cost_management_export_name
-  scope               = var.subscription_id
-  storage_account_id  = var.storage_account_id
-  recurrence_period {
-    from = var.recurrence_from
-    to   = var.recurrence_to
+  name                = "example-export"
+  resource_group_name = azurerm_resource_group.example.name
+  timeframe           = "Monthly"
+  delivery_info {
+    destination {
+      container {
+        resource_id   = azurerm_resource_group.example.id
+        name          = "example-container"
+      }
+    }
   }
 }
 
-resource "azurerm_devops_project" "example" {
-  name                = var.devops_project_name
-  description         = var.devops_project_description
-}
-
-resource "azurerm_log_analytics_workspace" "example" {
-  name                = var.log_analytics_workspace_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
-  sku                 = "PerGB2018"
+resource "azurerm_policy_definition" "example" {
+  name         = "example-policy"
+  policy_type  = "Custom"
+  mode         = "Indexed"
+  display_name = "Example Policy"
+  policy_rule = <<POLICY
+    {
+      "if": {
+        "field": "location",
+        "equals": "West Europe"
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  POLICY
 }
