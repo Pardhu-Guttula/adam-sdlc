@@ -1,74 +1,10 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.56.0"
-    }
-  }
-  required_version = ">= 0.14"
-}
-
 provider "azurerm" {
   features {}
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "East US"
-}
-
-resource "azurerm_app_service_plan" "example" {
-  name                = "example-appserviceplan"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  sku {
-    tier = "Free"
-    size = "F1"
-  }
-}
-
-resource "azurerm_app_service" "web_app" {
-  name                = "example-webapp"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  app_service_plan_id = azurerm_app_service_plan.example.id
-  site_config {
-    application_stack {
-      node_version = "14-lts"
-    }
-  }
-}
-
-resource "azurerm_api_management" "api_management" {
-  name                = "example-api-management"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  publisher_name      = "Example Corp"
-  publisher_email     = "api@example.com"
-  sku_name            = "Developer_1"
-}
-
-resource "azurerm_api_management_api" "example_api" {
-  name                = "example-api"
-  resource_group_name = azurerm_resource_group.example.name
-  api_management_name = azurerm_api_management.api_management.name
-  revision            = "1"
-  display_name        = "Example API"
-  path                = "example"
-  protocols           = ["https"]
-}
-
-resource "azurerm_api_management_authorization_server" "example_auth_server" {
-  name                         = "example-oauth2"
-  resource_group_name          = azurerm_resource_group.example.name
-  api_management_name          = azurerm_api_management.api_management.name
-  authorization_endpoint       = "https://example.com/oauth2/authorize"
-  token_endpoint               = "https://example.com/oauth2/token"
-  client_registration_endpoint = "https://example.com/oauth2/register"
-  grant_types                  = ["authorizationCode"]
-  authorization_methods        = ["HEAD", "OPTIONS", "TRACE"]
-  client_authentication_method = ["POST"]
-  token_body_parameters        = [{ name = "resource", value = "{baseUrl}" }]
+  name     = var.resource_group_name
+  location = var.location
 }
 
 resource "azurerm_application_insights" "example" {
@@ -78,29 +14,99 @@ resource "azurerm_application_insights" "example" {
   application_type    = "web"
 }
 
-resource "azurerm_log_analytics_workspace" "example" {
-  name                = "example-loganalytics"
+resource "azurerm_app_service_plan" "example" {
+  name                = "example-service-plan"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  sku                 = "PerGB2018"
-}
-
-resource "azurerm_monitor_diagnostic_setting" "example" {
-  name                       = "example-diagnostic-setting"
-  target_resource_id         = azurerm_api_management.api_management.id
-  log_analytics_workspace_id = azurerm_log_analytics_workspace.example.id
-  enabled_log {
-    category = "GatewayLogs"
-    enabled  = true
-  }
-  metric {
-    category = "AllMetrics"
-    enabled  = true
+  sku {
+    tier = "Basic"
+    size = "B1"
   }
 }
 
-resource "azurerm_role_assignment" "example" {
-  principal_id   = "<principal_id>"
-  role_definition_name = "Contributor"
-  scope          = azurerm_resource_group.example.id
+resource "azurerm_app_service" "example" {
+  name                = "example-app-service"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  app_service_plan_id = azurerm_app_service_plan.example.id
+  site_config {
+    application_insights_connection_string = azurerm_application_insights.example.connection_string
+    always_on = true
+  }
+}
+
+resource "azurerm_function_app" "example" {
+  name                       = "example-function-app"
+  location                   = azurerm_resource_group.example.location
+  resource_group_name        = azurerm_resource_group.example.name
+  app_service_plan_id        = azurerm_app_service_plan.example.id
+  application_insights_id    = azurerm_application_insights.example.id
+  storage_connection_string  = azurerm_storage_account.example.primary_connection_string
+  os_type                    = "linux"
+  version                    = "~3"
+  site_config {
+    application_insights_connection_string = azurerm_application_insights.example.connection_string
+  }
+}
+
+resource "azurerm_cosmosdb_account" "example" {
+  name                = "example-cosmos-db"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  offer_type          = "Standard"
+  kind                = "GlobalDocumentDB"
+  consistency_policy {
+    consistency_level = "BoundedStaleness"
+    max_interval_in_seconds = 10
+    max_staleness_prefix   = 200
+  }
+}
+
+resource "azurerm_sql_server" "example" {
+  name                         = "example-sql-server"
+  resource_group_name          = azurerm_resource_group.example.name
+  location                     = azurerm_resource_group.example.location
+  version                      = "12.0"
+  administrator_login          = "sqladmin"
+  administrator_login_password = var.sql_admin_password
+}
+
+resource "azurerm_sql_database" "example" {
+  name                = "example-sql-db"
+  resource_group_name = azurerm_sql_server.example.resource_group_name
+  location            = azurerm_sql_server.example.location
+  server_name         = azurerm_sql_server.example.name
+  sku_name            = "Basic"
+}
+
+resource "azurerm_key_vault" "example" {
+  name                = "example-key-vault"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+}
+
+resource "azurerm_key_vault_access_policy" "example" {
+  key_vault_id = azurerm_key_vault.example.id
+  tenant_id    = data.azurerm_client_config.example.tenant_id
+  object_id    = data.azurerm_client_config.example.object_id
+}
+
+resource "azurerm_key_vault_key" "example" {
+  name        = "example-key"
+  key_vault_id = azurerm_key_vault.example.id
+  key_type    = "RSA"
+  key_size    = 2048
+}
+
+resource "azurerm_key_vault_secret" "example" {
+  name         = "example-secret"
+  value        = var.key_vault_secret_value
+  key_vault_id = azurerm_key_vault.example.id
+}
+
+resource "azurerm_active_directory_domain_service" "example" {
+  name                = "example-adds"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  domain_name         = "example.com"
 }
