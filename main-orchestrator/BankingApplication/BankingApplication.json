@@ -267,17 +267,32 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture ensures a secure, scalable, and user-friendly banking self-service portal, following best practices for security, performance, and maintainability. It encompasses services for frontend, backend, security, integration, business logic, notifications, logging, data protection, and CI/CD using Azure services.",
+    "description": "Modern self-service banking portal leveraging Azure services for security, scalability, and performance.",
     "nodes": [
       {
-        "id": "FrontendServices",
+        "id": "Frontend",
+        "data": {
+          "label": "User Interface"
+        },
+        "position": {
+          "x": 0,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
         "type": "group",
         "data": {
           "label": "Frontend Services"
         },
         "position": {
-          "x": 0,
-          "y": 0
+          "x": 200,
+          "y": 50
         },
         "style": {
           "width": 300,
@@ -289,293 +304,117 @@
         }
       },
       {
-        "id": "Security",
-        "type": "group",
-        "data": {
-          "label": "Security"
-        },
-        "position": {
-          "x": 350,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "IntegrationServices",
-        "type": "group",
-        "data": {
-          "label": "Integration Services"
-        },
-        "position": {
-          "x": 700,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "BackendServices",
-        "type": "group",
-        "data": {
-          "label": "Backend Services"
-        },
-        "position": {
-          "x": 0,
-          "y": 250
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "BusinessLogic",
-        "type": "group",
-        "data": {
-          "label": "Business Logic"
-        },
-        "position": {
-          "x": 350,
-          "y": 250
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "NotificationServices",
-        "type": "group",
-        "data": {
-          "label": "Notification Services"
-        },
-        "position": {
-          "x": 700,
-          "y": 250
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-WebApp",
-        "data": {
-          "label": "Web Application"
-        },
-        "position": {
-          "x": 20,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "FrontendServices",
-        "extent": "parent"
-      },
-      {
-        "id": "node-MobileApp",
-        "data": {
-          "label": "Mobile Application"
-        },
-        "position": {
-          "x": 20,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "FrontendServices",
-        "extent": "parent"
-      },
-      {
-        "id": "node-Auth",
-        "data": {
-          "label": "Authentication and Authorization"
-        },
-        "position": {
-          "x": 370,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "Security",
-        "extent": "parent"
-      },
-      {
-        "id": "node-NetworkSec",
-        "data": {
-          "label": "Network Security"
-        },
-        "position": {
-          "x": 370,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "Security",
-        "extent": "parent"
-      },
-      {
-        "id": "node-APIGateway",
+        "id": "node-1a",
         "data": {
           "label": "API Gateway"
         },
         "position": {
-          "x": 720,
-          "y": 20
+          "x": 50,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "IntegrationServices",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "node-CoreBankingInt",
+        "id": "group-2",
+        "type": "group",
         "data": {
-          "label": "Core Banking Integration"
+          "label": "Server-Side Services"
         },
         "position": {
-          "x": 720,
-          "y": 100
+          "x": 600,
+          "y": 50
         },
         "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "IntegrationServices",
-        "extent": "parent"
+        }
       },
       {
-        "id": "node-WebHosting",
+        "id": "node-2a",
         "data": {
-          "label": "Web Application Hosting"
+          "label": "Web Services"
         },
         "position": {
-          "x": 20,
-          "y": 270
+          "x": 50,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "BackendServices",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "node-Database",
+        "id": "group-3",
+        "type": "group",
         "data": {
           "label": "Database"
         },
         "position": {
-          "x": 20,
-          "y": 320
+          "x": 1000,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-3a",
+        "data": {
+          "label": "SQL Database"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "BackendServices",
+        "parentId": "group-3",
         "extent": "parent"
       },
       {
-        "id": "node-Workflow",
+        "id": "node-3b",
         "data": {
-          "label": "Workflow Management"
+          "label": "NoSQL Database"
         },
         "position": {
-          "x": 370,
-          "y": 270
+          "x": 150,
+          "y": 50
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "BusinessLogic",
-        "extent": "parent"
-      },
-      {
-        "id": "node-EventDriven",
-        "data": {
-          "label": "Event-Driven Architecture"
-        },
-        "position": {
-          "x": 370,
-          "y": 320
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "BusinessLogic",
-        "extent": "parent"
-      },
-      {
-        "id": "node-EmailNotifs",
-        "data": {
-          "label": "Email Notifications"
-        },
-        "position": {
-          "x": 720,
-          "y": 270
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "NotificationServices",
+        "parentId": "group-3",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "node-WebApp",
-        "target": "node-CoreBankingInt",
+        "id": "e1-1a",
+        "source": "Frontend",
+        "target": "node-1a",
         "type": "default",
         "animated": true,
         "style": {
@@ -583,9 +422,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "node-MobileApp",
-        "target": "node-APIGateway",
+        "id": "e1-2a",
+        "source": "node-1a",
+        "target": "node-2a",
         "type": "default",
         "animated": true,
         "style": {
@@ -593,9 +432,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "node-Database",
-        "target": "node-Workflow",
+        "id": "e2-3a",
+        "source": "node-2a",
+        "target": "node-3a",
         "type": "default",
         "animated": true,
         "style": {
@@ -603,29 +442,9 @@
         }
       },
       {
-        "id": "e4",
-        "source": "node-Auth",
-        "target": "node-WebHosting",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5",
-        "source": "node-NetworkSec",
-        "target": "node-EventDriven",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6",
-        "source": "node-WebHosting",
-        "target": "node-EmailNotifs",
+        "id": "e2-3b",
+        "source": "node-2a",
+        "target": "node-3b",
         "type": "default",
         "animated": true,
         "style": {
