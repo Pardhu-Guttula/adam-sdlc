@@ -1,140 +1,87 @@
 provider "azurerm" {
-  features {}
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 4.56.0"
     }
   }
+  features {}
 }
-
-resource "azurerm_app_service" "frontend_app" {
-  name                = "myAppService"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  app_service_plan_id = azurerm_app_service_plan.app_service_plan.id
-  site_config {
-    always_on                 = true
-    dotnet_framework_version  = "v4.0"
-  }
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "West Europe"
 }
-
-resource "azurerm_traffic_manager_profile" "frontend_traffic" {
-  name                = "myTrafficManager"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = "global"
-  profile_status      = "Enabled"
-  traffic_routing_method = "Performance"
-  dns_config {
-    relative_name    = "myTrafficManager"
-    ttl              = 30
-  }
-  monitor_config {
-    protocol         = "HTTP"
-    port             = 80
-    path             = "/"
-  }
+resource "azurerm_app_service" "example" {
+  name                = "example-app"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  app_service_plan_id = azurerm_app_service_plan.example.id
 }
-
-resource "azurerm_application_gateway" "userexp_gateway" {
-  name                = "myAppGateway"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  sku {
-    name     = "Standard_v2"
-    tier     = "Standard_v2"
-    capacity = 2
-  }
-  gateway_ip_configuration {
-    name      = "myGatewayIpConfig"
-    subnet_id = azurerm_subnet.subnet.id
-  }
-  frontend_port {
-    name = "frontendPort"
-    port = 80
-  }
-  frontend_ip_configuration {
-    name                 = "frontendIpConfig"
-    public_ip_address_id = azurerm_public_ip.public_ip.id
-  }
-  backend_address_pool {
-    name = "backendAddressPool"
-  }
-  http_listener {
-    name                           = "httpListener"
-    frontend_ip_configuration_name = "frontendIpConfig"
-    frontend_port_name             = "frontendPort"
-    protocol                       = "Http"
-  }
-  url_path_map {
-    name                = "urlPathMap"
-    default_backend_address_pool_name = "backendAddressPool"
-    default_redirect_configuration {
-      redirect_type = "Found"
-      target_url    = "https://example.com"
-    }
-  }
-}
-
-resource "azurerm_cdn_profile" "userexp_cdn" {
-  name                = "myCdnProfile"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  sku                 = "Standard_Microsoft"
-}
-
-resource "azurerm_cdn_endpoint" "cdn_endpoint" {
-  name                = "myCdnEndpoint"
-  profile_name        = azurerm_cdn_profile.userexp_cdn.name
-  resource_group_name = azurerm_resource_group.rg.name
-  origin {
-    name      = "cdn-origin"
-    host_name = azurerm_app_service.frontend_app.default_site_hostname
-  }
-  delivery_rule_cache_expiration_action {
-    name                   = "no-store"
-    match_condition_list {
-      match_variable  = "UrlPath"
-      operator        = "Any"
-    }
-    parameters {
-      cache_behavior = "BypassCache"
-    }
-  }
-}
-
-resource "azurerm_resource_group" "rg" {
-  name     = var.resource_group_name
-  location = var.location
-}
-
-resource "azurerm_app_service_plan" "app_service_plan" {
-  name                = "myAppServicePlan"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+resource "azurerm_app_service_plan" "example" {
+  name                = "example-app-service-plan"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
   sku {
     tier = "Standard"
     size = "S1"
   }
 }
-
-resource "azurerm_public_ip" "public_ip" {
-  name                = "myPublicIp"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  allocation_method   = "Dynamic"
+resource "azurerm_sql_server" "example" {
+  name                         = "example-sql-server"
+  resource_group_name          = azurerm_resource_group.example.name
+  location                     = azurerm_resource_group.example.location
+  version                      = "12.0"
+  administrator_login          = "adminlogin"
+  administrator_login_password = "H@Sh1CoR3!"
 }
-
-resource "azurerm_subnet" "subnet" {
-  name                 = "mySubnet"
-  resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.1.0/24"]
+resource "azurerm_sql_database" "example" {
+  name                = "example-sql-database"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  server_name         = azurerm_sql_server.example.name
+  requested_service_objective_name = "S0"
 }
-
-resource "azurerm_virtual_network" "vnet" {
-  name                = "myVnet"
-  address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+resource "azurerm_storage_account" "example" {
+  name                     = "examplestorageacc"
+  resource_group_name      = azurerm_resource_group.example.name
+  location                 = azurerm_resource_group.example.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+resource "azurerm_monitor_diagnostic_setting" "example" {
+  name                       = "example"
+  target_resource_id         = azurerm_app_service.example.id
+  log_analytics_workspace_id = azurerm_log_analytics_workspace.example.id
+  enabled_log {
+    category = "AppServiceHTTPLogs"
+    enabled  = true
+  }
+}
+resource "azurerm_log_analytics_workspace" "example" {
+  name                = "example-workspace"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  sku                 = "PerGB2018"
+}
+resource "azurerm_role_assignment" "example" {
+  scope                = azurerm_resource_group.example.id
+  role_definition_name = "Contributor"
+  principal_id         = "<principal_ID>"
+}
+resource "azurerm_monitor_metric_alert" "example" {
+  name                = "example"
+  resource_group_name = azurerm_resource_group.example.name
+  scopes              = [azurerm_app_service.example.id]
+  criteria {
+    metric_namespace = "Microsoft.Web/sites"
+    metric_name      = "Http5xx"
+    aggregation      = "Total"
+    operator         = "GreaterThan"
+    threshold        = 1
+  }
+}
+resource "azurerm_dev_test_lab" "example" {
+  name                = "example"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
 }
