@@ -4,32 +4,32 @@
   "epics": [
     {
       "id": "EPIC-1",
-      "title": "User Authentication and Access Control",
-      "summary": "Implement secure enterprise authentication and RBAC system",
-      "description": "Develop a secure authentication and authorization module that integrates with enterprise identity providers (e.g., SAML, OAuth, LDAP). Implement role-based access control (RBAC) to ensure users only see and act upon resources based on their assigned roles and permissions. Include tenant isolation to segregate user data securely and support multi-tenant environments.",
+      "title": "Enterprise Authentication and Access Management",
+      "summary": "Integrate enterprise authentication and implement role-based access control",
+      "description": "Develop a secure login mechanism integrated with enterprise identity providers using protocols such as SAML, OAuth2, or OpenID Connect. Implement role-based access control (RBAC) to ensure users access only authorized resources and data. Enforce tenant isolation to maintain separation of data across multiple organizations while providing a seamless user experience.",
       "dependencies": []
     },
     {
       "id": "EPIC-2",
-      "title": "Cloud Account Onboarding and Integration",
-      "summary": "Enable onboarding of cloud accounts across AWS, Azure, GCP, and IBM Cloud",
-      "description": "Design and implement account onboarding workflows for each supported cloud provider. The system should securely store credentials or access tokens, validate permissions, and establish integration with providers’ APIs. Ensure seamless connectivity to AWS, Azure, GCP, and IBM Cloud. Handle errors gracefully and maintain audit logs of all onboarding activities.",
+      "title": "Multi-Cloud Account Onboarding and API Integration",
+      "summary": "Enable onboarding of AWS, Azure, GCP, and IBM Cloud accounts with secure API integration",
+      "description": "Design and implement workflows for securely onboarding cloud accounts across multiple providers. Integrate with AWS, Azure, GCP, and IBM Cloud APIs to validate credentials, set permissions, and securely manage secrets or tokens. Ensure consistent validation, error handling, and audit logging throughout the onboarding process.",
       "dependencies": []
     },
     {
       "id": "EPIC-3",
-      "title": "Cloud Resource Discovery and Normalization",
-      "summary": "Automatically discover and normalize cloud resources across providers",
-      "description": "Develop automated discovery mechanisms using cloud APIs to fetch resource metadata, configurations, and tags across multiple cloud providers. Normalize discovered data into a common schema for unified reporting and visualization. Ensure periodic syncing, delta updates, and resiliency in case of API failures.",
+      "title": "Resource Discovery and Data Normalization",
+      "summary": "Automatically discover resources and normalize multi-cloud data for unified analysis",
+      "description": "Build automated discovery mechanisms using provider APIs to continuously identify and update cloud resources. Normalize asset data into a consistent schema to enable unified reporting and visualization. Ensure discovery runs at scheduled intervals or on-demand, maintaining accuracy even with frequent resource changes.",
       "dependencies": [
         "EPIC-2"
       ]
     },
     {
       "id": "EPIC-4",
-      "title": "Unified Dashboard and Visualization",
-      "summary": "Create a single-pane dashboard for inventory, cost, security, and compliance insights",
-      "description": "Develop a frontend dashboard that presents a unified, role-based view of cloud resources, costs, security posture, and compliance metrics. Provide drill-down capabilities for users to explore data by cloud, region, or service. Include filtering, search, and visualization widgets to make the dashboard interactive and informative.",
+      "title": "Single-Pane Dashboard and Visualization",
+      "summary": "Develop an interactive, personalized dashboard showing cloud inventory, cost, security, and compliance insights",
+      "description": "Create a dynamic user interface that consolidates cross-provider insights into a unified dashboard. Display real-time data on resource inventory, spending, security posture, and compliance metrics. Support customization based on user role and preferences, with filters, drill-downs, and visual widgets for actionable insights.",
       "dependencies": [
         "EPIC-1",
         "EPIC-3"
@@ -37,18 +37,18 @@
     },
     {
       "id": "EPIC-5",
-      "title": "Cost Management and Optimization Insights",
-      "summary": "Analyze and recommend cost optimization opportunities",
-      "description": "Integrate with billing and cost APIs from each cloud provider to aggregate cost data. Implement analytics to identify unused or underutilized resources, and provide actionable cost optimization suggestions. Support exporting or scheduling cost reports and visualizations for transparency and governance.",
+      "title": "Cost Analysis and Optimization Engine",
+      "summary": "Aggregate cloud billing data and provide cost optimization strategies",
+      "description": "Integrate with cloud billing APIs to collect and consolidate cost data across providers. Analyze spending patterns, detect anomalies, and identify savings opportunities such as unused resources or rightsizing options. Provide configurable reports and visualizations that help organizations monitor budgets and plan cloud expenditures effectively.",
       "dependencies": [
         "EPIC-3"
       ]
     },
     {
       "id": "EPIC-6",
-      "title": "Security and Compliance Monitoring",
-      "summary": "Provide rule-based security and compliance assessments across environments",
-      "description": "Develop a rule engine to continuously assess cloud configurations against security best practices and compliance frameworks such as CIS, NIST, and ISO. Display findings with clear rule explanations, severity levels, and remediation guidance. Integrate with cloud-native security tools and compliance services where applicable.",
+      "title": "Security Posture and Compliance Assessment",
+      "summary": "Implement a compliance engine for real-time security and compliance posture evaluation",
+      "description": "Develop a compliance assessment module with rule-based checks aligned to best practices and regulatory standards such as CIS, ISO 27001, and NIST. Continuously assess resource configurations and generate findings with severity levels and recommended remediations. Integrate with native cloud security APIs to enhance coverage and provide consolidated compliance reporting.",
       "dependencies": [
         "EPIC-3"
       ]
@@ -56,8 +56,8 @@
     {
       "id": "EPIC-7",
       "title": "Governance Automation and CI/CD Integration",
-      "summary": "Enable workflow automation and policy enforcement through CI/CD and IaC tools",
-      "description": "Integrate with CI/CD systems and Infrastructure-as-Code (IaC) tools to trigger automated workflows for governance and policy enforcement. Allow users to define automation rules that initiate environment creation, tagging, or policy actions. Support integrations with platforms such as Jenkins, GitLab, Terraform, and ServiceNow.",
+      "summary": "Enable policy-driven automation workflows via CI/CD and IaC tools",
+      "description": "Integrate governance automation workflows with CI/CD pipelines and Infrastructure-as-Code tools such as Terraform, Jenkins, and GitLab CI. Provide mechanisms to trigger automated environment creation, tagging enforcement, or policy remediation actions based on defined security or compliance events. Ensure auditability and reversibility of automated actions.",
       "dependencies": [
         "EPIC-5",
         "EPIC-6"
@@ -65,9 +65,9 @@
     },
     {
       "id": "EPIC-8",
-      "title": "Alerts, Notifications, and Real-Time Updates",
-      "summary": "Implement proactive alerting and real-time notifications for key events",
-      "description": "Create a robust alerting system that generates real-time notifications for cost anomalies, security risks, and compliance violations. Support delivery through multiple channels such as email, chat, and webhook integrations. Include configurable thresholds and escalation policies for different severity levels.",
+      "title": "Real-Time Alerts and Notifications",
+      "summary": "Implement an alerting framework for costs, security, and compliance events",
+      "description": "Build an event-driven alerting and notification system that provides real-time updates on cost spikes, security threats, and compliance violations. Support multi-channel delivery including email, chat, and webhooks. Allow customizable thresholds, escalation rules, and suppression policies to reduce noise and ensure timely response.",
       "dependencies": [
         "EPIC-4",
         "EPIC-6"
@@ -75,9 +75,9 @@
     },
     {
       "id": "EPIC-9",
-      "title": "Audit Logging and Activity History",
-      "summary": "Maintain a comprehensive audit trail of all user actions and system changes",
-      "description": "Implement a secure auditing system that records every significant user and system action, including logins, configuration changes, and automation triggers. Support search, filtering, and export of audit records for compliance and investigation. Ensure immutability and integrity of the audit trail.",
+      "title": "Audit Trail and Activity Logging",
+      "summary": "Establish full auditing and history tracking for all platform activities",
+      "description": "Implement an immutable audit logging system that records every user action, system event, and workflow execution. Store metadata such as timestamps, action details, and actor information in a secure and queryable format. Support retention policies and export options to facilitate compliance and investigations.",
       "dependencies": [
         "EPIC-1",
         "EPIC-7"
@@ -85,9 +85,9 @@
     },
     {
       "id": "EPIC-10",
-      "title": "Performance, Scalability, and Reliability Enhancements",
-      "summary": "Ensure the platform performs efficiently and scales reliably",
-      "description": "Enhance the platform’s architecture to handle large-scale multi-tenant operations efficiently. Implement performance optimizations at the API, database, and frontend levels. Support horizontal scaling, load balancing, and fault tolerance to ensure consistent performance under heavy load.",
+      "title": "Scalability, Performance, and Resilience Enhancements",
+      "summary": "Optimize system design for scalability, uptime, and high performance",
+      "description": "Architect and optimize the platform to scale efficiently with user growth and multi-cloud data volumes. Implement load balancing, caching, asynchronous processing, and horizontal scaling mechanisms. Ensure robust performance monitoring, disaster recovery strategies, and fault-tolerant design to deliver consistent performance under varying workloads.",
       "dependencies": [
         "EPIC-3",
         "EPIC-4",
