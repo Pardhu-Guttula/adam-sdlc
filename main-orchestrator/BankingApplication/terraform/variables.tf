@@ -1,27 +1,16 @@
-variable "resource_group_name" {
-  description = "The name of the resource group"
-  type        = string
-  default     = "main-resource-group"
-}
-
 variable "location" {
-  description = "The location of the resource group"
+  description = "The location where resources will be created."
   type        = string
-  default     = "West Europe"
+  default     = "East US"
 }
 
 variable "sql_admin_username" {
-  description = "The administrator username for SQL Server"
+  description = "The admin username for the SQL Server."
   type        = string
 }
 
 variable "sql_admin_password" {
-  description = "The administrator password for SQL Server"
+  description = "The admin password for the SQL Server."
   type        = string
   sensitive   = true
-}
-
-variable "tenant_id" {
-  description = "The tenant ID for the subscription"
-  type        = string
 }
