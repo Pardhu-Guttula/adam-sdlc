@@ -1,3 +1,9 @@
 {
-  "user_prompt": "Create Epics and User Stories for the usecase"
+  "user_prompt": "Create Epics and User Stories for the usecase",
+  "repo_link": "https://github.com/Pardhu-Guttula/adam-sdlc",
+  "epics": null,
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
 }
