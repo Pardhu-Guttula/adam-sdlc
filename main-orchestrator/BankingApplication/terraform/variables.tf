@@ -1,9 +1,11 @@
-variable "sql_admin_login" {
-  description = "The administrator login for the SQL server."
+variable "resource_group_name" {
+  description = "The name of the resource group to create or use"
   type        = string
+  default     = "example-resources"
 }
 
-variable "sql_admin_password" {
-  description = "The password for the SQL server administration."
+variable "location" {
+  description = "The Azure region where resources will be created"
   type        = string
+  default     = "East US"
 }
