@@ -362,7 +362,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been updated to address critical and recommended findings from the analysis. A Web Application Firewall (WAF) has been added to enhance security for the frontend web application. Disaster recovery and geo-replication strategies have been implemented for backend services to ensure high availability and resilience. The updated architecture adheres to the Azure Well-Architected Framework, improving security, reliability, and operational excellence while maintaining scalability and cost efficiency.",
+    "updatedDescription": "The updated architecture diagram includes enhancements for security and reliability, such as the addition of Azure Web Application Firewall (WAF) for the frontend web app and placeholders for geo-replication and disaster recovery configurations for backend services. The architecture is now more robust, secure, and aligned with Azure Well-Architected Framework principles.",
     "nodes": [
       {
         "id": "frontend-web-app",
@@ -486,48 +486,46 @@
         "extent": "parent"
       },
       {
-        "id": "web-application-firewall",
+        "id": "azure-waf",
         "data": {
-          "label": "Web Application Firewall (WAF)"
+          "label": "Azure Web Application Firewall"
         },
         "position": {
           "x": 50,
           "y": 100
         },
         "style": {
-          "border": "1px solid #FF0000",
+          "border": "none",
           "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "geo-replication-placeholder",
+        "data": {
+          "label": "Placeholder: Geo-Replication"
+        },
+        "position": {
+          "x": 700,
+          "y": 50
+        },
+        "style": {
+          "border": "1px dashed #999",
           "backgroundColor": "#FFF8E1"
         }
       },
       {
-        "id": "azure-app-service-dr",
+        "id": "disaster-recovery-placeholder",
         "data": {
-          "label": "Azure App Service (DR)"
+          "label": "Placeholder: Disaster Recovery"
         },
         "position": {
-          "x": 900,
-          "y": 120
+          "x": 700,
+          "y": 250
         },
         "style": {
-          "border": "1px solid #0000FF",
-          "borderRadius": "12px",
-          "backgroundColor": "#E1F5FE"
-        }
-      },
-      {
-        "id": "azure-functions-dr",
-        "data": {
-          "label": "Azure Functions (DR)"
-        },
-        "position": {
-          "x": 900,
-          "y": 180
-        },
-        "style": {
-          "border": "1px solid #0000FF",
-          "borderRadius": "12px",
-          "backgroundColor": "#E1F5FE"
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
         }
       }
     ],
@@ -564,32 +562,32 @@
       },
       {
         "id": "e4",
-        "source": "web-application-firewall",
+        "source": "azure-waf",
         "target": "frontend-web-app",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#FF0000"
+          "stroke": "#000000"
         }
       },
       {
         "id": "e5",
-        "source": "azure-app-service",
-        "target": "azure-app-service-dr",
+        "source": "geo-replication-placeholder",
+        "target": "azure-app-service",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#0000FF"
+          "stroke": "#000000"
         }
       },
       {
         "id": "e6",
-        "source": "azure-functions",
-        "target": "azure-functions-dr",
+        "source": "disaster-recovery-placeholder",
+        "target": "azure-functions",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#0000FF"
+          "stroke": "#000000"
         }
       }
     ]
