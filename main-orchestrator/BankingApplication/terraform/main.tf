@@ -1,87 +1,99 @@
 provider "azurerm" {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.56.0"
-    }
-  }
   features {}
 }
+
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
+  name     = var.resource_group_name
+  location = var.location
 }
+
 resource "azurerm_app_service" "example" {
-  name                = "example-app"
+  name                = "example-appservice"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  app_service_plan_id = azurerm_app_service_plan.example.id
-}
-resource "azurerm_app_service_plan" "example" {
-  name                = "example-app-service-plan"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  sku {
-    tier = "Standard"
-    size = "S1"
+  app_service_plan_id = var.app_service_plan_id
+
+  app_settings = {
+    "SOME_KEY" = "some-value"
   }
 }
-resource "azurerm_sql_server" "example" {
-  name                         = "example-sql-server"
-  resource_group_name          = azurerm_resource_group.example.name
-  location                     = azurerm_resource_group.example.location
-  version                      = "12.0"
-  administrator_login          = "adminlogin"
-  administrator_login_password = "H@Sh1CoR3!"
+
+resource "azurerm_cognitive_account" "example" {
+  name                = "example-cogs"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  sku_name            = "S1"
+
+  tags = {
+    environment = "test"
+  }
 }
+
+resource "azurerm_sql_server" "example" {
+  name                = "example-sqlserver"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  version             = "12.0"
+  administrator_login = var.sql_admin_login
+  administrator_login_password = var.sql_admin_password
+}
+
 resource "azurerm_sql_database" "example" {
-  name                = "example-sql-database"
+  name                = "example-sqldb"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
   server_name         = azurerm_sql_server.example.name
   requested_service_objective_name = "S0"
 }
+
 resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacc"
+  name                     = "examplestoracct"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
-resource "azurerm_monitor_diagnostic_setting" "example" {
-  name                       = "example"
-  target_resource_id         = azurerm_app_service.example.id
-  log_analytics_workspace_id = azurerm_log_analytics_workspace.example.id
-  enabled_log {
-    category = "AppServiceHTTPLogs"
-    enabled  = true
-  }
+
+resource "azurerm_servicebus_namespace" "example" {
+  name                = "example-sbnamespace"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  sku                 = "Basic"
 }
+
+resource "azurerm_function_app" "example" {
+  name                = "example-funcapp"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  app_service_plan_id = var.app_service_plan_id
+  storage_account_name = azurerm_storage_account.example.name
+  storage_account_access_key = azurerm_storage_account.example.primary_access_key
+  version             = "~2"
+}
+
 resource "azurerm_log_analytics_workspace" "example" {
-  name                = "example-workspace"
+  name                = "example-law"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   sku                 = "PerGB2018"
 }
+
+resource "azurerm_monitor_diagnostic_setting" "example" {
+  name                        = "example-ds"
+  target_resource_id          = azurerm_app_service.example.id
+  log_analytics_workspace_id  = azurerm_log_analytics_workspace.example.id
+  enabled_log {
+    category = "AllLogs"
+    enabled  = true
+  }
+  metric {
+    category = "AllMetrics"
+    enabled  = true
+  }
+}
+
 resource "azurerm_role_assignment" "example" {
   scope                = azurerm_resource_group.example.id
   role_definition_name = "Contributor"
-  principal_id         = "<principal_ID>"
-}
-resource "azurerm_monitor_metric_alert" "example" {
-  name                = "example"
-  resource_group_name = azurerm_resource_group.example.name
-  scopes              = [azurerm_app_service.example.id]
-  criteria {
-    metric_namespace = "Microsoft.Web/sites"
-    metric_name      = "Http5xx"
-    aggregation      = "Total"
-    operator         = "GreaterThan"
-    threshold        = 1
-  }
-}
-resource "azurerm_dev_test_lab" "example" {
-  name                = "example"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  principal_id         = var.role_principal_id
 }
