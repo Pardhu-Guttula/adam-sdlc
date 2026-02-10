@@ -1,3 +1,2 @@
-location = "East US"
-sql_admin_username = "adminuser"
-sql_admin_password = "adminpass"
+sql_admin_login      = "adminuser"
+sql_admin_password   = "ChangeThisP@ssw0rd!"
