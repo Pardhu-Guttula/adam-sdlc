@@ -1,2 +1,5 @@
-resource_group_name = "myResourceGroup"
-location           = "East US"
+resource_group_name = "example-resources"
+location           = "West Europe"
+admin_login        = "adminlogin"
+admin_password     = "H@Sh1CoR3!"
+log_analytics_workspace_sku = "PerGB2018"
