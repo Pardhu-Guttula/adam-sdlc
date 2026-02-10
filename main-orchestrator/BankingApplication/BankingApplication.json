@@ -267,12 +267,12 @@
     }
   ],
   "architecture_generation": {
-    "description": "Modern self-service banking portal leveraging Azure services for security, scalability, and performance.",
+    "description": "This architecture ensures security, performance, high availability, and a seamless user experience across devices while integrating seamlessly with the existing core banking system.",
     "nodes": [
       {
-        "id": "Frontend",
+        "id": "user",
         "data": {
-          "label": "User Interface"
+          "label": "User"
         },
         "position": {
           "x": 0,
@@ -285,14 +285,14 @@
         }
       },
       {
-        "id": "group-1",
+        "id": "g-frontend",
         "type": "group",
         "data": {
-          "label": "Frontend Services"
+          "label": "Front-End"
         },
         "position": {
-          "x": 200,
-          "y": 50
+          "x": 100,
+          "y": 150
         },
         "style": {
           "width": 300,
@@ -304,31 +304,14 @@
         }
       },
       {
-        "id": "node-1a",
-        "data": {
-          "label": "API Gateway"
-        },
-        "position": {
-          "x": 50,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "group-2",
+        "id": "g-auth",
         "type": "group",
         "data": {
-          "label": "Server-Side Services"
+          "label": "Authentication and Security"
         },
         "position": {
-          "x": 600,
-          "y": 50
+          "x": 450,
+          "y": 150
         },
         "style": {
           "width": 300,
@@ -340,31 +323,14 @@
         }
       },
       {
-        "id": "node-2a",
-        "data": {
-          "label": "Web Services"
-        },
-        "position": {
-          "x": 50,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
+        "id": "g-userexp",
         "type": "group",
         "data": {
-          "label": "Database"
+          "label": "User Experience"
         },
         "position": {
-          "x": 1000,
-          "y": 50
+          "x": 800,
+          "y": 150
         },
         "style": {
           "width": 300,
@@ -376,45 +342,113 @@
         }
       },
       {
-        "id": "node-3a",
+        "id": "frontend-app",
         "data": {
-          "label": "SQL Database"
+          "label": "Azure App Service"
         },
         "position": {
-          "x": 50,
-          "y": 50
+          "x": 20,
+          "y": 30
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "g-frontend",
         "extent": "parent"
       },
       {
-        "id": "node-3b",
+        "id": "frontend-traffic",
         "data": {
-          "label": "NoSQL Database"
+          "label": "Azure Traffic Manager"
         },
         "position": {
           "x": 150,
-          "y": 50
+          "y": 30
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "g-frontend",
+        "extent": "parent"
+      },
+      {
+        "id": "auth-ad",
+        "data": {
+          "label": "Azure AD"
+        },
+        "position": {
+          "x": 20,
+          "y": 30
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-auth",
+        "extent": "parent"
+      },
+      {
+        "id": "auth-adb2c",
+        "data": {
+          "label": "Azure AD B2C"
+        },
+        "position": {
+          "x": 150,
+          "y": 30
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-auth",
+        "extent": "parent"
+      },
+      {
+        "id": "userexp-gateway",
+        "data": {
+          "label": "Azure Application Gateway"
+        },
+        "position": {
+          "x": 20,
+          "y": 30
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-userexp",
+        "extent": "parent"
+      },
+      {
+        "id": "userexp-cdn",
+        "data": {
+          "label": "Azure CDN"
+        },
+        "position": {
+          "x": 150,
+          "y": 30
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-userexp",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1-1a",
-        "source": "Frontend",
-        "target": "node-1a",
+        "id": "edge1",
+        "source": "user",
+        "target": "frontend-app",
         "type": "default",
         "animated": true,
         "style": {
@@ -422,9 +456,9 @@
         }
       },
       {
-        "id": "e1-2a",
-        "source": "node-1a",
-        "target": "node-2a",
+        "id": "edge2",
+        "source": "frontend-app",
+        "target": "frontend-traffic",
         "type": "default",
         "animated": true,
         "style": {
@@ -432,9 +466,9 @@
         }
       },
       {
-        "id": "e2-3a",
-        "source": "node-2a",
-        "target": "node-3a",
+        "id": "edge3",
+        "source": "frontend-traffic",
+        "target": "auth-ad",
         "type": "default",
         "animated": true,
         "style": {
@@ -442,9 +476,29 @@
         }
       },
       {
-        "id": "e2-3b",
-        "source": "node-2a",
-        "target": "node-3b",
+        "id": "edge4",
+        "source": "frontend-traffic",
+        "target": "auth-adb2c",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge5",
+        "source": "auth-ad",
+        "target": "userexp-gateway",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge6",
+        "source": "auth-adb2c",
+        "target": "userexp-cdn",
         "type": "default",
         "animated": true,
         "style": {
