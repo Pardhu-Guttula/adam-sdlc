@@ -1,99 +1,90 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 4.56.0"
+    }
+  }
+}
+
 provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
 }
 
-resource "azurerm_app_service" "example" {
-  name                = "example-appservice"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  app_service_plan_id = var.app_service_plan_id
-
-  app_settings = {
-    "SOME_KEY" = "some-value"
+resource "azurerm_app_service_plan" "asp" {
+  name                = "appserviceplan"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  sku {
+    tier = "Standard"
+    size = "S1"
   }
 }
 
-resource "azurerm_cognitive_account" "example" {
-  name                = "example-cogs"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  sku_name            = "S1"
-
-  tags = {
-    environment = "test"
+resource "azurerm_app_service" "webapp" {
+  name                = "webapp"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  app_service_plan_id = azurerm_app_service_plan.asp.id
+  site_config {
+    always_on = true
   }
 }
 
-resource "azurerm_sql_server" "example" {
-  name                = "example-sqlserver"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
+resource "azurerm_sql_server" "sqlserver" {
+  name                = "sqlserver"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   version             = "12.0"
-  administrator_login = var.sql_admin_login
+  administrator_login = var.sql_admin_username
   administrator_login_password = var.sql_admin_password
 }
 
-resource "azurerm_sql_database" "example" {
-  name                = "example-sqldb"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
-  server_name         = azurerm_sql_server.example.name
+resource "azurerm_sql_database" "sqldb" {
+  name                = "sqldb"
+  resource_group_name = azurerm_sql_server.sqlserver.resource_group_name
+  location            = azurerm_sql_server.sqlserver.location
+  server_name         = azurerm_sql_server.sqlserver.name
   requested_service_objective_name = "S0"
 }
 
-resource "azurerm_storage_account" "example" {
-  name                     = "examplestoracct"
-  resource_group_name      = azurerm_resource_group.example.name
-  location                 = azurerm_resource_group.example.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+resource "azurerm_api_management" "apim" {
+  name                = "apimservice"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  publisher_name      = "company"
+  publisher_email     = "company@example.com"
+  sku_name            = "Developer_1"
 }
 
-resource "azurerm_servicebus_namespace" "example" {
-  name                = "example-sbnamespace"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
-  sku                 = "Basic"
+resource "azurerm_application_insights" "appinsights" {
+  name                = "appinsights"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  application_type    = "web"
 }
 
-resource "azurerm_function_app" "example" {
-  name                = "example-funcapp"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  app_service_plan_id = var.app_service_plan_id
-  storage_account_name = azurerm_storage_account.example.name
-  storage_account_access_key = azurerm_storage_account.example.primary_access_key
-  version             = "~2"
+resource "azurerm_virtual_network" "vnet" {
+  name                = "vnet"
+  address_space       = ["10.0.0.0/16"]
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
 }
 
-resource "azurerm_log_analytics_workspace" "example" {
-  name                = "example-law"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  sku                 = "PerGB2018"
+resource "azurerm_subnet" "subnet" {
+  name                 = "subnet1"
+  resource_group_name  = azurerm_resource_group.rg.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = ["10.0.1.0/24"]
 }
 
-resource "azurerm_monitor_diagnostic_setting" "example" {
-  name                        = "example-ds"
-  target_resource_id          = azurerm_app_service.example.id
-  log_analytics_workspace_id  = azurerm_log_analytics_workspace.example.id
-  enabled_log {
-    category = "AllLogs"
-    enabled  = true
-  }
-  metric {
-    category = "AllMetrics"
-    enabled  = true
-  }
-}
-
-resource "azurerm_role_assignment" "example" {
-  scope                = azurerm_resource_group.example.id
-  role_definition_name = "Contributor"
-  principal_id         = var.role_principal_id
+resource "azurerm_network_security_group" "nsg" {
+  name                = "nsg"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
 }
