@@ -1,5 +1,3 @@
-resource_group_name = "banking-portal-rg"
-location           = "East US"
+location = "East US"
 sql_admin_username = "adminuser"
-sql_admin_password = "P@ssw0rd1234!"
-tenant_id          = "00000000-0000-0000-0000-000000000000"
+sql_admin_password = "adminpass"
