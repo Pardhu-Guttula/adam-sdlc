@@ -1,2 +1,2 @@
-sql_admin_login      = "adminuser"
-sql_admin_password   = "ChangeThisP@ssw0rd!"
+resource_group_name = "example-resources"
+location           = "East US"
