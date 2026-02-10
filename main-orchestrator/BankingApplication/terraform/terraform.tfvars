@@ -1,2 +1,2 @@
-resource_group_name = "example-resources"
+resource_group_name = "myResourceGroup"
 location           = "East US"
