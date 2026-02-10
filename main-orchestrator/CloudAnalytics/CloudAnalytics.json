@@ -95,7 +95,7 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_link": null,
   "user_stories": [
     {
       "epic_title": "User Authentication and Access Control",
@@ -207,12 +207,12 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture provides a unified cloud management platform for managing resources across AWS, Azure, GCP, and IBM Cloud, including API integrations, authentication, data management, security, cost management, automation, scalability, and connectivity.",
+    "description": "Multi-cloud self-service platform integrating resources from various cloud providers with comprehensive management features including enterprise authentication, real-time updates, CI/CD integration, role-based access control, and compliance requirements.",
     "nodes": [
       {
-        "id": "MainEntry",
+        "id": "User",
         "data": {
-          "label": "Main Entry Point"
+          "label": "Frontend User Interface"
         },
         "position": {
           "x": 50,
@@ -228,15 +228,15 @@
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "User and Authentication Group"
+          "label": "Identity and Access Management"
         },
         "position": {
           "x": 200,
           "y": 50
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -244,30 +244,13 @@
         }
       },
       {
-        "id": "AAD",
+        "id": "azure-ad",
         "data": {
           "label": "Azure Active Directory"
         },
         "position": {
-          "x": 100,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "SSO",
-        "data": {
-          "label": "Single Sign-On"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
+          "x": 0,
+          "y": 0
         },
         "style": {
           "border": "none",
@@ -281,15 +264,15 @@
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Data Aggregation and Normalization Group"
+          "label": "CI/CD Integration and IaC"
         },
         "position": {
-          "x": 550,
+          "x": 500,
           "y": 50
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -297,30 +280,13 @@
         }
       },
       {
-        "id": "SQL",
+        "id": "terraform-cloud",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Terraform Cloud"
         },
         "position": {
-          "x": 100,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "CosmosDB",
-        "data": {
-          "label": "Cosmos DB"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
+          "x": 0,
+          "y": 0
         },
         "style": {
           "border": "none",
@@ -334,15 +300,15 @@
         "id": "group-3",
         "type": "group",
         "data": {
-          "label": "Security and Compliance Group"
+          "label": "Real-Time Monitoring"
         },
         "position": {
-          "x": 900,
+          "x": 800,
           "y": 50
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -350,30 +316,13 @@
         }
       },
       {
-        "id": "SecurityCenter",
+        "id": "azure-monitor",
         "data": {
-          "label": "Azure Security Center"
+          "label": "Azure Monitor"
         },
         "position": {
-          "x": 100,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "Policies",
-        "data": {
-          "label": "Azure Policy"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
+          "x": 0,
+          "y": 0
         },
         "style": {
           "border": "none",
@@ -387,15 +336,15 @@
         "id": "group-4",
         "type": "group",
         "data": {
-          "label": "Cost Management Group"
+          "label": "Security and Compliance"
         },
         "position": {
-          "x": 1250,
+          "x": 1100,
           "y": 50
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -403,30 +352,13 @@
         }
       },
       {
-        "id": "CostManagement",
+        "id": "azure-security-center",
         "data": {
-          "label": "Azure Cost Management"
+          "label": "Azure Security Center"
         },
         "position": {
-          "x": 100,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
-        "extent": "parent"
-      },
-      {
-        "id": "OptimizationTools",
-        "data": {
-          "label": "Cost Optimization Tools"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
+          "x": 0,
+          "y": 0
         },
         "style": {
           "border": "none",
@@ -440,15 +372,15 @@
         "id": "group-5",
         "type": "group",
         "data": {
-          "label": "Automation and CI/CD Group"
+          "label": "Cost Management"
         },
         "position": {
-          "x": 1600,
+          "x": 1400,
           "y": 50
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -456,30 +388,13 @@
         }
       },
       {
-        "id": "DevOpsPipelines",
+        "id": "azure-cost-management",
         "data": {
-          "label": "Azure DevOps Pipelines"
+          "label": "Azure Cost Management"
         },
         "position": {
-          "x": 100,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-5",
-        "extent": "parent"
-      },
-      {
-        "id": "Terraform",
-        "data": {
-          "label": "Terraform"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
+          "x": 0,
+          "y": 0
         },
         "style": {
           "border": "none",
@@ -493,15 +408,15 @@
         "id": "group-6",
         "type": "group",
         "data": {
-          "label": "Audit and Logging Group"
+          "label": "Policy Enforcement"
         },
         "position": {
-          "x": 1950,
+          "x": 1700,
           "y": 50
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -509,30 +424,13 @@
         }
       },
       {
-        "id": "LogAnalytics",
+        "id": "azure-policy",
         "data": {
-          "label": "Azure Log Analytics"
+          "label": "Azure Policy"
         },
         "position": {
-          "x": 100,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-6",
-        "extent": "parent"
-      },
-      {
-        "id": "ELKStack",
-        "data": {
-          "label": "Centralized Logging Platform (ELK)"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
+          "x": 0,
+          "y": 0
         },
         "style": {
           "border": "none",
@@ -546,8 +444,8 @@
     "edges": [
       {
         "id": "e1",
-        "source": "MainEntry",
-        "target": "AAD",
+        "source": "User",
+        "target": "azure-ad",
         "type": "default",
         "animated": true,
         "style": {
@@ -556,8 +454,8 @@
       },
       {
         "id": "e2",
-        "source": "AAD",
-        "target": "SQL",
+        "source": "azure-ad",
+        "target": "terraform-cloud",
         "type": "default",
         "animated": true,
         "style": {
@@ -566,8 +464,8 @@
       },
       {
         "id": "e3",
-        "source": "SQL",
-        "target": "SecurityCenter",
+        "source": "terraform-cloud",
+        "target": "azure-monitor",
         "type": "default",
         "animated": true,
         "style": {
@@ -576,8 +474,8 @@
       },
       {
         "id": "e4",
-        "source": "SecurityCenter",
-        "target": "CostManagement",
+        "source": "azure-monitor",
+        "target": "azure-security-center",
         "type": "default",
         "animated": true,
         "style": {
@@ -586,8 +484,8 @@
       },
       {
         "id": "e5",
-        "source": "CostManagement",
-        "target": "DevOpsPipelines",
+        "source": "azure-security-center",
+        "target": "azure-cost-management",
         "type": "default",
         "animated": true,
         "style": {
@@ -596,8 +494,8 @@
       },
       {
         "id": "e6",
-        "source": "DevOpsPipelines",
-        "target": "LogAnalytics",
+        "source": "azure-cost-management",
+        "target": "azure-policy",
         "type": "default",
         "animated": true,
         "style": {
