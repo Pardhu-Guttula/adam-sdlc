@@ -266,88 +266,12 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture supports a banking self-service portal with secure, scalable and efficient management of users' banking needs, incorporating a user-friendly interface, secure authentication, backend services, and audit logs.",
+    "description": "This architecture describes a modern, user-friendly self-service banking portal using various Azure resources for frontend, backend, database, integration, monitoring, security, and DevOps capabilities.",
     "nodes": [
       {
-        "id": "ui-group",
-        "type": "group",
+        "id": "Frontend",
         "data": {
-          "label": "User Interface"
-        },
-        "position": {
-          "x": 0,
-          "y": 0
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "auth-group",
-        "type": "group",
-        "data": {
-          "label": "Authentication & Authorization"
-        },
-        "position": {
-          "x": 300,
-          "y": 0
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "backend-group",
-        "type": "group",
-        "data": {
-          "label": "Backend Services"
-        },
-        "position": {
-          "x": 600,
-          "y": 0
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "data-group",
-        "type": "group",
-        "data": {
-          "label": "Database & Data Storage"
-        },
-        "position": {
-          "x": 900,
-          "y": 0
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "frontend",
-        "data": {
-          "label": "Azure Static Web Apps"
+          "label": "Frontend (React.js)"
         },
         "position": {
           "x": 50,
@@ -357,67 +281,190 @@
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "ui-group",
-        "extent": "parent"
+        }
       },
       {
-        "id": "aad",
+        "id": "group-1",
+        "type": "group",
         "data": {
-          "label": "Azure Active Directory (AAD)"
+          "label": "Authentication and Authorization"
         },
         "position": {
-          "x": 350,
-          "y": 50
+          "x": 300,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 120,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "AAD",
+        "data": {
+          "label": "Azure AD B2C"
+        },
+        "position": {
+          "x": 320,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "auth-group",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "functions",
+        "id": "RBAC",
+        "data": {
+          "label": "RBAC"
+        },
+        "position": {
+          "x": 320,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 650,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 140,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "APIManagement",
+        "data": {
+          "label": "API Management"
+        },
+        "position": {
+          "x": 670,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "AppServices",
+        "data": {
+          "label": "Azure App Services"
+        },
+        "position": {
+          "x": 670,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "Functions",
         "data": {
           "label": "Azure Functions"
         },
         "position": {
-          "x": 650,
-          "y": 50
+          "x": 670,
+          "y": 200
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "backend-group",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "sql-db",
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Database and Storage"
+        },
+        "position": {
+          "x": 1000,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 120,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQLDatabase",
         "data": {
           "label": "Azure SQL Database"
         },
         "position": {
-          "x": 950,
-          "y": 50
+          "x": 1020,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "data-group",
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "BlobStorage",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 1020,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "edge-1",
-        "source": "frontend",
-        "target": "functions",
+        "id": "e1",
+        "source": "Frontend",
+        "target": "AAD",
         "type": "default",
         "animated": true,
         "style": {
@@ -425,9 +472,9 @@
         }
       },
       {
-        "id": "edge-2",
-        "source": "aad",
-        "target": "functions",
+        "id": "e2",
+        "source": "AAD",
+        "target": "APIManagement",
         "type": "default",
         "animated": true,
         "style": {
@@ -435,9 +482,9 @@
         }
       },
       {
-        "id": "edge-3",
-        "source": "functions",
-        "target": "sql-db",
+        "id": "e3",
+        "source": "APIManagement",
+        "target": "SQLDatabase",
         "type": "default",
         "animated": true,
         "style": {
