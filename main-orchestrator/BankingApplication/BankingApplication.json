@@ -267,36 +267,21 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture represents a self-service banking portal integrating frontend, authentication, backend services, integration, data storage, workflow automation, real-time communication, monitoring, analytics, authorization, and DevOps for secure and efficient user interaction and transaction management.",
+    "description": "This architecture diagram outlines a modern, user-friendly self-service banking portal, integrating frontend, backend, database, authentication/authorization, workflow, notification, security, user experience, and monitoring services to ensure comprehensive and secure operations.",
     "nodes": [
       {
-        "id": "Frontend",
-        "data": {
-          "label": "Web and Mobile Application"
-        },
-        "position": {
-          "x": 80,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-1",
+        "id": "frontend",
         "type": "group",
         "data": {
-          "label": "Authentication & Security"
+          "label": "Frontend Services"
         },
         "position": {
-          "x": 300,
-          "y": 50
+          "x": 0,
+          "y": 0
         },
         "style": {
           "width": 300,
-          "height": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -304,154 +289,101 @@
         }
       },
       {
-        "id": "AzureAD",
+        "id": "webapp",
         "data": {
-          "label": "Azure AD B2C"
+          "label": "Web Application"
         },
         "position": {
-          "x": 50,
-          "y": 40
+          "x": 10,
+          "y": 10
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "frontend",
         "extent": "parent"
       },
       {
-        "id": "APIManagement",
+        "id": "mobileapp",
         "data": {
-          "label": "API Management"
+          "label": "Mobile Application"
         },
         "position": {
-          "x": 50,
-          "y": 140
+          "x": 10,
+          "y": 70
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "frontend",
         "extent": "parent"
       },
       {
-        "id": "group-2",
+        "id": "auth",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Authorization"
+        },
+        "position": {
+          "x": 320,
+          "y": 0
+        },
+        "style": {
+          "width": 350,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "aad",
+        "data": {
+          "label": "Azure Active Directory"
+        },
+        "position": {
+          "x": 330,
+          "y": 10
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "auth",
+        "extent": "parent"
+      },
+      {
+        "id": "rbac",
+        "data": {
+          "label": "Role-Based Access Control"
+        },
+        "position": {
+          "x": 330,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "auth",
+        "extent": "parent"
+      },
+      {
+        "id": "backend",
         "type": "group",
         "data": {
           "label": "Backend Services"
         },
         "position": {
-          "x": 650,
-          "y": 50
-        },
-        "style": {
-          "width": 250,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "AppServices",
-        "data": {
-          "label": "App Services"
-        },
-        "position": {
-          "x": 50,
-          "y": 40
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "AzureFunctions",
-        "data": {
-          "label": "Azure Functions"
-        },
-        "position": {
-          "x": 50,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
-        "type": "group",
-        "data": {
-          "label": "Data Storage"
-        },
-        "position": {
-          "x": 920,
-          "y": 50
-        },
-        "style": {
-          "width": 350,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "SQLDatabase",
-        "data": {
-          "label": "SQL Database"
-        },
-        "position": {
-          "x": 50,
-          "y": 40
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "BlobStorage",
-        "data": {
-          "label": "Blob Storage"
-        },
-        "position": {
-          "x": 50,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "group-4",
-        "type": "group",
-        "data": {
-          "label": "Integration & Messaging"
-        },
-        "position": {
-          "x": 300,
-          "y": 350
+          "x": 690,
+          "y": 0
         },
         "style": {
           "width": 300,
@@ -463,52 +395,52 @@
         }
       },
       {
-        "id": "ServiceBus",
+        "id": "api",
         "data": {
-          "label": "Service Bus"
+          "label": "API Gateway"
         },
         "position": {
-          "x": 50,
-          "y": 40
+          "x": 700,
+          "y": 10
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-4",
+        "parentId": "backend",
         "extent": "parent"
       },
       {
-        "id": "DataFactory",
+        "id": "microservices",
         "data": {
-          "label": "Data Factory"
+          "label": "Microservices"
         },
         "position": {
-          "x": 50,
-          "y": 90
+          "x": 700,
+          "y": 70
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-4",
+        "parentId": "backend",
         "extent": "parent"
       },
       {
-        "id": "group-5",
+        "id": "database",
         "type": "group",
         "data": {
-          "label": "Workflow & Automation"
+          "label": "Database Services"
         },
         "position": {
-          "x": 650,
-          "y": 350
+          "x": 0,
+          "y": 180
         },
         "style": {
-          "width": 250,
-          "height": 100,
+          "width": 300,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -516,31 +448,48 @@
         }
       },
       {
-        "id": "LogicApps",
+        "id": "sql",
         "data": {
-          "label": "Logic Apps"
+          "label": "Azure SQL Database"
         },
         "position": {
-          "x": 50,
-          "y": 40
+          "x": 10,
+          "y": 190
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-5",
+        "parentId": "database",
         "extent": "parent"
       },
       {
-        "id": "group-6",
-        "type": "group",
+        "id": "blob",
         "data": {
-          "label": "Monitoring & Analytics"
+          "label": "Azure Blob Storage"
         },
         "position": {
-          "x": 920,
-          "y": 350
+          "x": 10,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "database",
+        "extent": "parent"
+      },
+      {
+        "id": "workflow",
+        "type": "group",
+        "data": {
+          "label": "Workflow Management"
+        },
+        "position": {
+          "x": 320,
+          "y": 180
         },
         "style": {
           "width": 350,
@@ -552,153 +501,240 @@
         }
       },
       {
-        "id": "AzureMonitor",
+        "id": "logicapps",
         "data": {
-          "label": "Azure Monitor"
+          "label": "Logic/Function Apps"
         },
         "position": {
-          "x": 50,
-          "y": 40
+          "x": 330,
+          "y": 190
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-6",
+        "parentId": "workflow",
         "extent": "parent"
       },
       {
-        "id": "AppInsights",
+        "id": "realtime",
+        "data": {
+          "label": "Real-Time Status Update"
+        },
+        "position": {
+          "x": 330,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "workflow",
+        "extent": "parent"
+      },
+      {
+        "id": "notification",
+        "type": "group",
+        "data": {
+          "label": "Notification Services"
+        },
+        "position": {
+          "x": 690,
+          "y": 180
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "communication",
+        "data": {
+          "label": "Azure Communication"
+        },
+        "position": {
+          "x": 700,
+          "y": 190
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "notification",
+        "extent": "parent"
+      },
+      {
+        "id": "security",
+        "type": "group",
+        "data": {
+          "label": "Security and Compliance"
+        },
+        "position": {
+          "x": 0,
+          "y": 360
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "encryption",
+        "data": {
+          "label": "Encryption Services"
+        },
+        "position": {
+          "x": 10,
+          "y": 370
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "security",
+        "extent": "parent"
+      },
+      {
+        "id": "securitycenter",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 10,
+          "y": 430
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "security",
+        "extent": "parent"
+      },
+      {
+        "id": "ux",
+        "type": "group",
+        "data": {
+          "label": "User Experience"
+        },
+        "position": {
+          "x": 320,
+          "y": 360
+        },
+        "style": {
+          "width": 350,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "session",
+        "data": {
+          "label": "Session Management"
+        },
+        "position": {
+          "x": 330,
+          "y": 370
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "ux",
+        "extent": "parent"
+      },
+      {
+        "id": "progress",
+        "data": {
+          "label": "Progress Saving"
+        },
+        "position": {
+          "x": 330,
+          "y": 430
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "ux",
+        "extent": "parent"
+      },
+      {
+        "id": "monitoring",
+        "type": "group",
+        "data": {
+          "label": "Monitoring and Logging"
+        },
+        "position": {
+          "x": 690,
+          "y": 360
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "insights",
         "data": {
           "label": "Application Insights"
         },
         "position": {
-          "x": 50,
-          "y": 90
+          "x": 700,
+          "y": 370
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-6",
+        "parentId": "monitoring",
         "extent": "parent"
       },
       {
-        "id": "group-7",
-        "type": "group",
+        "id": "azuremonitor",
         "data": {
-          "label": "Authorization"
+          "label": "Azure Monitor"
         },
         "position": {
-          "x": 300,
-          "y": 550
-        },
-        "style": {
-          "width": 300,
-          "height": 100,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "RBAC",
-        "data": {
-          "label": "Role-Based Access Control"
-        },
-        "position": {
-          "x": 50,
-          "y": 40
+          "x": 700,
+          "y": 430
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-7",
-        "extent": "parent"
-      },
-      {
-        "id": "group-8",
-        "type": "group",
-        "data": {
-          "label": "DevOps"
-        },
-        "position": {
-          "x": 650,
-          "y": 550
-        },
-        "style": {
-          "width": 250,
-          "height": 100,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "DevOpsServices",
-        "data": {
-          "label": "DevOps Services"
-        },
-        "position": {
-          "x": 50,
-          "y": 40
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-8",
-        "extent": "parent"
-      },
-      {
-        "id": "group-9",
-        "type": "group",
-        "data": {
-          "label": "Real-time Communication"
-        },
-        "position": {
-          "x": 920,
-          "y": 550
-        },
-        "style": {
-          "width": 250,
-          "height": 100,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "SignalRService",
-        "data": {
-          "label": "SignalR Service"
-        },
-        "position": {
-          "x": 50,
-          "y": 40
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-9",
+        "parentId": "monitoring",
         "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "Frontend",
-        "target": "group-1",
+        "source": "webapp",
+        "target": "aad",
         "type": "default",
         "animated": true,
         "style": {
@@ -707,8 +743,8 @@
       },
       {
         "id": "e2",
-        "source": "AzureAD",
-        "target": "AppServices",
+        "source": "mobileapp",
+        "target": "aad",
         "type": "default",
         "animated": true,
         "style": {
@@ -717,8 +753,8 @@
       },
       {
         "id": "e3",
-        "source": "APIManagement",
-        "target": "ServiceBus",
+        "source": "aad",
+        "target": "api",
         "type": "default",
         "animated": true,
         "style": {
@@ -727,8 +763,8 @@
       },
       {
         "id": "e4",
-        "source": "AppServices",
-        "target": "SQLDatabase",
+        "source": "rbac",
+        "target": "api",
         "type": "default",
         "animated": true,
         "style": {
@@ -737,8 +773,8 @@
       },
       {
         "id": "e5",
-        "source": "AzureFunctions",
-        "target": "BlobStorage",
+        "source": "api",
+        "target": "sql",
         "type": "default",
         "animated": true,
         "style": {
@@ -747,8 +783,8 @@
       },
       {
         "id": "e6",
-        "source": "SignalRService",
-        "target": "AppInsights",
+        "source": "api",
+        "target": "blob",
         "type": "default",
         "animated": true,
         "style": {
@@ -757,8 +793,8 @@
       },
       {
         "id": "e7",
-        "source": "LogicApps",
-        "target": "DevOpsServices",
+        "source": "microservices",
+        "target": "logicapps",
         "type": "default",
         "animated": true,
         "style": {
@@ -767,8 +803,8 @@
       },
       {
         "id": "e8",
-        "source": "RBAC",
-        "target": "AzureMonitor",
+        "source": "logicapps",
+        "target": "communication",
         "type": "default",
         "animated": true,
         "style": {
