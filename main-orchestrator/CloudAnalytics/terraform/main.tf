@@ -1,13 +1,3 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.56.0"
-    }
-  }
-  backend "local" {}
-}
-
 provider "azurerm" {
   features {}
 }
@@ -17,53 +7,39 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 
-resource "azurerm_monitor_diagnostic_setting" "diagnostic" {
-  name               = "example-diagnostic"
-  target_resource_id = azurerm_resource_group.example.id
-  enabled_log {
-    category = "Administrative"
-  }
-  metric {
-    category = "AllMetrics"
-    enabled  = true
-  }
+resource "azurerm_storage_account" "example" {
+  name                     = "examplestoracct"
+  resource_group_name      = azurerm_resource_group.example.name
+  location                 = azurerm_resource_group.example.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
 }
 
-resource "azurerm_security_center_contact" "example" {
-  email       = "example@example.com"
-  phone       = "+1-555-555-5555"
-  alert_notifications = true
-  alerts_to_admins    = true
-}
-
-resource "azurerm_cost_management_export" "example" {
-  name                = "example-export"
+resource "azurerm_cosmosdb_account" "example" {
+  name                = "examplecosmosdb"
+  location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  timeframe           = "Monthly"
-  delivery_info {
-    destination {
-      container {
-        resource_id   = azurerm_resource_group.example.id
-        name          = "example-container"
-      }
-    }
-  }
+  offer_type          = "Standard"
+  kind                = "GlobalDocumentDB"
 }
 
-resource "azurerm_policy_definition" "example" {
-  name         = "example-policy"
-  policy_type  = "Custom"
-  mode         = "Indexed"
-  display_name = "Example Policy"
-  policy_rule = <<POLICY
-    {
-      "if": {
-        "field": "location",
-        "equals": "West Europe"
-      },
-      "then": {
-        "effect": "deny"
-      }
-    }
-  POLICY
+resource "azurerm_function_app" "example" {
+  name                = "examplefunctionapp"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  app_service_plan_id = azurerm_app_service_plan.example.id
+}
+
+resource "azurerm_eventhub_namespace" "example" {
+  name                = "exampleeventhub"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  sku                 = "Standard"
+  capacity            = 1
+}
+
+resource "azurerm_synapse_workspace" "example" {
+  name                = "examplesynapse"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
 }
