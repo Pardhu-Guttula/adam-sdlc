@@ -95,7 +95,7 @@
       ]
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_link": null,
   "user_stories": [
     {
       "epic_title": "Enterprise Authentication and Role-Based Access Management",
@@ -171,16 +171,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture ensures a comprehensive, secure, and scalable platform to manage multi-cloud environments with robust integration capabilities, real-time monitoring, and enterprise-grade security compliance.",
+    "description": "This architecture integrates various Azure services such as Azure AD for identity management, Azure Arc and Azure Lighthouse for multi-cloud management, and Azure Cost Management for financial tracking. Security is handled by Azure Security Center and Defender for Cloud while Azure Automation and Logic Apps enable automation workflows. Azure DevOps and GitHub Actions manage CI/CD pipelines. Real-time monitoring and alerts are provided by Azure Monitor, and logging is centralized by Azure Log Analytics with Azure Sentinel providing SIEM capabilities.",
     "nodes": [
       {
-        "id": "Frontend",
+        "id": "User",
         "data": {
-          "label": "User Interface"
+          "label": "User"
         },
         "position": {
-          "x": 0,
-          "y": 0
+          "x": 50,
+          "y": 60
         },
         "style": {
           "border": "none",
@@ -192,15 +192,15 @@
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Authentication & Authorization"
+          "label": "Identity and Access Management"
         },
         "position": {
-          "x": 200,
-          "y": 0
+          "x": 100,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -210,28 +210,11 @@
       {
         "id": "node-1a",
         "data": {
-          "label": "Azure AD"
+          "label": "Azure Active Directory"
         },
         "position": {
-          "x": 10,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "node-1b",
-        "data": {
-          "label": "MFA"
-        },
-        "position": {
-          "x": 10,
-          "y": 100
+          "x": 120,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -245,15 +228,15 @@
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Backend Services"
+          "label": "Multi-Cloud Management"
         },
         "position": {
-          "x": 520,
-          "y": 0
+          "x": 400,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -263,11 +246,11 @@
       {
         "id": "node-2a",
         "data": {
-          "label": "API Gateway"
+          "label": "Azure Arc"
         },
         "position": {
-          "x": 10,
-          "y": 20
+          "x": 420,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -280,11 +263,11 @@
       {
         "id": "node-2b",
         "data": {
-          "label": "Azure Functions"
+          "label": "Azure Lighthouse"
         },
         "position": {
-          "x": 10,
-          "y": 100
+          "x": 420,
+          "y": 200
         },
         "style": {
           "border": "none",
@@ -298,15 +281,15 @@
         "id": "group-3",
         "type": "group",
         "data": {
-          "label": "Data Storage"
+          "label": "Inventory and Cost Management"
         },
         "position": {
-          "x": 840,
-          "y": 0
+          "x": 700,
+          "y": 100
         },
         "style": {
           "width": 300,
-          "height": 200,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -316,11 +299,11 @@
       {
         "id": "node-3a",
         "data": {
-          "label": "Azure Cosmos DB"
+          "label": "Azure Cost Management"
         },
         "position": {
-          "x": 10,
-          "y": 20
+          "x": 720,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -333,11 +316,11 @@
       {
         "id": "node-3b",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Azure Resource Graph"
         },
         "position": {
-          "x": 10,
-          "y": 100
+          "x": 720,
+          "y": 200
         },
         "style": {
           "border": "none",
@@ -351,15 +334,15 @@
         "id": "group-4",
         "type": "group",
         "data": {
-          "label": "Data Integration and Aggregation"
+          "label": "Security and Compliance"
         },
         "position": {
-          "x": 1160,
-          "y": 0
+          "x": 1050,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 350,
+          "height": 210,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -369,11 +352,11 @@
       {
         "id": "node-4a",
         "data": {
-          "label": "Azure Event Hubs"
+          "label": "Azure Security Center"
         },
         "position": {
-          "x": 10,
-          "y": 20
+          "x": 1070,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -386,11 +369,11 @@
       {
         "id": "node-4b",
         "data": {
-          "label": "Azure Synapse"
+          "label": "Azure Policy"
         },
         "position": {
-          "x": 10,
-          "y": 100
+          "x": 1070,
+          "y": 200
         },
         "style": {
           "border": "none",
@@ -399,12 +382,468 @@
         },
         "parentId": "group-4",
         "extent": "parent"
+      },
+      {
+        "id": "node-4c",
+        "data": {
+          "label": "Defender for Cloud"
+        },
+        "position": {
+          "x": 1070,
+          "y": 260
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "group-5",
+        "type": "group",
+        "data": {
+          "label": "Automation and Governance"
+        },
+        "position": {
+          "x": 1450,
+          "y": 100
+        },
+        "style": {
+          "width": 400,
+          "height": 270,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-5a",
+        "data": {
+          "label": "Azure Automation"
+        },
+        "position": {
+          "x": 1470,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      },
+      {
+        "id": "node-5b",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 1470,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      },
+      {
+        "id": "node-5c",
+        "data": {
+          "label": "Azure Blueprints"
+        },
+        "position": {
+          "x": 1470,
+          "y": 260
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      },
+      {
+        "id": "group-6",
+        "type": "group",
+        "data": {
+          "label": "CI/CD and IaC"
+        },
+        "position": {
+          "x": 1950,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 180,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-6a",
+        "data": {
+          "label": "Azure DevOps"
+        },
+        "position": {
+          "x": 1970,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-6",
+        "extent": "parent"
+      },
+      {
+        "id": "node-6b",
+        "data": {
+          "label": "GitHub Actions"
+        },
+        "position": {
+          "x": 1970,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-6",
+        "extent": "parent"
+      },
+      {
+        "id": "group-7",
+        "type": "group",
+        "data": {
+          "label": "Real-Time Monitoring and Alerts"
+        },
+        "position": {
+          "x": 2250,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-7a",
+        "data": {
+          "label": "Azure Monitor"
+        },
+        "position": {
+          "x": 2270,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-7",
+        "extent": "parent"
+      },
+      {
+        "id": "node-7b",
+        "data": {
+          "label": "Azure Alerts"
+        },
+        "position": {
+          "x": 2270,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-7",
+        "extent": "parent"
+      },
+      {
+        "id": "group-8",
+        "type": "group",
+        "data": {
+          "label": "Logging and Auditing"
+        },
+        "position": {
+          "x": 2550,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 180,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-8a",
+        "data": {
+          "label": "Azure Log Analytics"
+        },
+        "position": {
+          "x": 2570,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-8",
+        "extent": "parent"
+      },
+      {
+        "id": "node-8b",
+        "data": {
+          "label": "Azure Sentinel"
+        },
+        "position": {
+          "x": 2570,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-8",
+        "extent": "parent"
+      },
+      {
+        "id": "group-9",
+        "type": "group",
+        "data": {
+          "label": "Integration Services"
+        },
+        "position": {
+          "x": 2850,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-9a",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 2870,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-9",
+        "extent": "parent"
+      },
+      {
+        "id": "group-10",
+        "type": "group",
+        "data": {
+          "label": "Data Security and Privacy"
+        },
+        "position": {
+          "x": 3150,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-10a",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 3170,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-10",
+        "extent": "parent"
+      },
+      {
+        "id": "node-10b",
+        "data": {
+          "label": "Azure Private Link"
+        },
+        "position": {
+          "x": 3170,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-10",
+        "extent": "parent"
+      },
+      {
+        "id": "group-11",
+        "type": "group",
+        "data": {
+          "label": "Scalability and Performance"
+        },
+        "position": {
+          "x": 3450,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-11a",
+        "data": {
+          "label": "Azure Scale Sets"
+        },
+        "position": {
+          "x": 3470,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-11",
+        "extent": "parent"
+      },
+      {
+        "id": "node-11b",
+        "data": {
+          "label": "Azure App Gateway"
+        },
+        "position": {
+          "x": 3470,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-11",
+        "extent": "parent"
+      },
+      {
+        "id": "group-12",
+        "type": "group",
+        "data": {
+          "label": "Tenant Isolation"
+        },
+        "position": {
+          "x": 3750,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-12a",
+        "data": {
+          "label": "Azure Virtual Network"
+        },
+        "position": {
+          "x": 3770,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-12",
+        "extent": "parent"
+      },
+      {
+        "id": "node-12b",
+        "data": {
+          "label": "Azure Subnet"
+        },
+        "position": {
+          "x": 3770,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-12",
+        "extent": "parent"
+      },
+      {
+        "id": "Backend",
+        "data": {
+          "label": "Backend"
+        },
+        "position": {
+          "x": 4400,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
       }
     ],
     "edges": [
       {
         "id": "e1-1a",
-        "source": "Frontend",
+        "source": "User",
         "target": "node-1a",
         "type": "default",
         "animated": true,
@@ -413,7 +852,7 @@
         }
       },
       {
-        "id": "e1b-2a",
+        "id": "e1a-2a",
         "source": "node-1a",
         "target": "node-2a",
         "type": "default",
@@ -423,7 +862,7 @@
         }
       },
       {
-        "id": "e2a-3a",
+        "id": "e1a-3a",
         "source": "node-2a",
         "target": "node-3a",
         "type": "default",
@@ -433,7 +872,7 @@
         }
       },
       {
-        "id": "e3a-4a",
+        "id": "e2a-4a",
         "source": "node-3a",
         "target": "node-4a",
         "type": "default",
@@ -443,9 +882,39 @@
         }
       },
       {
-        "id": "e4a-1b",
+        "id": "e4a-5a",
         "source": "node-4a",
-        "target": "node-1b",
+        "target": "node-5a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6b-7a",
+        "source": "node-6b",
+        "target": "node-7a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e10a-11a",
+        "source": "node-10a",
+        "target": "node-11a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e12a-BE",
+        "source": "node-12a",
+        "target": "Backend",
         "type": "default",
         "animated": true,
         "style": {
