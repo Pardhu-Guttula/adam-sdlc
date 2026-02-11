@@ -204,16 +204,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram depicts a cloud-based self-service banking portal on Azure, including user interface, authentication and authorization, backend services, database and storage, integration services, monitoring and notifications, security and compliance, networking, and development/CI/CD, ensuring the portal is scalable, secure, and integrates smoothly with existing systems while providing a seamless experience for users across multiple devices.",
+    "description": "This architecture involves a user-friendly self-service portal for bank customers encompassing frontend applications, secure authentication, API management, microservices, databases, secure document storage, workflows, integration services, notifications, security, monitoring, analytics, development pipelines, load balancing, caching, user interface features, and accessibility.",
     "nodes": [
       {
-        "id": "frontend-web-app",
+        "id": "User",
         "data": {
-          "label": "Frontend Web App"
+          "label": "User (Frontend)"
         },
         "position": {
-          "x": 100,
-          "y": 100
+          "x": 0,
+          "y": 0
         },
         "style": {
           "border": "none",
@@ -222,14 +222,14 @@
         }
       },
       {
-        "id": "group-auth",
+        "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Authentication & Authorization"
+          "label": "User Interaction Layer"
         },
         "position": {
-          "x": 300,
-          "y": 100
+          "x": 200,
+          "y": 0
         },
         "style": {
           "width": 250,
@@ -241,48 +241,48 @@
         }
       },
       {
-        "id": "azure-ad-b2c",
+        "id": "WebApp",
         "data": {
-          "label": "Azure Active Directory B2C"
+          "label": "Web & Mobile Apps"
         },
         "position": {
-          "x": 320,
-          "y": 120
+          "x": 210,
+          "y": 20
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-auth",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "azure-key-vault",
+        "id": "ResponsiveDesign",
         "data": {
-          "label": "Azure Key Vault"
+          "label": "Responsive Design Libraries"
         },
         "position": {
-          "x": 320,
-          "y": 180
+          "x": 210,
+          "y": 80
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-auth",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "group-backend",
+        "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Backend Services"
+          "label": "Authentication & Access Control"
         },
         "position": {
-          "x": 600,
-          "y": 100
+          "x": 500,
+          "y": 0
         },
         "style": {
           "width": 250,
@@ -294,45 +294,98 @@
         }
       },
       {
-        "id": "azure-app-service",
+        "id": "AzureADB2C",
         "data": {
-          "label": "Azure App Service"
+          "label": "Azure AD B2C"
         },
         "position": {
-          "x": 620,
-          "y": 120
+          "x": 510,
+          "y": 20
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-backend",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "azure-functions",
+        "id": "RBAC",
         "data": {
-          "label": "Azure Functions"
+          "label": "Role-Based Access Control (RBAC)"
         },
         "position": {
-          "x": 620,
-          "y": 180
+          "x": 510,
+          "y": 80
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-backend",
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Business Logic Layer"
+        },
+        "position": {
+          "x": 800,
+          "y": 0
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "APIGateway",
+        "data": {
+          "label": "API Gateway"
+        },
+        "position": {
+          "x": 810,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Microservices",
+        "data": {
+          "label": "Microservices"
+        },
+        "position": {
+          "x": 810,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
         "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "frontend-web-app",
-        "target": "azure-ad-b2c",
+        "source": "User",
+        "target": "WebApp",
         "type": "default",
         "animated": true,
         "style": {
@@ -341,8 +394,8 @@
       },
       {
         "id": "e2",
-        "source": "azure-ad-b2c",
-        "target": "azure-app-service",
+        "source": "WebApp",
+        "target": "AzureADB2C",
         "type": "default",
         "animated": true,
         "style": {
@@ -351,8 +404,8 @@
       },
       {
         "id": "e3",
-        "source": "azure-key-vault",
-        "target": "azure-functions",
+        "source": "AzureADB2C",
+        "target": "APIGateway",
         "type": "default",
         "animated": true,
         "style": {
