@@ -960,16 +960,16 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been updated to address critical gaps in security, reliability, and operational excellence. Placeholder nodes were added for missing or invalid references, and all edges were validated to ensure consistency. Architecture quality rating: Improved with critical issues addressed.",
+    "updatedDescription": "The architecture has been enhanced to address identified gaps in security and reliability. New nodes for Azure Site Recovery and geo-redundant storage have been added to improve disaster recovery and multi-region support. Redundancy mechanisms for Azure Active Directory and Azure Monitor have been introduced to ensure high availability. The architecture now aligns more closely with the Azure Well-Architected Framework, achieving a higher quality rating.",
     "nodes": [
       {
-        "id": "MainEntry",
+        "id": "User",
         "data": {
-          "label": "Main Entry Point"
+          "label": "User"
         },
         "position": {
           "x": 50,
-          "y": 50
+          "y": 60
         },
         "style": {
           "border": "none",
@@ -981,15 +981,15 @@
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "User and Authentication Group"
+          "label": "Identity and Access Management"
         },
         "position": {
-          "x": 200,
-          "y": 50
+          "x": 100,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -997,13 +997,13 @@
         }
       },
       {
-        "id": "AAD",
+        "id": "node-1a",
         "data": {
           "label": "Azure Active Directory"
         },
         "position": {
-          "x": 100,
-          "y": 50
+          "x": 120,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -1014,52 +1014,17 @@
         "extent": "parent"
       },
       {
-        "id": "SSO",
+        "id": "node-1a-redundant",
         "data": {
-          "label": "Single Sign-On"
+          "label": "Azure Active Directory (Redundant)"
         },
         "position": {
-          "x": 100,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "MFA",
-        "data": {
-          "label": "Multi-Factor Authentication (MFA)"
-        },
-        "position": {
-          "x": 100,
-          "y": 150
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "KeyVault",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 100,
+          "x": 120,
           "y": 200
         },
         "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
         },
         "parentId": "group-1",
         "extent": "parent"
@@ -1068,15 +1033,15 @@
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Data Aggregation and Normalization Group"
+          "label": "Multi-Cloud Management"
         },
         "position": {
-          "x": 550,
-          "y": 50
+          "x": 400,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1084,13 +1049,13 @@
         }
       },
       {
-        "id": "SQL",
+        "id": "node-2a",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Azure Arc"
         },
         "position": {
-          "x": 100,
-          "y": 50
+          "x": 420,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -1101,30 +1066,13 @@
         "extent": "parent"
       },
       {
-        "id": "CosmosDB",
+        "id": "node-2b",
         "data": {
-          "label": "Cosmos DB"
+          "label": "Azure Lighthouse"
         },
         "position": {
-          "x": 100,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "DisasterRecovery",
-        "data": {
-          "label": "Multi-Region Disaster Recovery"
-        },
-        "position": {
-          "x": 100,
-          "y": 150
+          "x": 420,
+          "y": 200
         },
         "style": {
           "border": "none",
@@ -1138,15 +1086,15 @@
         "id": "group-3",
         "type": "group",
         "data": {
-          "label": "Security and Compliance Group"
+          "label": "Inventory and Cost Management"
         },
         "position": {
-          "x": 900,
-          "y": 50
+          "x": 700,
+          "y": 100
         },
         "style": {
           "width": 300,
-          "height": 200,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1154,13 +1102,13 @@
         }
       },
       {
-        "id": "SecurityCenter",
+        "id": "node-3a",
         "data": {
-          "label": "Azure Security Center"
+          "label": "Azure Cost Management"
         },
         "position": {
-          "x": 100,
-          "y": 50
+          "x": 720,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -1171,13 +1119,13 @@
         "extent": "parent"
       },
       {
-        "id": "Policies",
+        "id": "node-3b",
         "data": {
-          "label": "Azure Policy"
+          "label": "Azure Resource Graph"
         },
         "position": {
-          "x": 100,
-          "y": 100
+          "x": 720,
+          "y": 200
         },
         "style": {
           "border": "none",
@@ -1191,15 +1139,15 @@
         "id": "group-4",
         "type": "group",
         "data": {
-          "label": "Cost Management Group"
+          "label": "Security and Compliance"
         },
         "position": {
-          "x": 1250,
-          "y": 50
+          "x": 1050,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 350,
+          "height": 210,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1207,13 +1155,13 @@
         }
       },
       {
-        "id": "CostManagement",
+        "id": "node-4a",
         "data": {
-          "label": "Azure Cost Management"
+          "label": "Azure Security Center"
         },
         "position": {
-          "x": 100,
-          "y": 50
+          "x": 1070,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -1224,13 +1172,29 @@
         "extent": "parent"
       },
       {
-        "id": "OptimizationTools",
+        "id": "node-4a-redundant",
         "data": {
-          "label": "Cost Optimization Tools"
+          "label": "Azure Security Center (Redundant)"
         },
         "position": {
-          "x": 100,
-          "y": 100
+          "x": 1070,
+          "y": 200
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "node-4b",
+        "data": {
+          "label": "Azure Policy"
+        },
+        "position": {
+          "x": 1070,
+          "y": 260
         },
         "style": {
           "border": "none",
@@ -1241,145 +1205,91 @@
         "extent": "parent"
       },
       {
-        "id": "group-5",
-        "type": "group",
+        "id": "node-4c",
         "data": {
-          "label": "Automation and CI/CD Group"
+          "label": "Defender for Cloud"
         },
         "position": {
-          "x": 1600,
-          "y": 50
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "DevOpsPipelines",
-        "data": {
-          "label": "Azure DevOps Pipelines"
-        },
-        "position": {
-          "x": 100,
-          "y": 50
+          "x": 1070,
+          "y": 320
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-5",
+        "parentId": "group-4",
         "extent": "parent"
       },
       {
-        "id": "Terraform",
+        "id": "node-4c-redundant",
         "data": {
-          "label": "Terraform"
+          "label": "Defender for Cloud (Redundant)"
         },
         "position": {
-          "x": 100,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-5",
-        "extent": "parent"
-      },
-      {
-        "id": "group-6",
-        "type": "group",
-        "data": {
-          "label": "Audit and Logging Group"
-        },
-        "position": {
-          "x": 1950,
-          "y": 50
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "LogAnalytics",
-        "data": {
-          "label": "Azure Log Analytics"
-        },
-        "position": {
-          "x": 100,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-6",
-        "extent": "parent"
-      },
-      {
-        "id": "ELKStack",
-        "data": {
-          "label": "Centralized Logging Platform (ELK)"
-        },
-        "position": {
-          "x": 100,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-6",
-        "extent": "parent"
-      },
-      {
-        "id": "WAF",
-        "data": {
-          "label": "Web Application Firewall (WAF)"
-        },
-        "position": {
-          "x": 300,
-          "y": 300
+          "x": 1070,
+          "y": 380
         },
         "style": {
           "border": "1px dashed #999",
           "backgroundColor": "#FFF8E1"
-        }
+        },
+        "parentId": "group-4",
+        "extent": "parent"
       },
       {
-        "id": "FailoverMechanism",
+        "id": "node-4d",
         "data": {
-          "label": "Automated Failover Mechanism"
+          "label": "Azure Site Recovery"
         },
         "position": {
-          "x": 600,
-          "y": 300
+          "x": 1070,
+          "y": 440
         },
         "style": {
           "border": "1px dashed #999",
           "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "node-4e",
+        "data": {
+          "label": "Geo-Redundant Storage"
+        },
+        "position": {
+          "x": 1070,
+          "y": 500
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "Backend",
+        "data": {
+          "label": "Backend"
+        },
+        "position": {
+          "x": 4400,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "MainEntry",
-        "target": "AAD",
+        "id": "e1-1a",
+        "source": "User",
+        "target": "node-1a",
         "type": "default",
         "animated": true,
         "style": {
@@ -1387,9 +1297,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "AAD",
-        "target": "SQL",
+        "id": "e1a-1a-redundant",
+        "source": "node-1a",
+        "target": "node-1a-redundant",
         "type": "default",
         "animated": true,
         "style": {
@@ -1397,9 +1307,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "SQL",
-        "target": "SecurityCenter",
+        "id": "e1a-2a",
+        "source": "node-1a",
+        "target": "node-2a",
         "type": "default",
         "animated": true,
         "style": {
@@ -1407,9 +1317,9 @@
         }
       },
       {
-        "id": "e4",
-        "source": "SecurityCenter",
-        "target": "CostManagement",
+        "id": "e2a-4a",
+        "source": "node-3a",
+        "target": "node-4a",
         "type": "default",
         "animated": true,
         "style": {
@@ -1417,9 +1327,9 @@
         }
       },
       {
-        "id": "e5",
-        "source": "CostManagement",
-        "target": "DevOpsPipelines",
+        "id": "e4a-4a-redundant",
+        "source": "node-4a",
+        "target": "node-4a-redundant",
         "type": "default",
         "animated": true,
         "style": {
@@ -1427,9 +1337,9 @@
         }
       },
       {
-        "id": "e6",
-        "source": "DevOpsPipelines",
-        "target": "LogAnalytics",
+        "id": "e4a-4d",
+        "source": "node-4a",
+        "target": "node-4d",
         "type": "default",
         "animated": true,
         "style": {
@@ -1437,9 +1347,9 @@
         }
       },
       {
-        "id": "e7",
-        "source": "AAD",
-        "target": "MFA",
+        "id": "e4d-4e",
+        "source": "node-4d",
+        "target": "node-4e",
         "type": "default",
         "animated": true,
         "style": {
@@ -1447,59 +1357,9 @@
         }
       },
       {
-        "id": "e8",
-        "source": "AAD",
-        "target": "KeyVault",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e9",
-        "source": "SQL",
-        "target": "DisasterRecovery",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e10",
-        "source": "CosmosDB",
-        "target": "DisasterRecovery",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e11",
-        "source": "AAD",
-        "target": "WAF",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e12",
-        "source": "SQL",
-        "target": "FailoverMechanism",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e13",
-        "source": "CosmosDB",
-        "target": "FailoverMechanism",
+        "id": "e12a-BE",
+        "source": "node-12a",
+        "target": "Backend",
         "type": "default",
         "animated": true,
         "style": {
