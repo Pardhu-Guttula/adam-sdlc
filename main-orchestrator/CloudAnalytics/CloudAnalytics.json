@@ -960,7 +960,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been updated to address critical gaps in security and reliability by adding new nodes for multi-factor authentication (MFA), Azure Key Vault, and multi-region disaster recovery. All nodes and edges have been validated, ensuring a complete and consistent graph structure. Architecture quality rating: Improved with critical issues addressed.",
+    "updatedDescription": "The architecture has been updated to address critical gaps in security, reliability, and operational excellence. Placeholder nodes were added for missing or invalid references, and all edges were validated to ensure consistency. Architecture quality rating: Improved with critical issues addressed.",
     "nodes": [
       {
         "id": "MainEntry",
