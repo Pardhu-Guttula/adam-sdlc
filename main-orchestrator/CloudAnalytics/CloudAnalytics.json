@@ -1345,6 +1345,34 @@
         },
         "parentId": "group-6",
         "extent": "parent"
+      },
+      {
+        "id": "WAF",
+        "data": {
+          "label": "Web Application Firewall (WAF)"
+        },
+        "position": {
+          "x": 300,
+          "y": 300
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "FailoverMechanism",
+        "data": {
+          "label": "Automated Failover Mechanism"
+        },
+        "position": {
+          "x": 600,
+          "y": 300
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
       }
     ],
     "edges": [
@@ -1442,6 +1470,36 @@
         "id": "e10",
         "source": "CosmosDB",
         "target": "DisasterRecovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e11",
+        "source": "AAD",
+        "target": "WAF",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e12",
+        "source": "SQL",
+        "target": "FailoverMechanism",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e13",
+        "source": "CosmosDB",
+        "target": "FailoverMechanism",
         "type": "default",
         "animated": true,
         "style": {
