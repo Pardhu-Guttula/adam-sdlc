@@ -1,0 +1,20 @@
+{
+  "repo_owner": "Pardhu-Guttula",
+  "repo_name": "adam-sdlc",
+  "branch_name": "main",
+  "usecase": "As a cloud operations user, I need a secure, self-service platform that provides a single pane of glass to manage resources across AWS, Azure, GCP, and IBM Cloud. I should be able to log in using enterprise authentication and access a personalized dashboard showing cloud inventory, costs, security posture, and compliance status based on my role and permissions.\\n\\nThe platform must allow me to onboard cloud accounts, automatically discover resources, and view normalized data across providers. I should be able to identify cost optimization opportunities, review security and compliance findings with clear, rule-based explanations, and trigger governance or automation workflows such as environment creation or policy enforcement through CI/CD and IaC integrations.\\n\\nI expect real-time status updates, alerts, and notifications for costs, security risks, and compliance violations. The system must maintain an auditable history of all actions and changes, integrate reliably with cloud provider APIs, and ensure high performance, scalability, and data security through role-based access controls and tenant isolation.",
+  "project_name": "CloudAnalytics",
+  "access_users": [
+    "pardhu.guttula@brillio.com",
+    "lokesh.kadi@brillio.com"
+  ],
+  "user_names": [
+    "Pardhu Guttula",
+    "Lokesh Kadi"
+  ],
+  "jira_board": "ADAM-SDLC",
+  "jira_user": "pardhu.guttula@brillio.com",
+  "type": "greenfield",
+  "jira_url": "https://brillio.atlassian.net/jira/software/projects/ADAM-SDLC/backlog",
+  "repo_link": "https://github.com/Pardhu-Guttula/adam-sdlc"
+}
