@@ -1,0 +1,20 @@
+{
+  "repo_owner": "Pardhu-Guttula",
+  "repo_name": "testing-repo-creation",
+  "branch_name": "main",
+  "usecase": "Create Banking Website using Azure Infrastructure and provide proper security layers throughout the application",
+  "project_name": "CloudOptics",
+  "access_users": [
+    "pardhu.guttula@brillio.com",
+    "lokesh.kadi@brillio.com"
+  ],
+  "user_names": [
+    "Pardhu Guttula",
+    "Lokesh Kadi"
+  ],
+  "jira_board": "ADAM-SDLC",
+  "jira_user": "Pardhu.Guttula@brillio.com",
+  "type": "greenfield",
+  "jira_url": "https://brillio.atlassian.net/jira/software/projects/ADAM-SDLC/backlog",
+  "repo_link": "https://github.com/Pardhu-Guttula/testing-repo-creation"
+}
