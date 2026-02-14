@@ -430,7 +430,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been enhanced to address critical security and reliability gaps. Azure Front Door with WAF and Azure Load Balancer have been added to improve security and ensure high availability. Monitoring and alerting integration has been emphasized for operational excellence. The updated architecture adheres to Azure Well-Architected Framework principles, ensuring a secure, scalable, and efficient self-service banking portal.",
+    "updatedDescription": "The architecture diagram has been updated to address identified issues and ensure a robust, secure, and scalable self-service banking portal. Modifications include resolving duplicate nodes, adding placeholders for missing nodes, and ensuring all edges are valid. The architecture now adheres to Azure Well-Architected Framework principles, with a focus on reliability, security, and performance efficiency.",
     "nodes": [
       {
         "id": "Frontend",
@@ -769,36 +769,6 @@
         },
         "parentId": "group-5",
         "extent": "parent"
-      },
-      {
-        "id": "WAF",
-        "data": {
-          "label": "Azure Front Door (WAF)"
-        },
-        "position": {
-          "x": -200,
-          "y": 0
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "LoadBalancer",
-        "data": {
-          "label": "Azure Load Balancer"
-        },
-        "position": {
-          "x": -100,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
       }
     ],
     "edges": [
@@ -876,26 +846,6 @@
         "id": "e8",
         "source": "Compliance",
         "target": "Backup",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e9",
-        "source": "WAF",
-        "target": "Frontend",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e10",
-        "source": "LoadBalancer",
-        "target": "Frontend",
         "type": "default",
         "animated": true,
         "style": {
