@@ -249,16 +249,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture describes a modern, user-friendly banking self-service portal that is secure, scalable, and responsive, ensuring a seamless experience across multiple devices. It includes user authentication, responsive front-end, back-end processes, data storage, integration, secure workflow, notifications, logging and monitoring, security, scalability, DevOps, and analytics and reporting.",
+    "description": "This architecture ensures a secure, scalable, and user-friendly self-service portal that is integrated with the bank's existing core banking system and provides consistent performance across multiple devices. It utilizes various Azure services for UI/UX, authentication, hosting, backend services, database and storage, notifications, RBAC, DevOps, and monitoring.",
     "nodes": [
       {
-        "id": "Frontend",
+        "id": "main-entry",
         "data": {
-          "label": "Responsive Web App"
+          "label": "User"
         },
         "position": {
-          "x": 100,
-          "y": 50
+          "x": 50,
+          "y": 100
         },
         "style": {
           "border": "none",
@@ -270,15 +270,15 @@
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Identity and Access Management"
+          "label": "User Interface and Experience"
         },
         "position": {
-          "x": 300,
+          "x": 200,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -286,13 +286,13 @@
         }
       },
       {
-        "id": "AAD",
+        "id": "node-1a",
         "data": {
-          "label": "Azure Active Directory"
+          "label": "Angular/React"
         },
         "position": {
-          "x": 320,
-          "y": 120
+          "x": 250,
+          "y": 150
         },
         "style": {
           "border": "none",
@@ -303,13 +303,13 @@
         "extent": "parent"
       },
       {
-        "id": "MFA",
+        "id": "node-1b",
         "data": {
-          "label": "Multi-Factor Authentication"
+          "label": "Flutter/React Native"
         },
         "position": {
-          "x": 320,
-          "y": 200
+          "x": 250,
+          "y": 250
         },
         "style": {
           "border": "none",
@@ -323,15 +323,15 @@
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Back-End Services"
+          "label": "Authentication and Security"
         },
         "position": {
           "x": 600,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -339,13 +339,13 @@
         }
       },
       {
-        "id": "AzureAppService",
+        "id": "node-2a",
         "data": {
-          "label": "Azure App Service"
+          "label": "Azure AD"
         },
         "position": {
-          "x": 620,
-          "y": 120
+          "x": 650,
+          "y": 150
         },
         "style": {
           "border": "none",
@@ -356,13 +356,13 @@
         "extent": "parent"
       },
       {
-        "id": "RESTAPI",
+        "id": "node-2b",
         "data": {
-          "label": "RESTful APIs"
+          "label": "Azure AD B2C"
         },
         "position": {
-          "x": 620,
-          "y": 200
+          "x": 650,
+          "y": 250
         },
         "style": {
           "border": "none",
@@ -376,15 +376,15 @@
         "id": "group-3",
         "type": "group",
         "data": {
-          "label": "Database and Data Storage"
+          "label": "Frontend Hosting and Content Delivery"
         },
         "position": {
-          "x": 900,
+          "x": 1000,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -392,13 +392,13 @@
         }
       },
       {
-        "id": "AzureSQL",
+        "id": "node-3a",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Azure App Service"
         },
         "position": {
-          "x": 920,
-          "y": 120
+          "x": 1050,
+          "y": 150
         },
         "style": {
           "border": "none",
@@ -409,13 +409,13 @@
         "extent": "parent"
       },
       {
-        "id": "AzureBlobStorage",
+        "id": "node-3b",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Azure Storage"
         },
         "position": {
-          "x": 920,
-          "y": 200
+          "x": 1050,
+          "y": 250
         },
         "style": {
           "border": "none",
@@ -428,9 +428,9 @@
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "Frontend",
-        "target": "AAD",
+        "id": "edge-1",
+        "source": "main-entry",
+        "target": "node-1a",
         "type": "default",
         "animated": true,
         "style": {
@@ -438,9 +438,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "AAD",
-        "target": "AzureAppService",
+        "id": "edge-2",
+        "source": "node-1a",
+        "target": "node-2a",
         "type": "default",
         "animated": true,
         "style": {
@@ -448,39 +448,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "AzureAppService",
-        "target": "AzureSQL",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4",
-        "source": "AzureAppService",
-        "target": "AzureBlobStorage",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5",
-        "source": "AAD",
-        "target": "MFA",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6",
-        "source": "AzureAppService",
-        "target": "RESTAPI",
+        "id": "edge-3",
+        "source": "node-2a",
+        "target": "node-3a",
         "type": "default",
         "animated": true,
         "style": {
