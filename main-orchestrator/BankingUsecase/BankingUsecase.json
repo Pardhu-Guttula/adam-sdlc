@@ -430,7 +430,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been updated to address critical reliability issues by adding high availability nodes for Azure Functions and Azure Logic Apps. All nodes and edges have been validated, ensuring a complete and consistent representation of the system. The architecture quality rating is improved, with enhanced reliability and adherence to Azure Well-Architected Framework principles.",
+    "updatedDescription": "The architecture diagram has been enhanced to address critical security and reliability gaps. Azure Front Door with WAF and Azure Load Balancer have been added to improve security and ensure high availability. Monitoring and alerting integration has been emphasized for operational excellence. The updated architecture adheres to Azure Well-Architected Framework principles, ensuring a secure, scalable, and efficient self-service banking portal.",
     "nodes": [
       {
         "id": "Frontend",
@@ -537,46 +537,12 @@
         "extent": "parent"
       },
       {
-        "id": "node-2a-ha",
-        "data": {
-          "label": "Azure Functions (HA)"
-        },
-        "position": {
-          "x": 120,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
         "id": "node-2b",
         "data": {
           "label": "Azure Logic Apps"
         },
         "position": {
           "x": 20,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "node-2b-ha",
-        "data": {
-          "label": "Azure Logic Apps (HA)"
-        },
-        "position": {
-          "x": 120,
           "y": 120
         },
         "style": {
@@ -803,6 +769,36 @@
         },
         "parentId": "group-5",
         "extent": "parent"
+      },
+      {
+        "id": "WAF",
+        "data": {
+          "label": "Azure Front Door (WAF)"
+        },
+        "position": {
+          "x": -200,
+          "y": 0
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "LoadBalancer",
+        "data": {
+          "label": "Azure Load Balancer"
+        },
+        "position": {
+          "x": -100,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
       }
     ],
     "edges": [
@@ -827,28 +823,8 @@
         }
       },
       {
-        "id": "e2-ha",
-        "source": "node-1a",
-        "target": "node-2a-ha",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
         "id": "e3",
         "source": "node-2a",
-        "target": "node-3a",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e3-ha",
-        "source": "node-2a-ha",
         "target": "node-3a",
         "type": "default",
         "animated": true,
@@ -900,6 +876,26 @@
         "id": "e8",
         "source": "Compliance",
         "target": "Backup",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e9",
+        "source": "WAF",
+        "target": "Frontend",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e10",
+        "source": "LoadBalancer",
+        "target": "Frontend",
         "type": "default",
         "animated": true,
         "style": {
