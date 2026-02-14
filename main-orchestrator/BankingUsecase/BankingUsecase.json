@@ -1,8 +1,8 @@
 {
   "user_prompt": "undefined",
-  "repo_link": null,
+  "repo_link": "https://github.com/Pardhu-Guttula/adam-sdlc",
   "epics": null,
-  "jira_link": null,
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": null,
   "architecture_generation": {
     "description": "This architecture diagram represents a secure, scalable, and user-friendly self-service banking portal hosted on Azure. The portal includes front-end services via Azure App Service, authentication and security with Azure Active Directory B2C and Key Vault, a robust back-end using Azure Functions and Logic Apps, efficient data storage solutions, integration with the bank's core system through Azure Service Bus, comprehensive monitoring and analytics, CI/CD with Azure DevOps, enforced compliance with Azure Policy, and reliable backup and recovery solutions.",
