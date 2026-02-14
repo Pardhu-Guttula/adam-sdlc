@@ -1,0 +1,20 @@
+{
+  "repo_owner": "Pardhu-Guttula",
+  "repo_name": "Banking Application",
+  "branch_name": "main",
+  "usecase": "As a bank customer, I require a modern, user-friendly self-service portal that allows me to efficiently manage my banking needs without visiting physical branches. I need to securely log in using multi-factor authentication and access a personalized dashboard displaying available banking products and services based on my profile and eligibility. The portal must enable me to submit account opening requests and service modifications through streamlined workflows requiring minimal clicks. I expect to receive real-time status updates and email notifications regarding my submitted requests. The system should maintain a comprehensive history of all my interactions while ensuring my sensitive financial data remains secure. The portal must be responsive across various devices, providing a consistent experience whether I access it via desktop, tablet, or mobile phone. I should be able to save incomplete applications and return to them later, with the ability to upload necessary documentation directly through the interface. The solution must integrate seamlessly with the bank's existing core banking system while maintaining its own database to ensure optimal performance and reliability. Role-based access controls must be implemented to ensure I can only view and access services appropriate to my profile and authorization level.",
+  "project_name": "BankingApplication",
+  "access_users": [
+    "pardhu.guttula@brillio.com",
+    "Kanishka.Balaji@brillio.com"
+  ],
+  "user_names": [
+    "Pardhu Guttula",
+    "Kanishka Balaji"
+  ],
+  "jira_board": "ADAM-SDLC",
+  "jira_user": "pardhu.guttula@brillio.com",
+  "type": "greenfield",
+  "jira_url": "https://brillio.atlassian.net/jira/software/projects/ADAM-SDLC/backlog",
+  "repo_link": "https://github.com/Pardhu-Guttula/Banking Application"
+}
