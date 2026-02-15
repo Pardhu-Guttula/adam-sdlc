@@ -12,9 +12,9 @@
     "Pardhu Guttula",
     "Lokesh Kadi"
   ],
-  "jira_board": "ADAM-Banking-Usecase",
+  "jira_board": "ADAM",
+  "jira_board_id": "2056",
   "jira_user": "pardhu.guttula@brillio.com",
   "type": "greenfield",
-  "jira_url": "https://brillio.atlassian.net/jira/software/projects/ADAM-Banking-Usecase/backlog",
   "repo_link": "https://github.com/Pardhu-Guttula/BankingUsecase"
 }
