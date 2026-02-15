@@ -18,16 +18,16 @@
     },
     {
       "id": "EPIC-3",
-      "title": "Responsive Design",
-      "summary": "Develop a responsive design for the portal.",
-      "description": "Ensure that the portal is responsive and provides a consistent user experience across various devices, including desktop, tablet, and mobile phones. This involves implementing adaptive layouts and testing on different screen sizes and operating systems.",
+      "title": "Account Opening and Service Modifications",
+      "summary": "Enable users to submit account opening requests and service modifications.",
+      "description": "Implement streamlined workflows that allow users to submit new account opening requests and service modifications with minimal clicks. This includes forms for data entry, validation, and submission, along with workflows for approval and processing of these requests.",
       "dependencies": []
     },
     {
       "id": "EPIC-4",
-      "title": "Account Opening and Service Modifications",
-      "summary": "Enable users to submit account opening requests and service modifications.",
-      "description": "Implement streamlined workflows that allow users to submit new account opening requests and service modifications with minimal clicks. This includes forms for data entry, validation, and submission, along with workflows for approval and processing of these requests.",
+      "title": "Responsive Design",
+      "summary": "Develop a responsive design for the portal.",
+      "description": "Ensure that the portal is responsive and provides a consistent user experience across various devices, including desktop, tablet, and mobile phones. This involves implementing adaptive layouts and testing on different screen sizes and operating systems.",
       "dependencies": []
     },
     {
@@ -36,7 +36,7 @@
       "summary": "Provide real-time status updates and notifications.",
       "description": "Develop features to provide users with real-time status updates on their requests and transactions, along with email notifications. This ensures users are kept informed about the progress of their submissions and any necessary actions they need to take.",
       "dependencies": [
-        "EPIC-4"
+        "EPIC-3"
       ]
     },
     {
