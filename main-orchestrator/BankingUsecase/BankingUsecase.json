@@ -61,7 +61,7 @@
       "dependencies": []
     }
   ],
-  "jira_link": null,
+  "jira_link": "null",
   "user_stories": [
     {
       "epic_title": "User Authentication and Security",
