@@ -4,60 +4,70 @@
   "epics": [
     {
       "id": "EPIC-1",
-      "title": "User Authentication and Authorization",
-      "summary": "Implement secure user authentication and authorization.",
-      "description": "Develop a robust authentication mechanism that supports multi-factor authentication, ensuring secure access to the portal. Implement role-based access controls to restrict access based on user profiles and authorization levels.",
+      "title": "User Authentication",
+      "summary": "Implement multi-factor authentication for secure login.",
+      "description": "Develop a secure login system using multi-factor authentication (MFA) to ensure users can safely access the self-service portal. This includes integration with authentication providers, configuring MFA settings, and providing a user-friendly interface for login.",
       "dependencies": []
     },
     {
       "id": "EPIC-2",
-      "title": "Responsive Design",
-      "summary": "Ensure the portal is responsive across various devices.",
-      "description": "Create a responsive design for the portal that provides a consistent user experience across desktop, tablet, and mobile devices. The design should adapt to different screen sizes and resolutions seamlessly.",
+      "title": "Personalized Dashboard",
+      "summary": "Create a personalized dashboard for users.",
+      "description": "Design and develop a personalized user dashboard that displays relevant banking products and services based on the user's profile and eligibility. The dashboard should offer a clean and intuitive user interface that is easy to navigate.",
       "dependencies": []
     },
     {
       "id": "EPIC-3",
-      "title": "Personalized User Dashboard",
-      "summary": "Develop a personalized user dashboard based on user profile.",
-      "description": "Build a dashboard that displays personalized banking products and services tailored to the user's profile and eligibility. The dashboard should be intuitive and user-friendly, providing quick access to essential features.",
+      "title": "Account Management",
+      "summary": "Enable users to manage their accounts efficiently.",
+      "description": "Develop functionality that allows users to submit account opening requests and modify existing services through streamlined workflows. Ensure the process is intuitive, requiring minimal clicks, and provide options for saving incomplete applications to return to later.",
       "dependencies": []
     },
     {
       "id": "EPIC-4",
-      "title": "Account Opening and Service Modifications",
-      "summary": "Enable users to submit account opening and service modification requests.",
-      "description": "Implement a streamlined workflow for users to submit account opening and service modification requests with minimal clicks. Ensure that users can save incomplete applications and return to them later. Provide the ability to upload necessary documentation directly through the interface.",
-      "dependencies": [
-        "EPIC-1",
-        "EPIC-3"
-      ]
+      "title": "Real-Time Status Updates",
+      "summary": "Provide real-time status updates on user requests.",
+      "description": "Implement a system that offers real-time status updates and email notifications regarding submitted account requests and modifications. Ensure that users are kept informed throughout the process via the portal and email.",
+      "dependencies": []
     },
     {
       "id": "EPIC-5",
-      "title": "Real-Time Status Updates and Notifications",
-      "summary": "Provide real-time status updates and notifications for user requests.",
-      "description": "Develop a system to provide real-time status updates and email notifications regarding user-submitted requests. Ensure users are kept informed about the progress and status of their requests efficiently.",
-      "dependencies": [
-        "EPIC-1",
-        "EPIC-3"
-      ]
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of user interactions.",
+      "description": "Design and develop a solution to maintain a comprehensive history of all user interactions within the portal. Ensure that sensitive financial data is securely stored and easily accessible to users for review.",
+      "dependencies": []
     },
     {
       "id": "EPIC-6",
-      "title": "Interaction History",
-      "summary": "Maintain a comprehensive history of all user interactions.",
-      "description": "Develop a system to store and display a comprehensive history of all user interactions within the portal. Ensure that sensitive financial data is securely maintained and accessible to users for their records.",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across various devices.",
+      "description": "Develop a responsive design for the self-service portal to ensure a consistent user experience across desktop, tablet, and mobile devices. Utilize modern web development standards and practices to achieve this.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Document Upload",
+      "summary": "Enable users to upload documents securely.",
+      "description": "Implement functionality that allows users to upload necessary documentation directly through the portal interface. Ensure the upload process is secure and user-friendly, providing feedback on the upload status.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Integration with Core Banking System",
+      "summary": "Integrate the self-service portal with the bank's core banking system.",
+      "description": "Develop seamless integration between the self-service portal and the bank's existing core banking system. Ensure data consistency and security while maintaining optimal performance and reliability.",
       "dependencies": [
         "EPIC-1",
         "EPIC-3"
       ]
     },
     {
-      "id": "EPIC-7",
-      "title": "Core Banking System Integration",
-      "summary": "Integrate the portal with the bank's core banking system.",
-      "description": "Ensure seamless integration of the portal with the bank's existing core banking system. Maintain a separate database for the portal to ensure optimal performance and reliability, while ensuring data consistency between the systems.",
+      "id": "EPIC-9",
+      "title": "Role-Based Access Control",
+      "summary": "Implement role-based access control for user security.",
+      "description": "Design and develop role-based access control mechanisms to ensure users can only view and access services appropriate to their profile and authorization level. Ensure the system is flexible and secure to handle different user roles and permissions.",
       "dependencies": [
         "EPIC-1"
       ]
