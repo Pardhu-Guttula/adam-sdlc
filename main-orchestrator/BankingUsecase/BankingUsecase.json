@@ -61,7 +61,7 @@
       "dependencies": []
     }
   ],
-  "jira_link": "undefined",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
   "user_stories": [
     {
       "epic_title": "User Authentication and Security",
