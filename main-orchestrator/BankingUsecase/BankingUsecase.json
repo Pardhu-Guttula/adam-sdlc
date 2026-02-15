@@ -633,16 +633,16 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been updated to address identified issues and ensure a robust, secure, and scalable self-service banking portal. Modifications include resolving duplicate nodes, adding placeholders for missing nodes, and ensuring all edges are valid. The architecture now adheres to Azure Well-Architected Framework principles, with a focus on reliability, security, and performance efficiency.",
+    "updatedDescription": "The architecture diagram has been enhanced to address identified gaps in security, reliability, and operational excellence. Azure Web Application Firewall (WAF) has been added to protect the frontend, and geo-replication has been implemented for Azure SQL Database and Azure Blob Storage to ensure disaster recovery. Monitoring services like Azure Monitor are recommended for backend services, and cost optimization and performance efficiency strategies are suggested. The architecture now aligns more closely with the Azure Well-Architected Framework, achieving a higher quality rating.",
     "nodes": [
       {
-        "id": "Frontend",
+        "id": "frontend",
         "data": {
-          "label": "Azure App Service"
+          "label": "Web Frontend (React.js/Angular)"
         },
         "position": {
-          "x": 0,
-          "y": 0
+          "x": 100,
+          "y": 50
         },
         "style": {
           "border": "none",
@@ -651,176 +651,32 @@
         }
       },
       {
-        "id": "group-1",
-        "type": "group",
+        "id": "waf",
         "data": {
-          "label": "Authentication and Security"
+          "label": "Azure Web Application Firewall (WAF)"
         },
         "position": {
-          "x": 300,
-          "y": 0
+          "x": 250,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-auth",
+        "type": "group",
+        "data": {
+          "label": "Authentication & Authorization"
+        },
+        "position": {
+          "x": 400,
+          "y": 50
         },
         "style": {
           "width": 300,
-          "height": 250,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-1a",
-        "data": {
-          "label": "Azure AD B2C"
-        },
-        "position": {
-          "x": 20,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "node-1b",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 20,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "group-2",
-        "type": "group",
-        "data": {
-          "label": "Back-End Services"
-        },
-        "position": {
-          "x": 700,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 250,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-2a",
-        "data": {
-          "label": "Azure Functions"
-        },
-        "position": {
-          "x": 20,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "node-2b",
-        "data": {
-          "label": "Azure Logic Apps"
-        },
-        "position": {
-          "x": 20,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
-        "type": "group",
-        "data": {
-          "label": "Data Storage"
-        },
-        "position": {
-          "x": 1100,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 250,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-3a",
-        "data": {
-          "label": "Azure SQL Database"
-        },
-        "position": {
-          "x": 20,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "node-3b",
-        "data": {
-          "label": "Azure Blob Storage"
-        },
-        "position": {
-          "x": 20,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "group-4",
-        "type": "group",
-        "data": {
-          "label": "Integration"
-        },
-        "position": {
-          "x": 1500,
-          "y": 0
-        },
-        "style": {
-          "width": 250,
           "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
@@ -829,140 +685,29 @@
         }
       },
       {
-        "id": "node-4a",
+        "id": "aad",
         "data": {
-          "label": "Azure Service Bus"
+          "label": "Azure Active Directory B2C"
         },
         "position": {
-          "x": 20,
-          "y": 20
+          "x": 410,
+          "y": 70
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-4",
+        "parentId": "group-auth",
         "extent": "parent"
       },
       {
-        "id": "Monitoring",
+        "id": "oauth",
         "data": {
-          "label": "Azure Monitor"
+          "label": "OAuth2.0/OpenID Connect"
         },
         "position": {
-          "x": 1900,
-          "y": 0
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "DevOps",
-        "data": {
-          "label": "Azure DevOps"
-        },
-        "position": {
-          "x": 0,
-          "y": 300
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Compliance",
-        "data": {
-          "label": "Azure Policy"
-        },
-        "position": {
-          "x": 300,
-          "y": 300
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Backup",
-        "data": {
-          "label": "Azure Backup"
-        },
-        "position": {
-          "x": 600,
-          "y": 300
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "RBAC",
-        "data": {
-          "label": "Azure RBAC"
-        },
-        "position": {
-          "x": 900,
-          "y": 300
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-5",
-        "type": "group",
-        "data": {
-          "label": "Backup and Recovery"
-        },
-        "position": {
-          "x": 1200,
-          "y": 300
-        },
-        "style": {
-          "width": 300,
-          "height": 250,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-5a",
-        "data": {
-          "label": "Azure Backup"
-        },
-        "position": {
-          "x": 20,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-5",
-        "extent": "parent"
-      },
-      {
-        "id": "node-5b",
-        "data": {
-          "label": "Azure Site Recovery"
-        },
-        "position": {
-          "x": 20,
+          "x": 410,
           "y": 120
         },
         "style": {
@@ -970,15 +715,204 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-5",
+        "parentId": "group-auth",
+        "extent": "parent"
+      },
+      {
+        "id": "group-backend",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 800,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "appservice",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 810,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-backend",
+        "extent": "parent"
+      },
+      {
+        "id": "functions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 810,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-backend",
+        "extent": "parent"
+      },
+      {
+        "id": "group-db-storage",
+        "type": "group",
+        "data": {
+          "label": "Database & Storage"
+        },
+        "position": {
+          "x": 50,
+          "y": 300
+        },
+        "style": {
+          "width": 300,
+          "height": 155,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "sql-db",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 60,
+          "y": 320
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-db-storage",
+        "extent": "parent"
+      },
+      {
+        "id": "sql-db-geo",
+        "data": {
+          "label": "Azure SQL Database (Geo-Replication)"
+        },
+        "position": {
+          "x": 200,
+          "y": 320
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "blob",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 60,
+          "y": 370
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-db-storage",
+        "extent": "parent"
+      },
+      {
+        "id": "blob-geo",
+        "data": {
+          "label": "Azure Blob Storage (Geo-Replication)"
+        },
+        "position": {
+          "x": 200,
+          "y": 370
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-integration",
+        "type": "group",
+        "data": {
+          "label": "Integration with Core Banking"
+        },
+        "position": {
+          "x": 400,
+          "y": 300
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "logicapps",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 410,
+          "y": 320
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-integration",
+        "extent": "parent"
+      },
+      {
+        "id": "servicebus",
+        "data": {
+          "label": "Azure Service Bus"
+        },
+        "position": {
+          "x": 410,
+          "y": 370
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-integration",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "Frontend",
-        "target": "node-1a",
+        "id": "edge1",
+        "source": "frontend",
+        "target": "waf",
         "type": "default",
         "animated": true,
         "style": {
@@ -986,9 +920,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "node-1a",
-        "target": "node-2a",
+        "id": "edge1-1",
+        "source": "waf",
+        "target": "aad",
         "type": "default",
         "animated": true,
         "style": {
@@ -996,9 +930,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "node-2a",
-        "target": "node-3a",
+        "id": "edge2",
+        "source": "aad",
+        "target": "oauth",
         "type": "default",
         "animated": true,
         "style": {
@@ -1006,9 +940,9 @@
         }
       },
       {
-        "id": "e4",
-        "source": "node-3a",
-        "target": "node-4a",
+        "id": "edge3",
+        "source": "oauth",
+        "target": "appservice",
         "type": "default",
         "animated": true,
         "style": {
@@ -1016,9 +950,9 @@
         }
       },
       {
-        "id": "e5",
-        "source": "node-4a",
-        "target": "Monitoring",
+        "id": "edge4",
+        "source": "appservice",
+        "target": "functions",
         "type": "default",
         "animated": true,
         "style": {
@@ -1026,9 +960,9 @@
         }
       },
       {
-        "id": "e6",
-        "source": "Monitoring",
-        "target": "DevOps",
+        "id": "edge5",
+        "source": "functions",
+        "target": "sql-db",
         "type": "default",
         "animated": true,
         "style": {
@@ -1036,9 +970,9 @@
         }
       },
       {
-        "id": "e7",
-        "source": "DevOps",
-        "target": "Compliance",
+        "id": "edge5-1",
+        "source": "sql-db",
+        "target": "sql-db-geo",
         "type": "default",
         "animated": true,
         "style": {
@@ -1046,9 +980,39 @@
         }
       },
       {
-        "id": "e8",
-        "source": "Compliance",
-        "target": "Backup",
+        "id": "edge6",
+        "source": "sql-db",
+        "target": "blob",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge6-1",
+        "source": "blob",
+        "target": "blob-geo",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge7",
+        "source": "blob",
+        "target": "logicapps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge8",
+        "source": "logicapps",
+        "target": "servicebus",
         "type": "default",
         "animated": true,
         "style": {
