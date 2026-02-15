@@ -175,7 +175,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "Architecture for an Azure-based self-service banking portal utilizing a microservices architecture. The architecture involves a web application framework, various Azure services for authentication, API management, application logic, database, real-time updates, logging, monitoring, security, role-based access control, and a CI/CD pipeline.",
+    "description": "Architecture updated to include a Virtual Machine (VM) in the backend services.",
     "nodes": [
       {
         "id": "frontend",
@@ -257,7 +257,7 @@
         },
         "style": {
           "width": 300,
-          "height": 300,
+          "height": 360,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -311,6 +311,24 @@
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-backend",
+        "extent": "parent"
+      },
+      {
+        "id": "node-1",
+        "data": {
+          "label": "Virtual Machine"
+        },
+        "position": {
+          "x": 620,
+          "y": 260
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#FFFFFF"
         },
         "parentId": "g-backend",
         "extent": "parent"
@@ -601,6 +619,16 @@
         "id": "e8",
         "source": "data-2",
         "target": "data-3",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-be-3-node-1",
+        "source": "be-3",
+        "target": "node-1",
         "type": "default",
         "animated": true,
         "style": {
