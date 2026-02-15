@@ -175,12 +175,12 @@
     }
   ],
   "architecture_generation": {
-    "description": "Architecture updated to include a Virtual Machine (VM) in the backend services.",
+    "description": "AWS architecture aligned to equivalent service mappings.",
     "nodes": [
       {
         "id": "frontend",
         "data": {
-          "label": "Front-end Web App (Angular/React)"
+          "label": "Front-end Web App (React/Angular)"
         },
         "position": {
           "x": 0,
@@ -214,7 +214,7 @@
       {
         "id": "auth-1",
         "data": {
-          "label": "Azure AD B2C"
+          "label": "AWS Cognito"
         },
         "position": {
           "x": 340,
@@ -231,7 +231,7 @@
       {
         "id": "auth-2",
         "data": {
-          "label": "Azure Key Vault"
+          "label": "AWS Secrets Manager"
         },
         "position": {
           "x": 340,
@@ -267,7 +267,7 @@
       {
         "id": "be-1",
         "data": {
-          "label": "Azure API Management"
+          "label": "AWS API Gateway"
         },
         "position": {
           "x": 620,
@@ -284,7 +284,7 @@
       {
         "id": "be-2",
         "data": {
-          "label": "Azure App Service"
+          "label": "AWS Elastic Beanstalk"
         },
         "position": {
           "x": 620,
@@ -301,7 +301,7 @@
       {
         "id": "be-3",
         "data": {
-          "label": "Azure Logic Apps"
+          "label": "AWS Step Functions"
         },
         "position": {
           "x": 620,
@@ -318,7 +318,7 @@
       {
         "id": "node-1",
         "data": {
-          "label": "Virtual Machine"
+          "label": "EC2 Instance"
         },
         "position": {
           "x": 620,
@@ -355,7 +355,7 @@
       {
         "id": "integration-1",
         "data": {
-          "label": "Azure Service Bus"
+          "label": "Amazon SQS"
         },
         "position": {
           "x": 970,
@@ -372,7 +372,7 @@
       {
         "id": "integration-2",
         "data": {
-          "label": "Azure Logic Apps"
+          "label": "AWS Step Functions"
         },
         "position": {
           "x": 970,
@@ -408,7 +408,7 @@
       {
         "id": "data-1",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Amazon RDS"
         },
         "position": {
           "x": 1320,
@@ -425,7 +425,7 @@
       {
         "id": "data-2",
         "data": {
-          "label": "Azure Cosmos DB"
+          "label": "Amazon DynamoDB"
         },
         "position": {
           "x": 1320,
@@ -442,7 +442,7 @@
       {
         "id": "data-3",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Amazon S3"
         },
         "position": {
           "x": 1320,
@@ -460,7 +460,7 @@
         "id": "g-obs",
         "type": "group",
         "data": {
-          "label": "Observability and Security"
+          "label": "Monitoring and Security"
         },
         "position": {
           "x": 1650,
@@ -478,7 +478,7 @@
       {
         "id": "obs-1",
         "data": {
-          "label": "Azure Monitor"
+          "label": "Amazon CloudWatch"
         },
         "position": {
           "x": 1670,
@@ -495,7 +495,7 @@
       {
         "id": "obs-2",
         "data": {
-          "label": "Azure Security Center"
+          "label": "AWS Security Hub"
         },
         "position": {
           "x": 1670,
@@ -512,7 +512,7 @@
       {
         "id": "obs-3",
         "data": {
-          "label": "Azure Sentinel"
+          "label": "Amazon GuardDuty"
         },
         "position": {
           "x": 1670,
@@ -529,7 +529,7 @@
       {
         "id": "obs-4",
         "data": {
-          "label": "Azure Application Insights"
+          "label": "Amazon X-Ray"
         },
         "position": {
           "x": 1670,
