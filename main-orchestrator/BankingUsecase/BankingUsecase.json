@@ -1,7 +1,68 @@
 {
   "user_prompt": "undefined",
   "repo_link": "https://github.com/Pardhu-Guttula/adam-sdlc",
-  "epics": null,
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication and Authorization",
+      "summary": "Implement secure user authentication and authorization.",
+      "description": "Develop a robust authentication mechanism that supports multi-factor authentication, ensuring secure access to the portal. Implement role-based access controls to restrict access based on user profiles and authorization levels.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across various devices.",
+      "description": "Create a responsive design for the portal that provides a consistent user experience across desktop, tablet, and mobile devices. The design should adapt to different screen sizes and resolutions seamlessly.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Personalized User Dashboard",
+      "summary": "Develop a personalized user dashboard based on user profile.",
+      "description": "Build a dashboard that displays personalized banking products and services tailored to the user's profile and eligibility. The dashboard should be intuitive and user-friendly, providing quick access to essential features.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Account Opening and Modifications",
+      "summary": "Enable users to submit account opening and service modification requests.",
+      "description": "Implement a streamlined workflow for users to submit account opening and service modification requests with minimal clicks. Ensure that users can save incomplete applications and return to them later. Provide the ability to upload necessary documentation directly through the interface.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Real-Time Status Updates and Notifications",
+      "summary": "Provide real-time status updates and notifications for user requests.",
+      "description": "Develop a system to provide real-time status updates and email notifications regarding user-submitted requests. Ensure users are kept informed about the progress and status of their requests efficiently.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of all user interactions.",
+      "description": "Develop a system to store and display a comprehensive history of all user interactions within the portal. Ensure that sensitive financial data is securely maintained and accessible to users for their records.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Core Banking System Integration",
+      "summary": "Integrate the portal with the bank's core banking system.",
+      "description": "Ensure seamless integration of the portal with the bank's existing core banking system. Maintain a separate database for the portal to ensure optimal performance and reliability, while ensuring data consistency between the systems.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    }
+  ],
   "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
   "user_stories": null,
   "architecture_generation": {
