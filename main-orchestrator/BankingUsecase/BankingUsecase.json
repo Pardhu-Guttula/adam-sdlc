@@ -6,7 +6,7 @@
       "id": "EPIC-1",
       "title": "User Authentication and Security",
       "summary": "Implement secure user authentication and security features.",
-      "description": "Develop a secure login mechanism that includes multi-factor authentication to ensure that only authorized users can access the banking portal. This epic encompasses creating secure user sessions and managing secure storage of user credentials and session keys.",
+      "description": "Develop a secure login mechanism that includes multi-factor authentication to ensure that only authorized users can access the banking portal. This epic includes creating secure user sessions and managing secure storage of user credentials and session keys.",
       "dependencies": []
     },
     {
@@ -61,7 +61,7 @@
       "dependencies": []
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/BROA/boards/416/backlog",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
   "user_stories": [
     {
       "epic_title": "User Authentication and Security",
