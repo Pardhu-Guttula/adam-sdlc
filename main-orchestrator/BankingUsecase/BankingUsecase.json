@@ -1,6 +1,6 @@
 {
   "user_prompt": "undefined",
-  "repo_link": "https://github.com/Pardhu-Guttula/adam-sdlc",
+  "repo_link": "https://github.com/Pardhu-Guttula/BankingUsecase",
   "epics": [
     {
       "id": "EPIC-1",
@@ -61,7 +61,7 @@
       "dependencies": []
     }
   ],
-  "jira_link": "null",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
   "user_stories": [
     {
       "epic_title": "User Authentication and Security",
