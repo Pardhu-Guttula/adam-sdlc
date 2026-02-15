@@ -25,7 +25,7 @@
     },
     {
       "id": "EPIC-4",
-      "title": "Account Opening and Modifications",
+      "title": "Account Opening and Service Modifications",
       "summary": "Enable users to submit account opening and service modification requests.",
       "description": "Implement a streamlined workflow for users to submit account opening and service modification requests with minimal clicks. Ensure that users can save incomplete applications and return to them later. Provide the ability to upload necessary documentation directly through the interface.",
       "dependencies": [
