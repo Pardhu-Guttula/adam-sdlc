@@ -1,1 +1,1006 @@
-{"session_id":"9600db71-b388-4fc9-94bc-c7ef5ad4fc59","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/SDLC2.0/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"id":"EPIC-1","title":"User Authentication and Security","summary":"Implement secure user authentication and security features","description":"Develop a multi-factor authentication system to ensure secure logins. Implement encryption protocols to protect sensitive financial data. Enable features for password recovery and account lockout after multiple failed attempts.","dependencies":[]},{"id":"EPIC-2","title":"Personalized Dashboard","summary":"Create a personalized user dashboard","description":"Design and build a personalized dashboard that displays available banking products and services based on user profile and eligibility. Ensure the dashboard provides an intuitive and user-friendly interface for easy navigation.","dependencies":[]},{"id":"EPIC-3","title":"Account Requests and Modifications","summary":"Implement functionality for account opening requests and modifications","description":"Develop workflows to allow customers to submit account opening requests and service modifications with minimal clicks. Ensure the process is streamlined and user-friendly.","dependencies":[]},{"id":"EPIC-4","title":"Real-Time Status Updates","summary":"Provide real-time status updates","description":"Implement a system to provide real-time status updates and email notifications regarding submitted requests. Ensure the updates are timely and accurate.","dependencies":[]},{"id":"EPIC-5","title":"Interaction History","summary":"Maintain a comprehensive history of user interactions","description":"Develop a feature to maintain a comprehensive history of all user interactions. Ensure the data is secure and easily accessible for the user.","dependencies":[]},{"id":"EPIC-6","title":"Responsive Design","summary":"Ensure the portal is responsive across various devices","description":"Develop a responsive design for the portal to provide a consistent experience across desktop, tablet, and mobile devices. Ensure compatibility with different screen sizes and resolutions.","dependencies":[]},{"id":"EPIC-7","title":"Save Incomplete Applications","summary":"Allow users to save and return to incomplete applications","description":"Implement functionality to allow users to save incomplete applications and return to them at a later time. Enable users to upload necessary documentation directly through the interface.","dependencies":[]},{"id":"EPIC-8","title":"Core Banking Integration","summary":"Integrate the portal with the bank's core banking system","description":"Ensure seamless integration with the bank's existing core banking system. Maintain a separate database for the portal to ensure optimal performance and reliability.","dependencies":[]},{"id":"EPIC-9","title":"Role-Based Access Control","summary":"Implement role-based access controls","description":"Develop and implement role-based access controls to ensure users can only view and access services appropriate to their profile and authorization level.","dependencies":[]}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "undefined",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication and Security",
+      "summary": "Implement secure user authentication and security features",
+      "description": "Develop a multi-factor authentication system to ensure secure logins. Implement encryption protocols to protect sensitive financial data. Enable features for password recovery and account lockout after multiple failed attempts.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Personalized Dashboard",
+      "summary": "Create a personalized user dashboard",
+      "description": "Design and build a personalized dashboard that displays available banking products and services based on user profile and eligibility. Ensure the dashboard provides an intuitive and user-friendly interface for easy navigation.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Account Requests and Modifications",
+      "summary": "Implement functionality for account opening requests and modifications",
+      "description": "Develop workflows to allow customers to submit account opening requests and service modifications with minimal clicks. Ensure the process is streamlined and user-friendly.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Real-Time Status Updates",
+      "summary": "Provide real-time status updates",
+      "description": "Implement a system to provide real-time status updates and email notifications regarding submitted requests. Ensure the updates are timely and accurate.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of user interactions",
+      "description": "Develop a feature to maintain a comprehensive history of all user interactions. Ensure the data is secure and easily accessible for the user.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across various devices",
+      "description": "Develop a responsive design for the portal to provide a consistent experience across desktop, tablet, and mobile devices. Ensure compatibility with different screen sizes and resolutions.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Save Incomplete Applications",
+      "summary": "Allow users to save and return to incomplete applications",
+      "description": "Implement functionality to allow users to save incomplete applications and return to them at a later time. Enable users to upload necessary documentation directly through the interface.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Core Banking Integration",
+      "summary": "Integrate the portal with the bank's core banking system",
+      "description": "Ensure seamless integration with the bank's existing core banking system. Maintain a separate database for the portal to ensure optimal performance and reliability.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Role-Based Access Control",
+      "summary": "Implement role-based access controls",
+      "description": "Develop and implement role-based access controls to ensure users can only view and access services appropriate to their profile and authorization level.",
+      "dependencies": []
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/SDLC2.0/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": {
+    "description": "The architecture includes a user interface with responsive design, secure authentication, multi-factor authentication, backend processing using Kubernetes or Azure Functions, data storage using SQL and Blob Storage, asynchronous workflows, real-time updates, core banking system integrations, and monitoring and analytics.",
+    "nodes": [
+      {
+        "id": "WebApp",
+        "data": {
+          "label": "Azure App Service (Web App)"
+        },
+        "position": {
+          "x": 10,
+          "y": 10
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Security"
+        },
+        "position": {
+          "x": 300,
+          "y": 10
+        },
+        "style": {
+          "width": 500,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "MFA",
+        "data": {
+          "label": "Azure AD B2C (MFA)"
+        },
+        "position": {
+          "x": 310,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "RBAC",
+        "data": {
+          "label": "Role-Based Access Control"
+        },
+        "position": {
+          "x": 310,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Backend and APIs"
+        },
+        "position": {
+          "x": 850,
+          "y": 10
+        },
+        "style": {
+          "width": 420,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "API Management",
+        "data": {
+          "label": "API Management"
+        },
+        "position": {
+          "x": 860,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "Microservices",
+        "data": {
+          "label": "AKS / Azure Functions"
+        },
+        "position": {
+          "x": 860,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Databases and Storage"
+        },
+        "position": {
+          "x": 1300,
+          "y": 10
+        },
+        "style": {
+          "width": 450,
+          "height": 250,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQL Database",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1310,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Blob Storage",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 1310,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Queue Storage",
+        "data": {
+          "label": "Azure Queue Storage"
+        },
+        "position": {
+          "x": 1310,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Workflow and Integration"
+        },
+        "position": {
+          "x": 10,
+          "y": 350
+        },
+        "style": {
+          "width": 780,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Logic Apps",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 20,
+          "y": 360
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "SignalR",
+        "data": {
+          "label": "Azure SignalR Service"
+        },
+        "position": {
+          "x": 20,
+          "y": 430
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "Notification",
+        "data": {
+          "label": "Azure Communication Services"
+        },
+        "position": {
+          "x": 20,
+          "y": 500
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "Service Bus",
+        "data": {
+          "label": "Azure Service Bus"
+        },
+        "position": {
+          "x": 20,
+          "y": 570
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "group-5",
+        "type": "group",
+        "data": {
+          "label": "Monitoring and Analytics"
+        },
+        "position": {
+          "x": 850,
+          "y": 350
+        },
+        "style": {
+          "width": 420,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Monitoring",
+        "data": {
+          "label": "Azure Monitor"
+        },
+        "position": {
+          "x": 860,
+          "y": 360
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      },
+      {
+        "id": "Analytics",
+        "data": {
+          "label": "Azure Log Analytics"
+        },
+        "position": {
+          "x": 860,
+          "y": 430
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "WebApp",
+        "target": "MFA",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "MFA",
+        "target": "API Management",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "API Management",
+        "target": "SQL Database",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "API Management",
+        "target": "Queue Storage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "Queue Storage",
+        "target": "SignalR",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "API Management",
+        "target": "Service Bus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "Service Bus",
+        "target": "Monitoring",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "Monitoring",
+        "target": "Analytics",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
+  "architecture_validation": {
+    "updatedDescription": "The architecture has been enhanced to address critical security and reliability gaps by adding a Web Application Firewall (WAF) and placeholders for disaster recovery (DR) components. All nodes and edges are validated, and the diagram adheres to the Azure Well-Architected Framework principles.",
+    "nodes": [
+      {
+        "id": "WebApp",
+        "data": {
+          "label": "Azure App Service (Web App)"
+        },
+        "position": {
+          "x": 10,
+          "y": 10
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Security"
+        },
+        "position": {
+          "x": 300,
+          "y": 10
+        },
+        "style": {
+          "width": 500,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "MFA",
+        "data": {
+          "label": "Azure AD B2C (MFA)"
+        },
+        "position": {
+          "x": 310,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "RBAC",
+        "data": {
+          "label": "Role-Based Access Control"
+        },
+        "position": {
+          "x": 310,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "WAF",
+        "data": {
+          "label": "Azure Web Application Firewall (WAF)"
+        },
+        "position": {
+          "x": 310,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Backend and APIs"
+        },
+        "position": {
+          "x": 850,
+          "y": 10
+        },
+        "style": {
+          "width": 420,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "API Management",
+        "data": {
+          "label": "API Management"
+        },
+        "position": {
+          "x": 860,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "Microservices",
+        "data": {
+          "label": "AKS / Azure Functions"
+        },
+        "position": {
+          "x": 860,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Databases and Storage"
+        },
+        "position": {
+          "x": 1300,
+          "y": 10
+        },
+        "style": {
+          "width": 450,
+          "height": 250,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQL Database",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1310,
+          "y": 20
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Blob Storage",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 1310,
+          "y": 90
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Queue Storage",
+        "data": {
+          "label": "Azure Queue Storage"
+        },
+        "position": {
+          "x": 1310,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "DR-SQL",
+        "data": {
+          "label": "Placeholder: DR for SQL Database"
+        },
+        "position": {
+          "x": 1400,
+          "y": 20
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "DR-Blob",
+        "data": {
+          "label": "Placeholder: DR for Blob Storage"
+        },
+        "position": {
+          "x": 1400,
+          "y": 90
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "DR-Queue",
+        "data": {
+          "label": "Placeholder: DR for Queue Storage"
+        },
+        "position": {
+          "x": 1400,
+          "y": 160
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Workflow and Integration"
+        },
+        "position": {
+          "x": 10,
+          "y": 350
+        },
+        "style": {
+          "width": 780,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Logic Apps",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 20,
+          "y": 360
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "SignalR",
+        "data": {
+          "label": "Azure SignalR Service"
+        },
+        "position": {
+          "x": 20,
+          "y": 430
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "Notification",
+        "data": {
+          "label": "Azure Communication Services"
+        },
+        "position": {
+          "x": 20,
+          "y": 500
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "Service Bus",
+        "data": {
+          "label": "Azure Service Bus"
+        },
+        "position": {
+          "x": 20,
+          "y": 570
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "group-5",
+        "type": "group",
+        "data": {
+          "label": "Monitoring and Analytics"
+        },
+        "position": {
+          "x": 850,
+          "y": 350
+        },
+        "style": {
+          "width": 420,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Monitoring",
+        "data": {
+          "label": "Azure Monitor"
+        },
+        "position": {
+          "x": 860,
+          "y": 360
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      },
+      {
+        "id": "Analytics",
+        "data": {
+          "label": "Azure Log Analytics"
+        },
+        "position": {
+          "x": 860,
+          "y": 430
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "WebApp",
+        "target": "MFA",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "MFA",
+        "target": "API Management",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "API Management",
+        "target": "SQL Database",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "API Management",
+        "target": "Queue Storage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "Queue Storage",
+        "target": "SignalR",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "API Management",
+        "target": "Service Bus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "Service Bus",
+        "target": "Monitoring",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "Monitoring",
+        "target": "Analytics",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e9",
+        "source": "WebApp",
+        "target": "WAF",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e10",
+        "source": "SQL Database",
+        "target": "DR-SQL",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e11",
+        "source": "Blob Storage",
+        "target": "DR-Blob",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e12",
+        "source": "Queue Storage",
+        "target": "DR-Queue",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
+}
