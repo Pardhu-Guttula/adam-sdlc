@@ -159,7 +159,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram represents a self-service portal for a bank customer using various Azure services for frontend, backend, authentication, data management, integration services, monitoring, DevOps, and security.",
+    "description": "This architecture diagram includes virtual networks integrated into the bank's self-service portal for enhanced network management.",
     "nodes": [
       {
         "id": "main-entry",
@@ -319,6 +319,40 @@
         },
         "parentId": "group-data",
         "extent": "parent"
+      },
+      {
+        "id": "group-network",
+        "type": "group",
+        "data": {
+          "label": "Virtual Networks"
+        },
+        "position": {
+          "x": 1600,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 100,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-1",
+        "data": {
+          "label": "Virtual Network"
+        },
+        "position": {
+          "x": 10,
+          "y": 10
+        },
+        "style": {
+          "backgroundColor": "#FFFFFF"
+        },
+        "parentId": "group-network",
+        "extent": "parent"
       }
     ],
     "edges": [
@@ -355,6 +389,16 @@
       {
         "id": "backend-data",
         "source": "api-services",
+        "target": "sql-db",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-vnet-sqldb",
+        "source": "node-1",
         "target": "sql-db",
         "type": "default",
         "animated": true,
