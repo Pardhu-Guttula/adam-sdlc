@@ -159,7 +159,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "The architecture for a banking portal uses Azure services, providing a robust, scalable, and secure solution. It includes frontend services using Azure App Service and CDN, backend logic using Azure Functions and Logic Apps, data storage with Azure SQL and Blob Storage, integration with the core banking system using Azure Service Bus, security with Azure Key Vault, and monitoring with Azure Monitor and Application Insights.",
+    "description": "The AWS-based architecture for a banking portal uses Elastic Beanstalk and CloudFront for frontend services, Lambda and Step Functions for backend logic, RDS and S3 for data storage, SQS for core banking integration, IAM and CloudWatch for security and monitoring.",
     "nodes": [
       {
         "id": "group-1",
@@ -181,9 +181,9 @@
         }
       },
       {
-        "id": "WebApp",
+        "id": "ElasticBeanstalk",
         "data": {
-          "label": "Azure App Service"
+          "label": "AWS Elastic Beanstalk"
         },
         "position": {
           "x": 130,
@@ -198,9 +198,9 @@
         "extent": "parent"
       },
       {
-        "id": "CDN",
+        "id": "CloudFront",
         "data": {
-          "label": "Azure CDN"
+          "label": "AWS CloudFront"
         },
         "position": {
           "x": 180,
@@ -215,9 +215,9 @@
         "extent": "parent"
       },
       {
-        "id": "AppGateway",
+        "id": "ALB",
         "data": {
-          "label": "Azure Application Gateway"
+          "label": "AWS Application Load Balancer"
         },
         "position": {
           "x": 230,
@@ -251,9 +251,9 @@
         }
       },
       {
-        "id": "Functions",
+        "id": "Lambda",
         "data": {
-          "label": "Azure Functions"
+          "label": "AWS Lambda"
         },
         "position": {
           "x": 530,
@@ -268,9 +268,9 @@
         "extent": "parent"
       },
       {
-        "id": "LogicApps",
+        "id": "StepFunctions",
         "data": {
-          "label": "Azure Logic Apps"
+          "label": "AWS Step Functions"
         },
         "position": {
           "x": 580,
@@ -285,9 +285,9 @@
         "extent": "parent"
       },
       {
-        "id": "ApiManagement",
+        "id": "ApiGateway",
         "data": {
-          "label": "Azure API Management"
+          "label": "AWS API Gateway"
         },
         "position": {
           "x": 630,
@@ -321,9 +321,9 @@
         }
       },
       {
-        "id": "SQLDatabase",
+        "id": "RDS",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "AWS RDS"
         },
         "position": {
           "x": 930,
@@ -338,9 +338,9 @@
         "extent": "parent"
       },
       {
-        "id": "BlobStorage",
+        "id": "S3",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "AWS S3"
         },
         "position": {
           "x": 980,
@@ -355,9 +355,9 @@
         "extent": "parent"
       },
       {
-        "id": "CacheRedis",
+        "id": "ElasticCache",
         "data": {
-          "label": "Azure Cache for Redis"
+          "label": "AWS ElastiCache"
         },
         "position": {
           "x": 1030,
@@ -391,9 +391,9 @@
         }
       },
       {
-        "id": "ServiceBus",
+        "id": "SQS",
         "data": {
-          "label": "Azure Service Bus"
+          "label": "AWS SQS"
         },
         "position": {
           "x": 1330,
@@ -408,9 +408,9 @@
         "extent": "parent"
       },
       {
-        "id": "IntegrationLogicApps",
+        "id": "IntegrationStepFunctions",
         "data": {
-          "label": "Azure Logic Apps"
+          "label": "AWS Step Functions"
         },
         "position": {
           "x": 1380,
@@ -428,8 +428,8 @@
     "edges": [
       {
         "id": "e1",
-        "source": "WebApp",
-        "target": "Functions",
+        "source": "ElasticBeanstalk",
+        "target": "Lambda",
         "type": "default",
         "animated": true,
         "style": {
@@ -438,8 +438,8 @@
       },
       {
         "id": "e2",
-        "source": "CDN",
-        "target": "Functions",
+        "source": "CloudFront",
+        "target": "Lambda",
         "type": "default",
         "animated": true,
         "style": {
@@ -448,8 +448,8 @@
       },
       {
         "id": "e3",
-        "source": "AppGateway",
-        "target": "Functions",
+        "source": "ALB",
+        "target": "Lambda",
         "type": "default",
         "animated": true,
         "style": {
@@ -458,8 +458,8 @@
       },
       {
         "id": "e4",
-        "source": "Functions",
-        "target": "ServiceBus",
+        "source": "Lambda",
+        "target": "SQS",
         "type": "default",
         "animated": true,
         "style": {
@@ -468,8 +468,8 @@
       },
       {
         "id": "e5",
-        "source": "ApiManagement",
-        "target": "ServiceBus",
+        "source": "ApiGateway",
+        "target": "SQS",
         "type": "default",
         "animated": true,
         "style": {
@@ -478,8 +478,8 @@
       },
       {
         "id": "e6",
-        "source": "Functions",
-        "target": "BlobStorage",
+        "source": "Lambda",
+        "target": "S3",
         "type": "default",
         "animated": true,
         "style": {
@@ -488,8 +488,8 @@
       },
       {
         "id": "e7",
-        "source": "SQLDatabase",
-        "target": "ServiceBus",
+        "source": "RDS",
+        "target": "SQS",
         "type": "default",
         "animated": true,
         "style": {
@@ -498,8 +498,8 @@
       },
       {
         "id": "e8",
-        "source": "IntegrationLogicApps",
-        "target": "Functions",
+        "source": "IntegrationStepFunctions",
+        "target": "Lambda",
         "type": "default",
         "animated": true,
         "style": {
