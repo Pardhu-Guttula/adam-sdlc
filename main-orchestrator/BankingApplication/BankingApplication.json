@@ -159,33 +159,203 @@
     }
   ],
   "architecture_generation": {
-    "description": "Rearchitecting to Azure not supported. Please modify AWS diagram.",
+    "description": "This architecture diagram represents a self-service portal for a bank customer using various Azure services for frontend, backend, authentication, data management, integration services, monitoring, DevOps, and security.",
     "nodes": [
       {
-        "id": "group-1",
-        "type": "group",
+        "id": "main-entry",
         "data": {
-          "label": "Example Tier"
+          "label": "Main Entry (User)"
         },
         "position": {
-          "x": 100,
-          "y": 100
+          "x": 50,
+          "y": 50
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-frontend",
+        "type": "group",
+        "data": {
+          "label": "Frontend Services"
+        },
+        "position": {
+          "x": 200,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 100,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
+      },
+      {
+        "id": "frontend-app",
+        "data": {
+          "label": "Responsive Web Application"
+        },
+        "position": {
+          "x": 10,
+          "y": 10
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
+        "extent": "parent"
+      },
+      {
+        "id": "group-security",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Security"
+        },
+        "position": {
+          "x": 550,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 100,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "mfa",
+        "data": {
+          "label": "Multi-Factor Authentication"
+        },
+        "position": {
+          "x": 10,
+          "y": 10
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-security",
+        "extent": "parent"
+      },
+      {
+        "id": "group-backend",
+        "type": "group",
+        "data": {
+          "label": "Backend APIs & Services"
+        },
+        "position": {
+          "x": 900,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 100,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "api-services",
+        "data": {
+          "label": "RESTful API Services"
+        },
+        "position": {
+          "x": 10,
+          "y": 10
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-backend",
+        "extent": "parent"
+      },
+      {
+        "id": "group-data",
+        "type": "group",
+        "data": {
+          "label": "Data Persistence"
+        },
+        "position": {
+          "x": 1250,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 100,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "sql-db",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 10,
+          "y": 10
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-data",
+        "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1-1a",
-        "source": "some-source-node",
-        "target": "node-1a",
+        "id": "main-frontend",
+        "source": "main-entry",
+        "target": "frontend-app",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "frontend-security",
+        "source": "frontend-app",
+        "target": "mfa",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "security-backend",
+        "source": "mfa",
+        "target": "api-services",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "backend-data",
+        "source": "api-services",
+        "target": "sql-db",
         "type": "default",
         "animated": true,
         "style": {
