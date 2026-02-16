@@ -230,7 +230,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "A modern, user-friendly self-service banking portal architecture featuring frontend services, secure authentication, backend integration, data management, workflow automation, storage, performance monitoring, data security, and development/deployment capabilities.",
+    "description": "A GCP-based, user-friendly self-service banking portal architecture featuring frontend services, secure authentication, backend integration, data management, workflow automation, storage, performance monitoring, data security, and development/deployment capabilities.",
     "nodes": [
       {
         "id": "group-1",
@@ -254,7 +254,7 @@
       {
         "id": "node-1",
         "data": {
-          "label": "Azure Active Directory B2C"
+          "label": "Google Identity Platform"
         },
         "position": {
           "x": 10,
@@ -271,7 +271,7 @@
       {
         "id": "node-2",
         "data": {
-          "label": "Role-Based Access Control (RBAC)"
+          "label": "IAM (Access Control)"
         },
         "position": {
           "x": 10,
@@ -343,7 +343,7 @@
       {
         "id": "node-4",
         "data": {
-          "label": "Azure App Service"
+          "label": "Cloud Functions"
         },
         "position": {
           "x": 710,
@@ -360,7 +360,7 @@
       {
         "id": "node-5",
         "data": {
-          "label": "Azure API Management"
+          "label": "API Gateway"
         },
         "position": {
           "x": 710,
@@ -396,7 +396,7 @@
       {
         "id": "node-6",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Cloud SQL"
         },
         "position": {
           "x": 1060,
