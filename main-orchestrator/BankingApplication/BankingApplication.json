@@ -409,7 +409,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been validated and enhanced to address critical reliability and security gaps. Placeholder nodes for Disaster Recovery and Azure Load Testing were retained, and all nodes and edges were verified for consistency. Azure Key Vault integration was reviewed, and all backend services are now connected. The diagram adheres to the Azure Well-Architected Framework, ensuring a robust, scalable, and secure solution with high availability and performance.",
+    "updatedDescription": "The architecture has been enhanced to address critical gaps in security, reliability, and performance efficiency. Azure Security Center was added for comprehensive security monitoring, and placeholders for Disaster Recovery and Azure Load Testing were retained. All nodes and edges were validated for consistency, and the diagram adheres to the Azure Well-Architected Framework, ensuring a robust, scalable, and secure solution.",
     "nodes": [
       {
         "id": "group-1",
@@ -743,6 +743,20 @@
           "border": "1px solid #008000",
           "backgroundColor": "#E8F5E9"
         }
+      },
+      {
+        "id": "SecurityCenter",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 400,
+          "y": 400
+        },
+        "style": {
+          "border": "1px solid #FF00FF",
+          "backgroundColor": "#FCE4EC"
+        }
       }
     ],
     "edges": [
@@ -974,6 +988,66 @@
         "animated": true,
         "style": {
           "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e24",
+        "source": "SecurityCenter",
+        "target": "WebApp",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e25",
+        "source": "SecurityCenter",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e26",
+        "source": "SecurityCenter",
+        "target": "LogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e27",
+        "source": "SecurityCenter",
+        "target": "ApiManagement",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e28",
+        "source": "SecurityCenter",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e29",
+        "source": "SecurityCenter",
+        "target": "IntegrationLogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
         }
       }
     ]
