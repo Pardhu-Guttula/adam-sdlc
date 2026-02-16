@@ -409,7 +409,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address critical gaps in security, reliability, and performance efficiency. Azure Security Center was added for comprehensive security monitoring, and placeholders for Disaster Recovery and Azure Load Testing were retained. All nodes and edges were validated for consistency, and the diagram adheres to the Azure Well-Architected Framework, ensuring a robust, scalable, and secure solution.",
+    "updatedDescription": "The architecture has been validated and enhanced to address critical gaps in security, reliability, and performance efficiency. Placeholder nodes for Disaster Recovery and Azure Load Testing were retained, and all nodes and edges were verified for consistency. The diagram adheres to the Azure Well-Architected Framework, ensuring a robust, scalable, and secure solution.",
     "nodes": [
       {
         "id": "group-1",
