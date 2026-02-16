@@ -71,7 +71,116 @@
     }
   ],
   "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/SDLC2.0/boards/2056/backlog",
-  "user_stories": null,
+  "user_stories": [
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement Multi-Factor Authentication",
+      "description": "As a user, I want multi-factor authentication, so that my logins are more secure.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Must support SMS, email, and authenticator apps for second-factor authentication.",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "1. User can set up and use multi-factor authentication.\n2. Successful verification of second-factor authentication.",
+      "test_cases": "Given the user has provided valid first-factor credentials, When the system prompts for a second factor, Then the user should be able to authenticate using SMS, email, or authenticator app."
+    },
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Implement Data Encryption Protocols",
+      "description": "As a user, I want my financial data to be encrypted, so that it is protected from unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Must use industry-standard encryption protocols like AES-256.",
+      "core_domain_objects": "User, Data",
+      "acceptance_criteria": "1. Data is encrypted during transfer and storage.\n2. Decryption is only possible with valid credentials.",
+      "test_cases": "Given the user accesses their financial data, When the data is transferred or stored, Then it should be encrypted using AES-256 or equivalent protocol."
+    },
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Implement Account Lockout Mechanism",
+      "description": "As a user, I want my account to be locked after multiple failed login attempts, so that my account is protected from unauthorized access.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Account should be locked for a configurable duration after a certain number of failed attempts.",
+      "core_domain_objects": "User, LoginAttempt",
+      "acceptance_criteria": "1. Account is locked after 5 failed login attempts.\n2. User is notified via email of account lockout.",
+      "test_cases": "Given the user has failed to login 5 times, When another login attempt is made, Then the account should be locked, and the user receives an email notification."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Design User Profile-Based Dashboard",
+      "description": "As a user, I want a personalized dashboard based on my profile, so that I see relevant banking products and services.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Dashboard should dynamically show content based on the user's profile and eligibility.",
+      "core_domain_objects": "User, Dashboard",
+      "acceptance_criteria": "1. Dashboard displays personalized content.\n2. Users see products and services relevant to them.",
+      "test_cases": "Given the user logs in, When the dashboard loads, Then it should display products and services based on the user’s profile."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Ensure Intuitive Dashboard Interface",
+      "description": "As a user, I want an intuitive dashboard interface, so that I can navigate easily.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "The UI should be user-friendly and straightforward.",
+      "core_domain_objects": "User, Dashboard",
+      "acceptance_criteria": "1. User feedback indicates ease of navigation.\n2. Key functions are easily accessible.",
+      "test_cases": "Given the user is on the dashboard, When navigating through the options, Then the user should find it easy to access important functions."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "Display Banking Products Dynamically",
+      "description": "As a user, I want to see available banking products dynamically displayed on my dashboard, so that I can explore options suited to me.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Products should auto-update based on user data.",
+      "core_domain_objects": "User, Product",
+      "acceptance_criteria": "1. Products auto-update based on user profile.\n2. Relevant offers are shown without page reload.",
+      "test_cases": "Given the user accesses the dashboard, When the system checks the user profile, Then the products displayed should dynamically update based on the latest data."
+    },
+    {
+      "epic_title": "Account Requests and Modifications",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Simplify Account Opening Workflow",
+      "description": "As a user, I want to easily submit account opening requests, so that I can open a new account with minimal effort.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Workflow should require a minimal number of clicks.",
+      "core_domain_objects": "User, Account",
+      "acceptance_criteria": "1. Account opening request submitted in less than 5 clicks.\n2. User receives confirmation of request submission.",
+      "test_cases": "Given the user wants to open a new account, When they use the web interface, Then the request should be submitable with minimal clicks and a confirmation should be received."
+    },
+    {
+      "epic_title": "Account Requests and Modifications",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Streamline Service Modification Requests",
+      "description": "As a user, I want to easily submit service modifications, so that I can update my existing accounts effortlessly.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Service modifications should be intuitive and efficient.",
+      "core_domain_objects": "User, Service",
+      "acceptance_criteria": "1. Modifications are easy to request.\n2. User feedback indicates satisfaction with the process.",
+      "test_cases": "Given the user needs to update a service, When they navigate the interface, Then the modification process should be straightforward and intuitive."
+    },
+    {
+      "epic_title": "Account Requests and Modifications",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "User-Friendly Account Service Interface",
+      "description": "As a user, I want a user-friendly interface for account services, so that I can easily make account modifications.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Interface should be clear and user-oriented.",
+      "core_domain_objects": "User, Account",
+      "acceptance_criteria": "1. Interface is easy to navigate.\n2. Users can find the modification options quickly.",
+      "test_cases": "Given the user needs to modify account services, When they use the modification interface, Then they should be able to navigate it easily and find options quickly."
+    }
+  ],
   "architecture_generation": null,
   "architecture_validation": null
 }
