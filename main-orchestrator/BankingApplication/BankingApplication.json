@@ -409,7 +409,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address critical reliability and security gaps. Placeholder nodes were added for missing disaster recovery mechanisms and Azure Active Directory for identity management. All nodes and edges are validated, ensuring a robust, scalable, and secure solution with high availability and performance.",
+    "updatedDescription": "The architecture has been enhanced to address critical reliability and security gaps. Placeholder nodes were added for missing disaster recovery mechanisms and Azure Active Directory for identity management. Additionally, a new node for Azure Key Vault was introduced to improve security by securely managing secrets, keys, and certificates. All nodes and edges are validated, ensuring a robust, scalable, and secure solution with high availability and performance.",
     "nodes": [
       {
         "id": "group-1",
@@ -729,6 +729,20 @@
           "border": "1px solid #0000FF",
           "backgroundColor": "#E3F2FD"
         }
+      },
+      {
+        "id": "KeyVault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 800,
+          "y": 400
+        },
+        "style": {
+          "border": "1px solid #008000",
+          "backgroundColor": "#E8F5E9"
+        }
       }
     ],
     "edges": [
@@ -900,6 +914,66 @@
         "animated": true,
         "style": {
           "stroke": "#0000FF"
+        }
+      },
+      {
+        "id": "e18",
+        "source": "KeyVault",
+        "target": "WebApp",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e19",
+        "source": "KeyVault",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e20",
+        "source": "KeyVault",
+        "target": "LogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e21",
+        "source": "KeyVault",
+        "target": "ApiManagement",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e22",
+        "source": "KeyVault",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e23",
+        "source": "KeyVault",
+        "target": "IntegrationLogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
         }
       }
     ]
