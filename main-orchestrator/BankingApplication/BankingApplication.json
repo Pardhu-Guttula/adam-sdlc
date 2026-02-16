@@ -1,6 +1,6 @@
 {
   "user_prompt": "undefined",
-  "repo_link": "undefined",
+  "repo_link": null,
   "epics": [
     {
       "id": "EPIC-1",
@@ -70,7 +70,7 @@
       "dependencies": []
     }
   ],
-  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/SDLC2.0/boards/2056/backlog",
+  "jira_link": null,
   "user_stories": [
     {
       "epic_title": "User Authentication and Security",
@@ -181,6 +181,184 @@
       "test_cases": "Given the user needs to modify account services, When they use the modification interface, Then they should be able to navigate it easily and find options quickly."
     }
   ],
-  "architecture_generation": null,
+  "architecture_generation": {
+    "description": "This architecture describes a modern, user-friendly self-service banking portal using Azure services. The portal includes client-side services, authentication and security, backend services, databases, integration with core banking systems, document handling, notifications, logging, monitoring, DevOps, user experience enhancements, miscellaneous services, and API management.",
+    "nodes": [
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Client-Side"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Security"
+        },
+        "position": {
+          "x": 400,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 700,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Database and Data Storage"
+        },
+        "position": {
+          "x": 1000,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "main-node",
+        "data": {
+          "label": "Frontend (Entry Point)"
+        },
+        "position": {
+          "x": 50,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "auth-node",
+        "data": {
+          "label": "Azure AD B2C (Auth)"
+        },
+        "position": {
+          "x": 450,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "api-node",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 750,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "db-node",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1050,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "main-node",
+        "target": "auth-node",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "auth-node",
+        "target": "api-node",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "api-node",
+        "target": "db-node",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
   "architecture_validation": null
 }
