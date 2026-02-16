@@ -182,39 +182,73 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture describes a modern, user-friendly self-service banking portal using Azure services. The portal includes client-side services, authentication and security, backend services, databases, integration with core banking systems, document handling, notifications, logging, monitoring, DevOps, user experience enhancements, miscellaneous services, and API management.",
+    "description": "A modern, user-friendly self-service banking portal architecture featuring frontend services, secure authentication, backend integration, data management, workflow automation, storage, performance monitoring, data security, and development/deployment capabilities.",
     "nodes": [
       {
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Client-Side"
+          "label": "Authentication & Security"
         },
         "position": {
-          "x": 100,
-          "y": 100
+          "x": 0,
+          "y": 0
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 250,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
+      },
+      {
+        "id": "node-1",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 10,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "node-2",
+        "data": {
+          "label": "Role-Based Access Control (RBAC)"
+        },
+        "position": {
+          "x": 10,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
       },
       {
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Authentication and Security"
+          "label": "Frontend Services"
         },
         "position": {
-          "x": 400,
-          "y": 100
+          "x": 350,
+          "y": 0
         },
         "style": {
-          "width": 250,
+          "width": 300,
           "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
@@ -223,66 +257,13 @@
         }
       },
       {
-        "id": "group-3",
-        "type": "group",
+        "id": "node-3",
         "data": {
-          "label": "Backend Services"
+          "label": "React.js"
         },
         "position": {
-          "x": 700,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-4",
-        "type": "group",
-        "data": {
-          "label": "Database and Data Storage"
-        },
-        "position": {
-          "x": 1000,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "main-node",
-        "data": {
-          "label": "Frontend (Entry Point)"
-        },
-        "position": {
-          "x": 50,
-          "y": 300
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "auth-node",
-        "data": {
-          "label": "Azure AD B2C (Auth)"
-        },
-        "position": {
-          "x": 450,
-          "y": 300
+          "x": 360,
+          "y": 50
         },
         "style": {
           "border": "none",
@@ -293,13 +274,32 @@
         "extent": "parent"
       },
       {
-        "id": "api-node",
+        "id": "group-3",
+        "type": "group",
         "data": {
-          "label": "Azure API Management"
+          "label": "Backend Services"
         },
         "position": {
-          "x": 750,
-          "y": 300
+          "x": 700,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 250,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-4",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 710,
+          "y": 50
         },
         "style": {
           "border": "none",
@@ -310,13 +310,49 @@
         "extent": "parent"
       },
       {
-        "id": "db-node",
+        "id": "node-5",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 710,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Data Management"
+        },
+        "position": {
+          "x": 1050,
+          "y": 0
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-6",
         "data": {
           "label": "Azure SQL Database"
         },
         "position": {
-          "x": 1050,
-          "y": 300
+          "x": 1060,
+          "y": 50
         },
         "style": {
           "border": "none",
@@ -325,13 +361,28 @@
         },
         "parentId": "group-4",
         "extent": "parent"
+      },
+      {
+        "id": "node-main",
+        "data": {
+          "label": "Frontend"
+        },
+        "position": {
+          "x": 1600,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "main-node",
-        "target": "auth-node",
+        "id": "edge-1",
+        "source": "node-main",
+        "target": "node-1",
         "type": "default",
         "animated": true,
         "style": {
@@ -339,9 +390,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "auth-node",
-        "target": "api-node",
+        "id": "edge-2",
+        "source": "node-3",
+        "target": "node-4",
         "type": "default",
         "animated": true,
         "style": {
@@ -349,9 +400,19 @@
         }
       },
       {
-        "id": "e3",
-        "source": "api-node",
-        "target": "db-node",
+        "id": "edge-3",
+        "source": "node-4",
+        "target": "node-5",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-4",
+        "source": "node-5",
+        "target": "node-6",
         "type": "default",
         "animated": true,
         "style": {
