@@ -72,7 +72,92 @@
     }
   ],
   "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/SDLC2.0/boards/2056/backlog",
-  "user_stories": null,
+  "user_stories": [
+    {
+      "epic_title": "User Authentication System",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement Multi-Factor Authentication (MFA)",
+      "description": "As a user, I want multi-factor authentication to secure my account, so that I can protect my sensitive information from unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "MFA should include email/SMS-based OTP and support for biometric methods.",
+      "core_domain_objects": "User, Security",
+      "acceptance_criteria": "MFA mechanism implemented, users receive OTP via email/SMS/biometric verification, authentication integrates with existing security systems.",
+      "test_cases": "Given user login attempt, When OTP is requested, Then user receives OTP via email/SMS/biometric."
+    },
+    {
+      "epic_title": "User Authentication System",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Integrate Authentication with Bank Security Infrastructure",
+      "description": "As a security administrator, I want the authentication system to integrate with our existing security infrastructure, so that we can maintain a unified security posture across all systems.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Seamless integration, compatibility with existing security measures.",
+      "core_domain_objects": "User, Security, Infrastructure",
+      "acceptance_criteria": "Authentication system integrated with existing infrastructure, no conflicts or vulnerabilities introduced.",
+      "test_cases": "Given the new authentication system, When integrated, Then it should work seamlessly with existing security infrastructure."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "Display Personalized Banking Products",
+      "description": "As a user, I want to see personalized banking products on my dashboard, so that I can easily access the services that are most relevant to me.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Dashboard displays products based on user profiles and eligibility.",
+      "core_domain_objects": "User, Products, Dashboard",
+      "acceptance_criteria": "Dashboard shows personalized products/services, user profile and eligibility criteria applied.",
+      "test_cases": "Given a user profile, When accessing dashboard, Then personalized products/services are displayed."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 4,
+      "title": "Intuitive Dashboard Interface",
+      "description": "As a user, I want an intuitive dashboard interface, so that I can quickly navigate and access various features and services.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "User-friendly layout, quick access to key features.",
+      "core_domain_objects": "User, Dashboard",
+      "acceptance_criteria": "Interface is intuitive, users can navigate easily and access features quickly.",
+      "test_cases": "Given a user, When using the dashboard, Then they can navigate and access features easily."
+    },
+    {
+      "epic_title": "Account Management Workflows",
+      "epic_key": "EPIC-3",
+      "number": 5,
+      "title": "Enable Account Opening Requests",
+      "description": "As a user, I want to submit account opening requests easily, so that I can open a new account with minimal effort.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Streamlined workflow for account opening, minimal clicks.",
+      "core_domain_objects": "User, Account, Workflow",
+      "acceptance_criteria": "Account opening process streamlined, users can submit requests with minimal clicks.",
+      "test_cases": "Given a user, When submitting account opening request, Then process is completed with minimal clicks."
+    },
+    {
+      "epic_title": "Account Management Workflows",
+      "epic_key": "EPIC-3",
+      "number": 6,
+      "title": "Save and Resume Incomplete Applications",
+      "description": "As a user, I want to save my incomplete account applications, so that I can return to them later without starting over.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Feature to save and resume applications, user-friendly.",
+      "core_domain_objects": "User, Application, Workflow",
+      "acceptance_criteria": "Users can save incomplete applications and resume later seamlessly.",
+      "test_cases": "Given an incomplete application, When saved, Then user can resume later without starting over."
+    },
+    {
+      "epic_title": "Account Management Workflows",
+      "epic_key": "EPIC-3",
+      "number": 7,
+      "title": "Upload Documentation for Account Requests",
+      "description": "As a user, I want to upload necessary documentation directly, so that I can complete my account request efficiently.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Direct upload feature, supports various document formats.",
+      "core_domain_objects": "User, Document, Workflow",
+      "acceptance_criteria": "Users can upload documents directly, supported formats verified.",
+      "test_cases": "Given account request, When uploading documents, Then process is seamless and formats are supported."
+    }
+  ],
   "architecture_generation": null,
   "architecture_validation": null
 }
