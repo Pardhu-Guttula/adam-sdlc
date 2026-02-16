@@ -1,6 +1,6 @@
 {
   "user_prompt": "undefined",
-  "repo_link": "null",
+  "repo_link": null,
   "epics": [
     {
       "id": "EPIC-1",
@@ -70,7 +70,7 @@
       "dependencies": []
     }
   ],
-  "jira_url": "undefined",
+  "jira_link": null,
   "user_stories": [
     {
       "epic_title": "User Authentication and Security",
