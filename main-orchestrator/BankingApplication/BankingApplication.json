@@ -409,7 +409,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address critical reliability and security gaps. Placeholder nodes were added for missing disaster recovery mechanisms and Azure Active Directory for identity management. Additionally, a new node for Azure Key Vault was introduced to improve security by securely managing secrets, keys, and certificates. All nodes and edges are validated, ensuring a robust, scalable, and secure solution with high availability and performance.",
+    "updatedDescription": "The architecture has been validated and enhanced to address critical reliability and security gaps. Placeholder nodes for Disaster Recovery and Azure Load Testing were retained, and all nodes and edges were verified for consistency. Azure Key Vault integration was reviewed, and all backend services are now connected. The diagram adheres to the Azure Well-Architected Framework, ensuring a robust, scalable, and secure solution with high availability and performance.",
     "nodes": [
       {
         "id": "group-1",
