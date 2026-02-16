@@ -230,7 +230,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "A GCP-based, user-friendly self-service banking portal architecture featuring frontend services, secure authentication, backend integration, data management, workflow automation, storage, performance monitoring, data security, and development/deployment capabilities.",
+    "description": "A GCP-based, user-friendly self-service banking portal architecture with enhanced security and scalability through advanced features.",
     "nodes": [
       {
         "id": "group-1",
@@ -276,6 +276,23 @@
         "position": {
           "x": 10,
           "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "node-7",
+        "data": {
+          "label": "Cloud Armor"
+        },
+        "position": {
+          "x": 10,
+          "y": 210
         },
         "style": {
           "border": "none",
@@ -375,6 +392,23 @@
         "extent": "parent"
       },
       {
+        "id": "node-8",
+        "data": {
+          "label": "Load Balancer"
+        },
+        "position": {
+          "x": 710,
+          "y": 210
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
         "id": "group-4",
         "type": "group",
         "data": {
@@ -401,6 +435,23 @@
         "position": {
           "x": 1060,
           "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "node-9",
+        "data": {
+          "label": "Cache"
+        },
+        "position": {
+          "x": 1060,
+          "y": 110
         },
         "style": {
           "border": "none",
@@ -461,6 +512,36 @@
         "id": "edge-4",
         "source": "node-5",
         "target": "node-6",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-node-5-node-8",
+        "source": "node-5",
+        "target": "node-8",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-node-6-node-9",
+        "source": "node-6",
+        "target": "node-9",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-node-2-node-7",
+        "source": "node-2",
+        "target": "node-7",
         "type": "default",
         "animated": true,
         "style": {
