@@ -1,1 +1,75 @@
-{"session_id":"747a8c08489342c88b50245493c60f37","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"id":"EPIC-1","title":"User Authentication and Security","summary":"Implement multi-factor authentication and ensure data security","description":"Develop a secure login system incorporating multi-factor authentication to protect user accounts. Ensure all sensitive financial data is protected using industry-standard encryption methods. Implement comprehensive security measures to prevent unauthorized access.","dependencies":[]},{"id":"EPIC-2","title":"Personalized Dashboard","summary":"Create a personalized dashboard displaying banking products and services","description":"Design and implement a personalized dashboard that displays relevant banking products and services based on the customer's profile and eligibility. Ensure the dashboard is user-friendly and provides a seamless experience.","dependencies":[]},{"id":"EPIC-3","title":"Account Management","summary":"Enable account management and service modification","description":"Develop features that allow users to submit account opening requests and modify existing services through a streamlined, minimal-click workflow. Ensure real-time status updates and email notifications are sent regarding submitted requests.","dependencies":[]},{"id":"EPIC-4","title":"Interaction History","summary":"Maintain a comprehensive history of user interactions","description":"Implement a system to keep a detailed record of all user interactions with the portal. Ensure that transaction history is easily accessible and secure, providing transparency and traceability for the user.","dependencies":[]},{"id":"EPIC-5","title":"Responsive Design","summary":"Ensure the portal is responsive across various devices","description":"Develop a responsive design that provides a consistent user experience across desktops, tablets, and mobile phones. Optimize the portal’s interface for different screen sizes to ensure usability and accessibility.","dependencies":["EPIC-2"]},{"id":"EPIC-6","title":"Incomplete Application Handling","summary":"Allow users to save and return to incomplete applications","description":"Create functionality that lets users save incomplete applications and return to them later. Ensure users can easily upload necessary documentation directly through the interface, making the application process more convenient.","dependencies":["EPIC-3"]},{"id":"EPIC-7","title":"System Integration and Database Management","summary":"Integrate with core banking system while maintaining a separate database","description":"Ensure seamless integration of the portal with the bank's existing core banking system. Develop and maintain a separate database to optimize performance and reliability of the portal. Facilitate robust data synchronization between systems.","dependencies":["EPIC-1","EPIC-3"]},{"id":"EPIC-8","title":"Role-Based Access Control","summary":"Implement role-based access controls","description":"Implement a robust role-based access control system to ensure customers can only view and access services appropriate to their profile and authorization level. Establish strict access policies to enhance security and compliance.","dependencies":["EPIC-1"]}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "undefined",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication and Security",
+      "summary": "Implement multi-factor authentication and ensure data security",
+      "description": "Develop a secure login system incorporating multi-factor authentication to protect user accounts. Ensure all sensitive financial data is protected using industry-standard encryption methods. Implement comprehensive security measures to prevent unauthorized access.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Personalized Dashboard",
+      "summary": "Create a personalized dashboard displaying banking products and services",
+      "description": "Design and implement a personalized dashboard that displays relevant banking products and services based on the customer's profile and eligibility. Ensure the dashboard is user-friendly and provides a seamless experience.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Account Management",
+      "summary": "Enable account management and service modification",
+      "description": "Develop features that allow users to submit account opening requests and modify existing services through a streamlined, minimal-click workflow. Ensure real-time status updates and email notifications are sent regarding submitted requests.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of user interactions",
+      "description": "Implement a system to keep a detailed record of all user interactions with the portal. Ensure that transaction history is easily accessible and secure, providing transparency and traceability for the user.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across various devices",
+      "description": "Develop a responsive design that provides a consistent user experience across desktops, tablets, and mobile phones. Optimize the portal’s interface for different screen sizes to ensure usability and accessibility.",
+      "dependencies": [
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Incomplete Application Handling",
+      "summary": "Allow users to save and return to incomplete applications",
+      "description": "Create functionality that lets users save incomplete applications and return to them later. Ensure users can easily upload necessary documentation directly through the interface, making the application process more convenient.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-7",
+      "title": "System Integration and Database Management",
+      "summary": "Integrate with core banking system while maintaining a separate database",
+      "description": "Ensure seamless integration of the portal with the bank's existing core banking system. Develop and maintain a separate database to optimize performance and reliability of the portal. Facilitate robust data synchronization between systems.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Role-Based Access Control",
+      "summary": "Implement role-based access controls",
+      "description": "Implement a robust role-based access control system to ensure customers can only view and access services appropriate to their profile and authorization level. Establish strict access policies to enhance security and compliance.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
+}
