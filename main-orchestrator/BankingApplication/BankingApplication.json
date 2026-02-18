@@ -1,1 +1,695 @@
-{"session_id":"747a8c08489342c88b50245493c60f37","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"id":"EPIC-1","title":"User Authentication and Security","summary":"Implement multi-factor authentication and ensure data security","description":"Develop a secure login system incorporating multi-factor authentication to protect user accounts. Ensure all sensitive financial data is protected using industry-standard encryption methods. Implement comprehensive security measures to prevent unauthorized access.","dependencies":[]},{"id":"EPIC-2","title":"Personalized Dashboard","summary":"Create a personalized dashboard displaying banking products and services","description":"Design and implement a personalized dashboard that displays relevant banking products and services based on the customer's profile and eligibility. Ensure the dashboard is user-friendly and provides a seamless experience.","dependencies":[]},{"id":"EPIC-3","title":"Account Management","summary":"Enable account management and service modification","description":"Develop features that allow users to submit account opening requests and modify existing services through a streamlined, minimal-click workflow. Ensure real-time status updates and email notifications are sent regarding submitted requests.","dependencies":[]},{"id":"EPIC-4","title":"Interaction History","summary":"Maintain a comprehensive history of user interactions","description":"Implement a system to keep a detailed record of all user interactions with the portal. Ensure that transaction history is easily accessible and secure, providing transparency and traceability for the user.","dependencies":[]},{"id":"EPIC-5","title":"Responsive Design","summary":"Ensure the portal is responsive across various devices","description":"Develop a responsive design that provides a consistent user experience across desktops, tablets, and mobile phones. Optimize the portal’s interface for different screen sizes to ensure usability and accessibility.","dependencies":["EPIC-2"]},{"id":"EPIC-6","title":"Incomplete Application Handling","summary":"Allow users to save and return to incomplete applications","description":"Create functionality that lets users save incomplete applications and return to them later. Ensure users can easily upload necessary documentation directly through the interface, making the application process more convenient.","dependencies":["EPIC-3"]},{"id":"EPIC-7","title":"System Integration and Database Management","summary":"Integrate with core banking system while maintaining a separate database","description":"Ensure seamless integration of the portal with the bank's existing core banking system. Develop and maintain a separate database to optimize performance and reliability of the portal. Facilitate robust data synchronization between systems.","dependencies":["EPIC-1","EPIC-3"]},{"id":"EPIC-8","title":"Role-Based Access Control","summary":"Implement role-based access controls","description":"Implement a robust role-based access control system to ensure customers can only view and access services appropriate to their profile and authorization level. Establish strict access policies to enhance security and compliance.","dependencies":["EPIC-1"]}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "undefined",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication and Security",
+      "summary": "Implement multi-factor authentication and ensure data security",
+      "description": "Develop a secure login system incorporating multi-factor authentication to protect user accounts. Ensure all sensitive financial data is protected using industry-standard encryption methods. Implement comprehensive security measures to prevent unauthorized access.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Personalized Dashboard",
+      "summary": "Create a personalized dashboard displaying banking products and services",
+      "description": "Design and implement a personalized dashboard that displays relevant banking products and services based on the customer's profile and eligibility. Ensure the dashboard is user-friendly and provides a seamless experience.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Account Management",
+      "summary": "Enable account management and service modification",
+      "description": "Develop features that allow users to submit account opening requests and modify existing services through a streamlined, minimal-click workflow. Ensure real-time status updates and email notifications are sent regarding submitted requests.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of user interactions",
+      "description": "Implement a system to keep a detailed record of all user interactions with the portal. Ensure that transaction history is easily accessible and secure, providing transparency and traceability for the user.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across various devices",
+      "description": "Develop a responsive design that provides a consistent user experience across desktops, tablets, and mobile phones. Optimize the portal’s interface for different screen sizes to ensure usability and accessibility.",
+      "dependencies": [
+        "EPIC-2"
+      ]
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Incomplete Application Handling",
+      "summary": "Allow users to save and return to incomplete applications",
+      "description": "Create functionality that lets users save incomplete applications and return to them later. Ensure users can easily upload necessary documentation directly through the interface, making the application process more convenient.",
+      "dependencies": [
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-7",
+      "title": "System Integration and Database Management",
+      "summary": "Integrate with core banking system while maintaining a separate database",
+      "description": "Ensure seamless integration of the portal with the bank's existing core banking system. Develop and maintain a separate database to optimize performance and reliability of the portal. Facilitate robust data synchronization between systems.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-3"
+      ]
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Role-Based Access Control",
+      "summary": "Implement role-based access controls",
+      "description": "Implement a robust role-based access control system to ensure customers can only view and access services appropriate to their profile and authorization level. Establish strict access policies to enhance security and compliance.",
+      "dependencies": [
+        "EPIC-1"
+      ]
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": [
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Implement secure user authentication",
+      "description": "As a user, I want secure authentication, so that I can access the portal safely.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Authentication must be secure and comply with industry standards.",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "Users can authenticate securely.",
+      "test_cases": "Given a user, when they attempt to authenticate, then authentication should be secure and comply with industry standards."
+    },
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Implement multi-factor authentication",
+      "description": "As a user, I want multi-factor authentication, so that my account is more secure.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Multi-factor authentication should include SMS, app-based, or email verification.",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "Users can set up and use multi-factor authentication.",
+      "test_cases": "Given a user, when they set up multi-factor authentication, then they should receive a verification code through their selected method."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Design personalized dashboard",
+      "description": "As a user, I want a personalized dashboard, so that I can see relevant banking products and services.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Dashboard must display content based on user profile and eligibility.",
+      "core_domain_objects": "User, Dashboard",
+      "acceptance_criteria": "Users see personalized content on the dashboard.",
+      "test_cases": "Given a user, when they log in, then the dashboard should display personalized products and services."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Ensure user-friendly interface",
+      "description": "As a user, I want an intuitive dashboard interface, so that I can navigate easily.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "The interface should be intuitive and easy to navigate.",
+      "core_domain_objects": "User, Dashboard",
+      "acceptance_criteria": "Users find the dashboard intuitive and easy to navigate.",
+      "test_cases": "Given a user, when they use the dashboard, then they should find it easy to navigate."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "Accessibility of information",
+      "description": "As a user, I want easy access to information, so that I can find what I need quickly.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Information should be easily accessible from the dashboard.",
+      "core_domain_objects": "User, Dashboard",
+      "acceptance_criteria": "Users can easily access information from the dashboard.",
+      "test_cases": "Given a user, when they use the dashboard, then they should be able to access information quickly."
+    },
+    {
+      "epic_title": "Responsive Design",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Implement responsive design for portal",
+      "description": "As a user, I want a responsive portal, so that I can have a consistent experience on all devices.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Portal must adapt to different screen sizes and resolutions seamlessly.",
+      "core_domain_objects": "User, Portal",
+      "acceptance_criteria": "Portal provides a consistent experience across devices.",
+      "test_cases": "Given a user, when they access the portal from any device, then the experience should be consistent."
+    },
+    {
+      "epic_title": "Responsive Design",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Optimize portal display on mobile devices",
+      "description": "As a user, I want the portal to work well on my mobile phone, so that I can use it on the go.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Portal must provide a seamless experience on mobile devices.",
+      "core_domain_objects": "User, Portal",
+      "acceptance_criteria": "Portal works seamlessly on mobile devices.",
+      "test_cases": "Given a user, when they access the portal on a mobile phone, then it should work well."
+    },
+    {
+      "epic_title": "Responsive Design",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "Support for tablets and large screens",
+      "description": "As a user, I want the portal to display well on my tablet and large screens, so that I can use it easily on any device.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Portal must support various screen sizes, including tablets and large screens.",
+      "core_domain_objects": "User, Portal",
+      "acceptance_criteria": "Portal displays well on tablets and large screens.",
+      "test_cases": "Given a user, when they access the portal on a tablet or large screen, then it should display well."
+    }
+  ],
+  "architecture_generation": {
+    "description": "This architecture diagram represents a modern user-friendly self-service banking portal using various Azure services to ensure high security, scalability, and seamless user experience across multiple devices.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "User Interface (UI)"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Authentication"
+        },
+        "position": {
+          "x": 300,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-1a",
+        "data": {
+          "label": "Multi-Factor Authentication Service"
+        },
+        "position": {
+          "x": 320,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "node-1b",
+        "data": {
+          "label": "OAuth 2.0 / OpenID Connect"
+        },
+        "position": {
+          "x": 320,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 600,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-2a",
+        "data": {
+          "label": "Application Server"
+        },
+        "position": {
+          "x": 620,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "node-2b",
+        "data": {
+          "label": "Microservices"
+        },
+        "position": {
+          "x": 620,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Database"
+        },
+        "position": {
+          "x": 950,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-3a",
+        "data": {
+          "label": "Relational Database"
+        },
+        "position": {
+          "x": 970,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "node-3b",
+        "data": {
+          "label": "NoSQL Database"
+        },
+        "position": {
+          "x": 970,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "Frontend",
+        "target": "node-1a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "node-1a",
+        "target": "node-1b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "node-1b",
+        "target": "node-2a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "node-2a",
+        "target": "node-2b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "node-2b",
+        "target": "node-3a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "node-3a",
+        "target": "node-3b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
+  "architecture_validation": {
+    "updatedDescription": "The architecture has been validated and repaired to ensure all nodes and edges are consistent and complete. Placeholder nodes were added for missing references, and duplicate IDs were resolved. The architecture now adheres to ReactFlow standards and is ready for rendering.",
+    "nodes": [
+      {
+        "id": "User",
+        "data": {
+          "label": "User Interface"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Security"
+        },
+        "position": {
+          "x": 300,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Azure AD B2C",
+        "data": {
+          "label": "Azure AD B2C"
+        },
+        "position": {
+          "x": 350,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "Application Gateway",
+        "data": {
+          "label": "Application Gateway"
+        },
+        "position": {
+          "x": 350,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 700,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "App Services",
+        "data": {
+          "label": "Azure App Services"
+        },
+        "position": {
+          "x": 750,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "Functions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 750,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Database and Storage"
+        },
+        "position": {
+          "x": 1100,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQL Database",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1150,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Cosmos DB",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 1150,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Integration and Communication"
+        },
+        "position": {
+          "x": 1500,
+          "y": 0
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Service Bus",
+        "data": {
+          "label": "Azure Service Bus"
+        },
+        "position": {
+          "x": 1550,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "API Management",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 1550,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "User",
+        "target": "Azure AD B2C",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "Application Gateway",
+        "target": "App Services",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "App Services",
+        "target": "SQL Database",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "Functions",
+        "target": "Service Bus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "Cosmos DB",
+        "target": "API Management",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
+}
