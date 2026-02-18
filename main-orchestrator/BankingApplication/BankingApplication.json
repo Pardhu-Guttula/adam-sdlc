@@ -90,7 +90,80 @@
     }
   ],
   "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
-  "user_stories": null,
+  "user_stories": [
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "Secure User Authentication",
+      "description": "As a user, I want a secure authentication process, so that my financial data remains protected.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Must comply with industry security standards and best practices.",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "1. Authentication follows secure procedures. 2. Multi-factor authentication is included.",
+      "test_cases": "Given a user, when they attempt to authenticate, then the system requires multi-factor authentication."
+    },
+    {
+      "epic_title": "User Authentication and Security",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Multi-Factor Authentication",
+      "description": "As a user, I want multi-factor authentication, so that my account is more secure.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Requires at least two forms of identification.",
+      "core_domain_objects": "User, Authentication",
+      "acceptance_criteria": "1. Users are prompted for additional verification. 2. The process is user-friendly and secure.",
+      "test_cases": "Given that a user logs in, when the system prompts for additional verification, then the user must provide two-factor authentication."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "Dashboard Display",
+      "description": "As a user, I want a personalized dashboard, so that I can easily access relevant banking products and services.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "The dashboard must display user-specific products and services based on user profile.",
+      "core_domain_objects": "User, Dashboard",
+      "acceptance_criteria": "1. User-specific data is displayed. 2. Interface is user-friendly.",
+      "test_cases": "Given a user logs in, when the dashboard loads, then it displays personalized services and products."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Intuitive Navigation",
+      "description": "As a user, I want an intuitive interface, so that I can navigate the portal easily.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "The interface should be user-friendly and easy to navigate.",
+      "core_domain_objects": "User, Dashboard",
+      "acceptance_criteria": "1. Users can navigate without confusion. 2. Main services are easily accessible.",
+      "test_cases": "Given a user is on the dashboard, when they navigate, then they can access services without issues."
+    },
+    {
+      "epic_title": "Responsive Design",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Responsive Layout",
+      "description": "As a user, I want the portal to be responsive, so that I can use it on any device.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The portal must adapt to different screen sizes and resolutions.",
+      "core_domain_objects": "User, Portal",
+      "acceptance_criteria": "1. Portal works seamlessly on all devices. 2. No usability issues across different screen sizes.",
+      "test_cases": "Given a user accesses the portal, when they use different devices, then the user experience remains consistent."
+    },
+    {
+      "epic_title": "Responsive Design",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Cross-Device Usability",
+      "description": "As a user, I want to ensure the portal provides a consistent experience across devices, so that I can seamlessly access information anywhere.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Portal must be tested on various devices, ensuring no functionality is broken.",
+      "core_domain_objects": "User, Portal",
+      "acceptance_criteria": "1. Functional consistency across devices. 2. No visual or functional defects.",
+      "test_cases": "Given a user logs in from a different device, when they navigate the portal, then all functionality is intact."
+    }
+  ],
   "architecture_generation": null,
   "architecture_validation": null
 }
