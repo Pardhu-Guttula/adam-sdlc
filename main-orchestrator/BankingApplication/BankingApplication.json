@@ -206,16 +206,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture for a banking self-service portal leverages multiple Azure services like Azure AD B2C for authentication, Azure App Services for backend, Azure SQL Database for structured data, Azure Cosmos DB for high-performance data, and Azure Service Bus for integration with the core banking system.",
+    "description": "This architecture diagram represents a modern user-friendly self-service banking portal using various Azure services to ensure high security, scalability, and seamless user experience across multiple devices.",
     "nodes": [
       {
-        "id": "User",
+        "id": "Frontend",
         "data": {
-          "label": "User Interface"
+          "label": "User Interface (UI)"
         },
         "position": {
-          "x": 0,
-          "y": 0
+          "x": 100,
+          "y": 100
         },
         "style": {
           "border": "none",
@@ -227,15 +227,15 @@
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Authentication and Security"
+          "label": "Authentication"
         },
         "position": {
           "x": 300,
-          "y": 0
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -243,13 +243,13 @@
         }
       },
       {
-        "id": "Azure AD B2C",
+        "id": "node-1a",
         "data": {
-          "label": "Azure AD B2C"
+          "label": "Multi-Factor Authentication Service"
         },
         "position": {
-          "x": 350,
-          "y": 50
+          "x": 320,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -260,13 +260,13 @@
         "extent": "parent"
       },
       {
-        "id": "Application Gateway",
+        "id": "node-1b",
         "data": {
-          "label": "Application Gateway"
+          "label": "OAuth 2.0 / OpenID Connect"
         },
         "position": {
-          "x": 350,
-          "y": 100
+          "x": 320,
+          "y": 180
         },
         "style": {
           "border": "none",
@@ -283,8 +283,8 @@
           "label": "Backend Services"
         },
         "position": {
-          "x": 700,
-          "y": 0
+          "x": 600,
+          "y": 100
         },
         "style": {
           "width": 300,
@@ -296,13 +296,13 @@
         }
       },
       {
-        "id": "App Services",
+        "id": "node-2a",
         "data": {
-          "label": "Azure App Services"
+          "label": "Application Server"
         },
         "position": {
-          "x": 750,
-          "y": 50
+          "x": 620,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -313,13 +313,13 @@
         "extent": "parent"
       },
       {
-        "id": "Functions",
+        "id": "node-2b",
         "data": {
-          "label": "Azure Functions"
+          "label": "Microservices"
         },
         "position": {
-          "x": 750,
-          "y": 100
+          "x": 620,
+          "y": 180
         },
         "style": {
           "border": "none",
@@ -333,15 +333,15 @@
         "id": "group-3",
         "type": "group",
         "data": {
-          "label": "Database and Storage"
+          "label": "Database"
         },
         "position": {
-          "x": 1100,
-          "y": 0
+          "x": 950,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -349,13 +349,13 @@
         }
       },
       {
-        "id": "SQL Database",
+        "id": "node-3a",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Relational Database"
         },
         "position": {
-          "x": 1150,
-          "y": 50
+          "x": 970,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -366,13 +366,13 @@
         "extent": "parent"
       },
       {
-        "id": "Cosmos DB",
+        "id": "node-3b",
         "data": {
-          "label": "Azure Cosmos DB"
+          "label": "NoSQL Database"
         },
         "position": {
-          "x": 1150,
-          "y": 100
+          "x": 970,
+          "y": 180
         },
         "style": {
           "border": "none",
@@ -380,67 +380,14 @@
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
         "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "group-4",
-        "type": "group",
-        "data": {
-          "label": "Integration and Communication"
-        },
-        "position": {
-          "x": 1500,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "Service Bus",
-        "data": {
-          "label": "Azure Service Bus"
-        },
-        "position": {
-          "x": 1550,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
-        "extent": "parent"
-      },
-      {
-        "id": "API Management",
-        "data": {
-          "label": "Azure API Management"
-        },
-        "position": {
-          "x": 1550,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
         "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "User",
-        "target": "Azure AD B2C",
+        "source": "Frontend",
+        "target": "node-1a",
         "type": "default",
         "animated": true,
         "style": {
@@ -449,8 +396,8 @@
       },
       {
         "id": "e2",
-        "source": "Application Gateway",
-        "target": "App Services",
+        "source": "node-1a",
+        "target": "node-1b",
         "type": "default",
         "animated": true,
         "style": {
@@ -459,8 +406,8 @@
       },
       {
         "id": "e3",
-        "source": "App Services",
-        "target": "SQL Database",
+        "source": "node-1b",
+        "target": "node-2a",
         "type": "default",
         "animated": true,
         "style": {
@@ -469,8 +416,8 @@
       },
       {
         "id": "e4",
-        "source": "Functions",
-        "target": "Service Bus",
+        "source": "node-2a",
+        "target": "node-2b",
         "type": "default",
         "animated": true,
         "style": {
@@ -479,8 +426,18 @@
       },
       {
         "id": "e5",
-        "source": "Cosmos DB",
-        "target": "API Management",
+        "source": "node-2b",
+        "target": "node-3a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "node-3a",
+        "target": "node-3b",
         "type": "default",
         "animated": true,
         "style": {
