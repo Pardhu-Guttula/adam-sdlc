@@ -1,1 +1,478 @@
-{"session_id":"bf1a7c13-8a97-4631-8ff0-3e322f0f478f","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"id":"EPIC-1","title":"User Authentication","summary":"Implement secure multi-factor authentication for user login.","description":"Design and implement a secure multi-factor authentication (MFA) mechanism that enables users to log in safely. The system should support multiple authentication methods and ensure that user credentials are protected, providing a robust security layer for accessing the portal.","dependencies":[]},{"id":"EPIC-2","title":"Personalized Dashboard","summary":"Create a personalized dashboard displaying banking products and services based on user profile.","description":"Develop a personalized dashboard that dynamically displays banking products and services tailored to the user's profile and eligibility. The dashboard should provide an at-a-glance view of key information and services relevant to the user, enhancing their experience and engagement with the portal.","dependencies":[]},{"id":"EPIC-3","title":"Account Requests and Modifications","summary":"Enable users to submit account opening requests and service modifications through streamlined workflows.","description":"Design and implement streamlined workflows for account opening requests and service modifications. The workflows should minimize the number of clicks required to complete the process, providing a seamless and efficient user experience. Users should be able to track the real-time status of their requests.","dependencies":[]},{"id":"EPIC-4","title":"Email Notifications","summary":"Implement email notifications for real-time status updates on user requests.","description":"Set up an email notification system to keep users informed with real-time status updates regarding their submitted requests. This system should ensure that users receive timely and relevant information, enhancing their confidence in the portal's responsiveness and reliability.","dependencies":[]},{"id":"EPIC-5","title":"Interaction History","summary":"Maintain a comprehensive history of all user interactions within the portal.","description":"Develop a system for maintaining a detailed history of all user interactions within the portal. This history should be securely stored and easily accessible by the user, providing transparency and enabling users to review their past actions and transactions.","dependencies":[]},{"id":"EPIC-6","title":"Responsive Design","summary":"Ensure the portal is responsive across various devices.","description":"Implement a responsive design that provides a consistent user experience across different devices, including desktop, tablet, and mobile phones. The design should adapt to various screen sizes and orientations, ensuring ease of use and accessibility regardless of the device used.","dependencies":[]},{"id":"EPIC-7","title":"Save and Resume Applications","summary":"Allow users to save incomplete applications and resume them later.","description":"Implement a feature that allows users to save their incomplete applications and resume them at a later time. This functionality should include the ability to upload necessary documentation directly through the interface, providing users with flexibility and convenience in managing their applications.","dependencies":[]},{"id":"EPIC-8","title":"Core Banking System Integration","summary":"Integrate the portal seamlessly with the bank's existing core banking system.","description":"Develop and implement seamless integration between the self-service portal and the bank's existing core banking system. This integration should ensure data consistency and reliability while enabling the portal to leverage core banking functionalities.","dependencies":[]},{"id":"EPIC-9","title":"Role-based Access Control","summary":"Implement role-based access controls to restrict user access.","description":"Design and implement role-based access controls that ensure users can only view and access services appropriate to their profile and authorization level. This feature is crucial for maintaining security and ensuring that users are only able to interact with services they are permitted to access.","dependencies":[]}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "undefined",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication",
+      "summary": "Implement secure multi-factor authentication for user login.",
+      "description": "Design and implement a secure multi-factor authentication (MFA) mechanism that enables users to log in safely. The system should support multiple authentication methods and ensure that user credentials are protected, providing a robust security layer for accessing the portal.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Personalized Dashboard",
+      "summary": "Create a personalized dashboard displaying banking products and services based on user profile.",
+      "description": "Develop a personalized dashboard that dynamically displays banking products and services tailored to the user's profile and eligibility. The dashboard should provide an at-a-glance view of key information and services relevant to the user, enhancing their experience and engagement with the portal.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Account Requests and Modifications",
+      "summary": "Enable users to submit account opening requests and service modifications through streamlined workflows.",
+      "description": "Design and implement streamlined workflows for account opening requests and service modifications. The workflows should minimize the number of clicks required to complete the process, providing a seamless and efficient user experience. Users should be able to track the real-time status of their requests.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Email Notifications",
+      "summary": "Implement email notifications for real-time status updates on user requests.",
+      "description": "Set up an email notification system to keep users informed with real-time status updates regarding their submitted requests. This system should ensure that users receive timely and relevant information, enhancing their confidence in the portal's responsiveness and reliability.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of all user interactions within the portal.",
+      "description": "Develop a system for maintaining a detailed history of all user interactions within the portal. This history should be securely stored and easily accessible by the user, providing transparency and enabling users to review their past actions and transactions.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across various devices.",
+      "description": "Implement a responsive design that provides a consistent user experience across different devices, including desktop, tablet, and mobile phones. The design should adapt to various screen sizes and orientations, ensuring ease of use and accessibility regardless of the device used.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Save and Resume Applications",
+      "summary": "Allow users to save incomplete applications and resume them later.",
+      "description": "Implement a feature that allows users to save their incomplete applications and resume them at a later time. This functionality should include the ability to upload necessary documentation directly through the interface, providing users with flexibility and convenience in managing their applications.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Core Banking System Integration",
+      "summary": "Integrate the portal seamlessly with the bank's existing core banking system.",
+      "description": "Develop and implement seamless integration between the self-service portal and the bank's existing core banking system. This integration should ensure data consistency and reliability while enabling the portal to leverage core banking functionalities.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Role-based Access Control",
+      "summary": "Implement role-based access controls to restrict user access.",
+      "description": "Design and implement role-based access controls that ensure users can only view and access services appropriate to their profile and authorization level. This feature is crucial for maintaining security and ensuring that users are only able to interact with services they are permitted to access.",
+      "dependencies": []
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": [
+    {
+      "epic_title": "User Authentication",
+      "epic_key": "EPIC-1",
+      "number": 1,
+      "title": "User Login with Multi-Factor Authentication",
+      "description": "As a user, I want to log in with multi-factor authentication, so that my account is secured.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The system should support at least two authentication methods (e.g., password and SMS code).",
+      "core_domain_objects": "User, AuthenticationToken",
+      "acceptance_criteria": "Users must be able to log in using a password and a secondary authentication method.",
+      "test_cases": "Given a registered user, When the user logs in, Then they should be prompted for a secondary authentication method."
+    },
+    {
+      "epic_title": "User Authentication",
+      "epic_key": "EPIC-1",
+      "number": 2,
+      "title": "Protection of User Credentials",
+      "description": "As a user, I want my credentials to be securely stored and transmitted, so that they are protected from unauthorized access.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Credentials must be encrypted both in transit and at rest.",
+      "core_domain_objects": "User, EncryptionKey",
+      "acceptance_criteria": "User credentials should be protected using robust encryption methods during storage and transmission.",
+      "test_cases": "Given user credentials, When stored or transmitted, Then they must be encrypted."
+    },
+    {
+      "epic_title": "User Authentication",
+      "epic_key": "EPIC-1",
+      "number": 3,
+      "title": "Support for Multiple Authentication Methods",
+      "description": "As an admin, I want to configure multiple authentication methods for the portal, so that users have secure login options.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "The system should support at least SMS, email, and authenticator apps as authentication methods.",
+      "core_domain_objects": "AuthenticationMethod, Configuration",
+      "acceptance_criteria": "Admin must be able to configure multiple authentication methods in the system.",
+      "test_cases": "Given admin access, When configuring authentication methods, Then the system should support multiple methods such as SMS, email, and authenticator apps."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 1,
+      "title": "View Personalized Banking Products",
+      "description": "As a user, I want to see banking products tailored to my profile on my dashboard, so that I can easily access relevant services.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Dashboard must dynamically display products based on user profile data.",
+      "core_domain_objects": "UserProfile, Product",
+      "acceptance_criteria": "Users should see relevant products based on their profile when they log in.",
+      "test_cases": "Given a user profile, When the user logs in, Then the dashboard should display personalized banking products."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 2,
+      "title": "Display Key Information",
+      "description": "As a user, I want my dashboard to display key account information at a glance, so that I can efficiently manage my finances.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Key information should include balances, recent transactions, and important notifications.",
+      "core_domain_objects": "Account, Transaction, Notification",
+      "acceptance_criteria": "Dashboard should display key account information prominently.",
+      "test_cases": "Given a user account, When accessing the dashboard, Then key account information should be displayed."
+    },
+    {
+      "epic_title": "Personalized Dashboard",
+      "epic_key": "EPIC-2",
+      "number": 3,
+      "title": "Enhance User Engagement",
+      "description": "As a user, I want an engaging dashboard experience that keeps me informed about banking offers and services, so that I can make the most of my banking relationship.",
+      "priority_business_value": "Low",
+      "attributes_and_rules": "Dashboard should highlight offers and services that increase user engagement.",
+      "core_domain_objects": "Offer, Service",
+      "acceptance_criteria": "Users should see engaging content related to offers and services on their dashboard.",
+      "test_cases": "Given relevant user data, When the user logs in, Then the dashboard should highlight offers and services to enhance engagement."
+    },
+    {
+      "epic_title": "Account Requests and Modifications",
+      "epic_key": "EPIC-3",
+      "number": 1,
+      "title": "Streamlined Account Opening Request",
+      "description": "As a user, I want a streamlined process for submitting account opening requests, so that I can quickly get started with my new account.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The process should minimize the number of clicks and steps.",
+      "core_domain_objects": "AccountRequest",
+      "acceptance_criteria": "Users should complete account opening requests with minimal steps.",
+      "test_cases": "Given a user, When submitting an account request, Then the process should require minimal interaction."
+    },
+    {
+      "epic_title": "Account Requests and Modifications",
+      "epic_key": "EPIC-3",
+      "number": 2,
+      "title": "Seamless Service Modifications",
+      "description": "As a user, I want to modify my banking services seamlessly, so that managing my banking relationship is easy and efficient.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Service modification workflows should be intuitive and require minimal clicks.",
+      "core_domain_objects": "ServiceModification",
+      "acceptance_criteria": "Users should modify their services easily and efficiently.",
+      "test_cases": "Given a user, When modifying services, Then the process should be seamless and require minimal interaction."
+    },
+    {
+      "epic_title": "Account Requests and Modifications",
+      "epic_key": "EPIC-3",
+      "number": 3,
+      "title": "Track Request Status",
+      "description": "As a user, I want to track the status of my account requests and modifications, so that I am informed about their progress.",
+      "priority_business_value": "Low",
+      "attributes_and_rules": "Users should be able to view real-time status updates.",
+      "core_domain_objects": "RequestStatus",
+      "acceptance_criteria": "Users should see real-time status updates for their requests.",
+      "test_cases": "Given a user request, When the status changes, Then the user should be able to view the updated status."
+    },
+    {
+      "epic_title": "Email Notifications",
+      "epic_key": "EPIC-4",
+      "number": 1,
+      "title": "Real-time Status Updates via Email",
+      "description": "As a user, I want to receive real-time email notifications about my request status, so that I stay informed.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "The email notification system should be timely and reliable.",
+      "core_domain_objects": "EmailNotification, RequestStatus",
+      "acceptance_criteria": "Users should receive timely email notifications regarding request status updates.",
+      "test_cases": "Given a request status update, When the status changes, Then an email notification should be sent to the user."
+    },
+    {
+      "epic_title": "Email Notifications",
+      "epic_key": "EPIC-4",
+      "number": 2,
+      "title": "Configure Notification Preferences",
+      "description": "As a user, I want to configure my email notification preferences, so that I receive updates the way I prefer.",
+      "priority_business_value": "Medium",
+      "attributes_and_rules": "Users should be able to choose their notification preferences from the settings.",
+      "core_domain_objects": "UserPreference, EmailNotification",
+      "acceptance_criteria": "Users should configure notification preferences.",
+      "test_cases": "Given a user, When updating notification preferences, Then the system should send emails based on user preferences."
+    },
+    {
+      "epic_title": "Email Notifications",
+      "epic_key": "EPIC-4",
+      "number": 3,
+      "title": "Ensure Notification Timeliness",
+      "description": "As a system administrator, I want to ensure email notifications are sent promptly, so that users stay informed about their request status without delays.",
+      "priority_business_value": "Low",
+      "attributes_and_rules": "Notifications should be sent in real-time or within a defined SLA.",
+      "core_domain_objects": "EmailNotification, SystemConfiguration",
+      "acceptance_criteria": "Notification timeliness should be monitored and maintained as per SLA.",
+      "test_cases": "Given a request update, When it occurs, Then the notification should be sent promptly."
+    },
+    {
+      "epic_title": "Interaction History",
+      "epic_key": "EPIC-5",
+      "number": 1,
+      "title": "View Comprehensive Interaction History",
+      "description": "As a user, I want to view a comprehensive history of my interactions within the portal, so that I can review my past actions and transactions.",
+      "priority_business_value": "High",
+      "attributes_and_rules": "Interaction history must be detailed and easily accessible.",
+      "core_domain_objects": "InteractionHistory",
+      "acceptance_criteria": "Users should view a detailed history of their interactions.",
+      "test_cases": "Given a user, When accessing the portal, Then they should view a comprehensive interaction history."
+    }
+  ],
+  "architecture_generation": {
+    "description": "This architecture uses various Azure services to create a secure, scalable, and responsive self-service portal for banking customers, ensuring optimal performance and integration with the existing core banking system.",
+    "nodes": [
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Front-End"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-1a",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 120,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "node-1b",
+        "data": {
+          "label": "Azure Front Door"
+        },
+        "position": {
+          "x": 240,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Security"
+        },
+        "position": {
+          "x": 500,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-2a",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 520,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "node-2b",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 640,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Back-End"
+        },
+        "position": {
+          "x": 900,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-3a",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 920,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "node-3b",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 1040,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Database and Storage"
+        },
+        "position": {
+          "x": 1300,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-4a",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1320,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "node-4b",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 1440,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "node-1a",
+        "target": "node-2a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "node-2b",
+        "target": "node-3a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "node-3b",
+        "target": "node-4a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
+  "architecture_validation": null
+}
