@@ -310,16 +310,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture describes a secure, reliable, and user-friendly banking portal using Azure services along with a responsive web application and optional mobile application, ensuring seamless customer interactions with comprehensive security and monitoring.",
+    "description": "This architecture provides a secure and scalable platform for a banking portal with responsive web frontend, secure authentication, robust backend services, real-time communication, and comprehensive monitoring.",
     "nodes": [
       {
-        "id": "Frontend",
+        "id": "frontend",
         "data": {
-          "label": "Responsive Web Application"
+          "label": "Responsive Web Frontend (React.js/Angular.js)"
         },
         "position": {
           "x": 50,
-          "y": 100
+          "y": 50
         },
         "style": {
           "border": "none",
@@ -328,67 +328,14 @@
         }
       },
       {
-        "id": "group-1",
+        "id": "group-auth",
         "type": "group",
         "data": {
-          "label": "Authentication"
+          "label": "Authentication & Security"
         },
         "position": {
           "x": 300,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "AzureAD",
-        "data": {
-          "label": "Azure AD B2C"
-        },
-        "position": {
-          "x": 20,
-          "y": 40
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "MFA",
-        "data": {
-          "label": "Multi-Factor Auth"
-        },
-        "position": {
-          "x": 20,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "group-2",
-        "type": "group",
-        "data": {
-          "label": "Backend Services"
-        },
-        "position": {
-          "x": 600,
-          "y": 100
+          "y": 50
         },
         "style": {
           "width": 300,
@@ -400,69 +347,52 @@
         }
       },
       {
-        "id": "APIM",
+        "id": "azure-ad-b2c",
         "data": {
-          "label": "API Management"
+          "label": "Azure AD B2C"
         },
         "position": {
-          "x": 20,
-          "y": 40
+          "x": 320,
+          "y": 80
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "group-auth",
         "extent": "parent"
       },
       {
-        "id": "AppService",
+        "id": "rbac",
         "data": {
-          "label": "Azure App Service"
+          "label": "Role-Based Access Control (RBAC)"
         },
         "position": {
-          "x": 20,
-          "y": 100
+          "x": 320,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "group-auth",
         "extent": "parent"
       },
       {
-        "id": "LogicApps",
-        "data": {
-          "label": "Azure Logic Apps"
-        },
-        "position": {
-          "x": 20,
-          "y": 160
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
+        "id": "group-backend",
         "type": "group",
         "data": {
-          "label": "Data Layer"
+          "label": "Backend Services"
         },
         "position": {
-          "x": 950,
-          "y": 100
+          "x": 650,
+          "y": 50
         },
         "style": {
           "width": 300,
-          "height": 150,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -470,45 +400,98 @@
         }
       },
       {
-        "id": "SQLDB",
+        "id": "web-api",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Web API Layer"
         },
         "position": {
-          "x": 20,
-          "y": 40
+          "x": 670,
+          "y": 80
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "group-backend",
         "extent": "parent"
       },
       {
-        "id": "BlobStorage",
+        "id": "business-logic",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Business Logic Layer"
         },
         "position": {
-          "x": 20,
-          "y": 100
+          "x": 670,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "group-backend",
+        "extent": "parent"
+      },
+      {
+        "id": "group-services",
+        "type": "group",
+        "data": {
+          "label": "Cloud Services Integration"
+        },
+        "position": {
+          "x": 1000,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "api-management",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 1020,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-services",
+        "extent": "parent"
+      },
+      {
+        "id": "logic-apps",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 1020,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-services",
         "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "Frontend",
-        "target": "AzureAD",
+        "source": "frontend",
+        "target": "azure-ad-b2c",
         "type": "default",
         "animated": true,
         "style": {
@@ -517,8 +500,8 @@
       },
       {
         "id": "e2",
-        "source": "Frontend",
-        "target": "MFA",
+        "source": "azure-ad-b2c",
+        "target": "web-api",
         "type": "default",
         "animated": true,
         "style": {
@@ -527,8 +510,8 @@
       },
       {
         "id": "e3",
-        "source": "AzureAD",
-        "target": "APIM",
+        "source": "web-api",
+        "target": "api-management",
         "type": "default",
         "animated": true,
         "style": {
@@ -537,38 +520,8 @@
       },
       {
         "id": "e4",
-        "source": "MFA",
-        "target": "APIM",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5",
-        "source": "APIM",
-        "target": "SQLDB",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e6",
-        "source": "AppService",
-        "target": "SQLDB",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e7",
-        "source": "LogicApps",
-        "target": "BlobStorage",
+        "source": "api-management",
+        "target": "logic-apps",
         "type": "default",
         "animated": true,
         "style": {
