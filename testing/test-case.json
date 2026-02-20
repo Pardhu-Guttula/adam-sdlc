@@ -1,14 +1,6 @@
 [
   {
-    "epic_id": "EPIC-1234",
-    "test_case_path": "tests/authentication/test_auth_controller.py"
-  },
-  {
-    "epic_id": "EPIC-5678",
-    "test_case_path": "tests/authentication/test_account_lock_controller.py"
-  },
-  {
-    "epic_id": "EPIC-9101",
-    "test_case_path": "tests/authentication/test_account_lockout_controller.py"
+    "epic_id": "EPIC-1",
+    "test_case_path": "tests/test_auth_epic.py"
   }
 ]
