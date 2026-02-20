@@ -310,16 +310,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram represents a secure, reliable, and user-friendly self-service banking portal built on Microsoft Azure. It includes various services such as Azure Active Directory, Azure App Service, Azure SQL Database, Azure Logic Apps, Azure Service Bus, Azure Monitor, Azure Key Vault, Azure Blob Storage, and Azure API Management to meet the specified requirements.",
+    "description": "Self-service banking portal architecture leveraging Azure services for scalability, security, and performance, including frontend, backend, security, data storage, integration, real-time communication, monitoring, DevOps, user experience, content delivery, and backup and recovery solutions.",
     "nodes": [
       {
         "id": "Frontend",
         "data": {
-          "label": "Web Server/Hosting"
+          "label": "Frontend"
         },
         "position": {
           "x": 50,
-          "y": 300
+          "y": 50
         },
         "style": {
           "border": "none",
@@ -331,15 +331,15 @@
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Azure AD"
+          "label": "Backend"
         },
         "position": {
           "x": 300,
-          "y": 50
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 500,
+          "height": 400,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -347,13 +347,13 @@
         }
       },
       {
-        "id": "AAD-MFA",
+        "id": "WebAppService",
         "data": {
-          "label": "Multi-Factor Authentication"
+          "label": "Web Application Framework"
         },
         "position": {
-          "x": 75,
-          "y": 50
+          "x": 350,
+          "y": 150
         },
         "style": {
           "border": "none",
@@ -364,13 +364,13 @@
         "extent": "parent"
       },
       {
-        "id": "AAD-RBAC",
+        "id": "ApiGateway",
         "data": {
-          "label": "Role-Based Access Control"
+          "label": "API Gateway"
         },
         "position": {
-          "x": 75,
-          "y": 150
+          "x": 350,
+          "y": 200
         },
         "style": {
           "border": "none",
@@ -384,15 +384,15 @@
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "Azure App Service"
+          "label": "Microservices"
         },
         "position": {
-          "x": 650,
-          "y": 50
+          "x": 800,
+          "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 500,
+          "height": 300,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -400,13 +400,13 @@
         }
       },
       {
-        "id": "App-Web",
+        "id": "AccountService",
         "data": {
-          "label": "Web Apps"
+          "label": "Account Management"
         },
         "position": {
-          "x": 75,
-          "y": 50
+          "x": 850,
+          "y": 150
         },
         "style": {
           "border": "none",
@@ -417,13 +417,47 @@
         "extent": "parent"
       },
       {
-        "id": "App-API",
+        "id": "UserService",
         "data": {
-          "label": "API Apps"
+          "label": "User Profile Service"
         },
         "position": {
-          "x": 75,
+          "x": 850,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "RequestService",
+        "data": {
+          "label": "Request Processing Service"
+        },
+        "position": {
+          "x": 950,
           "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "NotificationService",
+        "data": {
+          "label": "Notification Service"
+        },
+        "position": {
+          "x": 950,
+          "y": 200
         },
         "style": {
           "border": "none",
@@ -437,11 +471,11 @@
         "id": "group-3",
         "type": "group",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Security"
         },
         "position": {
-          "x": 1000,
-          "y": 50
+          "x": 1300,
+          "y": 100
         },
         "style": {
           "width": 300,
@@ -453,13 +487,30 @@
         }
       },
       {
-        "id": "SQL-UserData",
+        "id": "Auth",
         "data": {
-          "label": "User Data Management"
+          "label": "Authentication and Authorization"
         },
         "position": {
-          "x": 75,
-          "y": 100
+          "x": 1350,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Encryption",
+        "data": {
+          "label": "Encryption"
+        },
+        "position": {
+          "x": 1350,
+          "y": 200
         },
         "style": {
           "border": "none",
@@ -474,7 +525,7 @@
       {
         "id": "e1",
         "source": "Frontend",
-        "target": "AAD-MFA",
+        "target": "WebAppService",
         "type": "default",
         "animated": true,
         "style": {
@@ -483,8 +534,8 @@
       },
       {
         "id": "e2",
-        "source": "AAD-RBAC",
-        "target": "App-Web",
+        "source": "WebAppService",
+        "target": "ApiGateway",
         "type": "default",
         "animated": true,
         "style": {
@@ -493,8 +544,58 @@
       },
       {
         "id": "e3",
-        "source": "App-API",
-        "target": "SQL-UserData",
+        "source": "ApiGateway",
+        "target": "AccountService",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "ApiGateway",
+        "target": "UserService",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "ApiGateway",
+        "target": "RequestService",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "ApiGateway",
+        "target": "NotificationService",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "Frontend",
+        "target": "Auth",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "Auth",
+        "target": "Encryption",
         "type": "default",
         "animated": true,
         "style": {
