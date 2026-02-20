@@ -8,7 +8,7 @@
     "test_case_path": "tests/authentication/test_account_lock_controller.py"
   },
   {
-    "epic_id": "EPIC-91011",
+    "epic_id": "EPIC-9101",
     "test_case_path": "tests/authentication/test_account_lockout_controller.py"
   }
 ]
