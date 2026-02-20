@@ -1,6 +1,6 @@
 [
   {
-    "epic_id": "EPIC-2",
-    "test_case_path": "tests/test_app.py"
+    "epic_id": "EPIC-1",
+    "test_case_path": "tests/test_auth.py"
   }
 ]
