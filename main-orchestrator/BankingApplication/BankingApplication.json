@@ -503,5 +503,318 @@
       }
     ]
   },
-  "architecture_validation": null
+  "architecture_validation": {
+    "updatedDescription": "The architecture has been enhanced to address security, reliability, performance efficiency, and cost optimization gaps. New nodes for Azure Security Center, Azure Backup, Azure Site Recovery, Azure Cache for Redis, and Azure Cost Management have been added. The architecture now aligns better with Azure Well-Architected Framework principles, ensuring a robust, secure, and efficient system.",
+    "nodes": [
+      {
+        "id": "frontend",
+        "data": {
+          "label": "Azure App Service (Web App)"
+        },
+        "position": {
+          "x": 100,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Frontend Services"
+        },
+        "position": {
+          "x": 100,
+          "y": 200
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "frontend-static",
+        "data": {
+          "label": "Azure Static Web Apps"
+        },
+        "position": {
+          "x": 150,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Authentication & Authorization"
+        },
+        "position": {
+          "x": 450,
+          "y": 200
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "auth-azuread",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 500,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "auth-keyvault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 600,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Backend and API"
+        },
+        "position": {
+          "x": 800,
+          "y": 200
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "backend-api",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 850,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "backend-service",
+        "data": {
+          "label": "Azure App Service (API App)"
+        },
+        "position": {
+          "x": 950,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "security-center",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 700,
+          "y": 50
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "backup",
+        "data": {
+          "label": "Azure Backup"
+        },
+        "position": {
+          "x": 1100,
+          "y": 50
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "site-recovery",
+        "data": {
+          "label": "Azure Site Recovery"
+        },
+        "position": {
+          "x": 1200,
+          "y": 50
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "cache-redis",
+        "data": {
+          "label": "Azure Cache for Redis"
+        },
+        "position": {
+          "x": 1000,
+          "y": 400
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "cost-management",
+        "data": {
+          "label": "Azure Cost Management"
+        },
+        "position": {
+          "x": 1300,
+          "y": 50
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1-frontend-static-auth-azuread",
+        "source": "frontend-static",
+        "target": "auth-azuread",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-frontend-static-backend-api",
+        "source": "frontend-static",
+        "target": "backend-api",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3-auth-keyvault-backend-service",
+        "source": "auth-keyvault",
+        "target": "backend-service",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-auth-azuread-security-center",
+        "source": "auth-azuread",
+        "target": "security-center",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5-backend-api-backup",
+        "source": "backend-api",
+        "target": "backup",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6-backend-service-site-recovery",
+        "source": "backend-service",
+        "target": "site-recovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7-backend-service-cache-redis",
+        "source": "backend-service",
+        "target": "cache-redis",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8-frontend-cost-management",
+        "source": "frontend",
+        "target": "cost-management",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
 }
