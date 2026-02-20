@@ -1,14 +1,14 @@
 [
   {
-    "epic_id": "",
+    "epic_id": "EPIC-1",
     "test_case_path": "tests/backend/authentication/controllers/test_auth_controller.py"
   },
   {
-    "epic_id": "",
+    "epic_id": "EPIC-2",
     "test_case_path": "tests/backend/authentication/controllers/test_account_lock_controller.py"
   },
   {
-    "epic_id": "",
+    "epic_id": "EPIC-3",
     "test_case_path": "tests/backend/authentication/controllers/test_account_lockout_controller.py"
   }
 ]
