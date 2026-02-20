@@ -310,15 +310,15 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture provides a modern, user-friendly self-service portal for bank customers using Azure services. It incorporates security, backend processing services, database and storage solutions, integration and workflow automation, notifications, monitoring, and access control to ensure a secure and efficient user experience.",
+    "description": "Architecture for a user-friendly self-service banking portal using Azure. The portal includes a web application, API management, secure authentication, scalable storage solutions, serverless backend processing, automated workflows, real-time notifications, secure access and compliance management, and continuous monitoring.",
     "nodes": [
       {
-        "id": "Frontend",
+        "id": "frontend",
         "data": {
-          "label": "Responsive Web Application"
+          "label": "Azure App Service (Web App)"
         },
         "position": {
-          "x": 50,
+          "x": 100,
           "y": 50
         },
         "style": {
@@ -328,170 +328,153 @@
         }
       },
       {
-        "id": "g-authentication",
+        "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Authentication and Security"
+          "label": "Frontend Services"
         },
         "position": {
-          "x": 300,
-          "y": 50
+          "x": 100,
+          "y": 200
         },
         "style": {
+          "width": 300,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "width": 250,
-        "height": 150
+        }
       },
       {
-        "id": "AAD",
+        "id": "frontend-static",
         "data": {
-          "label": "Azure Active Directory"
+          "label": "Azure Static Web Apps"
         },
         "position": {
-          "x": 320,
-          "y": 100
+          "x": 150,
+          "y": 250
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-authentication",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "MFA",
+        "id": "group-2",
+        "type": "group",
         "data": {
-          "label": "Multi-Factor Authentication"
+          "label": "Authentication & Authorization"
         },
         "position": {
-          "x": 320,
+          "x": 450,
           "y": 200
         },
         "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "auth-azuread",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 500,
+          "y": 250
+        },
+        "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-authentication",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "g-backend",
-        "type": "group",
+        "id": "auth-keyvault",
         "data": {
-          "label": "Backend Processing"
+          "label": "Azure Key Vault"
         },
         "position": {
           "x": 600,
-          "y": 50
-        },
-        "style": {
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "width": 250,
-        "height": 150
-      },
-      {
-        "id": "AppService",
-        "data": {
-          "label": "Azure App Service"
-        },
-        "position": {
-          "x": 620,
-          "y": 100
+          "y": 250
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-backend",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "AzureFunctions",
-        "data": {
-          "label": "Azure Functions"
-        },
-        "position": {
-          "x": 620,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-backend",
-        "extent": "parent"
-      },
-      {
-        "id": "g-database",
+        "id": "group-3",
         "type": "group",
         "data": {
-          "label": "Database and Storage"
+          "label": "Backend and API"
         },
         "position": {
-          "x": 900,
-          "y": 50
+          "x": 800,
+          "y": 200
         },
         "style": {
+          "width": 300,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "width": 250,
-        "height": 150
+        }
       },
       {
-        "id": "SQLDatabase",
+        "id": "backend-api",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Azure API Management"
         },
         "position": {
-          "x": 920,
-          "y": 100
+          "x": 850,
+          "y": 250
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-database",
+        "parentId": "group-3",
         "extent": "parent"
       },
       {
-        "id": "BlobStorage",
+        "id": "backend-service",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Azure App Service (API App)"
         },
         "position": {
-          "x": 920,
-          "y": 200
+          "x": 950,
+          "y": 250
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-database",
+        "parentId": "group-3",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1-frontend-authentication",
-        "source": "Frontend",
-        "target": "AAD",
+        "id": "e1-frontend-static-auth-azuread",
+        "source": "frontend-static",
+        "target": "auth-azuread",
         "type": "default",
         "animated": true,
         "style": {
@@ -499,9 +482,9 @@
         }
       },
       {
-        "id": "e2-authentication-backend",
-        "source": "AAD",
-        "target": "AppService",
+        "id": "e2-frontend-static-backend-api",
+        "source": "frontend-static",
+        "target": "backend-api",
         "type": "default",
         "animated": true,
         "style": {
@@ -509,29 +492,9 @@
         }
       },
       {
-        "id": "e3-backend-db",
-        "source": "AppService",
-        "target": "SQLDatabase",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4-db-backend",
-        "source": "BlobStorage",
-        "target": "AzureFunctions",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e5-frontend-backend",
-        "source": "Frontend",
-        "target": "AzureFunctions",
+        "id": "e3-auth-keyvault-backend-service",
+        "source": "auth-keyvault",
+        "target": "backend-service",
         "type": "default",
         "animated": true,
         "style": {
