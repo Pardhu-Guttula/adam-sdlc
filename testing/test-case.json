@@ -1,6 +1,6 @@
 [
   {
     "epic_id": "EPIC-1",
-    "test_case_path": "tests/test_user_authentication.py"
+    "test_case_path": "tests/EPIC-1_test_user_authentication.py"
   }
 ]
