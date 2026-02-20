@@ -1,30 +1,6 @@
 [
   {
-    "epic_id": "EPIC-1",
-    "test_case_path": "tests/test_EPIC-1_user_authentication2.py"
-  },
-  {
     "epic_id": "EPIC-2",
-    "test_case_path": "tests/test_account2.py"
-  },
-  {
-    "epic_id": "EPIC-3",
-    "test_case_path": "tests/test_EPIC-3_backend_app.py"
-  },
-  {
-    "epic_id": "EPIC-4",
-    "test_case_path": "tests/test_EPIC-4_responsive_design.py"
-  },
-  {
-    "epic_id": "EPIC-5",
-    "test_case_path": "tests/EPIC-5_test_data_security_and_interaction_history.py"
-  },
-  {
-    "epic_id": "EPIC-6",
-    "test_case_path": "tests/EPIC-6_test_app.py"
-  },
-  {
-    "epic_id": "EPIC-7",
-    "test_case_path": "tests/test_save_resume_applications.py"
+    "test_case_path": "tests/test_app.py"
   }
 ]
