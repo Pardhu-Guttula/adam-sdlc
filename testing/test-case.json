@@ -1,32 +1,38 @@
 [
   {
     "epic_id": "EPIC-1",
-    "source_file": "backend/authentication/controllers/auth_controller.py",
+    "source_file": "auth_controller.py",
     "test_file": "tests/test_auth_controller.py",
-    "test_code_analysis": "The tests verify the login functionality of the auth controller, covering successful login, invalid credentials, missing username, missing password, and internal server error scenarios."
+    "test_code_analysis": "The tests verify the functionality of the login endpoint, covering scenarios such as successful login, invalid credentials, missing username, missing password, and invalid JSON input."
   },
   {
     "epic_id": "EPIC-1",
-    "source_file": "backend/authentication/services/login_service.py",
+    "source_file": "login_service.py",
     "test_file": "tests/test_login_service.py",
-    "test_code_analysis": "The tests verify the authentication functionality in the LoginService class, covering scenarios of successful login, wrong password, account lockout, and nonexistent user."
+    "test_code_analysis": "The tests verify the functionality of the LoginService's user authentication process, covering scenarios of successful authentication, invalid password, locked accounts, and non-existent users."
   },
   {
     "epic_id": "EPIC-1",
-    "source_file": "backend/authentication/controllers/account_lock_controller.py",
+    "source_file": "account_lock_controller.py",
     "test_file": "tests/test_account_lock_controller.py",
-    "test_code_analysis": "The tests verify the functionality of the account lock controller's login endpoint, covering scenarios of successful login, invalid data, missing user_id or password, failed login due to wrong credentials, and handling exceptions during service calls."
+    "test_code_analysis": "These tests verify the login functionality of the account lock controller, covering scenarios such as successful login, invalid credentials, missing user ID, missing password, missing both user ID and password, and no JSON data provided in the request."
   },
   {
     "epic_id": "EPIC-1",
-    "source_file": "backend/authentication/controllers/account_lockout_controller.py",
+    "source_file": "account_lockout_controller.py",
     "test_file": "tests/test_account_lockout_controller.py",
-    "test_code_analysis": "The tests verify the functionality of the account lockout controller's login endpoint, checking for various scenarios such as successful login, account lockout, unauthorized attempts, and invalid data handling."
+    "test_code_analysis": "The tests verify the login functionality, covering scenarios of successful login, login with locked account, login with invalid credentials, and various cases of missing or invalid input data."
   },
   {
     "epic_id": "EPIC-1",
-    "source_file": "backend/authentication/services/auth_service.py",
+    "source_file": "auth_service.py",
     "test_file": "tests/test_auth_service.py",
-    "test_code_analysis": "The tests verify the authentication functionality of AuthService, covering successful authentication, failures due to invalid passwords, non-existent users, empty credentials, and handling exceptions from the user repository."
+    "test_code_analysis": "The tests verify the authentication functionality of AuthService, covering scenarios including successful authentication, invalid password, non-existent user, and cases where the username or password is None."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "test_auth_controller.py",
+    "test_file": "tests/test_auth_controller.py",
+    "test_code_analysis": "The tests verify the login functionality by covering scenarios such as valid login, invalid credentials, missing username, missing password, invalid JSON, overly long username or password, empty credentials, None values as credentials, and SQL injection attempts."
   }
 ]
