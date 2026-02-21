@@ -1,1 +1,32 @@
-[{"epic_id":"EPIC-1","source_file":"auth_controller.py","test_file":"https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_auth_controller.py","test_code_analysis":"The tests verify the login functionality of the authentication controller, covering scenarios such as successful login, invalid credentials, missing username or password, empty request body, and handling exceptions."},{"epic_id":"EPIC-1","source_file":"login_service.py","test_file":"https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_login_service.py","test_code_analysis":"The tests verify the functionality of the LoginService's user authentication method. They cover scenarios including successful authentication, invalid password, account locked, nonexistent user, and case sensitivity in username handling."},{"epic_id":"EPIC-1","source_file":"account_lock_controller.py","test_file":"https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_account_lock_controller.py","test_code_analysis":"The tests verify the login functionality, covering valid login, missing user ID, missing password, failed login, empty JSON, and invalid JSON format scenarios."},{"epic_id":"EPIC-1","source_file":"account_lockout_controller.py","test_file":"https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_account_lockout_controller.py","test_code_analysis":"The tests validate the login functionality, including successful login, locked accounts, invalid credentials, and missing or empty login data scenarios. The purpose is to ensure the account lockout service handles different login conditions correctly."},{"epic_id":"EPIC-1","source_file":"auth_service.py","test_file":"https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_auth_service.py","test_code_analysis":"The tests validate the authentication functionality of the AuthService, covering scenarios such as successful authentication, incorrect password, non-existent user, empty or null usernames and passwords, and SQL injection attempts."}]
+[
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "auth_controller.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_auth_controller.py",
+    "test_code_analysis": "These tests verify the authentication functionality of a login endpoint, including scenarios for successful login, invalid credentials, missing data, and unexpected exceptions."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "login_service.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_login_service.py",
+    "test_code_analysis": "The tests verify the functionality of the LoginService's user authentication process, covering scenarios including successful authentication, invalid passwords, locked accounts, non-existent users, and missing or null credentials."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "account_lock_controller.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_account_lock_controller.py",
+    "test_code_analysis": "The tests verify the login functionality of the account lock controller, covering successful logins, invalid credentials, missing user ID or password, empty request bodies, non-JSON data, and exception handling scenarios."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "account_lockout_controller.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_account_lockout_controller.py",
+    "test_code_analysis": "These tests verify the account lockout controller's behavior during login attempts, including successful logins, invalid data submissions, account lockouts, incorrect passwords, and various missing or empty data scenarios."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "auth_service.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_auth_service.py",
+    "test_code_analysis": "These tests verify the authentication functionality of the AuthService class. They cover scenarios including successful authentication, wrong password handling, non-existent user handling, and appropriate logging on failed and successful authentication attempts."
+  }
+]
