@@ -1,1 +1,73 @@
-{"session_id":"b210aff1-9d47-4689-92ee-49fb0c2bba88","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"id":"EPIC-1","title":"User Authentication and Security","summary":"Implement secure user authentication and security mechanisms","description":"Develop and implement a robust authentication system with multi-factor authentication (MFA) to ensure secure access to the self-service portal. This includes user registration, password management, and MFA integration to prevent unauthorized access. Additionally, build necessary security protocols to safeguard users' sensitive financial data.","dependencies":[]},{"id":"EPIC-2","title":"User Dashboard","summary":"Create a personalized user dashboard","description":"Develop a personalized dashboard that displays available banking products and services based on the user's profile and eligibility. This includes integrating with the core banking system to fetch and display relevant data, and ensuring the dashboard is intuitive, providing quick access to essential information.","dependencies":[]},{"id":"EPIC-3","title":"Account Management","summary":"Enable account management features","description":"Build functionalities that allow users to submit account opening requests and modifications through streamlined, user-friendly workflows. Ensure these processes require minimal clicks and maintain easy navigation for a seamless user experience. Integrate these workflows with the core banking system for real-time processing and status updates.","dependencies":[]},{"id":"EPIC-4","title":"Notifications and Alerts","summary":"Implement real-time status updates and email notifications","description":"Develop a notification system that provides users with real-time status updates and email notifications regarding their submitted requests. Ensure that notifications are timely, accurate, and facilitate users in staying informed about their banking activities and request statuses.","dependencies":[]},{"id":"EPIC-5","title":"Interaction History","summary":"Maintain a comprehensive history of user interactions","description":"Implement a system to log and maintain a comprehensive history of all user interactions within the self-service portal. Ensure that this history is easily accessible and provides detailed records of user activities while maintaining data security and privacy.","dependencies":[]},{"id":"EPIC-6","title":"Responsive Design","summary":"Ensure portal responsiveness across devices","description":"Design the self-service portal to be fully responsive, providing a consistent experience across various devices including desktop, tablet, and mobile phone. Test and optimize the portal for different screen sizes and ensure that all functionalities are easily accessible regardless of the device used.","dependencies":[]},{"id":"EPIC-7","title":"Session Management","summary":"Enable saving and resuming of incomplete applications","description":"Implement session management features that allow users to save incomplete applications and return to them later. Ensure that users can upload necessary documentation directly through the portal interface, with auto-save functionality to enhance user convenience and experience.","dependencies":[]},{"id":"EPIC-8","title":"Core Banking Integration","summary":"Integrate with the core banking system","description":"Seamlessly integrate the self-service portal with the bank's existing core banking system. Ensure that data flows smoothly between systems while maintaining a separate database for optimal performance and reliability. This integration should support real-time data exchange and updates.","dependencies":[]},{"id":"EPIC-9","title":"Role-Based Access Control","summary":"Implement role-based access control mechanisms","description":"Develop and implement role-based access control (RBAC) mechanisms to ensure that users can only view and access services appropriate to their profile and authorization level. This includes defining roles, assigning permissions, and ensuring secure access management throughout the portal.","dependencies":[]}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "undefined",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication and Security",
+      "summary": "Implement secure user authentication and security mechanisms",
+      "description": "Develop and implement a robust authentication system with multi-factor authentication (MFA) to ensure secure access to the self-service portal. This includes user registration, password management, and MFA integration to prevent unauthorized access. Additionally, build necessary security protocols to safeguard users' sensitive financial data.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-2",
+      "title": "User Dashboard",
+      "summary": "Create a personalized user dashboard",
+      "description": "Develop a personalized dashboard that displays available banking products and services based on the user's profile and eligibility. This includes integrating with the core banking system to fetch and display relevant data, and ensuring the dashboard is intuitive, providing quick access to essential information.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Account Management",
+      "summary": "Enable account management features",
+      "description": "Build functionalities that allow users to submit account opening requests and modifications through streamlined, user-friendly workflows. Ensure these processes require minimal clicks and maintain easy navigation for a seamless user experience. Integrate these workflows with the core banking system for real-time processing and status updates.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Notifications and Alerts",
+      "summary": "Implement real-time status updates and email notifications",
+      "description": "Develop a notification system that provides users with real-time status updates and email notifications regarding their submitted requests. Ensure that notifications are timely, accurate, and facilitate users in staying informed about their banking activities and request statuses.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of user interactions",
+      "description": "Implement a system to log and maintain a comprehensive history of all user interactions within the self-service portal. Ensure that this history is easily accessible and provides detailed records of user activities while maintaining data security and privacy.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Responsive Design",
+      "summary": "Ensure portal responsiveness across devices",
+      "description": "Design the self-service portal to be fully responsive, providing a consistent experience across various devices including desktop, tablet, and mobile phone. Test and optimize the portal for different screen sizes and ensure that all functionalities are easily accessible regardless of the device used.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Session Management",
+      "summary": "Enable saving and resuming of incomplete applications",
+      "description": "Implement session management features that allow users to save incomplete applications and return to them later. Ensure that users can upload necessary documentation directly through the portal interface, with auto-save functionality to enhance user convenience and experience.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Core Banking Integration",
+      "summary": "Integrate with the core banking system",
+      "description": "Seamlessly integrate the self-service portal with the bank's existing core banking system. Ensure that data flows smoothly between systems while maintaining a separate database for optimal performance and reliability. This integration should support real-time data exchange and updates.",
+      "dependencies": []
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Role-Based Access Control",
+      "summary": "Implement role-based access control mechanisms",
+      "description": "Develop and implement role-based access control (RBAC) mechanisms to ensure that users can only view and access services appropriate to their profile and authorization level. This includes defining roles, assigning permissions, and ensuring secure access management throughout the portal.",
+      "dependencies": []
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
+}
