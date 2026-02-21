@@ -1,0 +1,27 @@
+[
+  {
+    "epic_id": "EPIC-1",
+    "test_file": "tests/test_auth_controller.py",
+    "chanegs_detected": "The tests verify the login functionality of the auth controller, covering successful login, invalid credentials, missing username, missing password, and internal server error scenarios."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "test_file": "tests/test_login_service.py",
+    "chanegs_detected": "The tests verify the authentication functionality in the LoginService class, covering scenarios of successful login, wrong password, account lockout, and nonexistent user."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "test_file": "tests/test_account_lock_controller.py",
+    "chanegs_detected": "The tests verify the functionality of the account lock controller's login endpoint, covering scenarios of successful login, invalid data, missing user_id or password, failed login due to wrong credentials, and handling exceptions during service calls."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "test_file": "tests/test_account_lockout_controller.py",
+    "chanegs_detected": "The tests verify the functionality of the account lockout controller's login endpoint, checking for various scenarios such as successful login, account lockout, unauthorized attempts, and invalid data handling."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "test_file": "tests/test_auth_service.py",
+    "chanegs_detected": "The tests verify the authentication functionality of AuthService, covering successful authentication, failures due to invalid passwords, non-existent users, empty credentials, and handling exceptions from the user repository."
+  }
+]
