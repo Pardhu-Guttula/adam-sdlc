@@ -1,0 +1,32 @@
+[
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "auth_controller.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_auth_controller.py",
+    "test_code_analysis": "The tests verify the login functionality of the auth controller, covering scenarios such as successful login, invalid credentials, missing username or password, empty and invalid payloads, and service exceptions."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "login_service.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_login_service.py",
+    "test_code_analysis": "The tests verify the functionality of the LoginService's user authentication process, including successful and failed login attempts due to wrong password, locked account, and nonexistent user, as well as checking the invocation of the appropriate repository methods."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "account_lock_controller.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_account_lock_controller.py",
+    "test_code_analysis": "The tests verify the functionality of the login endpoint, covering scenarios of successful login, login failure due to invalid credentials, missing user ID or password, no data, and invalid JSON."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "account_lockout_controller.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_account_lockout_controller.py",
+    "test_code_analysis": "The tests verify the login endpoint for various scenarios, including successful login, account locked, invalid credentials, and missing or empty request data to ensure the proper HTTP status codes and response messages are returned."
+  },
+  {
+    "epic_id": "EPIC-1",
+    "source_file": "auth_service.py",
+    "test_file": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_auth_service.py",
+    "test_code_analysis": "The tests validate the authentication functionality of the AuthService. They cover scenarios including successful authentication, authentication failure due to invalid passwords or non-existent users, handling of empty username or password, and logging behaviors on both success and failure."
+  }
+]
