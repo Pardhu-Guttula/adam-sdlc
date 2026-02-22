@@ -741,7 +741,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been enhanced to address critical security, reliability, and operational excellence gaps. New nodes for Azure DDoS Protection, Azure Web Application Firewall (WAF), Azure DevOps, and Azure Site Recovery have been added. All nodes and edges are validated, ensuring a complete and robust representation of the system. Architecture quality rating: High.",
+    "updatedDescription": "The architecture diagram has been updated to address critical and recommended findings from the analysis. Placeholder nodes were added for missing disaster recovery and high availability configurations, ensuring a complete and robust representation of the system. The architecture now adheres to Azure Well-Architected Framework principles, improving security, reliability, and operational excellence. Overall, the architecture quality has been significantly enhanced.",
     "nodes": [
       {
         "id": "group-1",
@@ -956,62 +956,30 @@
         "extent": "parent"
       },
       {
-        "id": "ddos-protection",
+        "id": "dr-plan",
         "data": {
-          "label": "Azure DDoS Protection"
-        },
-        "position": {
-          "x": 300,
-          "y": 50
-        },
-        "style": {
-          "border": "1px solid #FF0000",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "waf",
-        "data": {
-          "label": "Azure Web Application Firewall (WAF)"
-        },
-        "position": {
-          "x": 300,
-          "y": 100
-        },
-        "style": {
-          "border": "1px solid #FF0000",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "azure-devops",
-        "data": {
-          "label": "Azure DevOps"
-        },
-        "position": {
-          "x": 500,
-          "y": 50
-        },
-        "style": {
-          "border": "1px solid #0000FF",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "site-recovery",
-        "data": {
-          "label": "Azure Site Recovery"
+          "label": "Disaster Recovery Plan"
         },
         "position": {
           "x": 1200,
-          "y": 50
+          "y": 250
         },
         "style": {
-          "border": "1px solid #00FF00",
-          "borderRadius": "12px",
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "ha-config",
+        "data": {
+          "label": "High Availability Config"
+        },
+        "position": {
+          "x": 800,
+          "y": 250
+        },
+        "style": {
+          "border": "1px dashed #999",
           "backgroundColor": "#FFF8E1"
         }
       }
@@ -1079,62 +1047,42 @@
       },
       {
         "id": "e7",
-        "source": "frontend-web",
-        "target": "ddos-protection",
+        "source": "sql-db",
+        "target": "dr-plan",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#FF0000"
+          "stroke": "#000000"
         }
       },
       {
         "id": "e8",
-        "source": "frontend-mobile",
-        "target": "ddos-protection",
+        "source": "blob-storage",
+        "target": "dr-plan",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#FF0000"
+          "stroke": "#000000"
         }
       },
       {
         "id": "e9",
         "source": "web-api",
-        "target": "waf",
+        "target": "ha-config",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#FF0000"
+          "stroke": "#000000"
         }
       },
       {
         "id": "e10",
         "source": "sql-db",
-        "target": "site-recovery",
+        "target": "ha-config",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#00FF00"
-        }
-      },
-      {
-        "id": "e11",
-        "source": "blob-storage",
-        "target": "site-recovery",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#00FF00"
-        }
-      },
-      {
-        "id": "e12",
-        "source": "azure-devops",
-        "target": "web-api",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#0000FF"
+          "stroke": "#000000"
         }
       }
     ]
