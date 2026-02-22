@@ -446,21 +446,21 @@
     }
   ],
   "architecture_generation": {
-    "description": "An Azure-based architecture for a user-friendly bank self-service portal designed for bank customers that supports multiple devices, integrates with core banking systems, and ensures security and monitoring.",
+    "description": "Architecture diagram for a modern banking self-service portal integrating frontend services, authentication, backend microservices, database storage, core banking integration, notifications, monitoring, security, DevOps tools, and backup/recovery.",
     "nodes": [
       {
-        "id": "group-1",
+        "id": "frontend",
         "type": "group",
         "data": {
-          "label": "User Interface and Client Devices"
+          "label": "Presentation Layer"
         },
         "position": {
           "x": 100,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -468,35 +468,35 @@
         }
       },
       {
-        "id": "node-1a",
+        "id": "frontend-webapp",
         "data": {
-          "label": "Responsive Web App"
+          "label": "Responsive Web Application"
         },
         "position": {
-          "x": 125,
-          "y": 150
+          "x": 120,
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "frontend",
         "extent": "parent"
       },
       {
-        "id": "group-2",
+        "id": "security",
         "type": "group",
         "data": {
-          "label": "Frontend & Backend Services"
+          "label": "Security Layer"
         },
         "position": {
-          "x": 400,
+          "x": 450,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -504,52 +504,35 @@
         }
       },
       {
-        "id": "node-2a",
+        "id": "security-mfa",
         "data": {
-          "label": "Azure App Service"
+          "label": "Multi-Factor Authentication"
         },
         "position": {
-          "x": 425,
-          "y": 150
+          "x": 470,
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "security",
         "extent": "parent"
       },
       {
-        "id": "node-2b",
-        "data": {
-          "label": "Azure API Management"
-        },
-        "position": {
-          "x": 475,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "group-3",
+        "id": "backend",
         "type": "group",
         "data": {
-          "label": "Authentication & Security"
+          "label": "Business Logic Layer"
         },
         "position": {
-          "x": 700,
+          "x": 800,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -557,52 +540,35 @@
         }
       },
       {
-        "id": "node-3a",
+        "id": "backend-api",
         "data": {
-          "label": "Azure Active Directory B2C"
+          "label": "API Gateway"
         },
         "position": {
-          "x": 725,
-          "y": 150
+          "x": 820,
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "backend",
         "extent": "parent"
       },
       {
-        "id": "node-3b",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 775,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-3",
-        "extent": "parent"
-      },
-      {
-        "id": "group-4",
+        "id": "data",
         "type": "group",
         "data": {
-          "label": "Database & Data Storage"
+          "label": "Data Layer"
         },
         "position": {
-          "x": 1000,
+          "x": 1150,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -610,45 +576,28 @@
         }
       },
       {
-        "id": "node-4a",
+        "id": "data-sql",
         "data": {
           "label": "Azure SQL Database"
         },
         "position": {
-          "x": 1025,
-          "y": 150
+          "x": 1170,
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-4",
-        "extent": "parent"
-      },
-      {
-        "id": "node-4b",
-        "data": {
-          "label": "Azure Blob Storage"
-        },
-        "position": {
-          "x": 1075,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
+        "parentId": "data",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1-2a",
-        "source": "node-1a",
-        "target": "node-2a",
+        "id": "e-frontend-security",
+        "source": "frontend-webapp",
+        "target": "security-mfa",
         "type": "default",
         "animated": true,
         "style": {
@@ -656,9 +605,9 @@
         }
       },
       {
-        "id": "e2a-3a",
-        "source": "node-2a",
-        "target": "node-3a",
+        "id": "e-security-backend",
+        "source": "security-mfa",
+        "target": "backend-api",
         "type": "default",
         "animated": true,
         "style": {
@@ -666,19 +615,9 @@
         }
       },
       {
-        "id": "e2a-3b",
-        "source": "node-2a",
-        "target": "node-3b",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e4a-2b",
-        "source": "node-4a",
-        "target": "node-2b",
+        "id": "e-backend-data",
+        "source": "backend-api",
+        "target": "data-sql",
         "type": "default",
         "animated": true,
         "style": {
