@@ -1,4 +1,4 @@
-{"epic_id": "",
+{"epic_title": "User Authentication and Security",
     "source_file": backend/authentication/controllers/auth_controller.py,
     "test_file": functional_test_cases/test_user_authentication_and_security.py,
     "test_code_analysis": The test cases validate the login functionality for both success and failure scenarios. They check for successful login with correct credentials, failure with incorrect credentials, and proper handling of missing data. There are no validations for logging verification, and the test cases do not cover exception handling scenarios explicitly.
