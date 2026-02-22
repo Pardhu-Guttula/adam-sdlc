@@ -3,18 +3,18 @@
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/auth_controller.py",
     "test_file": "tests/test_auth_controller.py",
-    "test_code_analysis": "The tests verify the login functionality of the auth controller, covering scenarios including successful login, invalid credentials, missing username or password, internal server errors, and unexpected exceptions."
+    "test_code_analysis": "The unit tests verify various login scenarios for the authentication controller, including successful login, invalid credentials, missing username or password, authentication exceptions, and the absence of a JSON body in the request."
   },
   {
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/account_lock_controller.py",
     "test_file": "tests/test_account_lock_controller.py",
-    "test_code_analysis": "The tests cover various scenarios for the login endpoint of the account lock controller, including successful login, invalid credentials, and missing or empty user data. The overall purpose is to ensure correct handling and appropriate responses for different login situations."
+    "test_code_analysis": "The tests verify the account login functionality, including successful login, login failure due to invalid credentials, and various invalid request scenarios such as missing user ID, missing password, empty request, and invalid JSON."
   },
   {
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/account_lockout_controller.py",
     "test_file": "tests/test_account_lockout_controller.py",
-    "test_code_analysis": "The tests verify the functionality of the account lockout controller, covering scenarios such as successful login, account lockout, invalid credentials, and missing or empty data in login attempts. The overall purpose is to ensure proper handling and responses for different authentication states."
+    "test_code_analysis": "The tests verify the account lockout functionality during login attempts, covering scenarios of successful login, locked account, unauthorized login due to incorrect credentials, and invalid login data."
   }
 ]
