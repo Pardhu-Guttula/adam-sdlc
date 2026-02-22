@@ -5,36 +5,40 @@
   "jira_url": null,
   "user_stories": null,
   "architecture_generation": {
-    "description": "This architecture describes a modern self-service banking portal on Azure. It includes front-end services for web hosting and content delivery, authentication, and security services for managing user authentications and storing secrets, back-end services for serverless processing and workflow management, and multiple Azure resources for storage, integration, notification, monitoring, and logging. Additionally, it includes DevOps tools for continuous deployment, and robust security management to ensure compliance and protection.",
+    "description": "This architecture ensures a robust, secure, and user-friendly self-service portal integrating seamlessly with the bank’s core banking system while maintaining high performance and reliability.",
     "nodes": [
       {
-        "id": "frontend",
+        "id": "auth-group",
+        "type": "group",
         "data": {
-          "label": "Azure App Service (Web App)"
+          "label": "Authentication & Authorization"
         },
         "position": {
           "x": 100,
           "y": 100
         },
         "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
       },
       {
-        "id": "g-security",
+        "id": "frontend-group",
         "type": "group",
         "data": {
-          "label": "Security and Authentication"
+          "label": "Front-End Development"
         },
         "position": {
           "x": 400,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 300,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -42,52 +46,18 @@
         }
       },
       {
-        "id": "ad-b2c",
-        "data": {
-          "label": "Azure Active Directory B2C"
-        },
-        "position": {
-          "x": 50,
-          "y": 50
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-security",
-        "extent": "parent"
-      },
-      {
-        "id": "key-vault",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 150,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-security",
-        "extent": "parent"
-      },
-      {
-        "id": "g-backend",
+        "id": "backend-group",
         "type": "group",
         "data": {
-          "label": "Business Logic"
+          "label": "Back-End Services"
         },
         "position": {
-          "x": 800,
+          "x": 700,
           "y": 100
         },
         "style": {
-          "width": 300,
-          "height": 300,
+          "width": 250,
+          "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -95,45 +65,166 @@
         }
       },
       {
-        "id": "azure-functions",
+        "id": "db-group",
+        "type": "group",
+        "data": {
+          "label": "Database"
+        },
+        "position": {
+          "x": 1000,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "auth-node-1",
+        "data": {
+          "label": "Azure AD"
+        },
+        "position": {
+          "x": 120,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "auth-group",
+        "extent": "parent"
+      },
+      {
+        "id": "auth-node-2",
+        "data": {
+          "label": "Azure AD B2C"
+        },
+        "position": {
+          "x": 120,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "auth-group",
+        "extent": "parent"
+      },
+      {
+        "id": "frontend-node-1",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 420,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "frontend-group",
+        "extent": "parent"
+      },
+      {
+        "id": "frontend-node-2",
+        "data": {
+          "label": "Azure CDN"
+        },
+        "position": {
+          "x": 420,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "frontend-group",
+        "extent": "parent"
+      },
+      {
+        "id": "backend-node-1",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 720,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "backend-group",
+        "extent": "parent"
+      },
+      {
+        "id": "backend-node-2",
         "data": {
           "label": "Azure Functions"
         },
         "position": {
-          "x": 50,
-          "y": 50
+          "x": 720,
+          "y": 180
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-backend",
+        "parentId": "backend-group",
         "extent": "parent"
       },
       {
-        "id": "logic-apps",
+        "id": "db-node-1",
         "data": {
-          "label": "Azure Logic Apps"
+          "label": "Azure SQL Database"
         },
         "position": {
-          "x": 150,
-          "y": 100
+          "x": 1020,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-backend",
+        "parentId": "db-group",
+        "extent": "parent"
+      },
+      {
+        "id": "db-node-2",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 1020,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "db-group",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "frontend",
-        "target": "ad-b2c",
+        "id": "edge-1",
+        "source": "auth-node-1",
+        "target": "frontend-node-1",
         "type": "default",
         "animated": true,
         "style": {
@@ -141,9 +232,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "ad-b2c",
-        "target": "key-vault",
+        "id": "edge-2",
+        "source": "frontend-node-1",
+        "target": "backend-node-1",
         "type": "default",
         "animated": true,
         "style": {
@@ -151,9 +242,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "key-vault",
-        "target": "azure-functions",
+        "id": "edge-3",
+        "source": "backend-node-1",
+        "target": "db-node-1",
         "type": "default",
         "animated": true,
         "style": {
@@ -161,9 +252,9 @@
         }
       },
       {
-        "id": "e4",
-        "source": "azure-functions",
-        "target": "logic-apps",
+        "id": "edge-4",
+        "source": "backend-node-1",
+        "target": "db-node-2",
         "type": "default",
         "animated": true,
         "style": {
@@ -171,9 +262,9 @@
         }
       },
       {
-        "id": "e5",
-        "source": "frontend",
-        "target": "logic-apps",
+        "id": "edge-5",
+        "source": "auth-node-2",
+        "target": "frontend-node-2",
         "type": "default",
         "animated": true,
         "style": {
