@@ -741,7 +741,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been enhanced to address security and reliability gaps by introducing Azure Firewall, Azure Site Recovery, Azure Web Application Firewall (WAF), and Azure SQL Database Geo-Replication. Placeholder nodes were added for missing components, and all nodes and edges have been validated for consistency and completeness. The architecture now aligns better with the Azure Well-Architected Framework, achieving a higher quality rating.",
+    "updatedDescription": "The architecture diagram has been enhanced to address security and reliability gaps by introducing Azure Firewall, Azure Site Recovery, Azure Web Application Firewall (WAF), Azure SQL Database Geo-Replication, Azure Monitor, and Azure Sentinel. Placeholder nodes were added for missing components, and all nodes and edges have been validated for consistency and completeness. The architecture now aligns better with the Azure Well-Architected Framework, achieving a higher quality rating.",
     "nodes": [
       {
         "id": "group-1",
@@ -1010,6 +1010,34 @@
           "border": "1px dashed #999",
           "backgroundColor": "#FFF8E1"
         }
+      },
+      {
+        "id": "azure-monitor",
+        "data": {
+          "label": "Azure Monitor"
+        },
+        "position": {
+          "x": 500,
+          "y": 300
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "azure-sentinel",
+        "data": {
+          "label": "Azure Sentinel"
+        },
+        "position": {
+          "x": 550,
+          "y": 350
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
       }
     ],
     "edges": [
@@ -1147,6 +1175,36 @@
         "id": "e14",
         "source": "sql-db",
         "target": "sql-db-geo",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e15",
+        "source": "auth-ad",
+        "target": "azure-monitor",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e16",
+        "source": "key-vault",
+        "target": "azure-monitor",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e17",
+        "source": "azure-monitor",
+        "target": "azure-sentinel",
         "type": "default",
         "animated": true,
         "style": {
