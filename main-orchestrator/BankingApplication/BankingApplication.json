@@ -741,7 +741,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been enhanced to address identified gaps in reliability, security, and performance efficiency. New nodes for disaster recovery, a web application firewall (WAF), and a caching mechanism have been added. All edges and nodes have been validated, and the structure is now fully consistent and complete.",
+    "updatedDescription": "The architecture diagram has been enhanced to address security and reliability gaps by introducing Azure Firewall and Azure Site Recovery. Placeholder nodes were added for missing network security and disaster recovery components. The architecture now aligns better with the Azure Well-Architected Framework, achieving a higher quality rating.",
     "nodes": [
       {
         "id": "group-1",
@@ -956,13 +956,13 @@
         "extent": "parent"
       },
       {
-        "id": "dr-sql-db",
+        "id": "azure-firewall",
         "data": {
-          "label": "Disaster Recovery (SQL Database)"
+          "label": "Azure Firewall"
         },
         "position": {
-          "x": 1250,
-          "y": 150
+          "x": 600,
+          "y": 50
         },
         "style": {
           "border": "1px dashed #999",
@@ -970,41 +970,13 @@
         }
       },
       {
-        "id": "dr-blob-storage",
+        "id": "site-recovery",
         "data": {
-          "label": "Disaster Recovery (Blob Storage)"
+          "label": "Azure Site Recovery"
         },
         "position": {
-          "x": 1250,
-          "y": 200
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "waf",
-        "data": {
-          "label": "Azure Web Application Firewall (WAF)"
-        },
-        "position": {
-          "x": 300,
-          "y": 175
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "redis-cache",
-        "data": {
-          "label": "Azure Cache for Redis"
-        },
-        "position": {
-          "x": 850,
-          "y": 150
+          "x": 1200,
+          "y": 50
         },
         "style": {
           "border": "1px dashed #999",
@@ -1075,8 +1047,8 @@
       },
       {
         "id": "e7",
-        "source": "sql-db",
-        "target": "dr-sql-db",
+        "source": "auth-ad",
+        "target": "azure-firewall",
         "type": "default",
         "animated": true,
         "style": {
@@ -1085,8 +1057,8 @@
       },
       {
         "id": "e8",
-        "source": "blob-storage",
-        "target": "dr-blob-storage",
+        "source": "key-vault",
+        "target": "azure-firewall",
         "type": "default",
         "animated": true,
         "style": {
@@ -1095,8 +1067,8 @@
       },
       {
         "id": "e9",
-        "source": "frontend-web",
-        "target": "waf",
+        "source": "sql-db",
+        "target": "site-recovery",
         "type": "default",
         "animated": true,
         "style": {
@@ -1105,18 +1077,8 @@
       },
       {
         "id": "e10",
-        "source": "frontend-mobile",
-        "target": "waf",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e11",
-        "source": "web-api",
-        "target": "redis-cache",
+        "source": "blob-storage",
+        "target": "site-recovery",
         "type": "default",
         "animated": true,
         "style": {
