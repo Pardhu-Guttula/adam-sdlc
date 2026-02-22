@@ -1,4 +1,5 @@
-{"epic_title": "User Authentication and Security",
+{   
+  "epic_title": "User Authentication and Security",
     "source_file": backend/authentication/controllers/auth_controller.py,
     "test_file": functional_test_cases/test_user_authentication.py,
     "test_code_analysis": The tests validate the 'login' endpoint functionality. Scenarios covered include successful login, invalid credentials, and internal server errors. Success and failure responses are verified. Exception handling and response status codes (200, 401, 500) are tested.
