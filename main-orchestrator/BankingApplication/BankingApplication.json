@@ -462,63 +462,25 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram represents a comprehensive AWS-based self-service portal for a bank, including services like UI, authentication, backend, database, storage, DevOps, and monitoring.",
+    "description": "The architecture setup for a bank's customer portal featuring a frontend service for the self-service portal, backend services hosted on Azure, integration with Azure Active Directory for authentication, Azure API Management for integrations, Azure SQL and Blob Storage for data, workflow management via Azure Logic Apps, real-time notifications via Notification Hubs, and comprehensive deployment, security, monitoring, and analytics with Azure services.",
     "nodes": [
       {
-        "id": "group-ui",
-        "type": "group",
+        "id": "Frontend",
         "data": {
-          "label": "User Interface (UI) Layer"
+          "label": "Web Application (Angular/React/Vue.js)"
         },
         "position": {
           "x": 100,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
       },
       {
-        "id": "web-app",
-        "data": {
-          "label": "Amazon CloudFront"
-        },
-        "position": {
-          "x": 120,
-          "y": 180
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-ui",
-        "extent": "parent"
-      },
-      {
-        "id": "app-gateway",
-        "data": {
-          "label": "AWS Application Load Balancer"
-        },
-        "position": {
-          "x": 180,
-          "y": 240
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-ui",
-        "extent": "parent"
-      },
-      {
-        "id": "group-auth",
+        "id": "group-1",
         "type": "group",
         "data": {
           "label": "Authentication and Authorization"
@@ -528,8 +490,8 @@
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -537,9 +499,26 @@
         }
       },
       {
-        "id": "aad-b2c",
+        "id": "AzureAD",
         "data": {
-          "label": "Amazon Cognito"
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 420,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "OAuth2",
+        "data": {
+          "label": "OAuth2/OpenID Connect"
         },
         "position": {
           "x": 420,
@@ -550,39 +529,22 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-auth",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "rbac",
-        "data": {
-          "label": "IAM Roles and Policies"
-        },
-        "position": {
-          "x": 480,
-          "y": 240
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-auth",
-        "extent": "parent"
-      },
-      {
-        "id": "group-backend",
+        "id": "group-2",
         "type": "group",
         "data": {
           "label": "Backend Services"
         },
         "position": {
-          "x": 700,
+          "x": 800,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -590,12 +552,29 @@
         }
       },
       {
-        "id": "azure-functions",
+        "id": "AzureAppService",
         "data": {
-          "label": "AWS Lambda"
+          "label": "Azure App Service"
         },
         "position": {
-          "x": 720,
+          "x": 820,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "BackendAPI",
+        "data": {
+          "label": "ASP.NET Core/Node.js"
+        },
+        "position": {
+          "x": 820,
           "y": 180
         },
         "style": {
@@ -603,39 +582,22 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-backend",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "api-management",
-        "data": {
-          "label": "Amazon API Gateway"
-        },
-        "position": {
-          "x": 780,
-          "y": 240
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-backend",
-        "extent": "parent"
-      },
-      {
-        "id": "group-database",
+        "id": "group-3",
         "type": "group",
         "data": {
-          "label": "Database and Storage"
+          "label": "Data Storage and Management"
         },
         "position": {
-          "x": 1000,
+          "x": 1200,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -643,12 +605,29 @@
         }
       },
       {
-        "id": "sql-db",
+        "id": "SQLDatabase",
         "data": {
-          "label": "Amazon RDS"
+          "label": "Azure SQL Database"
         },
         "position": {
-          "x": 1020,
+          "x": 1220,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "BlobStorage",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 1220,
           "y": 180
         },
         "style": {
@@ -656,100 +635,15 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-database",
+        "parentId": "group-3",
         "extent": "parent"
-      },
-      {
-        "id": "blob-storage",
-        "data": {
-          "label": "Amazon S3"
-        },
-        "position": {
-          "x": 1080,
-          "y": 240
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-database",
-        "extent": "parent"
-      },
-      {
-        "id": "group-devops",
-        "type": "group",
-        "data": {
-          "label": "DevOps and Monitoring"
-        },
-        "position": {
-          "x": 1300,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "devops",
-        "data": {
-          "label": "AWS CodePipeline"
-        },
-        "position": {
-          "x": 1320,
-          "y": 180
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-devops",
-        "extent": "parent"
-      },
-      {
-        "id": "monitor",
-        "data": {
-          "label": "Amazon CloudWatch"
-        },
-        "position": {
-          "x": 1380,
-          "y": 240
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-devops",
-        "extent": "parent"
-      },
-      {
-        "id": "user",
-        "data": {
-          "label": "User"
-        },
-        "position": {
-          "x": 20,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
       }
     ],
     "edges": [
       {
-        "id": "e-user-web-app",
-        "source": "user",
-        "target": "web-app",
+        "id": "e-UserAuth",
+        "source": "Frontend",
+        "target": "AzureAD",
         "type": "default",
         "animated": true,
         "style": {
@@ -757,9 +651,9 @@
         }
       },
       {
-        "id": "e-web-app-auth",
-        "source": "web-app",
-        "target": "aad-b2c",
+        "id": "e-AuthBackend",
+        "source": "AzureAD",
+        "target": "AzureAppService",
         "type": "default",
         "animated": true,
         "style": {
@@ -767,9 +661,9 @@
         }
       },
       {
-        "id": "e-aad-rbac",
-        "source": "aad-b2c",
-        "target": "rbac",
+        "id": "e-BackendData",
+        "source": "BackendAPI",
+        "target": "SQLDatabase",
         "type": "default",
         "animated": true,
         "style": {
@@ -777,49 +671,9 @@
         }
       },
       {
-        "id": "e-rbac-functions",
-        "source": "rbac",
-        "target": "azure-functions",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e-functions-api",
-        "source": "azure-functions",
-        "target": "api-management",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e-api-sql",
-        "source": "api-management",
-        "target": "sql-db",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e-sql-blob",
-        "source": "sql-db",
-        "target": "blob-storage",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e-blob-devops",
-        "source": "blob-storage",
-        "target": "devops",
+        "id": "e-BackendBlob",
+        "source": "BackendAPI",
+        "target": "BlobStorage",
         "type": "default",
         "animated": true,
         "style": {
