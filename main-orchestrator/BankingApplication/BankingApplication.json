@@ -741,7 +741,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been enhanced to address security and reliability gaps by introducing Azure Firewall, Azure Site Recovery, Azure Web Application Firewall (WAF), Azure SQL Database Geo-Replication, Azure Monitor, and Azure Sentinel. Placeholder nodes were added for missing components, and all nodes and edges have been validated for consistency and completeness. The architecture now aligns better with the Azure Well-Architected Framework, achieving a higher quality rating.",
+    "updatedDescription": "The architecture diagram has been enhanced to address security, reliability, and operational gaps. Placeholder nodes were added for missing components, and all nodes and edges have been validated for consistency and completeness. The architecture now aligns better with the Azure Well-Architected Framework, achieving a higher quality rating.",
     "nodes": [
       {
         "id": "group-1",
