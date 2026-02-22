@@ -3,18 +3,18 @@
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/auth_controller.py",
     "test_file": "tests/test_auth_controller.py",
-    "test_code_analysis": "The tests verify the login functionality of the auth controller, covering scenarios including successful login, invalid credentials, missing username or password, invalid JSON input, and authentication service exceptions."
+    "test_code_analysis": "The tests verify the login functionality of a Flask authentication controller, covering scenarios including successful login, invalid credentials, missing username or password, JSON errors, and general exceptions."
   },
   {
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/account_lock_controller.py",
     "test_file": "tests/test_account_lock_controller.py",
-    "test_code_analysis": "The tests verify the login functionality of the account lock controller, covering scenarios of successful login, login with invalid credentials, and various cases of missing or improper login data."
+    "test_code_analysis": "The tests verify the login functionality of the account lock controller, covering scenarios such as successful login, invalid data input, login failure due to incorrect credentials, and the absence of a JSON body in the request."
   },
   {
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/account_lockout_controller.py",
     "test_file": "tests/test_account_lockout_controller.py",
-    "test_code_analysis": "The tests verify the account lockout controller's login functionality, covering scenarios of successful authentication, invalid credentials, account lockout, and missing data in login requests."
+    "test_code_analysis": "The tests verify the account lockout functionality of a login endpoint, covering scenarios like successful login, account lockout due to multiple failed attempts, unauthorized access, and invalid data handling."
   }
 ]
