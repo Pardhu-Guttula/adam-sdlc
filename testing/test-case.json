@@ -3,18 +3,18 @@
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/auth_controller.py",
     "test_file": "tests/test_auth_controller.py",
-    "test_code_analysis": "The tests verify the login functionality of the authentication controller under various scenarios including successful login, invalid credentials, missing username, missing password, and non-JSON request."
+    "test_code_analysis": "The tests verify the login functionality of the AuthController, covering scenarios such as successful login, invalid credentials, missing username or password, and handling exceptions."
   },
   {
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/account_lock_controller.py",
     "test_file": "tests/test_account_lock_controller.py",
-    "test_code_analysis": "The tests verify the login functionality of the account lock controller, covering scenarios such as successful login, invalid credentials, missing user ID or password, empty JSON, invalid content type, and no data provided."
+    "test_code_analysis": "The tests verify the login functionality of the account lock controller, covering scenarios of successful login, invalid credentials, missing user ID, missing password, empty request body, and request without a JSON body, ensuring appropriate responses and status codes are returned."
   },
   {
     "epic_id": "EPIC-1",
     "source_file": "backend/authentication/controllers/account_lockout_controller.py",
     "test_file": "tests/test_account_lockout_controller.py",
-    "test_code_analysis": "The tests verify the functionality of the account lockout controller by simulating various login scenarios such as successful login, account lockout, invalid credentials, missing or empty data. The goal is to ensure appropriate responses, including status codes and error messages, are returned for each case."
+    "test_code_analysis": "The tests verify the functionality of the account lockout controller, including successful login, various invalid login scenarios (missing user ID, missing password, empty body), account lockout, and failed login attempts."
   }
 ]
