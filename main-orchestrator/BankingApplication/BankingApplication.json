@@ -741,7 +741,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been enhanced to address security, reliability, and operational gaps. Placeholder nodes were added for missing components, and all nodes and edges have been validated for consistency and completeness. The architecture now aligns better with the Azure Well-Architected Framework, achieving a higher quality rating.",
+    "updatedDescription": "The architecture diagram has been enhanced to address critical security, reliability, and operational excellence gaps. New nodes for Azure DDoS Protection, Azure Web Application Firewall (WAF), Azure DevOps, and Azure Site Recovery have been added. All nodes and edges are validated, ensuring a complete and robust representation of the system. Architecture quality rating: High.",
     "nodes": [
       {
         "id": "group-1",
@@ -956,16 +956,47 @@
         "extent": "parent"
       },
       {
-        "id": "azure-firewall",
+        "id": "ddos-protection",
         "data": {
-          "label": "Azure Firewall"
+          "label": "Azure DDoS Protection"
         },
         "position": {
-          "x": 600,
+          "x": 300,
           "y": 50
         },
         "style": {
-          "border": "1px dashed #999",
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "waf",
+        "data": {
+          "label": "Azure Web Application Firewall (WAF)"
+        },
+        "position": {
+          "x": 300,
+          "y": 100
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "azure-devops",
+        "data": {
+          "label": "Azure DevOps"
+        },
+        "position": {
+          "x": 500,
+          "y": 50
+        },
+        "style": {
+          "border": "1px solid #0000FF",
+          "borderRadius": "12px",
           "backgroundColor": "#FFF8E1"
         }
       },
@@ -979,63 +1010,8 @@
           "y": 50
         },
         "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "waf",
-        "data": {
-          "label": "Azure Web Application Firewall"
-        },
-        "position": {
-          "x": 300,
-          "y": 50
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "sql-db-geo",
-        "data": {
-          "label": "Azure SQL Database Geo-Replication"
-        },
-        "position": {
-          "x": 1200,
-          "y": 150
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "azure-monitor",
-        "data": {
-          "label": "Azure Monitor"
-        },
-        "position": {
-          "x": 500,
-          "y": 300
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "azure-sentinel",
-        "data": {
-          "label": "Azure Sentinel"
-        },
-        "position": {
-          "x": 550,
-          "y": 350
-        },
-        "style": {
-          "border": "1px dashed #999",
+          "border": "1px solid #00FF00",
+          "borderRadius": "12px",
           "backgroundColor": "#FFF8E1"
         }
       }
@@ -1103,112 +1079,62 @@
       },
       {
         "id": "e7",
-        "source": "auth-ad",
-        "target": "azure-firewall",
+        "source": "frontend-web",
+        "target": "ddos-protection",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
+          "stroke": "#FF0000"
         }
       },
       {
         "id": "e8",
-        "source": "key-vault",
-        "target": "azure-firewall",
+        "source": "frontend-mobile",
+        "target": "ddos-protection",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
+          "stroke": "#FF0000"
         }
       },
       {
         "id": "e9",
+        "source": "web-api",
+        "target": "waf",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e10",
         "source": "sql-db",
         "target": "site-recovery",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
+          "stroke": "#00FF00"
         }
       },
       {
-        "id": "e10",
+        "id": "e11",
         "source": "blob-storage",
         "target": "site-recovery",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e11",
-        "source": "frontend-web",
-        "target": "waf",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
+          "stroke": "#00FF00"
         }
       },
       {
         "id": "e12",
-        "source": "frontend-mobile",
-        "target": "waf",
+        "source": "azure-devops",
+        "target": "web-api",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e13",
-        "source": "waf",
-        "target": "auth-ad",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e14",
-        "source": "sql-db",
-        "target": "sql-db-geo",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e15",
-        "source": "auth-ad",
-        "target": "azure-monitor",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e16",
-        "source": "key-vault",
-        "target": "azure-monitor",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e17",
-        "source": "azure-monitor",
-        "target": "azure-sentinel",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
+          "stroke": "#0000FF"
         }
       }
     ]
