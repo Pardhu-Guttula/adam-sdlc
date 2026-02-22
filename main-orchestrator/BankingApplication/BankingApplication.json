@@ -462,7 +462,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram outlines a self-service portal for a bank based on AWS, including services like web applications, authentication, backend services, database and storage, notifications, integration with core banking systems, DevOps, monitoring, scalability, and user session management using AWS services.",
+    "description": "This architecture diagram represents a comprehensive AWS-based self-service portal for a bank, including services like UI, authentication, backend, database, storage, DevOps, and monitoring.",
     "nodes": [
       {
         "id": "group-ui",
