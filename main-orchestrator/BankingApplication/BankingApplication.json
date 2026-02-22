@@ -741,7 +741,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been enhanced to address security and reliability gaps by introducing Azure Firewall and Azure Site Recovery. Placeholder nodes were added for missing network security and disaster recovery components. The architecture now aligns better with the Azure Well-Architected Framework, achieving a higher quality rating. All nodes and edges have been validated, ensuring consistency and completeness.",
+    "updatedDescription": "The architecture diagram has been enhanced to address security and reliability gaps by introducing Azure Firewall, Azure Site Recovery, Azure Web Application Firewall (WAF), and Azure SQL Database Geo-Replication. Placeholder nodes were added for missing components, and all nodes and edges have been validated for consistency and completeness. The architecture now aligns better with the Azure Well-Architected Framework, achieving a higher quality rating.",
     "nodes": [
       {
         "id": "group-1",
@@ -982,6 +982,34 @@
           "border": "1px dashed #999",
           "backgroundColor": "#FFF8E1"
         }
+      },
+      {
+        "id": "waf",
+        "data": {
+          "label": "Azure Web Application Firewall"
+        },
+        "position": {
+          "x": 300,
+          "y": 50
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "sql-db-geo",
+        "data": {
+          "label": "Azure SQL Database Geo-Replication"
+        },
+        "position": {
+          "x": 1200,
+          "y": 150
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
       }
     ],
     "edges": [
@@ -1079,6 +1107,46 @@
         "id": "e10",
         "source": "blob-storage",
         "target": "site-recovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e11",
+        "source": "frontend-web",
+        "target": "waf",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e12",
+        "source": "frontend-mobile",
+        "target": "waf",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e13",
+        "source": "waf",
+        "target": "auth-ad",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e14",
+        "source": "sql-db",
+        "target": "sql-db-geo",
         "type": "default",
         "animated": true,
         "style": {
