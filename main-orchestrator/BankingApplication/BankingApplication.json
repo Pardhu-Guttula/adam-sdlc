@@ -741,7 +741,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been updated to address critical and recommended findings from the analysis. Placeholder nodes were added for missing disaster recovery and high availability configurations, ensuring a complete and robust representation of the system. The architecture now adheres to Azure Well-Architected Framework principles, improving security, reliability, and operational excellence. Overall, the architecture quality has been significantly enhanced.",
+    "updatedDescription": "The architecture diagram has been updated to address critical findings related to security, reliability, and operational excellence. New nodes for Azure Security Center, Azure Firewall, Azure Site Recovery, and Azure Availability Sets have been added to enhance security and ensure disaster recovery and high availability. Placeholder nodes for disaster recovery and high availability have been replaced with these new nodes. The architecture now adheres to Azure Well-Architected Framework principles, significantly improving its quality and robustness.",
     "nodes": [
       {
         "id": "group-1",
@@ -956,9 +956,37 @@
         "extent": "parent"
       },
       {
-        "id": "dr-plan",
+        "id": "azure-security-center",
         "data": {
-          "label": "Disaster Recovery Plan"
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 500,
+          "y": 300
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "azure-firewall",
+        "data": {
+          "label": "Azure Firewall"
+        },
+        "position": {
+          "x": 600,
+          "y": 300
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "azure-site-recovery",
+        "data": {
+          "label": "Azure Site Recovery"
         },
         "position": {
           "x": 1200,
@@ -970,9 +998,9 @@
         }
       },
       {
-        "id": "ha-config",
+        "id": "azure-availability-sets",
         "data": {
-          "label": "High Availability Config"
+          "label": "Azure Availability Sets"
         },
         "position": {
           "x": 800,
@@ -1048,7 +1076,7 @@
       {
         "id": "e7",
         "source": "sql-db",
-        "target": "dr-plan",
+        "target": "azure-site-recovery",
         "type": "default",
         "animated": true,
         "style": {
@@ -1058,7 +1086,7 @@
       {
         "id": "e8",
         "source": "blob-storage",
-        "target": "dr-plan",
+        "target": "azure-site-recovery",
         "type": "default",
         "animated": true,
         "style": {
@@ -1068,7 +1096,7 @@
       {
         "id": "e9",
         "source": "web-api",
-        "target": "ha-config",
+        "target": "azure-availability-sets",
         "type": "default",
         "animated": true,
         "style": {
@@ -1078,7 +1106,47 @@
       {
         "id": "e10",
         "source": "sql-db",
-        "target": "ha-config",
+        "target": "azure-availability-sets",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e11",
+        "source": "frontend-web",
+        "target": "azure-security-center",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e12",
+        "source": "frontend-mobile",
+        "target": "azure-security-center",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e13",
+        "source": "auth-ad",
+        "target": "azure-firewall",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e14",
+        "source": "web-api",
+        "target": "azure-firewall",
         "type": "default",
         "animated": true,
         "style": {
