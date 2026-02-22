@@ -1,1 +1,375 @@
-{"output":{"description":"This architecture diagram represents a modern self-service banking portal using Azure services including interface design, security, user profiles, workflow management, real-time updates, data management, core banking integration, performance, role-based access control, development, scalability, and monitoring.","nodes":[{"id":"Frontend","data":{"label":"Azure Front Door"},"position":{"x":50,"y":0},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"}},{"id":"group-1","type":"group","data":{"label":"Interface & User Experience"},"position":{"x":100,"y":100},"style":{"width":300,"height":200,"backgroundColor":"#D3DAD9","border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"}},{"id":"WebApp","data":{"label":"Azure App Service (Web App)"},"position":{"x":50,"y":150},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-1","extent":"parent"},{"id":"StaticWebApps","data":{"label":"Azure Static Web Apps"},"position":{"x":200,"y":150},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-1","extent":"parent"},{"id":"group-2","type":"group","data":{"label":"Security"},"position":{"x":450,"y":100},"style":{"width":300,"height":200,"backgroundColor":"#D3DAD9","border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"}},{"id":"AAD","data":{"label":"Azure Active Directory B2C"},"position":{"x":450,"y":150},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-2","extent":"parent"},{"id":"KeyVault","data":{"label":"Azure Key Vault"},"position":{"x":600,"y":150},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-2","extent":"parent"},{"id":"group-3","type":"group","data":{"label":"Real-time Updates & Notifications"},"position":{"x":800,"y":100},"style":{"width":300,"height":200,"backgroundColor":"#D3DAD9","border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"}},{"id":"SignalR","data":{"label":"Azure SignalR Service"},"position":{"x":950,"y":150},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-3","extent":"parent"},{"id":"NotificationHubs","data":{"label":"Azure Notification Hubs"},"position":{"x":950,"y":250},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-3","extent":"parent"},{"id":"group-4","type":"group","data":{"label":"Personalization & User Profiles"},"position":{"x":1100,"y":100},"style":{"width":300,"height":200,"backgroundColor":"#D3DAD9","border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"}},{"id":"SQLDatabase","data":{"label":"Azure SQL Database"},"position":{"x":1250,"y":150},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-4","extent":"parent"},{"id":"CosmosDB","data":{"label":"Azure CosmosDB"},"position":{"x":1250,"y":250},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-4","extent":"parent"},{"id":"group-5","type":"group","data":{"label":"DevOps"},"position":{"x":1450,"y":100},"style":{"width":300,"height":200,"backgroundColor":"#D3DAD9","border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"}},{"id":"DevOps","data":{"label":"Azure DevOps"},"position":{"x":1600,"y":150},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-5","extent":"parent"},{"id":"AutoScaling","data":{"label":"Azure Auto-Scaling"},"position":{"x":1600,"y":250},"style":{"border":"none","borderRadius":"12px","boxShadow":"0 2px 8px rgba(0,0,0,0.15)"},"parentId":"group-5","extent":"parent"}],"edges":[{"id":"edge-1","source":"Frontend","target":"WebApp","type":"default","animated":true,"style":{"stroke":"#000000"}},{"id":"edge-2","source":"Frontend","target":"AAD","type":"default","animated":true,"style":{"stroke":"#000000"}},{"id":"edge-3","source":"AAD","target":"KeyVault","type":"default","animated":true,"style":{"stroke":"#000000"}},{"id":"edge-4","source":"WebApp","target":"SQLDatabase","type":"default","animated":true,"style":{"stroke":"#000000"}},{"id":"edge-5","source":"WebApp","target":"SignalR","type":"default","animated":true,"style":{"stroke":"#000000"}},{"id":"edge-6","source":"WebApp","target":"DevOps","type":"default","animated":true,"style":{"stroke":"#000000"}},{"id":"edge-7","source":"SQLDatabase","target":"CosmosDB","type":"default","animated":true,"style":{"stroke":"#000000"}},{"id":"edge-8","source":"SignalR","target":"NotificationHubs","type":"default","animated":true,"style":{"stroke":"#000000"}}]}}
+{
+  "user_prompt": "undefined",
+  "repo_link": null,
+  "epics": null,
+  "jira_url": null,
+  "user_stories": null,
+  "architecture_generation": {
+    "description": "This architecture diagram represents a modern self-service banking portal using Azure services including interface design, security, user profiles, workflow management, real-time updates, data management, core banking integration, performance, role-based access control, development, scalability, and monitoring.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "Azure Front Door"
+        },
+        "position": {
+          "x": 50,
+          "y": 0
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Interface & User Experience"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "WebApp",
+        "data": {
+          "label": "Azure App Service (Web App)"
+        },
+        "position": {
+          "x": 50,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "StaticWebApps",
+        "data": {
+          "label": "Azure Static Web Apps"
+        },
+        "position": {
+          "x": 200,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Security"
+        },
+        "position": {
+          "x": 450,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "AAD",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 450,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "KeyVault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 600,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Real-time Updates & Notifications"
+        },
+        "position": {
+          "x": 800,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SignalR",
+        "data": {
+          "label": "Azure SignalR Service"
+        },
+        "position": {
+          "x": 950,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "NotificationHubs",
+        "data": {
+          "label": "Azure Notification Hubs"
+        },
+        "position": {
+          "x": 950,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Personalization & User Profiles"
+        },
+        "position": {
+          "x": 1100,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQLDatabase",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 1250,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "CosmosDB",
+        "data": {
+          "label": "Azure CosmosDB"
+        },
+        "position": {
+          "x": 1250,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "group-5",
+        "type": "group",
+        "data": {
+          "label": "DevOps"
+        },
+        "position": {
+          "x": 1450,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "DevOps",
+        "data": {
+          "label": "Azure DevOps"
+        },
+        "position": {
+          "x": 1600,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      },
+      {
+        "id": "AutoScaling",
+        "data": {
+          "label": "Azure Auto-Scaling"
+        },
+        "position": {
+          "x": 1600,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-5",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge-1",
+        "source": "Frontend",
+        "target": "WebApp",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-2",
+        "source": "Frontend",
+        "target": "AAD",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-3",
+        "source": "AAD",
+        "target": "KeyVault",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-4",
+        "source": "WebApp",
+        "target": "SQLDatabase",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-5",
+        "source": "WebApp",
+        "target": "SignalR",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-6",
+        "source": "WebApp",
+        "target": "DevOps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-7",
+        "source": "SQLDatabase",
+        "target": "CosmosDB",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge-8",
+        "source": "SignalR",
+        "target": "NotificationHubs",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
+  "architecture_validation": null
+}
