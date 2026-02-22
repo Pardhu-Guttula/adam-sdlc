@@ -627,21 +627,21 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address critical reliability and security issues by adding disaster recovery components and a Web Application Firewall (WAF). Placeholder nodes were added for missing disaster recovery and WAF components, ensuring a robust, secure, and user-friendly self-service portal. The architecture now aligns better with the Azure Well-Architected Framework, achieving a high-quality rating.",
+    "updatedDescription": "The architecture diagram has been enhanced to address critical security and reliability gaps by adding a Web Application Firewall (WAF) and Azure Backup for disaster recovery. All nodes and edges have been validated, and placeholders were added for missing components. The architecture now aligns better with operational excellence, security, and reliability standards.",
     "nodes": [
       {
-        "id": "auth-group",
+        "id": "frontend",
         "type": "group",
         "data": {
-          "label": "Authentication & Authorization"
+          "label": "Presentation Layer"
         },
         "position": {
           "x": 100,
           "y": 100
         },
         "style": {
-          "width": 250,
-          "height": 150,
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -649,232 +649,166 @@
         }
       },
       {
-        "id": "frontend-group",
-        "type": "group",
+        "id": "frontend-webapp",
         "data": {
-          "label": "Front-End Development"
-        },
-        "position": {
-          "x": 400,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "backend-group",
-        "type": "group",
-        "data": {
-          "label": "Back-End Services"
-        },
-        "position": {
-          "x": 700,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "db-group",
-        "type": "group",
-        "data": {
-          "label": "Database"
-        },
-        "position": {
-          "x": 1000,
-          "y": 100
-        },
-        "style": {
-          "width": 250,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "auth-node-1",
-        "data": {
-          "label": "Azure AD"
+          "label": "Responsive Web Application"
         },
         "position": {
           "x": 120,
-          "y": 120
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "auth-group",
+        "parentId": "frontend",
         "extent": "parent"
       },
       {
-        "id": "auth-node-2",
+        "id": "security",
+        "type": "group",
         "data": {
-          "label": "Azure AD B2C"
+          "label": "Security Layer"
         },
         "position": {
-          "x": 120,
-          "y": 180
+          "x": 450,
+          "y": 100
         },
         "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "auth-group",
-        "extent": "parent"
+        }
       },
       {
-        "id": "frontend-node-1",
+        "id": "security-mfa",
         "data": {
-          "label": "Azure App Service"
+          "label": "Multi-Factor Authentication"
         },
         "position": {
-          "x": 420,
-          "y": 120
+          "x": 470,
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "frontend-group",
+        "parentId": "security",
         "extent": "parent"
       },
       {
-        "id": "frontend-node-2",
+        "id": "backend",
+        "type": "group",
         "data": {
-          "label": "Azure CDN"
+          "label": "Business Logic Layer"
         },
         "position": {
-          "x": 420,
-          "y": 180
+          "x": 800,
+          "y": 100
         },
         "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "frontend-group",
-        "extent": "parent"
+        }
       },
       {
-        "id": "backend-node-1",
+        "id": "backend-api",
         "data": {
-          "label": "Azure API Management"
+          "label": "API Gateway"
         },
         "position": {
-          "x": 720,
-          "y": 120
+          "x": 820,
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "backend-group",
+        "parentId": "backend",
         "extent": "parent"
       },
       {
-        "id": "backend-node-2",
+        "id": "data",
+        "type": "group",
         "data": {
-          "label": "Azure Functions"
+          "label": "Data Layer"
         },
         "position": {
-          "x": 720,
-          "y": 180
+          "x": 1150,
+          "y": 100
         },
         "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "backend-group",
-        "extent": "parent"
+        }
       },
       {
-        "id": "db-node-1",
+        "id": "data-sql",
         "data": {
           "label": "Azure SQL Database"
         },
         "position": {
-          "x": 1020,
-          "y": 120
+          "x": 1170,
+          "y": 130
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "db-group",
+        "parentId": "data",
         "extent": "parent"
       },
       {
-        "id": "db-node-2",
-        "data": {
-          "label": "Azure Cosmos DB"
-        },
-        "position": {
-          "x": 1020,
-          "y": 180
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "db-group",
-        "extent": "parent"
-      },
-      {
-        "id": "dr-node-1",
-        "data": {
-          "label": "Disaster Recovery - Secondary Region"
-        },
-        "position": {
-          "x": 720,
-          "y": 240
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "waf-node-1",
+        "id": "security-waf",
         "data": {
           "label": "Azure Web Application Firewall"
         },
         "position": {
-          "x": 420,
-          "y": 240
+          "x": 300,
+          "y": 130
         },
         "style": {
-          "border": "1px dashed #999",
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "data-backup",
+        "data": {
+          "label": "Azure Backup"
+        },
+        "position": {
+          "x": 1350,
+          "y": 130
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
           "backgroundColor": "#FFF8E1"
         }
       }
     ],
     "edges": [
       {
-        "id": "edge-1",
-        "source": "auth-node-1",
-        "target": "frontend-node-1",
+        "id": "e-frontend-security",
+        "source": "frontend-webapp",
+        "target": "security-mfa",
         "type": "default",
         "animated": true,
         "style": {
@@ -882,9 +816,9 @@
         }
       },
       {
-        "id": "edge-2",
-        "source": "frontend-node-1",
-        "target": "backend-node-1",
+        "id": "e-security-backend",
+        "source": "security-mfa",
+        "target": "backend-api",
         "type": "default",
         "animated": true,
         "style": {
@@ -892,9 +826,9 @@
         }
       },
       {
-        "id": "edge-3",
-        "source": "backend-node-1",
-        "target": "db-node-1",
+        "id": "e-backend-data",
+        "source": "backend-api",
+        "target": "data-sql",
         "type": "default",
         "animated": true,
         "style": {
@@ -902,53 +836,33 @@
         }
       },
       {
-        "id": "edge-4",
-        "source": "backend-node-1",
-        "target": "db-node-2",
+        "id": "e-frontend-waf",
+        "source": "frontend-webapp",
+        "target": "security-waf",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
+          "stroke": "#FF0000"
         }
       },
       {
-        "id": "edge-5",
-        "source": "auth-node-2",
-        "target": "frontend-node-2",
+        "id": "e-waf-security",
+        "source": "security-waf",
+        "target": "security-mfa",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
+          "stroke": "#FF0000"
         }
       },
       {
-        "id": "edge-6",
-        "source": "backend-node-1",
-        "target": "dr-node-1",
+        "id": "e-data-backup",
+        "source": "data-sql",
+        "target": "data-backup",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-7",
-        "source": "frontend-node-1",
-        "target": "waf-node-1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-8",
-        "source": "waf-node-1",
-        "target": "backend-node-1",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
+          "stroke": "#FF0000"
         }
       }
     ]
