@@ -462,7 +462,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram outlines a self-service portal for a bank, including services like web applications, authentication, backend services, database and storage, notifications, integration with core banking systems, DevOps, monitoring, scalability, and user session management using Azure services.",
+    "description": "This architecture diagram outlines a self-service portal for a bank based on AWS, including services like web applications, authentication, backend services, database and storage, notifications, integration with core banking systems, DevOps, monitoring, scalability, and user session management using AWS services.",
     "nodes": [
       {
         "id": "group-ui",
@@ -486,7 +486,7 @@
       {
         "id": "web-app",
         "data": {
-          "label": "Web Application"
+          "label": "Amazon CloudFront"
         },
         "position": {
           "x": 120,
@@ -503,7 +503,7 @@
       {
         "id": "app-gateway",
         "data": {
-          "label": "Azure Application Gateway"
+          "label": "AWS Application Load Balancer"
         },
         "position": {
           "x": 180,
@@ -539,7 +539,7 @@
       {
         "id": "aad-b2c",
         "data": {
-          "label": "Azure Active Directory B2C"
+          "label": "Amazon Cognito"
         },
         "position": {
           "x": 420,
@@ -556,7 +556,7 @@
       {
         "id": "rbac",
         "data": {
-          "label": "Role-Based Access Control"
+          "label": "IAM Roles and Policies"
         },
         "position": {
           "x": 480,
@@ -592,7 +592,7 @@
       {
         "id": "azure-functions",
         "data": {
-          "label": "Azure Functions"
+          "label": "AWS Lambda"
         },
         "position": {
           "x": 720,
@@ -609,7 +609,7 @@
       {
         "id": "api-management",
         "data": {
-          "label": "Azure API Management"
+          "label": "Amazon API Gateway"
         },
         "position": {
           "x": 780,
@@ -645,7 +645,7 @@
       {
         "id": "sql-db",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Amazon RDS"
         },
         "position": {
           "x": 1020,
@@ -662,7 +662,7 @@
       {
         "id": "blob-storage",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Amazon S3"
         },
         "position": {
           "x": 1080,
@@ -698,7 +698,7 @@
       {
         "id": "devops",
         "data": {
-          "label": "Azure DevOps"
+          "label": "AWS CodePipeline"
         },
         "position": {
           "x": 1320,
@@ -715,7 +715,7 @@
       {
         "id": "monitor",
         "data": {
-          "label": "Azure Monitor"
+          "label": "Amazon CloudWatch"
         },
         "position": {
           "x": 1380,
