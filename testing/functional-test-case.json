@@ -1,6 +1,6 @@
 {
-  "epic_title": "User Authentication and Security",
-  "source_file": "backend/authentication/controllers/auth_controller.py",
-  "test_file": "functional_test_cases/test_user_authentication_and_security.py",
-  "test_code_analysis": "The tests validate the login functionality by simulating successful login with valid credentials, failed login with invalid credentials, and server error scenarios. They assess both the response status codes and the returned messages."
+  "epic_title": "Implement user authentication and authorization features",
+  "source_file": "backend/authentication/models/user.py",
+  "test_file": "functional_test_cases/test_user_auth.py",
+  "test_code_analysis": "The test cases validate user registration, login, logout, and role assignment functionalities, covering scenarios of successful operations, invalid inputs, existing email, invalid credentials, account lock, invalid tokens, and missing admin privileges."
 }
