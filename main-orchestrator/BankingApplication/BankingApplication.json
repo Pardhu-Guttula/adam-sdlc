@@ -462,12 +462,12 @@
     }
   ],
   "architecture_generation": {
-    "description": "Self-Service Banking Portal Architecture with secure authentication, responsive UI, scalable backend services, robust database and storage options, integration with core banking, real-time notifications, enhanced security, and comprehensive monitoring.",
+    "description": "An architectural layout for a modern, secure, and efficient self-service banking portal using Azure services.",
     "nodes": [
       {
-        "id": "User",
+        "id": "Frontend",
         "data": {
-          "label": "Azure Active Directory B2C"
+          "label": "Frontend"
         },
         "position": {
           "x": 50,
@@ -483,15 +483,15 @@
         "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Authentication and Security"
+          "label": "Authentication and Authorization"
         },
         "position": {
-          "x": 250,
-          "y": 100
+          "x": 300,
+          "y": 50
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -499,13 +499,30 @@
         }
       },
       {
-        "id": "node-1a",
+        "id": "AuthService",
         "data": {
-          "label": "Azure Key Vault"
+          "label": "Authentication Service"
         },
         "position": {
-          "x": 275,
-          "y": 150
+          "x": 320,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "RBAC",
+        "data": {
+          "label": "Role-based Access Control (RBAC)"
+        },
+        "position": {
+          "x": 320,
+          "y": 140
         },
         "style": {
           "border": "none",
@@ -519,15 +536,15 @@
         "id": "group-2",
         "type": "group",
         "data": {
-          "label": "UI/UX and Hosting"
+          "label": "Backend Services"
         },
         "position": {
           "x": 600,
-          "y": 100
+          "y": 50
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 250,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -535,13 +552,13 @@
         }
       },
       {
-        "id": "node-2a",
+        "id": "APIGateway",
         "data": {
-          "label": "Azure App Service"
+          "label": "API Gateway"
         },
         "position": {
-          "x": 625,
-          "y": 150
+          "x": 620,
+          "y": 70
         },
         "style": {
           "border": "none",
@@ -552,67 +569,29 @@
         "extent": "parent"
       },
       {
-        "id": "group-3",
-        "type": "group",
+        "id": "WebServers",
         "data": {
-          "label": "Backend Services"
+          "label": "Web Servers"
         },
         "position": {
-          "x": 950,
-          "y": 100
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-3a",
-        "data": {
-          "label": "Azure Functions"
-        },
-        "position": {
-          "x": 975,
-          "y": 150
+          "x": 620,
+          "y": 140
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "group-2",
         "extent": "parent"
       },
       {
-        "id": "group-4",
-        "type": "group",
+        "id": "DB",
         "data": {
-          "label": "Database and Storage"
+          "label": "Database"
         },
         "position": {
-          "x": 1300,
-          "y": 100
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node-4a",
-        "data": {
-          "label": "Azure SQL Database"
-        },
-        "position": {
-          "x": 1325,
+          "x": 800,
           "y": 150
         },
         "style": {
@@ -620,15 +599,15 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-4",
+        "parentId": "group-2",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1-1",
-        "source": "User",
-        "target": "node-1a",
+        "id": "e1",
+        "source": "Frontend",
+        "target": "AuthService",
         "type": "default",
         "animated": true,
         "style": {
@@ -636,9 +615,9 @@
         }
       },
       {
-        "id": "e2-1",
-        "source": "node-1a",
-        "target": "node-2a",
+        "id": "e2",
+        "source": "AuthService",
+        "target": "RBAC",
         "type": "default",
         "animated": true,
         "style": {
@@ -646,9 +625,9 @@
         }
       },
       {
-        "id": "e2-3",
-        "source": "node-2a",
-        "target": "node-3a",
+        "id": "e3",
+        "source": "RBAC",
+        "target": "APIGateway",
         "type": "default",
         "animated": true,
         "style": {
@@ -656,9 +635,19 @@
         }
       },
       {
-        "id": "e3-4",
-        "source": "node-3a",
-        "target": "node-4a",
+        "id": "e4",
+        "source": "APIGateway",
+        "target": "WebServers",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "WebServers",
+        "target": "DB",
         "type": "default",
         "animated": true,
         "style": {
