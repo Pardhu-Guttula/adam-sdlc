@@ -1,0 +1,36 @@
+{
+  "repo_owner": "Pardhu-Guttula",
+  "repo_name": "CartNova",
+  "branch_name": "main",
+  "usecase": "In an e-commerce business, artificial intelligence can significantly improve both customer experience and operational efficiency. For example, an online retailer like Amazon can use AI-powered systems to deliver personalized product recommendations based on browsing history, purchase behavior, and customer preferences. When a customer searches for a product, intelligent search tools understand intent and display the most relevant results, increasing the likelihood of conversion. AI-driven chatbots can provide 24/7 customer support, handling common inquiries such as order tracking, returns, and refunds, which reduces workload on human agents and lowers operational costs. Additionally, businesses using platforms like Shopify can automate inventory management by predicting demand trends and preventing stock shortages or overstocking. Marketing teams can leverage AI to segment customers, create targeted campaigns, and optimize pricing strategies based on real-time market data. Fraud detection systems also monitor transactions to identify suspicious activity and protect both the company and its customers. By integrating AI across sales, marketing, logistics, and customer service, e-commerce companies can streamline operations, enhance personalization, and ultimately drive higher revenue while delivering a seamless shopping experience.",
+  "project_name": "CartNova",
+  "access_users": [
+    "anoop.kumar@brillio.com",
+    "Chander.Damodaran@brillio.com",
+    "kgssv.akhilkumar@brillio.com",
+    "Lokesh.Kadi@brillio.com",
+    "Kanishka.Balaji@brillio.com",
+    "Suchismita.Panda@brillio.com",
+    "ravikumar.ps@brillio.com",
+    "Lakshmi.shastry@brillio.com",
+    "muthumari.s@BRILLIO.COM",
+    "Mahesh.Talada@brillio.com"
+  ],
+  "user_names": [
+    "Anoop Kumar",
+    "Chander Damodaran",
+    "Kgssv Akhilkumar",
+    "Lokesh Kadi",
+    "Kanishka Balaji",
+    "Suchismita Panda",
+    "Ravikumar Ps",
+    "Lakshmi Shastry",
+    "Muthumari S",
+    "Mahesh Talada"
+  ],
+  "jira_board": "SDLC2.0",
+  "jira_user": "anoop.kumar@brillio.com",
+  "type": "greenfield",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "repo_link": "https://github.com/Pardhu-Guttula/CartNova"
+}
