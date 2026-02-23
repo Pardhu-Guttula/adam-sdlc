@@ -1,1 +1,118 @@
-{"session_id":"toggleon_sessionid","project_name":"Digital-Customer-Banking-Portal","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal","epics":[{"id":"EPIC-1","title":"User Registration and MFA Setup","summary":"Implement secure user registration and multi-factor authentication setup.","description":"Develop the user registration process that allows customers to create an account and set up multi-factor authentication (MFA) for secure login. This step will involve creating the UI using React, backend logic with Java (Spring Boot), and storing user data in PostgreSQL.","dependencies":[],"jira_epic_key":"ADAM-1280"},{"id":"EPIC-2","title":"Login and Authentication","summary":"Develop a secure login system utilizing MFA.","description":"Create a secure login system that uses the previously set up multi-factor authentication for additional security. The UI will be built using React, with authentication processes handled by Spring Boot and user details stored in PostgreSQL.","dependencies":[],"jira_epic_key":"ADAM-1276"},{"id":"EPIC-3","title":"Responsive UI Design","summary":"Design a responsive user interface for various devices.","description":"Design and implement a responsive user interface that provides a consistent user experience across desktop, tablet, and mobile devices using React. The frontend will be optimized for performance and usability.","dependencies":[],"jira_epic_key":"ADAM-1277"},{"id":"EPIC-4","title":"Personalized Dashboard","summary":"Develop a personalized dashboard for users.","description":"Create a personalized dashboard that displays banking products and services tailored to each user’s profile and eligibility. The dashboard will be implemented using React for the UI, with data fetched from the backend developed in Spring Boot and stored in PostgreSQL.","dependencies":["EPIC-1","EPIC-2"],"jira_epic_key":"ADAM-1281"},{"id":"EPIC-5","title":"Account Opening and Service Modifications","summary":"Implement workflows for account opening and service modifications.","description":"Develop streamlined workflows for users to submit account opening requests and service modifications with minimal clicks. The workflows will be managed through the backend in Spring Boot and interact with PostgreSQL for data storage. The UI will be implemented using React.","dependencies":["EPIC-1","EPIC-2","EPIC-3"],"jira_epic_key":"ADAM-1283"},{"id":"EPIC-6","title":"Real-Time Status Updates and Notifications","summary":"Implement real-time status updates and email notifications.","description":"Develop functionality to provide real-time status updates on user requests and send email notifications regarding their status. This will involve backend processes in Spring Boot and possibly integrating with an email service provider.","dependencies":["EPIC-5"],"jira_epic_key":"ADAM-1279"},{"id":"EPIC-7","title":"Interaction History and Secure Data Handling","summary":"Maintain a comprehensive user interaction history while ensuring data security.","description":"Implement a system to capture and maintain a comprehensive history of user interactions, ensuring all sensitive financial data is stored securely using PostgreSQL. Data security measures will be tightly integrated within the Spring Boot backend.","dependencies":["EPIC-5"],"jira_epic_key":"ADAM-1284"},{"id":"EPIC-8","title":"Save and Resume Applications","summary":"Allow users to save incomplete applications and resume them later.","description":"Implement functionality to allow users to save their incomplete applications and return to finish them later. This will require modifications in both the React frontend and Spring Boot backend, utilizing PostgreSQL to store the application state.","dependencies":["EPIC-5"],"jira_epic_key":"ADAM-1278"},{"id":"EPIC-9","title":"Document Upload","summary":"Enable users to upload necessary documentation.","description":"Develop the functionality for users to upload required documentation directly through the portal. The frontend will use React for the document upload interface, and the backend in Spring Boot will handle the storage and security of the documents in PostgreSQL.","dependencies":["EPIC-5"],"jira_epic_key":"ADAM-1275"},{"id":"EPIC-10","title":"Core Banking System Integration","summary":"Integrate the portal with the bank's existing core banking system.","description":"Implement seamless integration between the new portal and the bank's existing core banking system to ensure data consistency and operational flow. The integration will involve building APIs in Spring Boot that interact securely with both systems.","dependencies":["EPIC-5"],"jira_epic_key":"ADAM-1282"},{"id":"EPIC-11","title":"Role-Based Access Control","summary":"Implement role-based access control for user authorization.","description":"Implement role-based access controls to ensure that users can only view and access services that are appropriate to their profile and authorization level. This includes setting up user roles and permissions in React frontend and enforcing them in the Spring Boot backend.","dependencies":["EPIC-4","EPIC-5"],"jira_epic_key":"ADAM-1285"}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Registration and MFA Setup",
+      "summary": "Implement secure user registration and multi-factor authentication setup.",
+      "description": "Develop the user registration process that allows customers to create an account and set up multi-factor authentication (MFA) for secure login. This step will involve creating the UI using React, backend logic with Java (Spring Boot), and storing user data in PostgreSQL.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-1280"
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Login and Authentication",
+      "summary": "Develop a secure login system utilizing MFA.",
+      "description": "Create a secure login system that uses the previously set up multi-factor authentication for additional security. The UI will be built using React, with authentication processes handled by Spring Boot and user details stored in PostgreSQL.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-1276"
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Responsive UI Design",
+      "summary": "Design a responsive user interface for various devices.",
+      "description": "Design and implement a responsive user interface that provides a consistent user experience across desktop, tablet, and mobile devices using React. The frontend will be optimized for performance and usability.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-1277"
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Personalized Dashboard",
+      "summary": "Develop a personalized dashboard for users.",
+      "description": "Create a personalized dashboard that displays banking products and services tailored to each user’s profile and eligibility. The dashboard will be implemented using React for the UI, with data fetched from the backend developed in Spring Boot and stored in PostgreSQL.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-1281"
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Account Opening and Service Modifications",
+      "summary": "Implement workflows for account opening and service modifications.",
+      "description": "Develop streamlined workflows for users to submit account opening requests and service modifications with minimal clicks. The workflows will be managed through the backend in Spring Boot and interact with PostgreSQL for data storage. The UI will be implemented using React.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2",
+        "EPIC-3"
+      ],
+      "jira_epic_key": "ADAM-1283"
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Real-Time Status Updates and Notifications",
+      "summary": "Implement real-time status updates and email notifications.",
+      "description": "Develop functionality to provide real-time status updates on user requests and send email notifications regarding their status. This will involve backend processes in Spring Boot and possibly integrating with an email service provider.",
+      "dependencies": [
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1279"
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Interaction History and Secure Data Handling",
+      "summary": "Maintain a comprehensive user interaction history while ensuring data security.",
+      "description": "Implement a system to capture and maintain a comprehensive history of user interactions, ensuring all sensitive financial data is stored securely using PostgreSQL. Data security measures will be tightly integrated within the Spring Boot backend.",
+      "dependencies": [
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1284"
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Save and Resume Applications",
+      "summary": "Allow users to save incomplete applications and resume them later.",
+      "description": "Implement functionality to allow users to save their incomplete applications and return to finish them later. This will require modifications in both the React frontend and Spring Boot backend, utilizing PostgreSQL to store the application state.",
+      "dependencies": [
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1278"
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Document Upload",
+      "summary": "Enable users to upload necessary documentation.",
+      "description": "Develop the functionality for users to upload required documentation directly through the portal. The frontend will use React for the document upload interface, and the backend in Spring Boot will handle the storage and security of the documents in PostgreSQL.",
+      "dependencies": [
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1275"
+    },
+    {
+      "id": "EPIC-10",
+      "title": "Core Banking System Integration",
+      "summary": "Integrate the portal with the bank's existing core banking system.",
+      "description": "Implement seamless integration between the new portal and the bank's existing core banking system to ensure data consistency and operational flow. The integration will involve building APIs in Spring Boot that interact securely with both systems.",
+      "dependencies": [
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1282"
+    },
+    {
+      "id": "EPIC-11",
+      "title": "Role-Based Access Control",
+      "summary": "Implement role-based access control for user authorization.",
+      "description": "Implement role-based access controls to ensure that users can only view and access services that are appropriate to their profile and authorization level. This includes setting up user roles and permissions in React frontend and enforcing them in the Spring Boot backend.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1285"
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
+}
