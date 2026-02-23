@@ -627,7 +627,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture diagram has been enhanced to address critical security and reliability gaps by adding a Web Application Firewall (WAF) and Azure Backup for disaster recovery. All nodes and edges have been validated, and placeholders were added for missing components. The architecture now aligns better with operational excellence, security, and reliability standards.",
+    "updatedDescription": "The architecture diagram has been enhanced to address critical gaps in security and reliability by adding Azure Security Center, network security groups, encryption, Azure Site Recovery, and Azure SQL Database failover groups. The diagram maintains its original structure while ensuring all nodes and edges are valid and consistent. Architecture quality rating: Improved to align with Azure Well-Architected Framework principles.",
     "nodes": [
       {
         "id": "frontend",
@@ -692,6 +692,23 @@
         "position": {
           "x": 470,
           "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "security",
+        "extent": "parent"
+      },
+      {
+        "id": "security-center",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 470,
+          "y": 180
         },
         "style": {
           "border": "none",
@@ -774,34 +791,38 @@
         "extent": "parent"
       },
       {
-        "id": "security-waf",
+        "id": "data-recovery",
         "data": {
-          "label": "Azure Web Application Firewall"
+          "label": "Azure Site Recovery"
         },
         "position": {
-          "x": 300,
-          "y": 130
+          "x": 1170,
+          "y": 180
         },
         "style": {
-          "border": "1px solid #FF0000",
+          "border": "none",
           "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "data",
+        "extent": "parent"
       },
       {
-        "id": "data-backup",
+        "id": "data-failover",
         "data": {
-          "label": "Azure Backup"
+          "label": "SQL Failover Groups"
         },
         "position": {
-          "x": 1350,
-          "y": 130
+          "x": 1170,
+          "y": 230
         },
         "style": {
-          "border": "1px solid #FF0000",
+          "border": "none",
           "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "data",
+        "extent": "parent"
       }
     ],
     "edges": [
@@ -836,33 +857,33 @@
         }
       },
       {
-        "id": "e-frontend-waf",
-        "source": "frontend-webapp",
-        "target": "security-waf",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#FF0000"
-        }
-      },
-      {
-        "id": "e-waf-security",
-        "source": "security-waf",
+        "id": "e-security-center-mfa",
+        "source": "security-center",
         "target": "security-mfa",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#FF0000"
+          "stroke": "#000000"
         }
       },
       {
-        "id": "e-data-backup",
-        "source": "data-sql",
-        "target": "data-backup",
+        "id": "e-data-recovery-sql",
+        "source": "data-recovery",
+        "target": "data-sql",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#FF0000"
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-data-failover-sql",
+        "source": "data-failover",
+        "target": "data-sql",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
         }
       }
     ]
