@@ -462,70 +462,17 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture represents a modern self-service banking portal designed to provide a seamless user experience across various platforms while ensuring security, real-time updates, and robust backend services.",
+    "description": "An architecture leveraging Azure services for authentication, frontend hosting, backend processing, database management, integration with core banking systems, and overall security and monitoring.",
     "nodes": [
-      {
-        "id": "group-frontend",
-        "type": "group",
-        "data": {
-          "label": "Frontend"
-        },
-        "position": {
-          "x": 0,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "responsive-web-app",
-        "data": {
-          "label": "Responsive Web Application"
-        },
-        "position": {
-          "x": 10,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-frontend",
-        "extent": "parent"
-      },
-      {
-        "id": "mobile-app",
-        "data": {
-          "label": "Mobile Application"
-        },
-        "position": {
-          "x": 10,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-frontend",
-        "extent": "parent"
-      },
       {
         "id": "group-auth",
         "type": "group",
         "data": {
-          "label": "Authentication & Authorization"
+          "label": "Authentication and Authorization"
         },
         "position": {
-          "x": 350,
-          "y": 0
+          "x": 100,
+          "y": 100
         },
         "style": {
           "width": 300,
@@ -537,13 +484,13 @@
         }
       },
       {
-        "id": "azure-ad-b2c",
+        "id": "ad",
         "data": {
-          "label": "Azure AD B2C"
+          "label": "Azure AD"
         },
         "position": {
-          "x": 360,
-          "y": 20
+          "x": 120,
+          "y": 120
         },
         "style": {
           "border": "none",
@@ -554,13 +501,13 @@
         "extent": "parent"
       },
       {
-        "id": "rbac",
+        "id": "mfa",
         "data": {
-          "label": "Role-Based Access Control"
+          "label": "Azure MFA"
         },
         "position": {
-          "x": 360,
-          "y": 100
+          "x": 120,
+          "y": 160
         },
         "style": {
           "border": "none",
@@ -568,6 +515,93 @@
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
         "parentId": "group-auth",
+        "extent": "parent"
+      },
+      {
+        "id": "group-frontend",
+        "type": "group",
+        "data": {
+          "label": "Frontend and User Interface"
+        },
+        "position": {
+          "x": 450,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "app-service",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 470,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
+        "extent": "parent"
+      },
+      {
+        "id": "front-door",
+        "data": {
+          "label": "Azure Front Door"
+        },
+        "position": {
+          "x": 470,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
+        "extent": "parent"
+      },
+      {
+        "id": "cdn",
+        "data": {
+          "label": "Azure CDN"
+        },
+        "position": {
+          "x": 470,
+          "y": 240
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
+        "extent": "parent"
+      },
+      {
+        "id": "responsive-web",
+        "data": {
+          "label": "Responsive Web Design"
+        },
+        "position": {
+          "x": 470,
+          "y": 300
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
         "extent": "parent"
       },
       {
@@ -577,12 +611,12 @@
           "label": "Backend Services"
         },
         "position": {
-          "x": 700,
-          "y": 0
+          "x": 800,
+          "y": 100
         },
         "style": {
           "width": 300,
-          "height": 200,
+          "height": 300,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -590,30 +624,13 @@
         }
       },
       {
-        "id": "azure-app-service",
-        "data": {
-          "label": "Azure App Service"
-        },
-        "position": {
-          "x": 710,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-backend",
-        "extent": "parent"
-      },
-      {
-        "id": "azure-functions",
+        "id": "functions",
         "data": {
           "label": "Azure Functions"
         },
         "position": {
-          "x": 710,
-          "y": 100
+          "x": 820,
+          "y": 120
         },
         "style": {
           "border": "none",
@@ -624,346 +641,62 @@
         "extent": "parent"
       },
       {
-        "id": "group-api",
-        "type": "group",
+        "id": "aks",
         "data": {
-          "label": "API Management & Integration"
+          "label": "Azure Kubernetes Service"
         },
         "position": {
-          "x": 1050,
-          "y": 0
+          "x": 820,
+          "y": 180
         },
         "style": {
-          "width": 300,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
+        },
+        "parentId": "group-backend",
+        "extent": "parent"
       },
       {
-        "id": "azure-api-mgmt",
+        "id": "api-management",
         "data": {
           "label": "Azure API Management"
         },
         "position": {
-          "x": 1060,
-          "y": 20
+          "x": 820,
+          "y": 240
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-api",
+        "parentId": "group-backend",
         "extent": "parent"
       },
       {
-        "id": "azure-logic-apps",
+        "id": "logic-apps",
         "data": {
-          "label": "Azure Logic Apps"
+          "label": "Logic Apps"
         },
         "position": {
-          "x": 1060,
-          "y": 100
+          "x": 820,
+          "y": 300
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-api",
-        "extent": "parent"
-      },
-      {
-        "id": "core-banking",
-        "data": {
-          "label": "Core Banking Integration"
-        },
-        "position": {
-          "x": 1060,
-          "y": 180
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-api",
-        "extent": "parent"
-      },
-      {
-        "id": "group-data",
-        "type": "group",
-        "data": {
-          "label": "Data Storage & Management"
-        },
-        "position": {
-          "x": 1400,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "azure-sql-db",
-        "data": {
-          "label": "Azure SQL Database/Cosmos DB"
-        },
-        "position": {
-          "x": 1410,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-data",
-        "extent": "parent"
-      },
-      {
-        "id": "blob-storage",
-        "data": {
-          "label": "Blob Storage"
-        },
-        "position": {
-          "x": 1410,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-data",
-        "extent": "parent"
-      },
-      {
-        "id": "key-vault",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 1410,
-          "y": 180
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-data",
-        "extent": "parent"
-      },
-      {
-        "id": "group-notif",
-        "type": "group",
-        "data": {
-          "label": "Notifications & Real-Time Updates"
-        },
-        "position": {
-          "x": 1750,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "service-bus",
-        "data": {
-          "label": "Azure Service Bus"
-        },
-        "position": {
-          "x": 1760,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-notif",
-        "extent": "parent"
-      },
-      {
-        "id": "notif-hubs",
-        "data": {
-          "label": "Azure Notification Hubs"
-        },
-        "position": {
-          "x": 1760,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-notif",
-        "extent": "parent"
-      },
-      {
-        "id": "group-monitor",
-        "type": "group",
-        "data": {
-          "label": "Monitoring & Logging"
-        },
-        "position": {
-          "x": 2100,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "azure-monitor",
-        "data": {
-          "label": "Azure Monitor"
-        },
-        "position": {
-          "x": 2110,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-monitor",
-        "extent": "parent"
-      },
-      {
-        "id": "app-insights",
-        "data": {
-          "label": "Azure Application Insights"
-        },
-        "position": {
-          "x": 2110,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-monitor",
-        "extent": "parent"
-      },
-      {
-        "id": "group-security",
-        "type": "group",
-        "data": {
-          "label": "Security & Compliance"
-        },
-        "position": {
-          "x": 2450,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "security-center",
-        "data": {
-          "label": "Azure Security Center"
-        },
-        "position": {
-          "x": 2460,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-security",
-        "extent": "parent"
-      },
-      {
-        "id": "data-encryption",
-        "data": {
-          "label": "Data Encryption"
-        },
-        "position": {
-          "x": 2460,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-security",
-        "extent": "parent"
-      },
-      {
-        "id": "group-devops",
-        "type": "group",
-        "data": {
-          "label": "Development & Deployment"
-        },
-        "position": {
-          "x": 2800,
-          "y": 0
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "azure-devops",
-        "data": {
-          "label": "Azure DevOps"
-        },
-        "position": {
-          "x": 2810,
-          "y": 20
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-devops",
+        "parentId": "group-backend",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "edge-frontend-auth",
-        "source": "responsive-web-app",
-        "target": "azure-ad-b2c",
+        "id": "edge1",
+        "source": "ad",
+        "target": "app-service",
         "type": "default",
         "animated": true,
         "style": {
@@ -971,9 +704,9 @@
         }
       },
       {
-        "id": "edge-frontend-backend",
-        "source": "responsive-web-app",
-        "target": "azure-app-service",
+        "id": "edge2",
+        "source": "mfa",
+        "target": "api-management",
         "type": "default",
         "animated": true,
         "style": {
@@ -981,9 +714,9 @@
         }
       },
       {
-        "id": "edge-auth-backend",
-        "source": "azure-ad-b2c",
-        "target": "azure-app-service",
+        "id": "edge3",
+        "source": "functions",
+        "target": "aks",
         "type": "default",
         "animated": true,
         "style": {
@@ -991,49 +724,9 @@
         }
       },
       {
-        "id": "edge-backend-api",
-        "source": "azure-app-service",
-        "target": "azure-api-mgmt",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-api-data",
-        "source": "azure-api-mgmt",
-        "target": "azure-sql-db",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-backend-notif",
-        "source": "azure-functions",
-        "target": "service-bus",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-data-monitor",
-        "source": "azure-sql-db",
-        "target": "azure-monitor",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "edge-devops-security",
-        "source": "azure-devops",
-        "target": "security-center",
+        "id": "edge4",
+        "source": "cdn",
+        "target": "logic-apps",
         "type": "default",
         "animated": true,
         "style": {
