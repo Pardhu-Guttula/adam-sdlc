@@ -1,1 +1,145 @@
-{"session_id":"f98f553f-8466-42b2-b79c-a798eca471bc","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"id":"EPIC-1","title":"User Authentication","summary":"Implement secure login and multi-factor authentication","description":"Develop a secure login system using React and FastAPI with multi-factor authentication (MFA) capabilities. Ensure users can authenticate via a combination of passwords and one-time codes sent via email or SMS. Sensitive data must be encrypted for security.","dependencies":[],"jira_epic_key":"ADAM-1452"},{"id":"EPIC-2","title":"User Profile Management","summary":"Create and manage user profiles with role-based access","description":"Design and implement user profile management in React and FastAPI, allowing users to create, view, and modify their profiles. Integrate role-based access controls to ensure users can only access data and functionalities appropriate to their authorization level.","dependencies":["EPIC-1"],"jira_epic_key":"ADAM-1450"},{"id":"EPIC-3","title":"Personalized Dashboard","summary":"Display personalized banking products and services","description":"Develop a personalized dashboard using React to present users with relevant banking products and services based on their profile and eligibility. Integrate with FastAPI for backend processing and PostgreSQL for storing user-specific data.","dependencies":["EPIC-2"],"jira_epic_key":"ADAM-1453"},{"id":"EPIC-4","title":"Responsive Design","summary":"Ensure portal is responsive across desktops, tablets, and mobiles","description":"Implement responsive design principles in React to ensure the self-service portal provides a consistent user experience across various devices, including desktops, tablets, and mobile phones.","dependencies":["EPIC-2"],"jira_epic_key":"ADAM-1454"},{"id":"EPIC-5","title":"History of Interactions","summary":"Maintain comprehensive history of user interactions","description":"Develop functionalities within React and FastAPI to maintain a comprehensive history of all user interactions. Ensure interaction data is securely stored in PostgreSQL and can be retrieved and displayed on demand.","dependencies":["EPIC-2"],"jira_epic_key":"ADAM-1460"},{"id":"EPIC-6","title":"Account Opening Requests","summary":"Enable streamlined account opening workflow","description":"Design and implement workflows using React and FastAPI to allow users to submit account opening requests efficiently. Ensure minimal clicks are required to complete the process and allow users to save incomplete applications and return to them later.","dependencies":["EPIC-3","EPIC-5"],"jira_epic_key":"ADAM-1455"},{"id":"EPIC-7","title":"Service Modifications","summary":"Allow users to submit service modification requests","description":"Create streamlined workflows in React and FastAPI for users to submit requests for modifying existing services. Ensure the workflow is user-friendly and requires minimal clicks, with the ability to upload necessary documentation directly through the interface.","dependencies":["EPIC-3","EPIC-5"],"jira_epic_key":"ADAM-1449"},{"id":"EPIC-8","title":"Real-time Status Updates","summary":"Provide real-time updates on request statuses","description":"Implement real-time status update functionalities in React and FastAPI to keep users informed about the status of their submitted requests. Leverage websockets or polling mechanisms to ensure timely updates.","dependencies":["EPIC-6","EPIC-7"],"jira_epic_key":"ADAM-1457"},{"id":"EPIC-9","title":"Email Notifications","summary":"Send email notifications regarding submitted requests","description":"Integrate email notification functionalities within FastAPI to inform users about the status changes of their submitted requests. Ensure the email content is clear and informative.","dependencies":["EPIC-8"],"jira_epic_key":"ADAM-1451"},{"id":"EPIC-10","title":"Role-based Access Control","summary":"Implement RBAC to control access based on user profile","description":"Develop role-based access controls (RBAC) within React and FastAPI to restrict access to functionalities based on user profiles and authorization levels. Ensure secure data handling and permissions enforcement.","dependencies":["EPIC-2"],"jira_epic_key":"ADAM-1461"},{"id":"EPIC-11","title":"Core Banking System Integration","summary":"Integrate portal with existing core banking system","description":"Develop integration points within FastAPI to seamlessly connect the self-service portal with the bank's existing core banking system. Ensure data synchronization and reliability without compromising performance.","dependencies":["EPIC-6","EPIC-7","EPIC-10"],"jira_epic_key":"ADAM-1456"},{"id":"EPIC-12","title":"Seamless Documentation Upload","summary":"Allow users to upload necessary documentation effortlessly","description":"Implement functionalities in React and FastAPI to enable users to upload necessary documentation during workflows. Ensure the upload process is intuitive and secure.","dependencies":["EPIC-6","EPIC-7"],"jira_epic_key":"ADAM-1459"},{"id":"EPIC-13","title":"Optimize Performance and Reliability","summary":"Enhance system performance and ensure reliability","description":"Optimize the self-service portal's performance and reliability using techniques like caching, efficient data querying, and asynchronous processing in FastAPI. Ensure responsiveness and minimal downtime.","dependencies":["EPIC-11","EPIC-12"],"jira_epic_key":"ADAM-1458"}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "https://github.com/Pardhu-Guttula/BankingApplication",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication",
+      "summary": "Implement secure login and multi-factor authentication",
+      "description": "Develop a secure login system using React and FastAPI with multi-factor authentication (MFA) capabilities. Ensure users can authenticate via a combination of passwords and one-time codes sent via email or SMS. Sensitive data must be encrypted for security.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-1452"
+    },
+    {
+      "id": "EPIC-2",
+      "title": "User Profile Management",
+      "summary": "Create and manage user profiles with role-based access",
+      "description": "Design and implement user profile management in React and FastAPI, allowing users to create, view, and modify their profiles. Integrate role-based access controls to ensure users can only access data and functionalities appropriate to their authorization level.",
+      "dependencies": [
+        "EPIC-1"
+      ],
+      "jira_epic_key": "ADAM-1450"
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Personalized Dashboard",
+      "summary": "Display personalized banking products and services",
+      "description": "Develop a personalized dashboard using React to present users with relevant banking products and services based on their profile and eligibility. Integrate with FastAPI for backend processing and PostgreSQL for storing user-specific data.",
+      "dependencies": [
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-1453"
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Responsive Design",
+      "summary": "Ensure portal is responsive across desktops, tablets, and mobiles",
+      "description": "Implement responsive design principles in React to ensure the self-service portal provides a consistent user experience across various devices, including desktops, tablets, and mobile phones.",
+      "dependencies": [
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-1454"
+    },
+    {
+      "id": "EPIC-5",
+      "title": "History of Interactions",
+      "summary": "Maintain comprehensive history of user interactions",
+      "description": "Develop functionalities within React and FastAPI to maintain a comprehensive history of all user interactions. Ensure interaction data is securely stored in PostgreSQL and can be retrieved and displayed on demand.",
+      "dependencies": [
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-1460"
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Account Opening Requests",
+      "summary": "Enable streamlined account opening workflow",
+      "description": "Design and implement workflows using React and FastAPI to allow users to submit account opening requests efficiently. Ensure minimal clicks are required to complete the process and allow users to save incomplete applications and return to them later.",
+      "dependencies": [
+        "EPIC-3",
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1455"
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Service Modifications",
+      "summary": "Allow users to submit service modification requests",
+      "description": "Create streamlined workflows in React and FastAPI for users to submit requests for modifying existing services. Ensure the workflow is user-friendly and requires minimal clicks, with the ability to upload necessary documentation directly through the interface.",
+      "dependencies": [
+        "EPIC-3",
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1449"
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Real-time Status Updates",
+      "summary": "Provide real-time updates on request statuses",
+      "description": "Implement real-time status update functionalities in React and FastAPI to keep users informed about the status of their submitted requests. Leverage websockets or polling mechanisms to ensure timely updates.",
+      "dependencies": [
+        "EPIC-6",
+        "EPIC-7"
+      ],
+      "jira_epic_key": "ADAM-1457"
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Email Notifications",
+      "summary": "Send email notifications regarding submitted requests",
+      "description": "Integrate email notification functionalities within FastAPI to inform users about the status changes of their submitted requests. Ensure the email content is clear and informative.",
+      "dependencies": [
+        "EPIC-8"
+      ],
+      "jira_epic_key": "ADAM-1451"
+    },
+    {
+      "id": "EPIC-10",
+      "title": "Role-based Access Control",
+      "summary": "Implement RBAC to control access based on user profile",
+      "description": "Develop role-based access controls (RBAC) within React and FastAPI to restrict access to functionalities based on user profiles and authorization levels. Ensure secure data handling and permissions enforcement.",
+      "dependencies": [
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-1461"
+    },
+    {
+      "id": "EPIC-11",
+      "title": "Core Banking System Integration",
+      "summary": "Integrate portal with existing core banking system",
+      "description": "Develop integration points within FastAPI to seamlessly connect the self-service portal with the bank's existing core banking system. Ensure data synchronization and reliability without compromising performance.",
+      "dependencies": [
+        "EPIC-6",
+        "EPIC-7",
+        "EPIC-10"
+      ],
+      "jira_epic_key": "ADAM-1456"
+    },
+    {
+      "id": "EPIC-12",
+      "title": "Seamless Documentation Upload",
+      "summary": "Allow users to upload necessary documentation effortlessly",
+      "description": "Implement functionalities in React and FastAPI to enable users to upload necessary documentation during workflows. Ensure the upload process is intuitive and secure.",
+      "dependencies": [
+        "EPIC-6",
+        "EPIC-7"
+      ],
+      "jira_epic_key": "ADAM-1459"
+    },
+    {
+      "id": "EPIC-13",
+      "title": "Optimize Performance and Reliability",
+      "summary": "Enhance system performance and ensure reliability",
+      "description": "Optimize the self-service portal's performance and reliability using techniques like caching, efficient data querying, and asynchronous processing in FastAPI. Ensure responsiveness and minimal downtime.",
+      "dependencies": [
+        "EPIC-11",
+        "EPIC-12"
+      ],
+      "jira_epic_key": "ADAM-1458"
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
+}
