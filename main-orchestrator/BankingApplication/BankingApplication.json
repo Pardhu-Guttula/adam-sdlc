@@ -492,6 +492,192 @@
       "test_cases": "Feature: Redundancy implementation\n\nScenario: Ensure failover mechanisms\nGiven a component failure\nWhen the failover system detects the failure\nThen it switches to the backup instance\nAnd the service remains available\n\nScenario: Test failover procedures\nGiven a scheduled maintenance window\nWhen failover procedures are tested\nThen failover is successfully verified\nAnd any issues are addressed\n\nScenario: Regular backup updates\nGiven a running backup system\nWhen the primary component is updated\nThen the backup component is updated as well\nAnd consistency is ensured"
     }
   ],
-  "architecture_generation": null,
+  "architecture_generation": {
+    "description": "A modern self-service banking portal on Azure with services for secure authentication, hosting, data storage, messaging, security, integration, monitoring, and continuous deployment.",
+    "nodes": [
+      {
+        "id": "User",
+        "data": {
+          "label": "User"
+        },
+        "position": {
+          "x": 50,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Authentication & User Management"
+        },
+        "position": {
+          "x": 200,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#D3DAD9"
+        }
+      },
+      {
+        "id": "Azure AD",
+        "data": {
+          "label": "Azure AD"
+        },
+        "position": {
+          "x": 250,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Application Hosting"
+        },
+        "position": {
+          "x": 500,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#D3DAD9"
+        }
+      },
+      {
+        "id": "Azure App Service",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 550,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Data Storage"
+        },
+        "position": {
+          "x": 800,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#D3DAD9"
+        }
+      },
+      {
+        "id": "Azure SQL Database",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 850,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Azure Storage",
+        "data": {
+          "label": "Azure Storage"
+        },
+        "position": {
+          "x": 900,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1-1a",
+        "source": "User",
+        "target": "Azure AD",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e1-2a",
+        "source": "Azure AD",
+        "target": "Azure App Service",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-3a",
+        "source": "Azure App Service",
+        "target": "Azure SQL Database",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3-3b",
+        "source": "Azure SQL Database",
+        "target": "Azure Storage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
   "architecture_validation": null
 }
