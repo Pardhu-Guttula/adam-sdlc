@@ -508,6 +508,75 @@
       "description": "As a system architect, I want to ensure a modular architecture, so that new features and third-party services can be easily integrated.\n\nCore Domain Objects:\n- Architecture\n- Modules\n- Services\n\nAttributes & Rules:\n- Modularity\n- Integration capability\n- Extensibility\n\nAcceptance Criteria:\n\nScenario: Modular architecture design\nGiven the need for modularity\nWhen the system architect designs the infrastructure\nThen the architecture supports separation of concerns\nAnd allows for individual modules to be developed and deployed independently\n\nScenario: Seamless integration of new features\nGiven the marketplace expansion plan\nWhen the system architect integrates new services\nThen the new features are added without disrupting existing functionality\n\nScenario: Connectivity and communication between modules\nGiven a modular design\nWhen new modules are added\nThen they communicate with existing modules seamlessly\nAnd perform their functions without breaking existing processes\n\nTest Cases:\n\nFeature: Modular Architecture\n\nScenario: Modular architecture design\nGiven the need for modularity\nWhen the system architect designs the infrastructure\nThen the architecture supports separation of concerns\nAnd allows for individual modules to be developed and deployed independently\n\nScenario: Seamless integration of new features\nGiven the marketplace expansion plan\nWhen the system architect integrates new services\nThen the new features are added without disrupting existing functionality\n\nScenario: Connectivity and communication between modules\nGiven a modular design\nWhen new modules are added\nThen they communicate with existing modules seamlessly\nAnd perform their functions without breaking existing processes\n\nPriority: High - Facilitates the easy addition of new features and services, ensuring smooth expansion."
     }
   ],
-  "architecture_generation": null,
+  "architecture_generation": {
+    "description": "A comprehensive architecture diagram for Cartly, a modern e-commerce platform using Azure services, covering all functionalities from frontend to backend, including storage, databases, identity management, notifications, monitoring, security, and developer tools.",
+    "nodes": [
+      {
+        "id": "group-frontend",
+        "type": "group",
+        "data": {
+          "label": "Frontend"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "web-app",
+        "data": {
+          "label": "Azure App Service (Web App)"
+        },
+        "position": {
+          "x": 20,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
+        "extent": "parent"
+      },
+      {
+        "id": "cdn",
+        "data": {
+          "label": "Azure CDN"
+        },
+        "position": {
+          "x": 20,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-frontend",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge-frontend-backend",
+        "source": "web-app",
+        "target": "cdn",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
   "architecture_validation": null
 }
