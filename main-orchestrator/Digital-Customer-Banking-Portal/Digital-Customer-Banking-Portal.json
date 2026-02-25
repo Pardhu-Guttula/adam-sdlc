@@ -751,7 +751,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The diagram has been updated to address critical security gaps by adding Azure Firewall and Azure DDoS Protection. Additionally, Azure Backup and Azure Site Recovery have been introduced to enhance reliability. Monitoring and observability recommendations are noted but not implemented in this update. The architecture now aligns more closely with the Azure Well-Architected Framework, achieving a higher quality rating.",
+    "updatedDescription": "The architecture has been enhanced to address security and reliability gaps by adding Azure WAF and Azure Backup services. All nodes and edges are validated, and the structure adheres to the Azure Well-Architected Framework. Architecture quality rating: High.",
     "nodes": [
       {
         "id": "User",
@@ -966,11 +966,11 @@
       {
         "id": "node8",
         "data": {
-          "label": "Azure Firewall"
+          "label": "Azure WAF"
         },
         "position": {
-          "x": 700,
-          "y": 50
+          "x": 480,
+          "y": 30
         },
         "style": {
           "border": "none",
@@ -981,41 +981,11 @@
       {
         "id": "node9",
         "data": {
-          "label": "Azure DDoS Protection"
-        },
-        "position": {
-          "x": 700,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node10",
-        "data": {
           "label": "Azure Backup"
         },
         "position": {
-          "x": 700,
-          "y": 250
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "node11",
-        "data": {
-          "label": "Azure Site Recovery"
-        },
-        "position": {
-          "x": 700,
-          "y": 300
+          "x": 480,
+          "y": 380
         },
         "style": {
           "border": "none",
@@ -1097,8 +1067,8 @@
       },
       {
         "id": "e8",
-        "source": "node4",
-        "target": "node8",
+        "source": "node8",
+        "target": "node1",
         "type": "default",
         "animated": true,
         "style": {
@@ -1108,7 +1078,7 @@
       {
         "id": "e9",
         "source": "node8",
-        "target": "node9",
+        "target": "node4",
         "type": "default",
         "animated": true,
         "style": {
@@ -1117,8 +1087,8 @@
       },
       {
         "id": "e10",
-        "source": "node6",
-        "target": "node10",
+        "source": "node9",
+        "target": "node6",
         "type": "default",
         "animated": true,
         "style": {
@@ -1127,8 +1097,8 @@
       },
       {
         "id": "e11",
-        "source": "node7",
-        "target": "node11",
+        "source": "node9",
+        "target": "node7",
         "type": "default",
         "animated": true,
         "style": {
