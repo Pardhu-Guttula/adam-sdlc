@@ -464,17 +464,51 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture diagram outlines a self-service banking portal using Azure services, ensuring secure, scalable, and responsive operations with comprehensive integration, monitoring, and security.",
+    "description": "Azure-based self-service banking portal architecture utilizing various Azure services for hosting, storage, authentication, API management, workflows, messaging, analytics, and security.",
     "nodes": [
       {
-        "id": "auth-group",
+        "id": "User",
+        "data": {
+          "label": "User (Frontend)"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group1",
+        "type": "group",
+        "data": {
+          "label": "User Presentation Layer"
+        },
+        "position": {
+          "x": 150,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group2",
         "type": "group",
         "data": {
           "label": "Authentication and Authorization"
         },
         "position": {
-          "x": 100,
-          "y": 100
+          "x": 150,
+          "y": 250
         },
         "style": {
           "width": 250,
@@ -483,53 +517,17 @@
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "nodes": [
-          {
-            "id": "azure-ad",
-            "data": {
-              "label": "Azure AD"
-            },
-            "position": {
-              "x": 120,
-              "y": 130
-            },
-            "style": {
-              "border": "none",
-              "borderRadius": "12px",
-              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-            },
-            "parentId": "auth-group",
-            "extent": "parent"
-          },
-          {
-            "id": "azure-ad-b2c",
-            "data": {
-              "label": "Azure AD B2C"
-            },
-            "position": {
-              "x": 120,
-              "y": 180
-            },
-            "style": {
-              "border": "none",
-              "borderRadius": "12px",
-              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-            },
-            "parentId": "auth-group",
-            "extent": "parent"
-          }
-        ]
+        }
       },
       {
-        "id": "frontend-group",
+        "id": "group3",
         "type": "group",
         "data": {
-          "label": "Frontend"
+          "label": "Business Logic and API Management"
         },
         "position": {
-          "x": 400,
-          "y": 100
+          "x": 450,
+          "y": 50
         },
         "style": {
           "width": 250,
@@ -538,53 +536,17 @@
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "nodes": [
-          {
-            "id": "app-service-web",
-            "data": {
-              "label": "Azure App Service (Web App)"
-            },
-            "position": {
-              "x": 420,
-              "y": 130
-            },
-            "style": {
-              "border": "none",
-              "borderRadius": "12px",
-              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-            },
-            "parentId": "frontend-group",
-            "extent": "parent"
-          },
-          {
-            "id": "static-web-app",
-            "data": {
-              "label": "Azure Static Web Apps"
-            },
-            "position": {
-              "x": 420,
-              "y": 180
-            },
-            "style": {
-              "border": "none",
-              "borderRadius": "12px",
-              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-            },
-            "parentId": "frontend-group",
-            "extent": "parent"
-          }
-        ]
+        }
       },
       {
-        "id": "backend-group",
+        "id": "group4",
         "type": "group",
         "data": {
-          "label": "Backend"
+          "label": "Data Storage"
         },
         "position": {
-          "x": 700,
-          "y": 100
+          "x": 450,
+          "y": 250
         },
         "style": {
           "width": 250,
@@ -593,50 +555,133 @@
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node1",
+        "data": {
+          "label": "Azure Static Web Apps"
         },
-        "nodes": [
-          {
-            "id": "azure-functions",
-            "data": {
-              "label": "Azure Functions"
-            },
-            "position": {
-              "x": 720,
-              "y": 130
-            },
-            "style": {
-              "border": "none",
-              "borderRadius": "12px",
-              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-            },
-            "parentId": "backend-group",
-            "extent": "parent"
-          },
-          {
-            "id": "azure-logic-apps",
-            "data": {
-              "label": "Azure Logic Apps"
-            },
-            "position": {
-              "x": 720,
-              "y": 180
-            },
-            "style": {
-              "border": "none",
-              "borderRadius": "12px",
-              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-            },
-            "parentId": "backend-group",
-            "extent": "parent"
-          }
-        ]
+        "position": {
+          "x": 180,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group1",
+        "extent": "parent"
+      },
+      {
+        "id": "node2",
+        "data": {
+          "label": "Azure CDN"
+        },
+        "position": {
+          "x": 180,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group1",
+        "extent": "parent"
+      },
+      {
+        "id": "node3",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 180,
+          "y": 280
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group2",
+        "extent": "parent"
+      },
+      {
+        "id": "node4",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 480,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group3",
+        "extent": "parent"
+      },
+      {
+        "id": "node5",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 480,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group3",
+        "extent": "parent"
+      },
+      {
+        "id": "node6",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 480,
+          "y": 280
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group4",
+        "extent": "parent"
+      },
+      {
+        "id": "node7",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 480,
+          "y": 330
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group4",
+        "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "azure-ad",
-        "target": "app-service-web",
+        "source": "User",
+        "target": "node1",
         "type": "default",
         "animated": true,
         "style": {
@@ -645,8 +690,8 @@
       },
       {
         "id": "e2",
-        "source": "azure-ad-b2c",
-        "target": "static-web-app",
+        "source": "User",
+        "target": "node2",
         "type": "default",
         "animated": true,
         "style": {
@@ -655,8 +700,8 @@
       },
       {
         "id": "e3",
-        "source": "app-service-web",
-        "target": "azure-functions",
+        "source": "node1",
+        "target": "node3",
         "type": "default",
         "animated": true,
         "style": {
@@ -665,8 +710,38 @@
       },
       {
         "id": "e4",
-        "source": "static-web-app",
-        "target": "azure-logic-apps",
+        "source": "node3",
+        "target": "node4",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "node4",
+        "target": "node5",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "node5",
+        "target": "node6",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "node6",
+        "target": "node7",
         "type": "default",
         "animated": true,
         "style": {
