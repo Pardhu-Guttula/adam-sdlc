@@ -750,5 +750,441 @@
       }
     ]
   },
-  "architecture_validation": null
+  "architecture_validation": {
+    "updatedDescription": "The diagram has been enhanced to address security, reliability, performance efficiency, and cost optimization issues by adding Azure Monitor, Azure Security Center, Azure Site Recovery, Azure Backup, Azure Cache for Redis, and Azure Cost Management. The architecture now adheres more closely to the Azure Well-Architected Framework, ensuring improved monitoring, resilience, performance, and cost control. Quality rating: High.",
+    "nodes": [
+      {
+        "id": "User",
+        "data": {
+          "label": "User (Frontend)"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group1",
+        "type": "group",
+        "data": {
+          "label": "User Presentation Layer"
+        },
+        "position": {
+          "x": 150,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group2",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Authorization"
+        },
+        "position": {
+          "x": 150,
+          "y": 250
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group3",
+        "type": "group",
+        "data": {
+          "label": "Business Logic and API Management"
+        },
+        "position": {
+          "x": 450,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group4",
+        "type": "group",
+        "data": {
+          "label": "Data Storage"
+        },
+        "position": {
+          "x": 450,
+          "y": 250
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node1",
+        "data": {
+          "label": "Azure Static Web Apps"
+        },
+        "position": {
+          "x": 180,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group1",
+        "extent": "parent"
+      },
+      {
+        "id": "node2",
+        "data": {
+          "label": "Azure CDN"
+        },
+        "position": {
+          "x": 180,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group1",
+        "extent": "parent"
+      },
+      {
+        "id": "node3",
+        "data": {
+          "label": "Azure Active Directory B2C"
+        },
+        "position": {
+          "x": 180,
+          "y": 280
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group2",
+        "extent": "parent"
+      },
+      {
+        "id": "node4",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 480,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group3",
+        "extent": "parent"
+      },
+      {
+        "id": "node5",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 480,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group3",
+        "extent": "parent"
+      },
+      {
+        "id": "node6",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 480,
+          "y": 280
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group4",
+        "extent": "parent"
+      },
+      {
+        "id": "node7",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 480,
+          "y": 330
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group4",
+        "extent": "parent"
+      },
+      {
+        "id": "node8",
+        "data": {
+          "label": "Azure Monitor"
+        },
+        "position": {
+          "x": 600,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node9",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 600,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node10",
+        "data": {
+          "label": "Azure Site Recovery"
+        },
+        "position": {
+          "x": 600,
+          "y": 280
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node11",
+        "data": {
+          "label": "Azure Backup"
+        },
+        "position": {
+          "x": 600,
+          "y": 330
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node12",
+        "data": {
+          "label": "Azure Cache for Redis"
+        },
+        "position": {
+          "x": 600,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node13",
+        "data": {
+          "label": "Azure Cost Management"
+        },
+        "position": {
+          "x": 600,
+          "y": 380
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "User",
+        "target": "node1",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "User",
+        "target": "node2",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "node1",
+        "target": "node3",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "node3",
+        "target": "node4",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "node4",
+        "target": "node5",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "node5",
+        "target": "node6",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "node6",
+        "target": "node7",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "node1",
+        "target": "node8",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e9",
+        "source": "node4",
+        "target": "node9",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e10",
+        "source": "node6",
+        "target": "node10",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e11",
+        "source": "node7",
+        "target": "node11",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e12",
+        "source": "node5",
+        "target": "node12",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e13",
+        "source": "node7",
+        "target": "node13",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
 }
