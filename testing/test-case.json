@@ -1,50 +1,74 @@
 [
   {
+    "source_file": "backend/access_control/controllers/permission_controller.py",
+    "test_file": "tests/test_permission_service.py",
+    "testcases_summary": "The tests verify the functionality of the PermissionService's assign_permission method. They cover scenarios of successful permission assignment, failure due to an exception, handling invalid data, and handling null data.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_permission_service.py"
+  },
+  {
     "source_file": "backend/access_control/controllers/role_controller.py",
-    "test_file": "tests/test_app.py",
-    "testcases_summary": "The tests verify the API endpoints for assigning roles and retrieving permissions. Scenarios include successful role assignment, role assignment failure, missing data, successful permission retrieval, and handling invalid or absent email queries for permissions.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_app.py"
+    "test_file": "tests/test_role.py",
+    "testcases_summary": "The tests verify the functionality of the role management system, covering scenarios for successfully creating a role, handling role creation failures, retrieving a list of roles, and handling an empty roles list. The purpose is to ensure the role service operates correctly under various conditions.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_role.py"
   },
   {
-    "source_file": "backend/access_control/models/role.py",
-    "test_file": "tests/test_auth.py",
-    "testcases_summary": "The tests verify the creation of Role objects with various attributes, including handling empty and special character attributes, negative and large role IDs, and ensuring exceptions are raised for null values in required fields.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_auth.py"
+    "source_file": "backend/access_control/controllers/security_controller.py",
+    "test_file": "tests/test_security_bp.py",
+    "testcases_summary": "The tests validate the functionality of a secure API endpoint under various conditions, including valid and invalid tokens, missing tokens, encryption failures, and requests without payloads.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_security_bp.py"
   },
   {
-    "source_file": "backend/access_control/models/user.py",
+    "source_file": "backend/access_control/controllers/user_controller.py",
     "test_file": "tests/test_user.py",
-    "testcases_summary": "The tests verify the creation of a User object with valid and invalid inputs, including type mismatches, missing arguments, None values, and boundary values. The purpose is to ensure the User object initializes correctly and handles erroneous inputs by raising appropriate exceptions.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user.py"
+    "testcases_summary": "The tests verify the functionality of role assignment and permission retrieval for users, covering scenarios of successful assignment, failure, invalid input, and retrieving both empty and populated permission lists.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_user.py"
   },
   {
-    "source_file": "backend/access_control/models/user_role.py",
-    "test_file": "tests/test_user_role.py",
-    "testcases_summary": "The tests verify the creation of UserRole entries in a database, covering scenarios such as valid inputs, missing user_id, missing role_id, non-integer values for user_id and role_id, and null values for both user_id and role_id, ensuring proper handling of integrity constraints.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_role.py"
+    "source_file": "backend/access_control/repositories/permission_repository.py",
+    "test_file": "tests/test_permission_repository.py",
+    "testcases_summary": "The tests verify the functionality of the assign_permission method in the PermissionRepository class. They cover scenarios including successful assignment of permissions, handling of an empty permission list, assigning permissions to a non-existent role, exception handling during assignment, and behavior with a null session.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_permission_repository.py"
   },
   {
     "source_file": "backend/access_control/repositories/role_repository.py",
     "test_file": "tests/test_role_repository.py",
-    "testcases_summary": "The tests verify the RoleRepository's get_role_by_name method for various scenarios, including retrieving existing roles, handling non-existent roles, case sensitivity, empty strings, and None values.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_role_repository.py"
+    "testcases_summary": "The tests verify the RoleRepository's ability to create roles and handle various scenarios such as successful creation, creation with an empty name, and exceptions due to database errors. It also tests the successful retrieval of roles and scenarios where the roles list is empty or database errors occur.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_role_repository.py"
+  },
+  {
+    "source_file": "backend/access_control/repositories/security_repository.py",
+    "test_file": "tests/test_security_repository.py",
+    "testcases_summary": "The tests verify the functionality of the SecurityRepository's verify_token method, covering scenarios such as valid and invalid tokens, empty tokens, SQL injection attempts, and database errors.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_security_repository.py"
   },
   {
     "source_file": "backend/access_control/repositories/user_repository.py",
     "test_file": "tests/test_user_repository.py",
-    "testcases_summary": "The tests verify UserRepository's ability to find users by email, handle non-existent emails properly, update user roles, and ensure invalid role updates raise errors.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_repository.py"
+    "testcases_summary": "The tests verify the functionality of assigning roles to users and retrieving user permissions in the UserRepository class. Main scenarios include assigning valid roles, retrieving permissions for users with assigned roles, handling invalid role assignments, and ensuring correct behavior when no permissions are assigned.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_user_repository.py"
   },
   {
-    "source_file": "backend/access_control/repositories/user_role_repository.py",
-    "test_file": "tests/test_user_role_repository.py",
-    "testcases_summary": "The tests verify the functionality of the UserRoleRepository, including assigning roles to users, handling database errors during assignment, retrieving user roles, changing user roles, and dealing with user roles not being found.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_role_repository.py"
+    "source_file": "backend/access_control/services/permission_service.py",
+    "test_file": "tests/test_permission_service.py",
+    "testcases_summary": "The tests verify the PermissionService's ability to successfully assign permissions, handle missing roles or permissions, and raise appropriate errors for incomplete data.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_permission_service.py"
   },
   {
     "source_file": "backend/access_control/services/role_service.py",
-    "test_file": "tests/test_access_control_role_service.py",
-    "testcases_summary": "The tests verify the functionality of assigning roles to users and retrieving user permissions in the RoleService. They cover scenarios including successful role assignment, user or role not found, and combined cases of user and role not found. Additionally, they test retrieving permissions successfully and handling cases where the user or role does not exist.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_access_control_role_service.py"
+    "test_file": "tests/test_role_service.py",
+    "testcases_summary": "The tests verify the RoleService's functionality for creating roles and retrieving roles. Scenarios covered include successful role creation, handling missing role names, and retrieving roles from the repository.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_role_service.py"
+  },
+  {
+    "source_file": "backend/access_control/services/security_service.py",
+    "test_file": "tests/test_security_service.py",
+    "testcases_summary": "The tests verify the SecurityService initialization, token validation including successful, missing, and invalid token scenarios, and encryption of sensitive banking data while ensuring non-banking data remains unchanged.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_security_service.py"
+  },
+  {
+    "source_file": "backend/access_control/services/user_service.py",
+    "test_file": "tests/test_user_service.py",
+    "testcases_summary": "The tests verify the UserService's ability to assign roles to users and retrieve user permissions, including scenarios for successful assignments, missing data, and invalid inputs.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_user_service.py"
   }
 ]
