@@ -463,6 +463,217 @@
       "test_cases": "Feature: Secure role-based data segregation\n\nScenario: Role-based data visibility\nGiven a database with role-segregated access\nWhen a user queries the data\nThen only data relevant to their role is visible\n\nScenario: Unauthorized data access attempt\nGiven data access rules\nWhen a user attempts to access data outside their role\nThen the access is denied\nAnd an alert is logged\n\nScenario: Data integrity validation\nGiven encrypted data\nWhen a user accesses data\nThen the data integrity is maintained"
     }
   ],
-  "architecture_generation": null,
+  "architecture_generation": {
+    "description": "This architecture diagram outlines a self-service banking portal using Azure services, ensuring secure, scalable, and responsive operations with comprehensive integration, monitoring, and security.",
+    "nodes": [
+      {
+        "id": "auth-group",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Authorization"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "nodes": [
+          {
+            "id": "azure-ad",
+            "data": {
+              "label": "Azure AD"
+            },
+            "position": {
+              "x": 120,
+              "y": 130
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "auth-group",
+            "extent": "parent"
+          },
+          {
+            "id": "azure-ad-b2c",
+            "data": {
+              "label": "Azure AD B2C"
+            },
+            "position": {
+              "x": 120,
+              "y": 180
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "auth-group",
+            "extent": "parent"
+          }
+        ]
+      },
+      {
+        "id": "frontend-group",
+        "type": "group",
+        "data": {
+          "label": "Frontend"
+        },
+        "position": {
+          "x": 400,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "nodes": [
+          {
+            "id": "app-service-web",
+            "data": {
+              "label": "Azure App Service (Web App)"
+            },
+            "position": {
+              "x": 420,
+              "y": 130
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "frontend-group",
+            "extent": "parent"
+          },
+          {
+            "id": "static-web-app",
+            "data": {
+              "label": "Azure Static Web Apps"
+            },
+            "position": {
+              "x": 420,
+              "y": 180
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "frontend-group",
+            "extent": "parent"
+          }
+        ]
+      },
+      {
+        "id": "backend-group",
+        "type": "group",
+        "data": {
+          "label": "Backend"
+        },
+        "position": {
+          "x": 700,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "nodes": [
+          {
+            "id": "azure-functions",
+            "data": {
+              "label": "Azure Functions"
+            },
+            "position": {
+              "x": 720,
+              "y": 130
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "backend-group",
+            "extent": "parent"
+          },
+          {
+            "id": "azure-logic-apps",
+            "data": {
+              "label": "Azure Logic Apps"
+            },
+            "position": {
+              "x": 720,
+              "y": 180
+            },
+            "style": {
+              "border": "none",
+              "borderRadius": "12px",
+              "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "parentId": "backend-group",
+            "extent": "parent"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "azure-ad",
+        "target": "app-service-web",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "azure-ad-b2c",
+        "target": "static-web-app",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "app-service-web",
+        "target": "azure-functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "static-web-app",
+        "target": "azure-logic-apps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
   "architecture_validation": null
 }
