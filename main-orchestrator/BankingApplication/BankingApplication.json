@@ -493,7 +493,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "A modern self-service banking portal on Azure with services for secure authentication, hosting, data storage, messaging, security, integration, monitoring, and continuous deployment.",
+    "description": "A modern self-service banking portal leveraging Azure and AWS with resources for secure and scalable deployment.",
     "nodes": [
       {
         "id": "User",
@@ -634,6 +634,79 @@
         },
         "parentId": "group-3",
         "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "AWS Services"
+        },
+        "position": {
+          "x": 1100,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 270,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#D3DAD9"
+        }
+      },
+      {
+        "id": "AWS EC2",
+        "data": {
+          "label": "AWS EC2"
+        },
+        "position": {
+          "x": 1150,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#FFFFFF"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "AWS S3",
+        "data": {
+          "label": "AWS S3"
+        },
+        "position": {
+          "x": 1150,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#FFFFFF"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "AWS RDS",
+        "data": {
+          "label": "AWS RDS"
+        },
+        "position": {
+          "x": 1150,
+          "y": 220
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#FFFFFF"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
       }
     ],
     "edges": [
@@ -671,6 +744,36 @@
         "id": "e3-3b",
         "source": "Azure SQL Database",
         "target": "Azure Storage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-4a",
+        "source": "Azure App Service",
+        "target": "AWS EC2",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-4b",
+        "source": "AWS EC2",
+        "target": "AWS S3",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-4c",
+        "source": "AWS EC2",
+        "target": "AWS RDS",
         "type": "default",
         "animated": true,
         "style": {
