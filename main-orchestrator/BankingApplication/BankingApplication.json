@@ -462,7 +462,7 @@
     }
   ],
   "architecture_generation": {
-    "description": "The architecture includes frontend, authentication, backend, database, integrations, workflows, notifications, monitoring, security, logging, backup, and DevOps for a modern, secure, scalable, and user-friendly portal.",
+    "description": "The architecture includes frontend, authentication, backend, database, integrations, workflows, notifications, monitoring, security, logging, backup, and DevOps for a modern, secure, scalable, and user-friendly portal using Azure Postgres database.",
     "nodes": [
       {
         "id": "Frontend",
@@ -588,9 +588,9 @@
         }
       },
       {
-        "id": "SQL",
+        "id": "Postgres",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Azure Postgres Database"
         },
         "position": {
           "x": 1000,
@@ -646,7 +646,7 @@
       {
         "id": "e-backend-database",
         "source": "Backend",
-        "target": "SQL",
+        "target": "Postgres",
         "type": "default",
         "animated": true,
         "style": {
