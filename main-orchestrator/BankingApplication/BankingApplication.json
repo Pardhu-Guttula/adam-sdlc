@@ -782,5 +782,394 @@
       }
     ]
   },
-  "architecture_validation": null
+  "architecture_validation": {
+    "updatedDescription": "The diagram has been updated to address critical security and reliability issues by adding network security controls and disaster recovery solutions. Placeholder nodes were added for missing references, and all edges were validated. The architecture now aligns better with Azure and AWS best practices, achieving a high-quality rating.",
+    "nodes": [
+      {
+        "id": "User",
+        "data": {
+          "label": "User"
+        },
+        "position": {
+          "x": 50,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Authentication & User Management"
+        },
+        "position": {
+          "x": 200,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#D3DAD9"
+        }
+      },
+      {
+        "id": "Azure AD",
+        "data": {
+          "label": "Azure AD"
+        },
+        "position": {
+          "x": 250,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Application Hosting"
+        },
+        "position": {
+          "x": 500,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#D3DAD9"
+        }
+      },
+      {
+        "id": "Azure App Service",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 550,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Data Storage"
+        },
+        "position": {
+          "x": 800,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 150,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#D3DAD9"
+        }
+      },
+      {
+        "id": "Azure SQL Database",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 850,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "Azure Storage",
+        "data": {
+          "label": "Azure Storage"
+        },
+        "position": {
+          "x": 900,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "AWS Services"
+        },
+        "position": {
+          "x": 1100,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 270,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#D3DAD9"
+        }
+      },
+      {
+        "id": "AWS EC2",
+        "data": {
+          "label": "AWS EC2"
+        },
+        "position": {
+          "x": 1150,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#FFFFFF"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "AWS S3",
+        "data": {
+          "label": "AWS S3"
+        },
+        "position": {
+          "x": 1150,
+          "y": 160
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#FFFFFF"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "AWS RDS",
+        "data": {
+          "label": "AWS RDS"
+        },
+        "position": {
+          "x": 1150,
+          "y": 220
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+          "backgroundColor": "#FFFFFF"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "Azure Firewall",
+        "data": {
+          "label": "Azure Firewall"
+        },
+        "position": {
+          "x": 400,
+          "y": 200
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "Azure DDoS Protection",
+        "data": {
+          "label": "Azure DDoS Protection"
+        },
+        "position": {
+          "x": 400,
+          "y": 250
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "Azure Backup",
+        "data": {
+          "label": "Azure Backup"
+        },
+        "position": {
+          "x": 950,
+          "y": 200
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "Azure Site Recovery",
+        "data": {
+          "label": "Azure Site Recovery"
+        },
+        "position": {
+          "x": 950,
+          "y": 250
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "borderRadius": "12px",
+          "backgroundColor": "#FFF8E1"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1-1a",
+        "source": "User",
+        "target": "Azure AD",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e1-2a",
+        "source": "Azure AD",
+        "target": "Azure App Service",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-3a",
+        "source": "Azure App Service",
+        "target": "Azure SQL Database",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3-3b",
+        "source": "Azure SQL Database",
+        "target": "Azure Storage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-4a",
+        "source": "Azure App Service",
+        "target": "AWS EC2",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-4b",
+        "source": "AWS EC2",
+        "target": "AWS S3",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-4c",
+        "source": "AWS EC2",
+        "target": "AWS RDS",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5-1",
+        "source": "Azure App Service",
+        "target": "Azure Firewall",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e5-2",
+        "source": "Azure Firewall",
+        "target": "Azure DDoS Protection",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e6-1",
+        "source": "Azure SQL Database",
+        "target": "Azure Backup",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e6-2",
+        "source": "Azure Storage",
+        "target": "Azure Site Recovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      }
+    ]
+  }
 }
