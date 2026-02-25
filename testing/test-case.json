@@ -1,0 +1,50 @@
+[
+  {
+    "source_file": "backend/access_control/controllers/role_controller.py",
+    "test_file": "tests/test_app.py",
+    "testcases_summary": "The tests verify the API endpoints for assigning roles and retrieving permissions. Scenarios include successful role assignment, role assignment failure, missing data, successful permission retrieval, and handling invalid or absent email queries for permissions.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_app.py"
+  },
+  {
+    "source_file": "backend/access_control/models/role.py",
+    "test_file": "tests/test_auth.py",
+    "testcases_summary": "The tests verify the creation of Role objects with various attributes, including handling empty and special character attributes, negative and large role IDs, and ensuring exceptions are raised for null values in required fields.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_auth.py"
+  },
+  {
+    "source_file": "backend/access_control/models/user.py",
+    "test_file": "tests/test_user.py",
+    "testcases_summary": "The tests verify the creation of a User object with valid and invalid inputs, including type mismatches, missing arguments, None values, and boundary values. The purpose is to ensure the User object initializes correctly and handles erroneous inputs by raising appropriate exceptions.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user.py"
+  },
+  {
+    "source_file": "backend/access_control/models/user_role.py",
+    "test_file": "tests/test_user_role.py",
+    "testcases_summary": "The tests verify the creation of UserRole entries in a database, covering scenarios such as valid inputs, missing user_id, missing role_id, non-integer values for user_id and role_id, and null values for both user_id and role_id, ensuring proper handling of integrity constraints.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_role.py"
+  },
+  {
+    "source_file": "backend/access_control/repositories/role_repository.py",
+    "test_file": "tests/test_role_repository.py",
+    "testcases_summary": "The tests verify the RoleRepository's get_role_by_name method for various scenarios, including retrieving existing roles, handling non-existent roles, case sensitivity, empty strings, and None values.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_role_repository.py"
+  },
+  {
+    "source_file": "backend/access_control/repositories/user_repository.py",
+    "test_file": "tests/test_user_repository.py",
+    "testcases_summary": "The tests verify UserRepository's ability to find users by email, handle non-existent emails properly, update user roles, and ensure invalid role updates raise errors.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_repository.py"
+  },
+  {
+    "source_file": "backend/access_control/repositories/user_role_repository.py",
+    "test_file": "tests/test_user_role_repository.py",
+    "testcases_summary": "The tests verify the functionality of the UserRoleRepository, including assigning roles to users, handling database errors during assignment, retrieving user roles, changing user roles, and dealing with user roles not being found.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_role_repository.py"
+  },
+  {
+    "source_file": "backend/access_control/services/role_service.py",
+    "test_file": "tests/test_access_control_role_service.py",
+    "testcases_summary": "The tests verify the functionality of assigning roles to users and retrieving user permissions in the RoleService. They cover scenarios including successful role assignment, user or role not found, and combined cases of user and role not found. Additionally, they test retrieving permissions successfully and handling cases where the user or role does not exist.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_access_control_role_service.py"
+  }
+]
