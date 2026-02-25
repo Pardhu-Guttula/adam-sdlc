@@ -751,7 +751,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address critical security and reliability issues by adding new nodes for input validation, encryption, security monitoring, threat modeling, geo-replication, and failover mechanisms. Operational excellence, performance efficiency, and cost optimization recommendations have been noted but do not require new nodes. The updated diagram ensures compliance with Azure's Well-Architected Framework and improves the overall quality of the system.",
+    "updatedDescription": "The architecture has been enhanced to address critical gaps in security and reliability by adding Azure Security Center for threat detection and Azure Site Recovery for disaster recovery. All nodes and edges are validated, and the structure adheres to ReactFlow standards with no missing or duplicate elements.",
     "nodes": [
       {
         "id": "User",
@@ -966,92 +966,36 @@
       {
         "id": "node8",
         "data": {
-          "label": "Input Validation Layer"
+          "label": "Azure Security Center"
         },
         "position": {
-          "x": 600,
-          "y": 80
+          "x": 180,
+          "y": 330
         },
         "style": {
-          "border": "1px solid #000",
+          "border": "none",
           "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group2",
+        "extent": "parent"
       },
       {
         "id": "node9",
         "data": {
-          "label": "Encryption Layer"
+          "label": "Azure Site Recovery"
         },
         "position": {
-          "x": 600,
-          "y": 130
+          "x": 480,
+          "y": 380
         },
         "style": {
-          "border": "1px solid #000",
+          "border": "none",
           "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "node10",
-        "data": {
-          "label": "Security Monitoring"
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "position": {
-          "x": 600,
-          "y": 180
-        },
-        "style": {
-          "border": "1px solid #000",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "node11",
-        "data": {
-          "label": "Threat Modeling"
-        },
-        "position": {
-          "x": 600,
-          "y": 230
-        },
-        "style": {
-          "border": "1px solid #000",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "node12",
-        "data": {
-          "label": "Geo-Replication"
-        },
-        "position": {
-          "x": 600,
-          "y": 280
-        },
-        "style": {
-          "border": "1px solid #000",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "node13",
-        "data": {
-          "label": "Failover Mechanism"
-        },
-        "position": {
-          "x": 600,
-          "y": 330
-        },
-        "style": {
-          "border": "1px solid #000",
-          "borderRadius": "12px",
-          "backgroundColor": "#FFF8E1"
-        }
+        "parentId": "group4",
+        "extent": "parent"
       }
     ],
     "edges": [
@@ -1127,7 +1071,7 @@
       },
       {
         "id": "e8",
-        "source": "node4",
+        "source": "node3",
         "target": "node8",
         "type": "default",
         "animated": true,
@@ -1137,7 +1081,7 @@
       },
       {
         "id": "e9",
-        "source": "node4",
+        "source": "node6",
         "target": "node9",
         "type": "default",
         "animated": true,
@@ -1147,38 +1091,8 @@
       },
       {
         "id": "e10",
-        "source": "node4",
-        "target": "node10",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e11",
-        "source": "node4",
-        "target": "node11",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e12",
-        "source": "node6",
-        "target": "node12",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e13",
-        "source": "node6",
-        "target": "node13",
+        "source": "node7",
+        "target": "node9",
         "type": "default",
         "animated": true,
         "style": {
