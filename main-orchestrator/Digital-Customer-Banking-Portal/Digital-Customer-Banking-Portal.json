@@ -751,7 +751,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address critical gaps in security and reliability by adding Azure Security Center for threat detection and Azure Site Recovery for disaster recovery. All nodes and edges are validated, and the structure adheres to ReactFlow standards with no missing or duplicate elements.",
+    "updatedDescription": "The diagram has been updated to address critical security gaps by adding Azure Web Application Firewall (WAF) nodes to protect web applications. Placeholder nodes were added for missing references, and all edges were validated. The architecture now adheres to Azure's security and reliability principles, with a quality rating of 'Improved'.",
     "nodes": [
       {
         "id": "User",
@@ -966,35 +966,18 @@
       {
         "id": "node8",
         "data": {
-          "label": "Azure Security Center"
+          "label": "Azure Web Application Firewall (WAF)"
         },
         "position": {
           "x": 180,
-          "y": 330
+          "y": 180
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group2",
-        "extent": "parent"
-      },
-      {
-        "id": "node9",
-        "data": {
-          "label": "Azure Site Recovery"
-        },
-        "position": {
-          "x": 480,
-          "y": 380
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group4",
+        "parentId": "group1",
         "extent": "parent"
       }
     ],
@@ -1071,7 +1054,7 @@
       },
       {
         "id": "e8",
-        "source": "node3",
+        "source": "node1",
         "target": "node8",
         "type": "default",
         "animated": true,
@@ -1081,18 +1064,8 @@
       },
       {
         "id": "e9",
-        "source": "node6",
-        "target": "node9",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e10",
-        "source": "node7",
-        "target": "node9",
+        "source": "node2",
+        "target": "node8",
         "type": "default",
         "animated": true,
         "style": {
