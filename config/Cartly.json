@@ -1,0 +1,34 @@
+{
+  "repo_owner": "Pardhu-Guttula",
+  "repo_name": "Cartly",
+  "branch_name": "main",
+  "usecase": "Cartly is a modern e-commerce platform that enables customers to browse, search, and purchase products across categories such as fashion, electronics, home, beauty, and lifestyle. Users can view product details, add items to cart or wishlist, and complete secure checkout using multiple payment options. Accounts include order tracking, history, and saved addresses. For administrators and sellers, Cartly provides tools to manage products, categories, inventory, pricing, discounts, and orders through a centralized dashboard. The platform is scalable and mobile-friendly, with support for promotions, analytics, and future marketplace expansion. Cartly aims to deliver a simple, reliable, and engaging online shopping experience connecting buyers and sellers.",
+  "project_name": "Cartly",
+  "access_users": [
+    "Lakshmi.shastry@brillio.com",
+    "Chander.Damodaran@brillio.com",
+    "anoop.kumar@brillio.com",
+    "ravikumar.ps@brillio.com",
+    "Pardhu.Guttula@brillio.com",
+    "Lokesh.Kadi@brillio.com",
+    "kgssv.akhilkumar@brillio.com",
+    "Kanishka.Balaji@brillio.com",
+    "Suchismita.Panda@brillio.com"
+  ],
+  "user_names": [
+    "Lakshmi Shastry",
+    "Chander Damodaran",
+    "Anoop Kumar",
+    "Ravikumar Ps",
+    "Pardhu Guttula",
+    "Lokesh Kadi",
+    "Kgssv Akhilkumar",
+    "Kanishka Balaji",
+    "Suchismita Panda"
+  ],
+  "jira_board": "SDLC2.0",
+  "jira_user": "Lakshmi.shastry@brillio.com",
+  "type": "greenfield",
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "repo_link": "https://github.com/Pardhu-Guttula/Cartly"
+}
