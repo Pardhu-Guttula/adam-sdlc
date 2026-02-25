@@ -1,1 +1,129 @@
-{"session_id":"toggleon_sessionid_Digital-Customer-Banking-Portal","project_name":"Digital-Customer-Banking-Portal","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal","epics":[{"id":"EPIC-1","title":"User Authentication and MFA","summary":"Implement user authentication with multi-factor authentication.","description":"Develop secure user authentication mechanisms using React for the frontend and FastAPI for the backend. Implement multi-factor authentication ensuring users can login securely. PostgreSQL will be used to store user credentials and authentication data.","dependencies":[],"jira_epic_key":"ADAM-1504"},{"id":"EPIC-2","title":"User Dashboard","summary":"Create a personalized user dashboard displaying banking products and services.","description":"Develop a personalized user dashboard in React that displays available banking products and services based on user profile and eligibility. The backend will query PostgreSQL to fetch user-specific data and Redis will be used for caching data to improve load times.","dependencies":[],"jira_epic_key":"ADAM-1507"},{"id":"EPIC-3","title":"Responsive Design","summary":"Ensure the portal is responsive across desktop, tablet, and mobile devices.","description":"Implement responsive design using React to ensure the portal provides a consistent experience across desktop, tablet, and mobile devices. Develop and test using various screen sizes to guarantee usability.","dependencies":[],"jira_epic_key":"ADAM-1501"},{"id":"EPIC-4","title":"Account Opening Requests","summary":"Enable users to submit account opening requests through streamlined workflows.","description":"Develop streamlined workflows using React for account opening requests requiring minimal clicks. The backend in FastAPI will handle process workflows and submit requests to the core banking system. PostgreSQL will store details of these requests and Redis will cache temporary data.","dependencies":["EPIC-1"],"jira_epic_key":"ADAM-1509"},{"id":"EPIC-5","title":"Service Modifications","summary":"Allow users to submit service modification requests efficiently.","description":"Implement features using React to allow users to submit service modification requests efficiently. Use FastAPI to handle backend processing and PostgreSQL to store the modification request details. Redis will cache data temporarily during workflow processing.","dependencies":["EPIC-1"],"jira_epic_key":"ADAM-1510"},{"id":"EPIC-6","title":"Real-time Status Updates","summary":"Provide real-time status updates for submitted requests.","description":"Using React and Redis, develop real-time status update mechanisms for requests submitted by users. The backend in FastAPI will provide APIs to fetch the status of submitted requests from PostgreSQL and deliver notifications promptly.","dependencies":["EPIC-4","EPIC-5"],"jira_epic_key":"ADAM-1508"},{"id":"EPIC-7","title":"Email Notifications","summary":"Send email notifications about request statuses.","description":"Implement email notification services using FastAPI to send updates regarding submitted request statuses. Ensure PostgreSQL maintains logs of these communications for audit purposes.","dependencies":["EPIC-6"],"jira_epic_key":"ADAM-1506"},{"id":"EPIC-8","title":"Interaction History","summary":"Maintain a comprehensive history of user interactions.","description":"Develop a feature in React and FastAPI to maintain a comprehensive history of all user interactions. Store interaction data securely in PostgreSQL ensuring users can access their historical actions and communications.","dependencies":["EPIC-1","EPIC-2"],"jira_epic_key":"ADAM-1502"},{"id":"EPIC-9","title":"Incomplete Applications","summary":"Allow users to save incomplete applications and resume later.","description":"Enable functionality to save incomplete applications using React. Utilize FastAPI and PostgreSQL for backend support to securely store these applications and allow users to resume where they left off.","dependencies":["EPIC-4","EPIC-5"],"jira_epic_key":"ADAM-1505"},{"id":"EPIC-10","title":"Document Upload","summary":"Enable users to upload necessary documentation directly through the portal.","description":"Develop document upload capabilities using React for the frontend and FastAPI for processing uploads. Store uploaded documents securely in PostgreSQL ensuring user data integrity and security.","dependencies":["EPIC-9"],"jira_epic_key":"ADAM-1503"},{"id":"EPIC-11","title":"Core Banking Integration","summary":"Integrate the portal with the bank’s existing core banking system.","description":"Implement seamless integration between the self-service portal and the existing core banking system using FastAPI. Ensure data consistency and reliability by syncing interactions and transactions between PostgreSQL and the core banking system.","dependencies":["EPIC-4","EPIC-5","EPIC-6"],"jira_epic_key":"ADAM-1511"},{"id":"EPIC-12","title":"Role-Based Access Controls","summary":"Implement role-based access controls for user authorization.","description":"Develop role-based access control mechanisms using React for frontend management and FastAPI for backend enforcement. Ensure users can only view and access services appropriate to their profile and authorization level, segregated securely in PostgreSQL.","dependencies":["EPIC-1"],"jira_epic_key":"ADAM-1500"}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication and MFA",
+      "summary": "Implement user authentication with multi-factor authentication.",
+      "description": "Develop secure user authentication mechanisms using React for the frontend and FastAPI for the backend. Implement multi-factor authentication ensuring users can login securely. PostgreSQL will be used to store user credentials and authentication data.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-1504"
+    },
+    {
+      "id": "EPIC-2",
+      "title": "User Dashboard",
+      "summary": "Create a personalized user dashboard displaying banking products and services.",
+      "description": "Develop a personalized user dashboard in React that displays available banking products and services based on user profile and eligibility. The backend will query PostgreSQL to fetch user-specific data and Redis will be used for caching data to improve load times.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-1507"
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across desktop, tablet, and mobile devices.",
+      "description": "Implement responsive design using React to ensure the portal provides a consistent experience across desktop, tablet, and mobile devices. Develop and test using various screen sizes to guarantee usability.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-1501"
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Account Opening Requests",
+      "summary": "Enable users to submit account opening requests through streamlined workflows.",
+      "description": "Develop streamlined workflows using React for account opening requests requiring minimal clicks. The backend in FastAPI will handle process workflows and submit requests to the core banking system. PostgreSQL will store details of these requests and Redis will cache temporary data.",
+      "dependencies": [
+        "EPIC-1"
+      ],
+      "jira_epic_key": "ADAM-1509"
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Service Modifications",
+      "summary": "Allow users to submit service modification requests efficiently.",
+      "description": "Implement features using React to allow users to submit service modification requests efficiently. Use FastAPI to handle backend processing and PostgreSQL to store the modification request details. Redis will cache data temporarily during workflow processing.",
+      "dependencies": [
+        "EPIC-1"
+      ],
+      "jira_epic_key": "ADAM-1510"
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Real-time Status Updates",
+      "summary": "Provide real-time status updates for submitted requests.",
+      "description": "Using React and Redis, develop real-time status update mechanisms for requests submitted by users. The backend in FastAPI will provide APIs to fetch the status of submitted requests from PostgreSQL and deliver notifications promptly.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1508"
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Email Notifications",
+      "summary": "Send email notifications about request statuses.",
+      "description": "Implement email notification services using FastAPI to send updates regarding submitted request statuses. Ensure PostgreSQL maintains logs of these communications for audit purposes.",
+      "dependencies": [
+        "EPIC-6"
+      ],
+      "jira_epic_key": "ADAM-1506"
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of user interactions.",
+      "description": "Develop a feature in React and FastAPI to maintain a comprehensive history of all user interactions. Store interaction data securely in PostgreSQL ensuring users can access their historical actions and communications.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-1502"
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Incomplete Applications",
+      "summary": "Allow users to save incomplete applications and resume later.",
+      "description": "Enable functionality to save incomplete applications using React. Utilize FastAPI and PostgreSQL for backend support to securely store these applications and allow users to resume where they left off.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5"
+      ],
+      "jira_epic_key": "ADAM-1505"
+    },
+    {
+      "id": "EPIC-10",
+      "title": "Document Upload",
+      "summary": "Enable users to upload necessary documentation directly through the portal.",
+      "description": "Develop document upload capabilities using React for the frontend and FastAPI for processing uploads. Store uploaded documents securely in PostgreSQL ensuring user data integrity and security.",
+      "dependencies": [
+        "EPIC-9"
+      ],
+      "jira_epic_key": "ADAM-1503"
+    },
+    {
+      "id": "EPIC-11",
+      "title": "Core Banking Integration",
+      "summary": "Integrate the portal with the bank’s existing core banking system.",
+      "description": "Implement seamless integration between the self-service portal and the existing core banking system using FastAPI. Ensure data consistency and reliability by syncing interactions and transactions between PostgreSQL and the core banking system.",
+      "dependencies": [
+        "EPIC-4",
+        "EPIC-5",
+        "EPIC-6"
+      ],
+      "jira_epic_key": "ADAM-1511"
+    },
+    {
+      "id": "EPIC-12",
+      "title": "Role-Based Access Controls",
+      "summary": "Implement role-based access controls for user authorization.",
+      "description": "Develop role-based access control mechanisms using React for frontend management and FastAPI for backend enforcement. Ensure users can only view and access services appropriate to their profile and authorization level, segregated securely in PostgreSQL.",
+      "dependencies": [
+        "EPIC-1"
+      ],
+      "jira_epic_key": "ADAM-1500"
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
+}
