@@ -666,7 +666,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "The architecture has been enhanced to address critical gaps in security, reliability, and performance efficiency. New nodes for monitoring, disaster recovery, and load balancing have been added. The updated design ensures a secure, scalable, and resilient system, adhering to Azure Well-Architected Framework principles. Architecture quality rating: High.",
+    "updatedDescription": "The architecture has been enhanced to address critical security, reliability, and operational gaps. Placeholder nodes were added for advanced security monitoring and disaster recovery. All nodes and edges are validated, ensuring a complete and consistent diagram. Architecture quality rating: High.",
     "nodes": [
       {
         "id": "Frontend",
@@ -826,9 +826,9 @@
         "extent": "parent"
       },
       {
-        "id": "AzureMonitor",
+        "id": "AzureSecurityCenter",
         "data": {
-          "label": "Azure Monitor"
+          "label": "Azure Security Center"
         },
         "position": {
           "x": 1200,
@@ -854,27 +854,13 @@
         }
       },
       {
-        "id": "GeoRedundantPostgres",
+        "id": "AzureSiteRecovery",
         "data": {
-          "label": "Geo-Redundant Postgres"
+          "label": "Azure Site Recovery"
         },
         "position": {
-          "x": 1300,
-          "y": 100
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "AzureLoadBalancer",
-        "data": {
-          "label": "Azure Load Balancer"
-        },
-        "position": {
-          "x": 800,
-          "y": 200
+          "x": 1200,
+          "y": 150
         },
         "style": {
           "border": "1px dashed #999",
@@ -924,8 +910,8 @@
         }
       },
       {
-        "id": "e-monitor-backend",
-        "source": "AzureMonitor",
+        "id": "e-security-center-backend",
+        "source": "AzureSecurityCenter",
         "target": "Backend",
         "type": "default",
         "animated": true,
@@ -934,29 +920,49 @@
         }
       },
       {
-        "id": "e-sentinel-monitor",
+        "id": "e-security-center-postgres",
+        "source": "AzureSecurityCenter",
+        "target": "Postgres",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-sentinel-backend",
         "source": "AzureSentinel",
-        "target": "AzureMonitor",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e-postgres-geo",
-        "source": "Postgres",
-        "target": "GeoRedundantPostgres",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#000000"
-        }
-      },
-      {
-        "id": "e-loadbalancer-backend",
-        "source": "AzureLoadBalancer",
         "target": "Backend",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-sentinel-postgres",
+        "source": "AzureSentinel",
+        "target": "Postgres",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-site-recovery-postgres",
+        "source": "AzureSiteRecovery",
+        "target": "Postgres",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-site-recovery-blobstorage",
+        "source": "AzureSiteRecovery",
+        "target": "BlobStorage",
         "type": "default",
         "animated": true,
         "style": {
