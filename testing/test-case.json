@@ -1,50 +1,38 @@
 [
   {
-    "source_file": "backend/access_control/controllers/role_controller.py",
-    "test_file": "tests/test_app.py",
-    "testcases_summary": "The tests verify role assignment and permission retrieval functionalities in a Flask app. They cover successful and failed role assignments, missing data scenarios for role assignment, invalid JSON handling, and permission retrieval with and without an email.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_app.py"
+    "source_file": "backend/account_management/controllers/account_controller.py",
+    "test_file": "tests/test_account_opening.py",
+    "testcases_summary": "The unit tests verify the account opening functionality, covering scenarios including successful account opening, account opening failure, backend processing error, and invalid input handling.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_account_opening.py"
   },
   {
-    "source_file": "backend/access_control/models/role.py",
-    "test_file": "tests/test_role.py",
-    "testcases_summary": "The tests verify the creation and validation of the Role class, including scenarios with valid and invalid data for role ID, name, and permissions, as well as boundary values.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_role.py"
+    "source_file": "backend/account_management/controllers/service_modification_controller.py",
+    "test_file": "tests/test_service_modification_bp.py",
+    "testcases_summary": "The tests verify the service modification endpoint's handling of successful requests, failure scenarios, SQLAlchemy exceptions, invalid JSON inputs, and database connection issues.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_service_modification_bp.py"
   },
   {
-    "source_file": "backend/access_control/models/user.py",
-    "test_file": "tests/test_user.py",
-    "testcases_summary": "The tests verify the creation of User instances, checking both valid and various invalid input scenarios including incorrect types for user_id, name, email, and role_id, as well as null values for name, email, and role_id.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user.py"
+    "source_file": "backend/account_management/repositories/account_repository.py",
+    "test_file": "tests/test_account_repository.py",
+    "testcases_summary": "The tests verify the functionality of saving account opening requests in the AccountRepository, including handling successful saves, missing and partial data, null data, and SQL execution failures.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_account_repository.py"
   },
   {
-    "source_file": "backend/access_control/models/user_role.py",
-    "test_file": "tests/test_user_role.py",
-    "testcases_summary": "The tests verify the creation of UserRole objects in different scenarios, including valid creation, missing user_id or role_id, duplicate entries, edge cases for zero and negative IDs, and invalid data types for user_id and role_id.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_role.py"
+    "source_file": "backend/account_management/repositories/service_modification_repository.py",
+    "test_file": "tests/test_service_modification_repository.py",
+    "testcases_summary": "The tests verify the functionality of the save_service_modification_request method in the ServiceModificationRepository. They cover scenarios such as successful data insertion, handling of empty or partial data, missing user ID, invalid data types, and null inputs.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_service_modification_repository.py"
   },
   {
-    "source_file": "backend/access_control/repositories/role_repository.py",
-    "test_file": "tests/test_role_repository.py",
-    "testcases_summary": "The tests verify the RoleRepository class's get_role_by_name method, checking for valid roles, invalid roles, and edge cases such as empty strings, whitespace strings, and None values.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_role_repository.py"
+    "source_file": "backend/account_management/services/account_service.py",
+    "test_file": "tests/test_account_service.py",
+    "testcases_summary": "The tests validate the AccountService's process_opening_request method, covering scenarios for successful processing, missing mandatory fields (name, email, phone), empty mandatory fields, and handling backend exceptions.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_account_service.py"
   },
   {
-    "source_file": "backend/access_control/repositories/user_repository.py",
-    "test_file": "tests/test_user_repository.py",
-    "testcases_summary": "The tests validate the UserRepository class, including finding users by email, updating user roles, handling non-existent users, empty and invalid emails, and edge cases for role IDs like zero and negative.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_repository.py"
-  },
-  {
-    "source_file": "backend/access_control/repositories/user_role_repository.py",
-    "test_file": "tests/test_user_role_repository.py",
-    "testcases_summary": "The tests verify the functionalities of the UserRoleRepository, including assigning roles to users, handling assignment failures, retrieving user roles, and changing user roles. They cover scenarios of success, non-existence of user roles, and database failures.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_user_role_repository.py"
-  },
-  {
-    "source_file": "backend/access_control/services/role_service.py",
-    "test_file": "tests/test_role_service.py",
-    "testcases_summary": "The tests verify the RoleService's ability to assign roles to users and fetch their permissions. Various scenarios are covered, including cases where the user or role is not found in the system.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/BankingApplication/blob/main/tests/test_role_service.py"
+    "source_file": "backend/account_management/services/service_modification_service.py",
+    "test_file": "tests/test_service_modification_service.py",
+    "testcases_summary": "The tests verify the functionality of the process_modification_request method in the ServiceModificationService class, covering scenarios such as successful processing, missing mandatory fields, empty fields, and backend exceptions.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Digital-Customer-Banking-Portal/blob/main/tests/test_service_modification_service.py"
   }
 ]
