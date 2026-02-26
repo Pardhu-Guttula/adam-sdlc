@@ -560,73 +560,35 @@
     }
   ],
   "architecture_generation": {
-    "description": "This architecture represents a digital insurance management system with a user interface layer, authentication, API management, application logic, database, storage, security, monitoring, messaging, analytics, DevOps, AI/ML, administration, and networking features.",
+    "description": "This is an architectural diagram for a digital insurance management system utilizing Azure services to ensure scalability, security, and user-friendliness. It encompasses various components including frontend, backend, database storage, authentication, analytics, DevOps, security, notifications, scalability, backup, and optional AI services.",
     "nodes": [
       {
-        "id": "user-interface",
-        "type": "group",
+        "id": "Frontend",
         "data": {
-          "label": "User Interface Layer"
+          "label": "Azure Frontend Services"
         },
         "position": {
           "x": 50,
           "y": 50
         },
         "style": {
-          "width": 200,
-          "height": 150,
-          "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         }
       },
       {
-        "id": "web-app",
-        "data": {
-          "label": "Web Application (React.js)"
-        },
-        "position": {
-          "x": 60,
-          "y": 80
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "user-interface",
-        "extent": "parent"
-      },
-      {
-        "id": "mobile-app",
-        "data": {
-          "label": "Mobile App (React Native)"
-        },
-        "position": {
-          "x": 60,
-          "y": 140
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "user-interface",
-        "extent": "parent"
-      },
-      {
-        "id": "auth-management",
+        "id": "group-1",
         "type": "group",
         "data": {
-          "label": "Authentication and Authorization"
+          "label": "Backend"
         },
         "position": {
           "x": 300,
-          "y": 50
+          "y": 100
         },
         "style": {
-          "width": 200,
+          "width": 250,
           "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
@@ -635,34 +597,51 @@
         }
       },
       {
-        "id": "azure-ad",
+        "id": "Backend-API",
         "data": {
-          "label": "Azure AD B2C"
+          "label": "Azure App Service (Backend API)"
         },
         "position": {
           "x": 310,
-          "y": 110
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "auth-management",
+        "parentId": "group-1",
         "extent": "parent"
       },
       {
-        "id": "api-management",
-        "type": "group",
+        "id": "Backend-Functions",
         "data": {
-          "label": "API Management"
+          "label": "Azure Functions"
         },
         "position": {
-          "x": 550,
-          "y": 50
+          "x": 310,
+          "y": 200
         },
         "style": {
-          "width": 200,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Database Storage"
+        },
+        "position": {
+          "x": 600,
+          "y": 100
+        },
+        "style": {
+          "width": 250,
           "height": 150,
           "backgroundColor": "#D3DAD9",
           "border": "none",
@@ -671,28 +650,45 @@
         }
       },
       {
-        "id": "azure-api",
+        "id": "SQL-Database",
         "data": {
-          "label": "Azure API Management"
+          "label": "Azure SQL Database"
         },
         "position": {
-          "x": 560,
-          "y": 110
+          "x": 610,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "api-management",
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "Cosmos-DB",
+        "data": {
+          "label": "Azure Cosmos DB"
+        },
+        "position": {
+          "x": 610,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1-1a",
-        "source": "web-app",
-        "target": "azure-api",
+        "id": "e1-BackendAPI-To-Frontend",
+        "source": "Backend-API",
+        "target": "Frontend",
         "type": "default",
         "animated": true,
         "style": {
@@ -700,9 +696,9 @@
         }
       },
       {
-        "id": "e1-1b",
-        "source": "mobile-app",
-        "target": "azure-api",
+        "id": "e2-BackendFunctions-To-Frontend",
+        "source": "Backend-Functions",
+        "target": "Frontend",
         "type": "default",
         "animated": true,
         "style": {
@@ -710,9 +706,19 @@
         }
       },
       {
-        "id": "e2-2a",
-        "source": "azure-api",
-        "target": "azure-ad",
+        "id": "e3-SQL-Database-To-BackendAPI",
+        "source": "SQL-Database",
+        "target": "Backend-API",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4-Cosmos-DB-To-BackendFunctions",
+        "source": "Cosmos-DB",
+        "target": "Backend-Functions",
         "type": "default",
         "animated": true,
         "style": {
