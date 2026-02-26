@@ -747,5 +747,246 @@
       }
     ]
   },
-  "architecture_validation": null
+  "architecture_validation": {
+    "updatedDescription": "The updated architecture diagram includes a disaster recovery plan with geo-redundant backups and failover mechanisms to address critical reliability issues. All nodes and edges are validated, and placeholders are added for missing disaster recovery components. The architecture quality rating is improved to align with the Azure Well-Architected Framework.",
+    "nodes": [
+      {
+        "id": "Frontend",
+        "data": {
+          "label": "Frontend Services"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "APIs and Business Logic"
+        },
+        "position": {
+          "x": 300,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-1a",
+        "data": {
+          "label": "API Management"
+        },
+        "position": {
+          "x": 350,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "node-1b",
+        "data": {
+          "label": "Logic Apps"
+        },
+        "position": {
+          "x": 350,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 650,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-2a",
+        "data": {
+          "label": "Policy Management"
+        },
+        "position": {
+          "x": 700,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "node-2b",
+        "data": {
+          "label": "Claims Tracking"
+        },
+        "position": {
+          "x": 700,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "disaster-recovery",
+        "data": {
+          "label": "Disaster Recovery"
+        },
+        "position": {
+          "x": 1000,
+          "y": 100
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1-1a",
+        "source": "Frontend",
+        "target": "node-1a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e1-1b",
+        "source": "Frontend",
+        "target": "node-1b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e1-2a",
+        "source": "node-1a",
+        "target": "node-2a",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e1-2b",
+        "source": "node-1b",
+        "target": "node-2b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-2a",
+        "source": "node-2a",
+        "target": "Frontend",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-2b",
+        "source": "node-2b",
+        "target": "Frontend",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-dr-1a",
+        "source": "node-1a",
+        "target": "disaster-recovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-dr-1b",
+        "source": "node-1b",
+        "target": "disaster-recovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-dr-2a",
+        "source": "node-2a",
+        "target": "disaster-recovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-dr-2b",
+        "source": "node-2b",
+        "target": "disaster-recovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  }
 }
