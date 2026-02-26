@@ -560,36 +560,21 @@
     }
   ],
   "architecture_generation": {
-    "description": "This is an architectural diagram for a digital insurance management system utilizing Azure services to ensure scalability, security, and user-friendliness. It encompasses various components including frontend, backend, database storage, authentication, analytics, DevOps, security, notifications, scalability, backup, and optional AI services.",
+    "description": "The architecture of a digital insurance management system on Azure with resources for frontend, authentication, business logic, storage, analytics, monitoring, security, notifications, scalability, DevOps, and disaster recovery.",
     "nodes": [
       {
-        "id": "Frontend",
+        "id": "frontend",
+        "type": "group",
         "data": {
-          "label": "Azure Frontend Services"
+          "label": "Frontend"
         },
         "position": {
-          "x": 50,
+          "x": 100,
           "y": 50
         },
         "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "group-1",
-        "type": "group",
-        "data": {
-          "label": "Backend"
-        },
-        "position": {
-          "x": 300,
-          "y": 100
-        },
-        "style": {
           "width": 250,
-          "height": 150,
+          "height": 400,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -597,29 +582,29 @@
         }
       },
       {
-        "id": "Backend-API",
+        "id": "app-service",
         "data": {
-          "label": "Azure App Service (Backend API)"
+          "label": "Azure App Service (Web Apps)"
         },
         "position": {
-          "x": 310,
-          "y": 120
+          "x": 120,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "frontend",
         "extent": "parent"
       },
       {
-        "id": "Backend-Functions",
+        "id": "cdn",
         "data": {
-          "label": "Azure Functions"
+          "label": "Azure CDN"
         },
         "position": {
-          "x": 310,
+          "x": 120,
           "y": 200
         },
         "style": {
@@ -627,22 +612,22 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "frontend",
         "extent": "parent"
       },
       {
-        "id": "group-2",
+        "id": "auth",
         "type": "group",
         "data": {
-          "label": "Database Storage"
+          "label": "Authentication and Security"
         },
         "position": {
-          "x": 600,
-          "y": 100
+          "x": 400,
+          "y": 50
         },
         "style": {
           "width": 250,
-          "height": 150,
+          "height": 300,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -650,29 +635,29 @@
         }
       },
       {
-        "id": "SQL-Database",
+        "id": "azure-ad",
         "data": {
-          "label": "Azure SQL Database"
+          "label": "Azure Active Directory"
         },
         "position": {
-          "x": 610,
-          "y": 120
+          "x": 420,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "auth",
         "extent": "parent"
       },
       {
-        "id": "Cosmos-DB",
+        "id": "mfa",
         "data": {
-          "label": "Azure Cosmos DB"
+          "label": "Azure MFA"
         },
         "position": {
-          "x": 610,
+          "x": 420,
           "y": 200
         },
         "style": {
@@ -680,15 +665,68 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "auth",
+        "extent": "parent"
+      },
+      {
+        "id": "api-business",
+        "type": "group",
+        "data": {
+          "label": "API and Business Layer"
+        },
+        "position": {
+          "x": 700,
+          "y": 50
+        },
+        "style": {
+          "width": 250,
+          "height": 300,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "functions-app-service",
+        "data": {
+          "label": "Azure Functions/ App Service"
+        },
+        "position": {
+          "x": 720,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "api-business",
+        "extent": "parent"
+      },
+      {
+        "id": "api-management",
+        "data": {
+          "label": "API Management"
+        },
+        "position": {
+          "x": 720,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "api-business",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1-BackendAPI-To-Frontend",
-        "source": "Backend-API",
-        "target": "Frontend",
+        "id": "e1",
+        "source": "app-service",
+        "target": "azure-ad",
         "type": "default",
         "animated": true,
         "style": {
@@ -696,9 +734,9 @@
         }
       },
       {
-        "id": "e2-BackendFunctions-To-Frontend",
-        "source": "Backend-Functions",
-        "target": "Frontend",
+        "id": "e2",
+        "source": "cdn",
+        "target": "functions-app-service",
         "type": "default",
         "animated": true,
         "style": {
@@ -706,9 +744,9 @@
         }
       },
       {
-        "id": "e3-SQL-Database-To-BackendAPI",
-        "source": "SQL-Database",
-        "target": "Backend-API",
+        "id": "e3",
+        "source": "azure-ad",
+        "target": "functions-app-service",
         "type": "default",
         "animated": true,
         "style": {
@@ -716,9 +754,9 @@
         }
       },
       {
-        "id": "e4-Cosmos-DB-To-BackendFunctions",
-        "source": "Cosmos-DB",
-        "target": "Backend-Functions",
+        "id": "e4",
+        "source": "mfa",
+        "target": "api-management",
         "type": "default",
         "animated": true,
         "style": {
