@@ -560,21 +560,36 @@
     }
   ],
   "architecture_generation": {
-    "description": "The architecture of a digital insurance management system on Azure with resources for frontend, authentication, business logic, storage, analytics, monitoring, security, notifications, scalability, DevOps, and disaster recovery.",
+    "description": "This architecture diagram showcases a comprehensive digital insurance management system on the Azure platform, featuring frontend services for web and mobile applications, APIs and business logic management, backend services for policy and claim management, various storage solutions, authentication and security management, scalability and performance optimization, monitoring and analytics, DevOps practices, dashboards and reporting, messaging and notifications, payment processing, and external integrations.",
     "nodes": [
       {
-        "id": "frontend",
-        "type": "group",
+        "id": "Frontend",
         "data": {
-          "label": "Frontend"
+          "label": "Frontend Services"
         },
         "position": {
-          "x": 100,
+          "x": 50,
           "y": 50
         },
         "style": {
-          "width": 250,
-          "height": 400,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "APIs and Business Logic"
+        },
+        "position": {
+          "x": 300,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -582,151 +597,98 @@
         }
       },
       {
-        "id": "app-service",
-        "data": {
-          "label": "Azure App Service (Web Apps)"
-        },
-        "position": {
-          "x": 120,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "frontend",
-        "extent": "parent"
-      },
-      {
-        "id": "cdn",
-        "data": {
-          "label": "Azure CDN"
-        },
-        "position": {
-          "x": 120,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "frontend",
-        "extent": "parent"
-      },
-      {
-        "id": "auth",
-        "type": "group",
-        "data": {
-          "label": "Authentication and Security"
-        },
-        "position": {
-          "x": 400,
-          "y": 50
-        },
-        "style": {
-          "width": 250,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "azure-ad",
-        "data": {
-          "label": "Azure Active Directory"
-        },
-        "position": {
-          "x": 420,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "auth",
-        "extent": "parent"
-      },
-      {
-        "id": "mfa",
-        "data": {
-          "label": "Azure MFA"
-        },
-        "position": {
-          "x": 420,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "auth",
-        "extent": "parent"
-      },
-      {
-        "id": "api-business",
-        "type": "group",
-        "data": {
-          "label": "API and Business Layer"
-        },
-        "position": {
-          "x": 700,
-          "y": 50
-        },
-        "style": {
-          "width": 250,
-          "height": 300,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "functions-app-service",
-        "data": {
-          "label": "Azure Functions/ App Service"
-        },
-        "position": {
-          "x": 720,
-          "y": 100
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "api-business",
-        "extent": "parent"
-      },
-      {
-        "id": "api-management",
+        "id": "node-1a",
         "data": {
           "label": "API Management"
         },
         "position": {
-          "x": 720,
-          "y": 200
+          "x": 350,
+          "y": 100
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "api-business",
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "node-1b",
+        "data": {
+          "label": "Logic Apps"
+        },
+        "position": {
+          "x": 350,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 650,
+          "y": 50
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "node-2a",
+        "data": {
+          "label": "Policy Management"
+        },
+        "position": {
+          "x": 700,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "node-2b",
+        "data": {
+          "label": "Claims Tracking"
+        },
+        "position": {
+          "x": 700,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
         "extent": "parent"
       }
     ],
     "edges": [
       {
-        "id": "e1",
-        "source": "app-service",
-        "target": "azure-ad",
+        "id": "e1-1a",
+        "source": "Frontend",
+        "target": "node-1a",
         "type": "default",
         "animated": true,
         "style": {
@@ -734,9 +696,9 @@
         }
       },
       {
-        "id": "e2",
-        "source": "cdn",
-        "target": "functions-app-service",
+        "id": "e1-1b",
+        "source": "Frontend",
+        "target": "node-1b",
         "type": "default",
         "animated": true,
         "style": {
@@ -744,9 +706,9 @@
         }
       },
       {
-        "id": "e3",
-        "source": "azure-ad",
-        "target": "functions-app-service",
+        "id": "e1-2a",
+        "source": "node-1a",
+        "target": "node-2a",
         "type": "default",
         "animated": true,
         "style": {
@@ -754,9 +716,29 @@
         }
       },
       {
-        "id": "e4",
-        "source": "mfa",
-        "target": "api-management",
+        "id": "e1-2b",
+        "source": "node-1b",
+        "target": "node-2b",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-2a",
+        "source": "node-2a",
+        "target": "Frontend",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-2b",
+        "source": "node-2b",
+        "target": "Frontend",
         "type": "default",
         "animated": true,
         "style": {
