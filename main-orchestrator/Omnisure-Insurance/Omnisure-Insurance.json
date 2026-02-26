@@ -559,6 +559,167 @@
       "test_cases": "Feature: Regular Security Audits\n\nScenario: Schedule Regular Audits\nGiven the platform is in use\nWhen a new quarter begins\nThen a security audit should be scheduled automatically\n\nScenario: Generate Audit Report\nGiven a security audit is completed\nWhen vulnerabilities are identified\nThen a report should be generated, highlighting vulnerabilities and recommendations\n\nScenario: Address Vulnerabilities\nGiven vulnerabilities are identified in an audit\nWhen the report is reviewed\nThen all identified vulnerabilities must be addressed within 30 days"
     }
   ],
-  "architecture_generation": null,
+  "architecture_generation": {
+    "description": "This architecture represents a digital insurance management system with a user interface layer, authentication, API management, application logic, database, storage, security, monitoring, messaging, analytics, DevOps, AI/ML, administration, and networking features.",
+    "nodes": [
+      {
+        "id": "user-interface",
+        "type": "group",
+        "data": {
+          "label": "User Interface Layer"
+        },
+        "position": {
+          "x": 50,
+          "y": 50
+        },
+        "style": {
+          "width": 200,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "web-app",
+        "data": {
+          "label": "Web Application (React.js)"
+        },
+        "position": {
+          "x": 60,
+          "y": 80
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "user-interface",
+        "extent": "parent"
+      },
+      {
+        "id": "mobile-app",
+        "data": {
+          "label": "Mobile App (React Native)"
+        },
+        "position": {
+          "x": 60,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "user-interface",
+        "extent": "parent"
+      },
+      {
+        "id": "auth-management",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Authorization"
+        },
+        "position": {
+          "x": 300,
+          "y": 50
+        },
+        "style": {
+          "width": 200,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "azure-ad",
+        "data": {
+          "label": "Azure AD B2C"
+        },
+        "position": {
+          "x": 310,
+          "y": 110
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "auth-management",
+        "extent": "parent"
+      },
+      {
+        "id": "api-management",
+        "type": "group",
+        "data": {
+          "label": "API Management"
+        },
+        "position": {
+          "x": 550,
+          "y": 50
+        },
+        "style": {
+          "width": 200,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "azure-api",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 560,
+          "y": 110
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "api-management",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1-1a",
+        "source": "web-app",
+        "target": "azure-api",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e1-1b",
+        "source": "mobile-app",
+        "target": "azure-api",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2-2a",
+        "source": "azure-api",
+        "target": "azure-ad",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
   "architecture_validation": null
 }
