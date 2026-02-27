@@ -1,14 +1,14 @@
 [
   {
     "source_file": "backend/product_catalog/controllers/__init__.py",
-    "test_file": "tests/test_catalog_controller.py",
-    "testcases_summary": "The tests verify the functionality of the catalog_controller endpoints for products, including fetching, creating, updating, and deleting products under various scenarios such as successful operations, handling of non-existing products, and missing fields in requests.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Cartly/blob/main/tests/test_catalog_controller.py"
+    "test_file": "tests/test_product_catalog.py",
+    "testcases_summary": "The tests verify the existence, registration, and accessibility of the product catalog blueprint in a Flask application, including handling registered and unregistered paths as well as sample route responses.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Cartly/blob/main/tests/test_product_catalog.py"
   },
   {
     "source_file": "backend/product_catalog/controllers/catalog_controller.py",
-    "test_file": "tests/test_health_check.py",
-    "testcases_summary": "The tests verify the health check endpoint of the Product Catalog API, specifically checking for successful responses, invalid method handling, and invalid route handling.",
-    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Cartly/blob/main/tests/test_health_check.py"
+    "test_file": "tests/test_product_catalog.py",
+    "testcases_summary": "The tests verify the health check endpoint of the Product Catalog API, ensuring it returns a 200 status code with a healthy status message and handles exceptions by returning a 500 status code.",
+    "test_file_complete_path": "https://github.com/Pardhu-Guttula/Cartly/blob/main/tests/test_product_catalog.py"
   }
 ]
