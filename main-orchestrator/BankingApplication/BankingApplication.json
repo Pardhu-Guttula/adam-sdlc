@@ -1,1 +1,43 @@
-{"session_id":"b4fe61db-19d0-4476-b36d-33e0b13cb0dd","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"},{"error":"Missing workflow_id in log"}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "https://github.com/Pardhu-Guttula/BankingApplication",
+  "epics": [
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    },
+    {
+      "error": "Missing workflow_id in log"
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
+}
