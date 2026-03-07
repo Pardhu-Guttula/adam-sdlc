@@ -742,6 +742,319 @@
       "description": "As a user, I want a dashboard that integrates header, side nav, and main content, so that I can view all relevant data effectively.\n\nFigma Design Reference - Header: https://www.figma.com/design/iwPK7TaEJfw92DWcFa7Sqc/banking---sdlc?node-id=1-280&m=dev\nFigma Design Reference - Side Navigation Bar: https://www.figma.com/design/iwPK7TaEJfw92DWcFa7Sqc/banking---sdlc?node-id=1-224&m=dev\nFigma Design Reference - Main Content Area: https://www.figma.com/design/iwPK7TaEJfw92DWcFa7Sqc/banking---sdlc?node-id=1-5&m=dev\n\nCore Domain Objects:\n- Dashboard Section\n- Integrated Elements\n\nAttributes & Rules:\n- Visibility\n- Interaction\n\nAcceptance Criteria:\n\nScenario: Dashboard visibility\nGiven the user\nWhen accessing the dashboard\nThen all integrated elements are visible\n\nScenario: Looking for key data\nGiven user\nWhen using dashboard\nThen critical data is accessible\n\nScenario: Dashboard responsiveness\nGiven user\nWhen interacting with dashboard\nThen it loads smoothly\n\nTest Cases:\n\nFeature: Dashboard\n\nScenario: Dashboard visibility\nGiven the user\nWhen accessing the dashboard\nThen all integrated elements are visible\n\nScenario: Looking for key data\nGiven user\nWhen using dashboard\nThen critical data is accessible\n\nPriority: High - Centralizes user experience"
     }
   ],
-  "architecture_generation": null,
+  "architecture_generation": {
+    "description": "Architecture for a self-service banking portal with front-end, security, middleware, back-end, and monitoring services.",
+    "nodes": [
+      {
+        "id": "Web Portal",
+        "data": {
+          "label": "Responsive UI"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "security",
+        "type": "group",
+        "data": {
+          "label": "Authentication and Security"
+        },
+        "position": {
+          "x": 300,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Azure AD B2C",
+        "data": {
+          "label": "Azure AD B2C"
+        },
+        "position": {
+          "x": 320,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "security",
+        "extent": "parent"
+      },
+      {
+        "id": "Azure Key Vault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 320,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "security",
+        "extent": "parent"
+      },
+      {
+        "id": "middleware",
+        "type": "group",
+        "data": {
+          "label": "Middleware Services"
+        },
+        "position": {
+          "x": 650,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "API Management",
+        "data": {
+          "label": "API Management"
+        },
+        "position": {
+          "x": 670,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "middleware",
+        "extent": "parent"
+      },
+      {
+        "id": "Azure Functions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 670,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "middleware",
+        "extent": "parent"
+      },
+      {
+        "id": "backend",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 1000,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQL Database",
+        "data": {
+          "label": "SQL Database"
+        },
+        "position": {
+          "x": 1020,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "backend",
+        "extent": "parent"
+      },
+      {
+        "id": "Blob Storage",
+        "data": {
+          "label": "Blob Storage"
+        },
+        "position": {
+          "x": 1020,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "backend",
+        "extent": "parent"
+      },
+      {
+        "id": "monitoring",
+        "type": "group",
+        "data": {
+          "label": "Monitoring and Analytics"
+        },
+        "position": {
+          "x": 1350,
+          "y": 100
+        },
+        "style": {
+          "width": 300,
+          "height": 150,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Monitor",
+        "data": {
+          "label": "Azure Monitor"
+        },
+        "position": {
+          "x": 1370,
+          "y": 140
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "monitoring",
+        "extent": "parent"
+      },
+      {
+        "id": "Application Insights",
+        "data": {
+          "label": "App Insights"
+        },
+        "position": {
+          "x": 1370,
+          "y": 180
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "monitoring",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge1",
+        "source": "Web Portal",
+        "target": "Azure AD B2C",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge2",
+        "source": "Web Portal",
+        "target": "API Management",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge3",
+        "source": "Azure AD B2C",
+        "target": "SQL Database",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge4",
+        "source": "Azure Key Vault",
+        "target": "Blob Storage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge5",
+        "source": "API Management",
+        "target": "SQL Database",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge6",
+        "source": "Azure Functions",
+        "target": "Monitor",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge7",
+        "source": "SQL Database",
+        "target": "Monitor",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "edge8",
+        "source": "Blob Storage",
+        "target": "Application Insights",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
   "architecture_validation": null
 }
