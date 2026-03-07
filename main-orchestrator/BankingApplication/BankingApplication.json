@@ -1206,7 +1206,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "Added required reliability components for Azure SQL multi-region failover (geo-replica and failover group) and connected them to the existing SQL node. All original nodes/edges preserved; no duplicates or missing references. Architecture quality rating: Improved (Reliability strengthened).",
+    "updatedDescription": "Added required security and reliability components per findings: introduced Azure Key Vault for secrets/certificates and Azure SQL Geo-Replication for DR, with new edges from API Management and Entra to Key Vault and from Azure SQL Database to Geo-Replication. Architecture quality rating: Improved (addresses critical Security and Reliability gaps).",
     "nodes": [
       {
         "id": "n-customer",
@@ -1436,30 +1436,30 @@
         "extent": "parent"
       },
       {
-        "id": "n-sql-geo-replica",
+        "id": "n-keyvault",
         "data": {
-          "label": "Azure SQL Geo-Replica (Secondary Region)"
+          "label": "Azure Key Vault"
         },
         "position": {
-          "x": 20,
-          "y": 230
+          "x": 200,
+          "y": 10
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-data",
+        "parentId": "g-identity",
         "extent": "parent"
       },
       {
-        "id": "n-sql-failover-group",
+        "id": "n-sql-georeplication",
         "data": {
-          "label": "Azure SQL Failover Group"
+          "label": "Azure SQL Geo-Replication (DR)"
         },
         "position": {
-          "x": 20,
-          "y": 310
+          "x": 200,
+          "y": 10
         },
         "style": {
           "border": "none",
@@ -1553,8 +1553,8 @@
       },
       {
         "id": "e9",
-        "source": "n-sql",
-        "target": "n-sql-geo-replica",
+        "source": "n-apim",
+        "target": "n-keyvault",
         "type": "default",
         "animated": true,
         "style": {
@@ -1563,8 +1563,8 @@
       },
       {
         "id": "e10",
-        "source": "n-sql-failover-group",
-        "target": "n-sql",
+        "source": "n-entra",
+        "target": "n-keyvault",
         "type": "default",
         "animated": true,
         "style": {
@@ -1573,8 +1573,8 @@
       },
       {
         "id": "e11",
-        "source": "n-sql-failover-group",
-        "target": "n-sql-geo-replica",
+        "source": "n-sql",
+        "target": "n-sql-georeplication",
         "type": "default",
         "animated": true,
         "style": {
