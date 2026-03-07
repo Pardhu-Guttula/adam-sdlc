@@ -8,7 +8,7 @@
       "summary": "Implement secure authentication and authorization mechanisms.",
       "description": "Develop a secure user authentication system using OAuth and implement multi-factor authentication (MFA). Ensure role-based access control to manage user permissions based on their profile and authorization level.",
       "dependencies": [],
-      "jira_epic_key": "ADAM-3029"
+      "jira_epic_key": "ADAM-3046"
     },
     {
       "id": "EPIC-2",
@@ -16,7 +16,7 @@
       "summary": "Design the database schema for storing user data and banking transactions.",
       "description": "Create a PostgreSQL database schema to manage user profiles, banking products, transaction histories, and other essential entities. Ensure data normalization and implement necessary indexing for optimal performance.",
       "dependencies": [],
-      "jira_epic_key": "ADAM-3035"
+      "jira_epic_key": "ADAM-3045"
     },
     {
       "id": "EPIC-3",
@@ -24,7 +24,7 @@
       "summary": "Develop the basic UI shell for the self-service portal.",
       "description": "Design the initial user interface using React, providing a responsive layout adaptable to desktop, tablet, and mobile devices. Create a clean, user-friendly design consistent with the bank's branding guidelines.",
       "dependencies": [],
-      "jira_epic_key": "ADAM-3037"
+      "jira_epic_key": "ADAM-3042"
     },
     {
       "id": "EPIC-4",
@@ -36,7 +36,7 @@
         "EPIC-2",
         "EPIC-3"
       ],
-      "jira_epic_key": "ADAM-3030"
+      "jira_epic_key": "ADAM-3047"
     },
     {
       "id": "EPIC-5",
@@ -47,7 +47,7 @@
         "EPIC-2",
         "EPIC-3"
       ],
-      "jira_epic_key": "ADAM-3039"
+      "jira_epic_key": "ADAM-3041"
     },
     {
       "id": "EPIC-6",
@@ -58,7 +58,7 @@
         "EPIC-2",
         "EPIC-3"
       ],
-      "jira_epic_key": "ADAM-3038"
+      "jira_epic_key": "ADAM-3044"
     },
     {
       "id": "EPIC-7",
@@ -68,7 +68,7 @@
       "dependencies": [
         "EPIC-2"
       ],
-      "jira_epic_key": "ADAM-3034"
+      "jira_epic_key": "ADAM-3043"
     },
     {
       "id": "EPIC-8",
@@ -80,7 +80,7 @@
         "EPIC-6",
         "EPIC-7"
       ],
-      "jira_epic_key": "ADAM-3032"
+      "jira_epic_key": "ADAM-3049"
     },
     {
       "id": "EPIC-9",
@@ -90,7 +90,7 @@
       "dependencies": [
         "EPIC-8"
       ],
-      "jira_epic_key": "ADAM-3031"
+      "jira_epic_key": "ADAM-3040"
     },
     {
       "id": "EPIC-10",
@@ -101,7 +101,7 @@
         "EPIC-6",
         "EPIC-8"
       ],
-      "jira_epic_key": "ADAM-3033"
+      "jira_epic_key": "ADAM-3050"
     },
     {
       "id": "EPIC-11",
@@ -111,7 +111,7 @@
       "dependencies": [
         "EPIC-5"
       ],
-      "jira_epic_key": "ADAM-3036"
+      "jira_epic_key": "ADAM-3048"
     },
     {
       "id": "EPIC-12",
@@ -122,7 +122,7 @@
         "EPIC-1",
         "EPIC-2"
       ],
-      "jira_epic_key": "ADAM-3028"
+      "jira_epic_key": "ADAM-3051"
     }
   ],
   "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
