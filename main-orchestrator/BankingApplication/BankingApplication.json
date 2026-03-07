@@ -1,1 +1,144 @@
-{"session_id":"b4fe61db-19d0-4476-b36d-33e0b13cb0dd","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"id":"EPIC-1","title":"User Authentication","summary":"Implement secure user authentication including multi-factor authentication.","description":"Develop a secure user authentication system using multi-factor authentication methods to ensure users can safely log in to the portal. Integrate with secure APIs to handle authentication processes while maintaining compliance with financial regulations.","dependencies":[],"jira_epic_key":"ADAM-2735"},{"id":"EPIC-2","title":"Dashboard Setup","summary":"Create a personalized user dashboard.","description":"Design and implement a personalized dashboard that displays available banking products and services based on the user's profile and eligibility. Ensure the dashboard is interactive and provides a comprehensive overview of the user's financial status.","dependencies":[],"jira_epic_key":"ADAM-2737"},{"id":"EPIC-3","title":"Profile Management","summary":"Enable users to manage their profile information.","description":"Allow users to update and manage their personal information, including address, contact details, and other profile-related data. Ensure profile changes are securely saved and reflected in the core banking system.","dependencies":[],"jira_epic_key":"ADAM-2728"},{"id":"EPIC-4","title":"Core Data Structure","summary":"Establish the core data structure for user and service data.","description":"Set up the foundational database structure in PostgreSQL to store user data, service information, and other crucial data entities. Ensure data integrity and optimal query performance.","dependencies":[],"jira_epic_key":"ADAM-2740"},{"id":"EPIC-5","title":"Account Requests","summary":"Enable users to submit account opening requests.","description":"Provide a streamlined workflow for users to submit requests for opening new accounts. Integrate the workflow with the core banking system to handle these requests efficiently and securely.","dependencies":["EPIC-1","EPIC-2"],"jira_epic_key":"ADAM-2730"},{"id":"EPIC-6","title":"Service Modifications","summary":"Allow users to request modifications to their existing services.","description":"Develop features that enable users to submit requests for modifying their existing banking services. Ensure that service modification workflows are simplified and require minimal user interaction to complete.","dependencies":["EPIC-1","EPIC-2"],"jira_epic_key":"ADAM-2734"},{"id":"EPIC-7","title":"Real-time Status Updates","summary":"Provide real-time status updates for submitted requests.","description":"Implement a notification system that provides users with real-time updates on the status of their submitted requests. Notify users via email and in-app notifications to keep them informed throughout the process.","dependencies":["EPIC-5","EPIC-6"],"jira_epic_key":"ADAM-2731"},{"id":"EPIC-8","title":"Email Notifications","summary":"Send email notifications for important events.","description":"Set up an email notification system that informs users about important events such as status updates, new product offerings, and other relevant information. Ensure emails are securely sent and comply with privacy regulations.","dependencies":["EPIC-5","EPIC-6","EPIC-7"],"jira_epic_key":"ADAM-2729"},{"id":"EPIC-9","title":"Responsive Design","summary":"Ensure the portal is responsive across various devices.","description":"Design the portal's UI to be fully responsive, providing a consistent user experience across desktop, tablet, and mobile devices. Use React to create adaptive components that scale and adjust to different screen sizes.","dependencies":["EPIC-2"],"jira_epic_key":"ADAM-2739"},{"id":"EPIC-10","title":"Interaction History","summary":"Maintain a comprehensive history of user interactions.","description":"Develop a system to log and maintain a comprehensive history of all user interactions within the portal. Ensure users can view past requests, modifications, and other interactions while securing sensitive financial data.","dependencies":["EPIC-1","EPIC-2","EPIC-5","EPIC-6"],"jira_epic_key":"ADAM-2738"},{"id":"EPIC-11","title":"Document Upload","summary":"Enable users to upload necessary documentation.","description":"Implement a document upload feature that allows users to upload required documents directly through the portal. Ensure secure handling and storage of uploaded documents, integrating with the core banking system where necessary.","dependencies":["EPIC-5","EPIC-6"],"jira_epic_key":"ADAM-2736"},{"id":"EPIC-12","title":"Role-based Access Control","summary":"Implement role-based access control for security.","description":"Develop a role-based access control system to ensure users can only view and access services appropriate to their profile and authorization level. Enhance security by enforcing strict access policies.","dependencies":["EPIC-1"],"jira_epic_key":"ADAM-2733"},{"id":"EPIC-13","title":"Core Banking Integration","summary":"Integrate the portal with the core banking system.","description":"Ensure seamless integration with the bank's existing core banking system to synchronize user data, transaction history, and other pertinent information. Use secure APIs to facilitate communication between the portal and core banking infrastructure.","dependencies":["EPIC-1","EPIC-4","EPIC-5","EPIC-6"],"jira_epic_key":"ADAM-2732"}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "https://github.com/Pardhu-Guttula/BankingApplication",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication",
+      "summary": "Implement secure user authentication including multi-factor authentication.",
+      "description": "Develop a secure user authentication system using multi-factor authentication methods to ensure users can safely log in to the portal. Integrate with secure APIs to handle authentication processes while maintaining compliance with financial regulations.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-2735"
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Dashboard Setup",
+      "summary": "Create a personalized user dashboard.",
+      "description": "Design and implement a personalized dashboard that displays available banking products and services based on the user's profile and eligibility. Ensure the dashboard is interactive and provides a comprehensive overview of the user's financial status.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-2737"
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Profile Management",
+      "summary": "Enable users to manage their profile information.",
+      "description": "Allow users to update and manage their personal information, including address, contact details, and other profile-related data. Ensure profile changes are securely saved and reflected in the core banking system.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-2728"
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Core Data Structure",
+      "summary": "Establish the core data structure for user and service data.",
+      "description": "Set up the foundational database structure in PostgreSQL to store user data, service information, and other crucial data entities. Ensure data integrity and optimal query performance.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-2740"
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Account Requests",
+      "summary": "Enable users to submit account opening requests.",
+      "description": "Provide a streamlined workflow for users to submit requests for opening new accounts. Integrate the workflow with the core banking system to handle these requests efficiently and securely.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-2730"
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Service Modifications",
+      "summary": "Allow users to request modifications to their existing services.",
+      "description": "Develop features that enable users to submit requests for modifying their existing banking services. Ensure that service modification workflows are simplified and require minimal user interaction to complete.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-2734"
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Real-time Status Updates",
+      "summary": "Provide real-time status updates for submitted requests.",
+      "description": "Implement a notification system that provides users with real-time updates on the status of their submitted requests. Notify users via email and in-app notifications to keep them informed throughout the process.",
+      "dependencies": [
+        "EPIC-5",
+        "EPIC-6"
+      ],
+      "jira_epic_key": "ADAM-2731"
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Email Notifications",
+      "summary": "Send email notifications for important events.",
+      "description": "Set up an email notification system that informs users about important events such as status updates, new product offerings, and other relevant information. Ensure emails are securely sent and comply with privacy regulations.",
+      "dependencies": [
+        "EPIC-5",
+        "EPIC-6",
+        "EPIC-7"
+      ],
+      "jira_epic_key": "ADAM-2729"
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across various devices.",
+      "description": "Design the portal's UI to be fully responsive, providing a consistent user experience across desktop, tablet, and mobile devices. Use React to create adaptive components that scale and adjust to different screen sizes.",
+      "dependencies": [
+        "EPIC-2"
+      ],
+      "jira_epic_key": "ADAM-2739"
+    },
+    {
+      "id": "EPIC-10",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of user interactions.",
+      "description": "Develop a system to log and maintain a comprehensive history of all user interactions within the portal. Ensure users can view past requests, modifications, and other interactions while securing sensitive financial data.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-2",
+        "EPIC-5",
+        "EPIC-6"
+      ],
+      "jira_epic_key": "ADAM-2738"
+    },
+    {
+      "id": "EPIC-11",
+      "title": "Document Upload",
+      "summary": "Enable users to upload necessary documentation.",
+      "description": "Implement a document upload feature that allows users to upload required documents directly through the portal. Ensure secure handling and storage of uploaded documents, integrating with the core banking system where necessary.",
+      "dependencies": [
+        "EPIC-5",
+        "EPIC-6"
+      ],
+      "jira_epic_key": "ADAM-2736"
+    },
+    {
+      "id": "EPIC-12",
+      "title": "Role-based Access Control",
+      "summary": "Implement role-based access control for security.",
+      "description": "Develop a role-based access control system to ensure users can only view and access services appropriate to their profile and authorization level. Enhance security by enforcing strict access policies.",
+      "dependencies": [
+        "EPIC-1"
+      ],
+      "jira_epic_key": "ADAM-2733"
+    },
+    {
+      "id": "EPIC-13",
+      "title": "Core Banking Integration",
+      "summary": "Integrate the portal with the core banking system.",
+      "description": "Ensure seamless integration with the bank's existing core banking system to synchronize user data, transaction history, and other pertinent information. Use secure APIs to facilitate communication between the portal and core banking infrastructure.",
+      "dependencies": [
+        "EPIC-1",
+        "EPIC-4",
+        "EPIC-5",
+        "EPIC-6"
+      ],
+      "jira_epic_key": "ADAM-2732"
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
+}
