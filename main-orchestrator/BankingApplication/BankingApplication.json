@@ -1,1 +1,106 @@
-{"session_id":"b4fe61db-19d0-4476-b36d-33e0b13cb0dd","project_name":"BankingApplication","jira_url":"https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog","repo_link":"https://github.com/Pardhu-Guttula/BankingApplication","epics":[{"id":"EPIC-1","title":"User Authentication","summary":"Implement secure user authentication using multi-factor authentication.","description":"Implement secure user authentication allowing customers to log in using multi-factor authentication methods, ensuring security and compliance with banking regulations. The authentication system should integrate with existing identity providers and support various forms of multi-factor authentication such as SMS, email, and authenticator apps. Tech stack: React frontend, FastAPI backend, PostgreSQL database.","dependencies":[],"jira_epic_key":"ADAM-2306"},{"id":"EPIC-2","title":"Database Schema Design","summary":"Design the database schema to securely store user data and application states.","description":"Design and implement the PostgreSQL database schema to securely store user data, application states, and interaction history. Ensure database security measures are in place, including encryption at rest and in transit. The schema should be optimized for performance and reliability. Tech stack: PostgreSQL.","dependencies":[],"jira_epic_key":"ADAM-2309"},{"id":"EPIC-3","title":"Core UI Development","summary":"Develop the core user interface components for the self-service portal.","description":"Develop the core user interface components for the banking self-service portal using React. Ensure the UI is responsive and provides a consistent experience across desktop, tablet, and mobile devices. The core UI should include the login screen, user dashboard, and basic navigation elements. Tech stack: React.","dependencies":[],"jira_epic_key":"ADAM-2304"},{"id":"EPIC-4","title":"Personalized Dashboard","summary":"Create a personalized dashboard displaying banking products and services based on user profile.","description":"Create a personalized dashboard that displays relevant banking products and services based on the user's profile and eligibility. The dashboard should provide an intuitive and user-friendly experience, allowing users to easily navigate through available options. Tech stack: React frontend, FastAPI backend, PostgreSQL database.","dependencies":["EPIC-3"],"jira_epic_key":"ADAM-2308"},{"id":"EPIC-5","title":"Account Opening Workflow","summary":"Implement streamlined workflows for new account opening requests.","description":"Implement streamlined workflows allowing users to submit new account opening requests with minimal clicks. The system should guide users through the process, validate inputs, and ensure all necessary information and documentation are collected. Tech stack: React frontend, FastAPI backend, PostgreSQL database.","dependencies":["EPIC-4"],"jira_epic_key":"ADAM-2307"},{"id":"EPIC-6","title":"Service Modifications Workflow","summary":"Enable users to submit service modification requests through streamlined workflows.","description":"Enable users to submit requests for modifications to their existing services through streamlined workflows. The system should allow users to select the service, provide necessary details, and upload any required documentation. Tech stack: React frontend, FastAPI backend, PostgreSQL database.","dependencies":["EPIC-4"],"jira_epic_key":"ADAM-2305"},{"id":"EPIC-7","title":"Notification System","summary":"Implement real-time status updates and email notifications for user requests.","description":"Implement a notification system that provides real-time status updates and email notifications to users regarding their submitted requests. The system should ensure timely delivery and accurate status tracking. Tech stack: React frontend, FastAPI backend, PostgreSQL database.","dependencies":["EPIC-5","EPIC-6"],"jira_epic_key":"ADAM-2312"},{"id":"EPIC-8","title":"Integration with Core Banking System","summary":"Integrate the self-service portal with the bank's existing core banking system.","description":"Integrate the self-service portal with the bank's existing core banking system to ensure seamless data exchange and real-time synchronization of user activities and financial transactions. Tech stack: FastAPI backend, PostgreSQL database.","dependencies":["EPIC-5","EPIC-6"],"jira_epic_key":"ADAM-2313"},{"id":"EPIC-9","title":"Interaction History","summary":"Maintain a comprehensive history of all user interactions.","description":"Maintain a comprehensive history of all user interactions within the self-service portal, ensuring that users have a record of their activities and submitted requests. The interaction history should be securely stored and easily accessible by the user. Tech stack: FastAPI backend, PostgreSQL database.","dependencies":["EPIC-8"],"jira_epic_key":"ADAM-2311"},{"id":"EPIC-10","title":"Role-Based Access Controls","summary":"Implement role-based access controls to manage user permissions.","description":"Implement role-based access controls to manage user permissions within the self-service portal. Ensure that users can only view and access services appropriate to their profile and authorization level, providing an added layer of security and compliance. Tech stack: FastAPI backend, PostgreSQL database.","dependencies":["EPIC-4"],"jira_epic_key":"ADAM-2310"}],"error":"Your request is invalid or could not be processed by the service"}
+{
+  "user_prompt": "undefined",
+  "repo_link": "https://github.com/Pardhu-Guttula/BankingApplication",
+  "epics": [
+    {
+      "id": "EPIC-1",
+      "title": "User Authentication",
+      "summary": "Implement secure user authentication using multi-factor authentication.",
+      "description": "Implement secure user authentication allowing customers to log in using multi-factor authentication methods, ensuring security and compliance with banking regulations. The authentication system should integrate with existing identity providers and support various forms of multi-factor authentication such as SMS, email, and authenticator apps. Tech stack: React frontend, FastAPI backend, PostgreSQL database.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-2306"
+    },
+    {
+      "id": "EPIC-2",
+      "title": "Database Schema Design",
+      "summary": "Design the database schema to securely store user data and application states.",
+      "description": "Design and implement the PostgreSQL database schema to securely store user data, application states, and interaction history. Ensure database security measures are in place, including encryption at rest and in transit. The schema should be optimized for performance and reliability. Tech stack: PostgreSQL.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-2309"
+    },
+    {
+      "id": "EPIC-3",
+      "title": "Core UI Development",
+      "summary": "Develop the core user interface components for the self-service portal.",
+      "description": "Develop the core user interface components for the banking self-service portal using React. Ensure the UI is responsive and provides a consistent experience across desktop, tablet, and mobile devices. The core UI should include the login screen, user dashboard, and basic navigation elements. Tech stack: React.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-2304"
+    },
+    {
+      "id": "EPIC-4",
+      "title": "Personalized Dashboard",
+      "summary": "Create a personalized dashboard displaying banking products and services based on user profile.",
+      "description": "Create a personalized dashboard that displays relevant banking products and services based on the user's profile and eligibility. The dashboard should provide an intuitive and user-friendly experience, allowing users to easily navigate through available options. Tech stack: React frontend, FastAPI backend, PostgreSQL database.",
+      "dependencies": [
+        "EPIC-3"
+      ],
+      "jira_epic_key": "ADAM-2308"
+    },
+    {
+      "id": "EPIC-5",
+      "title": "Account Opening Workflow",
+      "summary": "Implement streamlined workflows for new account opening requests.",
+      "description": "Implement streamlined workflows allowing users to submit new account opening requests with minimal clicks. The system should guide users through the process, validate inputs, and ensure all necessary information and documentation are collected. Tech stack: React frontend, FastAPI backend, PostgreSQL database.",
+      "dependencies": [
+        "EPIC-4"
+      ],
+      "jira_epic_key": "ADAM-2307"
+    },
+    {
+      "id": "EPIC-6",
+      "title": "Service Modifications Workflow",
+      "summary": "Enable users to submit service modification requests through streamlined workflows.",
+      "description": "Enable users to submit requests for modifications to their existing services through streamlined workflows. The system should allow users to select the service, provide necessary details, and upload any required documentation. Tech stack: React frontend, FastAPI backend, PostgreSQL database.",
+      "dependencies": [
+        "EPIC-4"
+      ],
+      "jira_epic_key": "ADAM-2305"
+    },
+    {
+      "id": "EPIC-7",
+      "title": "Notification System",
+      "summary": "Implement real-time status updates and email notifications for user requests.",
+      "description": "Implement a notification system that provides real-time status updates and email notifications to users regarding their submitted requests. The system should ensure timely delivery and accurate status tracking. Tech stack: React frontend, FastAPI backend, PostgreSQL database.",
+      "dependencies": [
+        "EPIC-5",
+        "EPIC-6"
+      ],
+      "jira_epic_key": "ADAM-2312"
+    },
+    {
+      "id": "EPIC-8",
+      "title": "Integration with Core Banking System",
+      "summary": "Integrate the self-service portal with the bank's existing core banking system.",
+      "description": "Integrate the self-service portal with the bank's existing core banking system to ensure seamless data exchange and real-time synchronization of user activities and financial transactions. Tech stack: FastAPI backend, PostgreSQL database.",
+      "dependencies": [
+        "EPIC-5",
+        "EPIC-6"
+      ],
+      "jira_epic_key": "ADAM-2313"
+    },
+    {
+      "id": "EPIC-9",
+      "title": "Interaction History",
+      "summary": "Maintain a comprehensive history of all user interactions.",
+      "description": "Maintain a comprehensive history of all user interactions within the self-service portal, ensuring that users have a record of their activities and submitted requests. The interaction history should be securely stored and easily accessible by the user. Tech stack: FastAPI backend, PostgreSQL database.",
+      "dependencies": [
+        "EPIC-8"
+      ],
+      "jira_epic_key": "ADAM-2311"
+    },
+    {
+      "id": "EPIC-10",
+      "title": "Role-Based Access Controls",
+      "summary": "Implement role-based access controls to manage user permissions.",
+      "description": "Implement role-based access controls to manage user permissions within the self-service portal. Ensure that users can only view and access services appropriate to their profile and authorization level, providing an added layer of security and compliance. Tech stack: FastAPI backend, PostgreSQL database.",
+      "dependencies": [
+        "EPIC-4"
+      ],
+      "jira_epic_key": "ADAM-2310"
+    }
+  ],
+  "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
+  "user_stories": null,
+  "architecture_generation": null,
+  "architecture_validation": null
+}
