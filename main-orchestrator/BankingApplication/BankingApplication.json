@@ -1205,5 +1205,696 @@
       }
     ]
   },
-  "architecture_validation": null
+  "architecture_validation": {
+    "updatedDescription": "Validated and repaired the ReactFlow graph for consistency. Added required Disaster Recovery implementation nodes (Azure Site Recovery and Geo-Redundant Storage) and connected them to the existing DisasterRecovery placeholder to address the critical reliability gap. Architecture quality rating: High (with DR implementation now represented).",
+    "nodes": [
+      {
+        "id": "group-1",
+        "type": "group",
+        "data": {
+          "label": "Frontend Services"
+        },
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "style": {
+          "width": 350,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "WebApp",
+        "data": {
+          "label": "Azure App Service"
+        },
+        "position": {
+          "x": 130,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "CDN",
+        "data": {
+          "label": "Azure CDN"
+        },
+        "position": {
+          "x": 180,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "AppGateway",
+        "data": {
+          "label": "Azure Application Gateway"
+        },
+        "position": {
+          "x": 230,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-1",
+        "extent": "parent"
+      },
+      {
+        "id": "group-2",
+        "type": "group",
+        "data": {
+          "label": "Backend Services"
+        },
+        "position": {
+          "x": 500,
+          "y": 100
+        },
+        "style": {
+          "width": 350,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "Functions",
+        "data": {
+          "label": "Azure Functions"
+        },
+        "position": {
+          "x": 530,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "LogicApps",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 580,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "ApiManagement",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 630,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-2",
+        "extent": "parent"
+      },
+      {
+        "id": "group-3",
+        "type": "group",
+        "data": {
+          "label": "Data and Storage"
+        },
+        "position": {
+          "x": 900,
+          "y": 100
+        },
+        "style": {
+          "width": 350,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "SQLDatabase",
+        "data": {
+          "label": "Azure SQL Database"
+        },
+        "position": {
+          "x": 930,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "BlobStorage",
+        "data": {
+          "label": "Azure Blob Storage"
+        },
+        "position": {
+          "x": 980,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "CacheRedis",
+        "data": {
+          "label": "Azure Cache for Redis"
+        },
+        "position": {
+          "x": 1030,
+          "y": 200
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-3",
+        "extent": "parent"
+      },
+      {
+        "id": "group-4",
+        "type": "group",
+        "data": {
+          "label": "Integration with Core Banking System"
+        },
+        "position": {
+          "x": 1300,
+          "y": 100
+        },
+        "style": {
+          "width": 350,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "ServiceBus",
+        "data": {
+          "label": "Azure Service Bus"
+        },
+        "position": {
+          "x": 1330,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "IntegrationLogicApps",
+        "data": {
+          "label": "Azure Logic Apps"
+        },
+        "position": {
+          "x": 1380,
+          "y": 250
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "group-4",
+        "extent": "parent"
+      },
+      {
+        "id": "WAF",
+        "data": {
+          "label": "Azure Web Application Firewall"
+        },
+        "position": {
+          "x": 200,
+          "y": 50
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "LoadTesting",
+        "data": {
+          "label": "Azure Load Testing"
+        },
+        "position": {
+          "x": 600,
+          "y": 50
+        },
+        "style": {
+          "border": "1px solid #FF0000",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "DisasterRecovery",
+        "data": {
+          "label": "Disaster Recovery"
+        },
+        "position": {
+          "x": 1500,
+          "y": 50
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "AAD",
+        "data": {
+          "label": "Azure Active Directory"
+        },
+        "position": {
+          "x": 700,
+          "y": 300
+        },
+        "style": {
+          "border": "1px solid #0000FF",
+          "backgroundColor": "#E3F2FD"
+        }
+      },
+      {
+        "id": "KeyVault",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 800,
+          "y": 400
+        },
+        "style": {
+          "border": "1px solid #008000",
+          "backgroundColor": "#E8F5E9"
+        }
+      },
+      {
+        "id": "SecurityCenter",
+        "data": {
+          "label": "Azure Security Center"
+        },
+        "position": {
+          "x": 400,
+          "y": 400
+        },
+        "style": {
+          "border": "1px solid #FF00FF",
+          "backgroundColor": "#FCE4EC"
+        }
+      },
+      {
+        "id": "AzureSiteRecovery",
+        "data": {
+          "label": "Azure Site Recovery"
+        },
+        "position": {
+          "x": 1500,
+          "y": 140
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      },
+      {
+        "id": "GeoRedundantStorage",
+        "data": {
+          "label": "Geo-Redundant Storage (GRS)"
+        },
+        "position": {
+          "x": 1650,
+          "y": 140
+        },
+        "style": {
+          "border": "1px dashed #999",
+          "backgroundColor": "#FFF8E1"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "WebApp",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "CDN",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "AppGateway",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "Functions",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "ApiManagement",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "Functions",
+        "target": "BlobStorage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e7",
+        "source": "SQLDatabase",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e8",
+        "source": "IntegrationLogicApps",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e9",
+        "source": "WAF",
+        "target": "WebApp",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e10",
+        "source": "LoadTesting",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF0000"
+        }
+      },
+      {
+        "id": "e11",
+        "source": "DisasterRecovery",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#999999"
+        }
+      },
+      {
+        "id": "e12",
+        "source": "AAD",
+        "target": "WebApp",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#0000FF"
+        }
+      },
+      {
+        "id": "e13",
+        "source": "AAD",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#0000FF"
+        }
+      },
+      {
+        "id": "e14",
+        "source": "AAD",
+        "target": "LogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#0000FF"
+        }
+      },
+      {
+        "id": "e15",
+        "source": "AAD",
+        "target": "ApiManagement",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#0000FF"
+        }
+      },
+      {
+        "id": "e16",
+        "source": "AAD",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#0000FF"
+        }
+      },
+      {
+        "id": "e17",
+        "source": "AAD",
+        "target": "IntegrationLogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#0000FF"
+        }
+      },
+      {
+        "id": "e18",
+        "source": "KeyVault",
+        "target": "WebApp",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e19",
+        "source": "KeyVault",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e20",
+        "source": "KeyVault",
+        "target": "LogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e21",
+        "source": "KeyVault",
+        "target": "ApiManagement",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e22",
+        "source": "KeyVault",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e23",
+        "source": "KeyVault",
+        "target": "IntegrationLogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#008000"
+        }
+      },
+      {
+        "id": "e24",
+        "source": "SecurityCenter",
+        "target": "WebApp",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e25",
+        "source": "SecurityCenter",
+        "target": "Functions",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e26",
+        "source": "SecurityCenter",
+        "target": "LogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e27",
+        "source": "SecurityCenter",
+        "target": "ApiManagement",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e28",
+        "source": "SecurityCenter",
+        "target": "ServiceBus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e29",
+        "source": "SecurityCenter",
+        "target": "IntegrationLogicApps",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#FF00FF"
+        }
+      },
+      {
+        "id": "e30",
+        "source": "DisasterRecovery",
+        "target": "AzureSiteRecovery",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#999999"
+        }
+      },
+      {
+        "id": "e31",
+        "source": "DisasterRecovery",
+        "target": "GeoRedundantStorage",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#999999"
+        }
+      }
+    ]
+  }
 }
