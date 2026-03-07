@@ -1206,7 +1206,7 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "Added required security and reliability components per findings: introduced Azure Key Vault for secrets/certificates and Azure SQL Geo-Replication for DR, with new edges from API Management and Entra to Key Vault and from Azure SQL Database to Geo-Replication. Architecture quality rating: Improved (addresses critical Security and Reliability gaps).",
+    "updatedDescription": "Added required reliability and security components as new nodes (Azure WAF and DR/geo-redundancy for SQL/Blob) and connected them with new edges; repaired invalid hierarchy by removing parentId/extent from the external Core Banking node. Architecture quality rating: Good (improved security and resilience coverage).",
     "nodes": [
       {
         "id": "n-customer",
@@ -1431,35 +1431,50 @@
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-data",
-        "extent": "parent"
+        }
       },
       {
-        "id": "n-keyvault",
+        "id": "n-waf",
         "data": {
-          "label": "Azure Key Vault"
+          "label": "Azure Web Application Firewall (WAF)"
         },
         "position": {
-          "x": 200,
-          "y": 10
+          "x": 20,
+          "y": 120
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-identity",
+        "parentId": "g-edge",
         "extent": "parent"
       },
       {
-        "id": "n-sql-georeplication",
+        "id": "n-sql-dr",
         "data": {
-          "label": "Azure SQL Geo-Replication (DR)"
+          "label": "Azure SQL Geo-Replication / Failover Group"
         },
         "position": {
-          "x": 200,
-          "y": 10
+          "x": 180,
+          "y": 60
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-data",
+        "extent": "parent"
+      },
+      {
+        "id": "n-blob-dr",
+        "data": {
+          "label": "Blob Storage Geo-Redundancy (GRS/RA-GRS)"
+        },
+        "position": {
+          "x": 180,
+          "y": 150
         },
         "style": {
           "border": "none",
@@ -1553,8 +1568,8 @@
       },
       {
         "id": "e9",
-        "source": "n-apim",
-        "target": "n-keyvault",
+        "source": "n-frontdoor",
+        "target": "n-waf",
         "type": "default",
         "animated": true,
         "style": {
@@ -1563,8 +1578,8 @@
       },
       {
         "id": "e10",
-        "source": "n-entra",
-        "target": "n-keyvault",
+        "source": "n-sql",
+        "target": "n-sql-dr",
         "type": "default",
         "animated": true,
         "style": {
@@ -1573,8 +1588,8 @@
       },
       {
         "id": "e11",
-        "source": "n-sql",
-        "target": "n-sql-georeplication",
+        "source": "n-blob",
+        "target": "n-blob-dr",
         "type": "default",
         "animated": true,
         "style": {
