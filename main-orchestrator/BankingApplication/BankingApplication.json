@@ -1001,16 +1001,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "Azure customer portal architecture for banking with global edge entry via Azure Front Door (WAF/TLS) routing to Azure API Management enforcing OAuth2/OIDC with Microsoft Entra ID/B2C and RBAC, serving a Portal Web/API on Azure App Service with workflow orchestration (Durable Functions or Logic Apps) for save-and-resume, persisting operational data in Azure SQL Database and documents in Azure Blob Storage protected by Private Endpoints, Key Vault, and Defender for Storage, integrating asynchronously with Core Banking Systems through the workflow layer, and providing end-to-end observability and audit with Azure Monitor and Log Analytics collecting signals from app, data, and integration components.",
+    "description": "Azure self-service banking portal architecture where users access the portal via Azure Front Door (WAF/CDN) with optional DDoS Protection, authenticate using Microsoft Entra ID B2C with secrets and CMKs stored in Azure Key Vault, call backend services through the portal UI and backend API tier, persist workflow and customer request state in Azure SQL Database using TDE/CMK from Key Vault, and integrate privately to on-prem Core Banking over ExpressRoute/VPN patterns; Front Door routes traffic to the Portal UI which calls the Backend API, the Backend API reads and writes Azure SQL and invokes core banking operations, and SQL and the app tier exchange secrets/keys with Key Vault for encryption and credential management.",
     "nodes": [
       {
-        "id": "User",
+        "id": "n-user",
         "data": {
-          "label": "User Channels"
+          "label": "Customer (Web/Mobile)"
         },
         "position": {
           "x": 40,
-          "y": 260
+          "y": 60
         },
         "style": {
           "border": "none",
@@ -1019,18 +1019,18 @@
         }
       },
       {
-        "id": "g-edge-access",
+        "id": "g-edge",
         "type": "group",
         "data": {
-          "label": "Edge & Access"
+          "label": "Client/Edge"
         },
         "position": {
           "x": 220,
-          "y": 120
+          "y": 20
         },
         "style": {
           "width": 260,
-          "height": 200,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1038,29 +1038,29 @@
         }
       },
       {
-        "id": "edge-frontdoor",
+        "id": "n-frontdoor",
         "data": {
-          "label": "Azure Front Door"
+          "label": "Azure Front Door (WAF/CDN)"
         },
         "position": {
-          "x": 20,
-          "y": 40
+          "x": 240,
+          "y": 60
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-edge-access",
+        "parentId": "g-edge",
         "extent": "parent"
       },
       {
-        "id": "edge-apim",
+        "id": "n-ddos",
         "data": {
-          "label": "Azure API Management"
+          "label": "Azure DDoS Protection"
         },
         "position": {
-          "x": 20,
+          "x": 240,
           "y": 120
         },
         "style": {
@@ -1068,22 +1068,22 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-edge-access",
+        "parentId": "g-edge",
         "extent": "parent"
       },
       {
-        "id": "g-app-workflow",
+        "id": "g-identity",
         "type": "group",
         "data": {
-          "label": "App & Workflow"
+          "label": "Identity/Security"
         },
         "position": {
           "x": 520,
-          "y": 120
+          "y": 20
         },
         "style": {
-          "width": 280,
-          "height": 200,
+          "width": 260,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1091,29 +1091,29 @@
         }
       },
       {
-        "id": "app-portal",
+        "id": "n-entra",
         "data": {
-          "label": "Portal App Service"
+          "label": "Microsoft Entra ID B2C"
         },
         "position": {
-          "x": 20,
-          "y": 40
+          "x": 540,
+          "y": 60
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-app-workflow",
+        "parentId": "g-identity",
         "extent": "parent"
       },
       {
-        "id": "app-workflow",
+        "id": "n-kv",
         "data": {
-          "label": "Workflow Orchestrator"
+          "label": "Azure Key Vault"
         },
         "position": {
-          "x": 20,
+          "x": 540,
           "y": 120
         },
         "style": {
@@ -1121,22 +1121,22 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-app-workflow",
+        "parentId": "g-identity",
         "extent": "parent"
       },
       {
-        "id": "g-data-security",
+        "id": "g-app",
         "type": "group",
         "data": {
-          "label": "Data & Security"
+          "label": "Portal UI + API"
         },
         "position": {
-          "x": 860,
-          "y": 120
+          "x": 820,
+          "y": 20
         },
         "style": {
           "width": 280,
-          "height": 200,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1144,29 +1144,82 @@
         }
       },
       {
-        "id": "data-sql",
+        "id": "n-ui",
+        "data": {
+          "label": "Portal UI (App Service)"
+        },
+        "position": {
+          "x": 840,
+          "y": 60
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-app",
+        "extent": "parent"
+      },
+      {
+        "id": "n-api",
+        "data": {
+          "label": "Backend API (AppSvc/AKS)"
+        },
+        "position": {
+          "x": 840,
+          "y": 120
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-app",
+        "extent": "parent"
+      },
+      {
+        "id": "g-data-integ",
+        "type": "group",
+        "data": {
+          "label": "Data + Core Integration"
+        },
+        "position": {
+          "x": 1160,
+          "y": 20
+        },
+        "style": {
+          "width": 300,
+          "height": 180,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n-sql",
         "data": {
           "label": "Azure SQL Database"
         },
         "position": {
-          "x": 20,
-          "y": 40
+          "x": 1180,
+          "y": 60
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-data-security",
+        "parentId": "g-data-integ",
         "extent": "parent"
       },
       {
-        "id": "data-blob",
+        "id": "n-core",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Core Banking (On-Prem)"
         },
         "position": {
-          "x": 20,
+          "x": 1180,
           "y": 120
         },
         "style": {
@@ -1174,68 +1227,15 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-data-security",
-        "extent": "parent"
-      },
-      {
-        "id": "g-integration-observe",
-        "type": "group",
-        "data": {
-          "label": "Integration & Ops"
-        },
-        "position": {
-          "x": 1200,
-          "y": 120
-        },
-        "style": {
-          "width": 300,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "int-corebank",
-        "data": {
-          "label": "Core Banking Systems"
-        },
-        "position": {
-          "x": 20,
-          "y": 40
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-integration-observe",
-        "extent": "parent"
-      },
-      {
-        "id": "ops-monitor",
-        "data": {
-          "label": "Azure Monitor Logs"
-        },
-        "position": {
-          "x": 20,
-          "y": 120
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-integration-observe",
+        "parentId": "g-data-integ",
         "extent": "parent"
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "User",
-        "target": "edge-frontdoor",
+        "source": "n-user",
+        "target": "n-frontdoor",
         "type": "default",
         "animated": true,
         "style": {
@@ -1244,8 +1244,8 @@
       },
       {
         "id": "e2",
-        "source": "edge-frontdoor",
-        "target": "edge-apim",
+        "source": "n-frontdoor",
+        "target": "n-entra",
         "type": "default",
         "animated": true,
         "style": {
@@ -1254,8 +1254,8 @@
       },
       {
         "id": "e3",
-        "source": "edge-apim",
-        "target": "app-portal",
+        "source": "n-entra",
+        "target": "n-api",
         "type": "default",
         "animated": true,
         "style": {
@@ -1264,8 +1264,8 @@
       },
       {
         "id": "e4",
-        "source": "app-portal",
-        "target": "app-workflow",
+        "source": "n-frontdoor",
+        "target": "n-ui",
         "type": "default",
         "animated": true,
         "style": {
@@ -1274,8 +1274,8 @@
       },
       {
         "id": "e5",
-        "source": "app-portal",
-        "target": "data-sql",
+        "source": "n-ui",
+        "target": "n-api",
         "type": "default",
         "animated": true,
         "style": {
@@ -1284,8 +1284,8 @@
       },
       {
         "id": "e6",
-        "source": "app-portal",
-        "target": "data-blob",
+        "source": "n-api",
+        "target": "n-sql",
         "type": "default",
         "animated": true,
         "style": {
@@ -1294,8 +1294,8 @@
       },
       {
         "id": "e7",
-        "source": "app-workflow",
-        "target": "int-corebank",
+        "source": "n-api",
+        "target": "n-core",
         "type": "default",
         "animated": true,
         "style": {
@@ -1304,8 +1304,8 @@
       },
       {
         "id": "e8",
-        "source": "data-sql",
-        "target": "ops-monitor",
+        "source": "n-sql",
+        "target": "n-kv",
         "type": "default",
         "animated": true,
         "style": {
