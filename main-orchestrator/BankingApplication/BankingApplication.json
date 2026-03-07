@@ -1206,21 +1206,36 @@
     ]
   },
   "architecture_validation": {
-    "updatedDescription": "Validated and repaired the ReactFlow graph for consistency. Added required Disaster Recovery implementation nodes (Azure Site Recovery and Geo-Redundant Storage) and connected them to the existing DisasterRecovery placeholder to address the critical reliability gap. Architecture quality rating: High (with DR implementation now represented).",
+    "updatedDescription": "Added required reliability components for Azure SQL multi-region failover (geo-replica and failover group) and connected them to the existing SQL node. All original nodes/edges preserved; no duplicates or missing references. Architecture quality rating: Improved (Reliability strengthened).",
     "nodes": [
       {
-        "id": "group-1",
-        "type": "group",
+        "id": "n-customer",
         "data": {
-          "label": "Frontend Services"
+          "label": "Bank Customer"
         },
         "position": {
-          "x": 100,
-          "y": 100
+          "x": 60,
+          "y": 220
         },
         "style": {
-          "width": 350,
-          "height": 200,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "g-edge",
+        "type": "group",
+        "data": {
+          "label": "Client Edge"
+        },
+        "position": {
+          "x": 220,
+          "y": 120
+        },
+        "style": {
+          "width": 250,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1228,69 +1243,35 @@
         }
       },
       {
-        "id": "WebApp",
+        "id": "n-frontdoor",
         "data": {
-          "label": "Azure App Service"
+          "label": "Azure Front Door (WAF/CDN)"
         },
         "position": {
-          "x": 130,
-          "y": 150
+          "x": 20,
+          "y": 60
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-1",
+        "parentId": "g-edge",
         "extent": "parent"
       },
       {
-        "id": "CDN",
-        "data": {
-          "label": "Azure CDN"
-        },
-        "position": {
-          "x": 180,
-          "y": 250
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "AppGateway",
-        "data": {
-          "label": "Azure Application Gateway"
-        },
-        "position": {
-          "x": 230,
-          "y": 200
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-1",
-        "extent": "parent"
-      },
-      {
-        "id": "group-2",
+        "id": "g-identity",
         "type": "group",
         "data": {
-          "label": "Backend Services"
+          "label": "Identity & API Gateway"
         },
         "position": {
-          "x": 500,
-          "y": 100
+          "x": 520,
+          "y": 90
         },
         "style": {
-          "width": 350,
-          "height": 200,
+          "width": 300,
+          "height": 260,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1298,69 +1279,52 @@
         }
       },
       {
-        "id": "Functions",
+        "id": "n-entra",
         "data": {
-          "label": "Azure Functions"
+          "label": "Microsoft Entra ID (B2C)"
         },
         "position": {
-          "x": 530,
-          "y": 150
+          "x": 20,
+          "y": 60
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "g-identity",
         "extent": "parent"
       },
       {
-        "id": "LogicApps",
-        "data": {
-          "label": "Azure Logic Apps"
-        },
-        "position": {
-          "x": 580,
-          "y": 250
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-2",
-        "extent": "parent"
-      },
-      {
-        "id": "ApiManagement",
+        "id": "n-apim",
         "data": {
           "label": "Azure API Management"
         },
         "position": {
-          "x": 630,
-          "y": 200
+          "x": 20,
+          "y": 150
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-2",
+        "parentId": "g-identity",
         "extent": "parent"
       },
       {
-        "id": "group-3",
+        "id": "g-app",
         "type": "group",
         "data": {
-          "label": "Data and Storage"
+          "label": "Portal App & Services"
         },
         "position": {
-          "x": 900,
-          "y": 100
+          "x": 890,
+          "y": 90
         },
         "style": {
-          "width": 350,
-          "height": 200,
+          "width": 320,
+          "height": 260,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1368,12 +1332,82 @@
         }
       },
       {
-        "id": "SQLDatabase",
+        "id": "n-webapp",
+        "data": {
+          "label": "Portal Web App (App Service)"
+        },
+        "position": {
+          "x": 20,
+          "y": 60
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-app",
+        "extent": "parent"
+      },
+      {
+        "id": "n-backend",
+        "data": {
+          "label": "Backend APIs (AKS/AppSvc)"
+        },
+        "position": {
+          "x": 20,
+          "y": 150
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-app",
+        "extent": "parent"
+      },
+      {
+        "id": "g-data",
+        "type": "group",
+        "data": {
+          "label": "Data & Storage"
+        },
+        "position": {
+          "x": 1260,
+          "y": 90
+        },
+        "style": {
+          "width": 320,
+          "height": 260,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n-sql",
         "data": {
           "label": "Azure SQL Database"
         },
         "position": {
-          "x": 930,
+          "x": 20,
+          "y": 60
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-data",
+        "extent": "parent"
+      },
+      {
+        "id": "n-blob",
+        "data": {
+          "label": "Azure Blob Storage (Docs)"
+        },
+        "position": {
+          "x": 20,
           "y": 150
         },
         "style": {
@@ -1381,214 +1415,66 @@
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "g-data",
         "extent": "parent"
       },
       {
-        "id": "BlobStorage",
+        "id": "n-corebank",
         "data": {
-          "label": "Azure Blob Storage"
+          "label": "Core Banking System (External)"
         },
         "position": {
-          "x": 980,
-          "y": 250
+          "x": 1620,
+          "y": 330
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "g-data",
         "extent": "parent"
       },
       {
-        "id": "CacheRedis",
+        "id": "n-sql-geo-replica",
         "data": {
-          "label": "Azure Cache for Redis"
+          "label": "Azure SQL Geo-Replica (Secondary Region)"
         },
         "position": {
-          "x": 1030,
-          "y": 200
+          "x": 20,
+          "y": 230
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-3",
+        "parentId": "g-data",
         "extent": "parent"
       },
       {
-        "id": "group-4",
-        "type": "group",
+        "id": "n-sql-failover-group",
         "data": {
-          "label": "Integration with Core Banking System"
+          "label": "Azure SQL Failover Group"
         },
         "position": {
-          "x": 1300,
-          "y": 100
-        },
-        "style": {
-          "width": 350,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "ServiceBus",
-        "data": {
-          "label": "Azure Service Bus"
-        },
-        "position": {
-          "x": 1330,
-          "y": 150
+          "x": 20,
+          "y": 310
         },
         "style": {
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "group-4",
+        "parentId": "g-data",
         "extent": "parent"
-      },
-      {
-        "id": "IntegrationLogicApps",
-        "data": {
-          "label": "Azure Logic Apps"
-        },
-        "position": {
-          "x": 1380,
-          "y": 250
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "group-4",
-        "extent": "parent"
-      },
-      {
-        "id": "WAF",
-        "data": {
-          "label": "Azure Web Application Firewall"
-        },
-        "position": {
-          "x": 200,
-          "y": 50
-        },
-        "style": {
-          "border": "1px solid #FF0000",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "LoadTesting",
-        "data": {
-          "label": "Azure Load Testing"
-        },
-        "position": {
-          "x": 600,
-          "y": 50
-        },
-        "style": {
-          "border": "1px solid #FF0000",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "DisasterRecovery",
-        "data": {
-          "label": "Disaster Recovery"
-        },
-        "position": {
-          "x": 1500,
-          "y": 50
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "AAD",
-        "data": {
-          "label": "Azure Active Directory"
-        },
-        "position": {
-          "x": 700,
-          "y": 300
-        },
-        "style": {
-          "border": "1px solid #0000FF",
-          "backgroundColor": "#E3F2FD"
-        }
-      },
-      {
-        "id": "KeyVault",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 800,
-          "y": 400
-        },
-        "style": {
-          "border": "1px solid #008000",
-          "backgroundColor": "#E8F5E9"
-        }
-      },
-      {
-        "id": "SecurityCenter",
-        "data": {
-          "label": "Azure Security Center"
-        },
-        "position": {
-          "x": 400,
-          "y": 400
-        },
-        "style": {
-          "border": "1px solid #FF00FF",
-          "backgroundColor": "#FCE4EC"
-        }
-      },
-      {
-        "id": "AzureSiteRecovery",
-        "data": {
-          "label": "Azure Site Recovery"
-        },
-        "position": {
-          "x": 1500,
-          "y": 140
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
-      },
-      {
-        "id": "GeoRedundantStorage",
-        "data": {
-          "label": "Geo-Redundant Storage (GRS)"
-        },
-        "position": {
-          "x": 1650,
-          "y": 140
-        },
-        "style": {
-          "border": "1px dashed #999",
-          "backgroundColor": "#FFF8E1"
-        }
       }
     ],
     "edges": [
       {
         "id": "e1",
-        "source": "WebApp",
-        "target": "Functions",
+        "source": "n-customer",
+        "target": "n-frontdoor",
         "type": "default",
         "animated": true,
         "style": {
@@ -1597,8 +1483,8 @@
       },
       {
         "id": "e2",
-        "source": "CDN",
-        "target": "Functions",
+        "source": "n-frontdoor",
+        "target": "n-webapp",
         "type": "default",
         "animated": true,
         "style": {
@@ -1607,8 +1493,8 @@
       },
       {
         "id": "e3",
-        "source": "AppGateway",
-        "target": "Functions",
+        "source": "n-webapp",
+        "target": "n-entra",
         "type": "default",
         "animated": true,
         "style": {
@@ -1617,8 +1503,8 @@
       },
       {
         "id": "e4",
-        "source": "Functions",
-        "target": "ServiceBus",
+        "source": "n-webapp",
+        "target": "n-apim",
         "type": "default",
         "animated": true,
         "style": {
@@ -1627,8 +1513,8 @@
       },
       {
         "id": "e5",
-        "source": "ApiManagement",
-        "target": "ServiceBus",
+        "source": "n-apim",
+        "target": "n-backend",
         "type": "default",
         "animated": true,
         "style": {
@@ -1637,8 +1523,8 @@
       },
       {
         "id": "e6",
-        "source": "Functions",
-        "target": "BlobStorage",
+        "source": "n-backend",
+        "target": "n-sql",
         "type": "default",
         "animated": true,
         "style": {
@@ -1647,8 +1533,8 @@
       },
       {
         "id": "e7",
-        "source": "SQLDatabase",
-        "target": "ServiceBus",
+        "source": "n-backend",
+        "target": "n-blob",
         "type": "default",
         "animated": true,
         "style": {
@@ -1657,8 +1543,8 @@
       },
       {
         "id": "e8",
-        "source": "IntegrationLogicApps",
-        "target": "Functions",
+        "source": "n-apim",
+        "target": "n-corebank",
         "type": "default",
         "animated": true,
         "style": {
@@ -1667,232 +1553,32 @@
       },
       {
         "id": "e9",
-        "source": "WAF",
-        "target": "WebApp",
+        "source": "n-sql",
+        "target": "n-sql-geo-replica",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#FF0000"
+          "stroke": "#000000"
         }
       },
       {
         "id": "e10",
-        "source": "LoadTesting",
-        "target": "Functions",
+        "source": "n-sql-failover-group",
+        "target": "n-sql",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#FF0000"
+          "stroke": "#000000"
         }
       },
       {
         "id": "e11",
-        "source": "DisasterRecovery",
-        "target": "ServiceBus",
+        "source": "n-sql-failover-group",
+        "target": "n-sql-geo-replica",
         "type": "default",
         "animated": true,
         "style": {
-          "stroke": "#999999"
-        }
-      },
-      {
-        "id": "e12",
-        "source": "AAD",
-        "target": "WebApp",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#0000FF"
-        }
-      },
-      {
-        "id": "e13",
-        "source": "AAD",
-        "target": "Functions",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#0000FF"
-        }
-      },
-      {
-        "id": "e14",
-        "source": "AAD",
-        "target": "LogicApps",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#0000FF"
-        }
-      },
-      {
-        "id": "e15",
-        "source": "AAD",
-        "target": "ApiManagement",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#0000FF"
-        }
-      },
-      {
-        "id": "e16",
-        "source": "AAD",
-        "target": "ServiceBus",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#0000FF"
-        }
-      },
-      {
-        "id": "e17",
-        "source": "AAD",
-        "target": "IntegrationLogicApps",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#0000FF"
-        }
-      },
-      {
-        "id": "e18",
-        "source": "KeyVault",
-        "target": "WebApp",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#008000"
-        }
-      },
-      {
-        "id": "e19",
-        "source": "KeyVault",
-        "target": "Functions",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#008000"
-        }
-      },
-      {
-        "id": "e20",
-        "source": "KeyVault",
-        "target": "LogicApps",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#008000"
-        }
-      },
-      {
-        "id": "e21",
-        "source": "KeyVault",
-        "target": "ApiManagement",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#008000"
-        }
-      },
-      {
-        "id": "e22",
-        "source": "KeyVault",
-        "target": "ServiceBus",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#008000"
-        }
-      },
-      {
-        "id": "e23",
-        "source": "KeyVault",
-        "target": "IntegrationLogicApps",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#008000"
-        }
-      },
-      {
-        "id": "e24",
-        "source": "SecurityCenter",
-        "target": "WebApp",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#FF00FF"
-        }
-      },
-      {
-        "id": "e25",
-        "source": "SecurityCenter",
-        "target": "Functions",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#FF00FF"
-        }
-      },
-      {
-        "id": "e26",
-        "source": "SecurityCenter",
-        "target": "LogicApps",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#FF00FF"
-        }
-      },
-      {
-        "id": "e27",
-        "source": "SecurityCenter",
-        "target": "ApiManagement",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#FF00FF"
-        }
-      },
-      {
-        "id": "e28",
-        "source": "SecurityCenter",
-        "target": "ServiceBus",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#FF00FF"
-        }
-      },
-      {
-        "id": "e29",
-        "source": "SecurityCenter",
-        "target": "IntegrationLogicApps",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#FF00FF"
-        }
-      },
-      {
-        "id": "e30",
-        "source": "DisasterRecovery",
-        "target": "AzureSiteRecovery",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#999999"
-        }
-      },
-      {
-        "id": "e31",
-        "source": "DisasterRecovery",
-        "target": "GeoRedundantStorage",
-        "type": "default",
-        "animated": true,
-        "style": {
-          "stroke": "#999999"
+          "stroke": "#000000"
         }
       }
     ]
