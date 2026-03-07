@@ -1000,6 +1000,319 @@
       "description": "As an admin, I want to restrict access to certain services and actions based on user roles, so that I can ensure users only perform allowed actions.\n\nCore Domain Objects:\n- Role\n- User Profile\n- Permissions\n\nAttributes & Rules:\n- Only users with specific roles can access certain services/actions.\n- Unauthorized access attempts must be logged and alerted.\n- The system must enforce role-based access controls consistently.\n\nAcceptance Criteria:\n\nScenario: Access allowed for authorized role\nGiven I am logged in as a user with specific role\nWhen I attempt to access a service allowed by my role\nThen the system should grant access\n\nScenario: Access denied for unauthorized role\nGiven I am logged in as a user with specific role\nWhen I attempt to access a service not allowed by my role\nThen the system should deny access\nAnd log the attempt\nAnd alert the admin\n\nScenario: Verify access control enforcement\nGiven I am logged in as an admin\nWhen I review access logs\nThen I should see entries for allowed and denied access attempts, including the user and role details\n\nTest Cases:\n\nFeature: Access Control Enforcement\n\nScenario: Access allowed for authorized role\nGiven I am logged in as a user with specific role\nWhen I attempt to access a service allowed by my role\nThen the system should grant access\n\nScenario: Access denied for unauthorized role\nGiven I am logged in as a user with specific role\nWhen I attempt to access a service not allowed by my role\nThen the system should deny access\nAnd log the attempt\nAnd alert the admin\n\nScenario: Verify access control enforcement\nGiven I am logged in as an admin\nWhen I review access logs\nThen I should see entries for allowed and denied access attempts, including the user and role details\n\nPriority: High - Ensures security and proper access controls."
     }
   ],
-  "architecture_generation": null,
+  "architecture_generation": {
+    "description": "Azure-based customer portal for banking journeys delivering responsive web/PWA content through Azure Front Door (with WAF) and Azure CDN to an Azure-hosted Portal Web App, which calls Azure API Management to broker requests to backend microservices and workflow/orchestration; Microsoft Entra ID provides OAuth2/OIDC authentication with MFA while Azure Key Vault supplies secrets and keys used by the portal and services; microservices persist portal-owned transactional data in Azure SQL Database and use Azure Cache for Redis for session/customer caching, store documents in Azure Blob Storage, and publish/consume events via Azure Service Bus for asynchronous processing and status updates; traffic is protected with TLS, DDoS/WAF controls at the edge, and operational telemetry flows to Azure Monitor/Application Insights with security posture via Defender for Cloud, enabling secure integration patterns to external core banking via API Management and workflow components where required.",
+    "nodes": [
+      {
+        "id": "User",
+        "data": {
+          "label": "User (Web/Mobile)"
+        },
+        "position": {
+          "x": 50,
+          "y": 60
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "g-edge",
+        "type": "group",
+        "data": {
+          "label": "Edge & Client"
+        },
+        "position": {
+          "x": 250,
+          "y": 20
+        },
+        "style": {
+          "width": 280,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n-afd",
+        "data": {
+          "label": "Front Door (WAF) + CDN"
+        },
+        "position": {
+          "x": 270,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-edge",
+        "extent": "parent"
+      },
+      {
+        "id": "n-portal",
+        "data": {
+          "label": "Portal Web App (App Service)"
+        },
+        "position": {
+          "x": 270,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-edge",
+        "extent": "parent"
+      },
+      {
+        "id": "g-security",
+        "type": "group",
+        "data": {
+          "label": "Identity & Security"
+        },
+        "position": {
+          "x": 560,
+          "y": 20
+        },
+        "style": {
+          "width": 280,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n-entra",
+        "data": {
+          "label": "Microsoft Entra ID (MFA)"
+        },
+        "position": {
+          "x": 580,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-security",
+        "extent": "parent"
+      },
+      {
+        "id": "n-kv",
+        "data": {
+          "label": "Azure Key Vault"
+        },
+        "position": {
+          "x": 580,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-security",
+        "extent": "parent"
+      },
+      {
+        "id": "g-app",
+        "type": "group",
+        "data": {
+          "label": "API & Services"
+        },
+        "position": {
+          "x": 870,
+          "y": 20
+        },
+        "style": {
+          "width": 300,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n-apim",
+        "data": {
+          "label": "Azure API Management"
+        },
+        "position": {
+          "x": 890,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-app",
+        "extent": "parent"
+      },
+      {
+        "id": "n-micro",
+        "data": {
+          "label": "Microservices + Workflow"
+        },
+        "position": {
+          "x": 890,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-app",
+        "extent": "parent"
+      },
+      {
+        "id": "g-data-int",
+        "type": "group",
+        "data": {
+          "label": "Data & Messaging"
+        },
+        "position": {
+          "x": 1210,
+          "y": 20
+        },
+        "style": {
+          "width": 310,
+          "height": 200,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "n-sqlredis",
+        "data": {
+          "label": "Azure SQL + Redis Cache"
+        },
+        "position": {
+          "x": 1230,
+          "y": 70
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-data-int",
+        "extent": "parent"
+      },
+      {
+        "id": "n-blobbus",
+        "data": {
+          "label": "Blob Storage + Service Bus"
+        },
+        "position": {
+          "x": 1230,
+          "y": 130
+        },
+        "style": {
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-data-int",
+        "extent": "parent"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-user-afd",
+        "source": "User",
+        "target": "n-afd",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-afd-portal",
+        "source": "n-afd",
+        "target": "n-portal",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-portal-apim",
+        "source": "n-portal",
+        "target": "n-apim",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-apim-micro",
+        "source": "n-apim",
+        "target": "n-micro",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-apim-entra",
+        "source": "n-apim",
+        "target": "n-entra",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-micro-kv",
+        "source": "n-micro",
+        "target": "n-kv",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-micro-sqlredis",
+        "source": "n-micro",
+        "target": "n-sqlredis",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      },
+      {
+        "id": "e-micro-blobbus",
+        "source": "n-micro",
+        "target": "n-blobbus",
+        "type": "default",
+        "animated": true,
+        "style": {
+          "stroke": "#000000"
+        }
+      }
+    ]
+  },
   "architecture_validation": null
 }
