@@ -1001,16 +1001,16 @@
     }
   ],
   "architecture_generation": {
-    "description": "Azure-based customer portal for banking journeys delivering responsive web/PWA content through Azure Front Door (with WAF) and Azure CDN to an Azure-hosted Portal Web App, which calls Azure API Management to broker requests to backend microservices and workflow/orchestration; Microsoft Entra ID provides OAuth2/OIDC authentication with MFA while Azure Key Vault supplies secrets and keys used by the portal and services; microservices persist portal-owned transactional data in Azure SQL Database and use Azure Cache for Redis for session/customer caching, store documents in Azure Blob Storage, and publish/consume events via Azure Service Bus for asynchronous processing and status updates; traffic is protected with TLS, DDoS/WAF controls at the edge, and operational telemetry flows to Azure Monitor/Application Insights with security posture via Defender for Cloud, enabling secure integration patterns to external core banking via API Management and workflow components where required.",
+    "description": "Azure-based customer self-service portal where Web/Mobile users enter through Azure Front Door with WAF and TLS, static assets accelerate via Azure CDN, requests route to an Azure App Service Web frontend that calls APIs published through API Management, APIs trigger orchestration in Logic Apps and asynchronous processing via Service Bus, integration events and workflows persist state in Azure SQL Database and store customer-uploaded documents in Azure Blob Storage, with service-to-data access intended via private networking and secrets/keys managed in Key Vault (referenced by the application layer) for secure end-to-end encryption and governance.",
     "nodes": [
       {
         "id": "User",
         "data": {
-          "label": "User (Web/Mobile)"
+          "label": "Customer (Web/Mobile)"
         },
         "position": {
           "x": 50,
-          "y": 60
+          "y": 40
         },
         "style": {
           "border": "none",
@@ -1022,15 +1022,15 @@
         "id": "g-edge",
         "type": "group",
         "data": {
-          "label": "Edge & Client"
+          "label": "Edge & Delivery"
         },
         "position": {
           "x": 250,
           "y": 20
         },
         "style": {
-          "width": 280,
-          "height": 200,
+          "width": 260,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1038,15 +1038,17 @@
         }
       },
       {
-        "id": "n-afd",
+        "id": "afd-waf",
         "data": {
-          "label": "Front Door (WAF) + CDN"
+          "label": "Front Door (WAF)"
         },
         "position": {
           "x": 270,
-          "y": 70
+          "y": 60
         },
         "style": {
+          "width": 220,
+          "height": 50,
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
@@ -1055,88 +1057,94 @@
         "extent": "parent"
       },
       {
-        "id": "n-portal",
+        "id": "cdn",
         "data": {
-          "label": "Portal Web App (App Service)"
+          "label": "Azure CDN"
         },
         "position": {
           "x": 270,
-          "y": 130
+          "y": 120
         },
         "style": {
+          "width": 220,
+          "height": 50,
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
         "parentId": "g-edge",
-        "extent": "parent"
-      },
-      {
-        "id": "g-security",
-        "type": "group",
-        "data": {
-          "label": "Identity & Security"
-        },
-        "position": {
-          "x": 560,
-          "y": 20
-        },
-        "style": {
-          "width": 280,
-          "height": 200,
-          "backgroundColor": "#D3DAD9",
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        }
-      },
-      {
-        "id": "n-entra",
-        "data": {
-          "label": "Microsoft Entra ID (MFA)"
-        },
-        "position": {
-          "x": 580,
-          "y": 70
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-security",
-        "extent": "parent"
-      },
-      {
-        "id": "n-kv",
-        "data": {
-          "label": "Azure Key Vault"
-        },
-        "position": {
-          "x": 580,
-          "y": 130
-        },
-        "style": {
-          "border": "none",
-          "borderRadius": "12px",
-          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
-        },
-        "parentId": "g-security",
         "extent": "parent"
       },
       {
         "id": "g-app",
         "type": "group",
         "data": {
-          "label": "API & Services"
+          "label": "Portal & APIs"
+        },
+        "position": {
+          "x": 560,
+          "y": 20
+        },
+        "style": {
+          "width": 260,
+          "height": 180,
+          "backgroundColor": "#D3DAD9",
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        }
+      },
+      {
+        "id": "webapp",
+        "data": {
+          "label": "App Service (Web)"
+        },
+        "position": {
+          "x": 580,
+          "y": 60
+        },
+        "style": {
+          "width": 220,
+          "height": 50,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-app",
+        "extent": "parent"
+      },
+      {
+        "id": "apim",
+        "data": {
+          "label": "API Management"
+        },
+        "position": {
+          "x": 580,
+          "y": 120
+        },
+        "style": {
+          "width": 220,
+          "height": 50,
+          "border": "none",
+          "borderRadius": "12px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
+        },
+        "parentId": "g-app",
+        "extent": "parent"
+      },
+      {
+        "id": "g-integration",
+        "type": "group",
+        "data": {
+          "label": "Workflow & Messaging"
         },
         "position": {
           "x": 870,
           "y": 20
         },
         "style": {
-          "width": 300,
-          "height": 200,
+          "width": 260,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1144,52 +1152,56 @@
         }
       },
       {
-        "id": "n-apim",
+        "id": "logicapps",
         "data": {
-          "label": "Azure API Management"
+          "label": "Azure Logic Apps"
         },
         "position": {
           "x": 890,
-          "y": 70
+          "y": 60
         },
         "style": {
+          "width": 220,
+          "height": 50,
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-app",
+        "parentId": "g-integration",
         "extent": "parent"
       },
       {
-        "id": "n-micro",
+        "id": "servicebus",
         "data": {
-          "label": "Microservices + Workflow"
+          "label": "Azure Service Bus"
         },
         "position": {
           "x": 890,
-          "y": 130
+          "y": 120
         },
         "style": {
+          "width": 220,
+          "height": 50,
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-app",
+        "parentId": "g-integration",
         "extent": "parent"
       },
       {
-        "id": "g-data-int",
+        "id": "g-data",
         "type": "group",
         "data": {
-          "label": "Data & Messaging"
+          "label": "Data & Storage"
         },
         "position": {
-          "x": 1210,
+          "x": 1180,
           "y": 20
         },
         "style": {
-          "width": 310,
-          "height": 200,
+          "width": 260,
+          "height": 180,
           "backgroundColor": "#D3DAD9",
           "border": "none",
           "borderRadius": "12px",
@@ -1197,37 +1209,41 @@
         }
       },
       {
-        "id": "n-sqlredis",
+        "id": "azsql",
         "data": {
-          "label": "Azure SQL + Redis Cache"
+          "label": "Azure SQL Database"
         },
         "position": {
-          "x": 1230,
-          "y": 70
+          "x": 1200,
+          "y": 60
         },
         "style": {
+          "width": 220,
+          "height": 50,
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-data-int",
+        "parentId": "g-data",
         "extent": "parent"
       },
       {
-        "id": "n-blobbus",
+        "id": "blob",
         "data": {
-          "label": "Blob Storage + Service Bus"
+          "label": "Azure Blob Storage"
         },
         "position": {
-          "x": 1230,
-          "y": 130
+          "x": 1200,
+          "y": 120
         },
         "style": {
+          "width": 220,
+          "height": 50,
           "border": "none",
           "borderRadius": "12px",
           "boxShadow": "0 2px 8px rgba(0,0,0,0.15)"
         },
-        "parentId": "g-data-int",
+        "parentId": "g-data",
         "extent": "parent"
       }
     ],
@@ -1235,7 +1251,7 @@
       {
         "id": "e-user-afd",
         "source": "User",
-        "target": "n-afd",
+        "target": "afd-waf",
         "type": "default",
         "animated": true,
         "style": {
@@ -1243,9 +1259,9 @@
         }
       },
       {
-        "id": "e-afd-portal",
-        "source": "n-afd",
-        "target": "n-portal",
+        "id": "e-afd-web",
+        "source": "afd-waf",
+        "target": "webapp",
         "type": "default",
         "animated": true,
         "style": {
@@ -1253,9 +1269,9 @@
         }
       },
       {
-        "id": "e-portal-apim",
-        "source": "n-portal",
-        "target": "n-apim",
+        "id": "e-cdn-web",
+        "source": "cdn",
+        "target": "webapp",
         "type": "default",
         "animated": true,
         "style": {
@@ -1263,9 +1279,9 @@
         }
       },
       {
-        "id": "e-apim-micro",
-        "source": "n-apim",
-        "target": "n-micro",
+        "id": "e-web-apim",
+        "source": "webapp",
+        "target": "apim",
         "type": "default",
         "animated": true,
         "style": {
@@ -1273,9 +1289,9 @@
         }
       },
       {
-        "id": "e-apim-entra",
-        "source": "n-apim",
-        "target": "n-entra",
+        "id": "e-apim-logic",
+        "source": "apim",
+        "target": "logicapps",
         "type": "default",
         "animated": true,
         "style": {
@@ -1283,9 +1299,9 @@
         }
       },
       {
-        "id": "e-micro-kv",
-        "source": "n-micro",
-        "target": "n-kv",
+        "id": "e-apim-bus",
+        "source": "apim",
+        "target": "servicebus",
         "type": "default",
         "animated": true,
         "style": {
@@ -1293,9 +1309,9 @@
         }
       },
       {
-        "id": "e-micro-sqlredis",
-        "source": "n-micro",
-        "target": "n-sqlredis",
+        "id": "e-logic-sql",
+        "source": "logicapps",
+        "target": "azsql",
         "type": "default",
         "animated": true,
         "style": {
@@ -1303,9 +1319,9 @@
         }
       },
       {
-        "id": "e-micro-blobbus",
-        "source": "n-micro",
-        "target": "n-blobbus",
+        "id": "e-bus-blob",
+        "source": "servicebus",
+        "target": "blob",
         "type": "default",
         "animated": true,
         "style": {
