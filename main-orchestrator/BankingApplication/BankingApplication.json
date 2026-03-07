@@ -4,125 +4,133 @@
   "epics": [
     {
       "id": "EPIC-1",
-      "title": "User Authentication and Authorization",
-      "summary": "Implement secure authentication and authorization mechanisms.",
-      "description": "Develop a secure user authentication system using OAuth and implement multi-factor authentication (MFA). Ensure role-based access control to manage user permissions based on their profile and authorization level.",
+      "title": "User Authentication",
+      "summary": "Implement secure user authentication mechanisms.",
+      "description": "Develop secure login functionality with multi-factor authentication using FastAPI for backend and React for frontend. Integration with existing bank systems to validate user credentials.",
       "dependencies": [],
-      "jira_epic_key": "ADAM-3056"
+      "jira_epic_key": "ADAM-3237"
     },
     {
       "id": "EPIC-2",
-      "title": "Database Schema Design",
-      "summary": "Design the database schema for storing user data and banking transactions.",
-      "description": "Create a PostgreSQL database schema to manage user profiles, banking products, transaction histories, and other essential entities. Ensure data normalization and implement necessary indexing for optimal performance.",
+      "title": "Database Schema",
+      "summary": "Design and implement the database schema.",
+      "description": "Create the PostgreSQL database schema to store user data, account information, service requests, and interaction history. Ensure the schema is optimized for performance and security.",
       "dependencies": [],
-      "jira_epic_key": "ADAM-3054"
+      "jira_epic_key": "ADAM-3247"
     },
     {
       "id": "EPIC-3",
       "title": "Basic UI Shell",
-      "summary": "Develop the basic UI shell for the self-service portal.",
-      "description": "Design the initial user interface using React, providing a responsive layout adaptable to desktop, tablet, and mobile devices. Create a clean, user-friendly design consistent with the bank's branding guidelines.",
+      "summary": "Set up the basic UI shell.",
+      "description": "Develop the basic UI shell using React to serve as the foundation for all frontend components. Ensure responsiveness and alignment with the design guidelines.",
       "dependencies": [],
-      "jira_epic_key": "ADAM-3052"
+      "jira_epic_key": "ADAM-3236"
     },
     {
       "id": "EPIC-4",
-      "title": "Personalized Dashboard",
-      "summary": "Create a personalized dashboard displaying relevant banking products and services.",
-      "description": "Develop a personalized dashboard using React, dynamically displaying banking products and services based on user profile and eligibility. Ensure the dashboard provides a seamless and intuitive user experience.",
-      "dependencies": [
-        "EPIC-1",
-        "EPIC-2",
-        "EPIC-3"
-      ],
-      "jira_epic_key": "ADAM-3059"
+      "title": "Core Banking System Integration",
+      "summary": "Integrate with the bank's core banking system.",
+      "description": "Implement the integration layer between the portal and the bank's core banking system using FastAPI. Ensure secure and efficient data exchange.",
+      "dependencies": [],
+      "jira_epic_key": "ADAM-3239"
     },
     {
       "id": "EPIC-5",
-      "title": "Account Opening Request Workflow",
-      "summary": "Implement a workflow for submitting account opening requests.",
-      "description": "Build a streamlined workflow allowing users to submit account opening requests with minimal clicks. Ensure the process is intuitive and allows users to save and resume incomplete applications. Integrate with the core banking system for request processing.",
+      "title": "Personalized Dashboard",
+      "summary": "Develop a personalized dashboard for users.",
+      "description": "Create a personalized dashboard using React to display available banking products and services based on user profile and eligibility. Real-time data fetching from the backend.",
       "dependencies": [
-        "EPIC-2",
-        "EPIC-3"
+        "EPIC-3",
+        "EPIC-4"
       ],
-      "jira_epic_key": "ADAM-3053"
+      "jira_epic_key": "ADAM-3242"
     },
     {
       "id": "EPIC-6",
-      "title": "Service Modification Workflow",
-      "summary": "Implement a workflow for submitting service modifications.",
-      "description": "Build a workflow allowing users to submit requests for modifying existing banking services. Ensure the process is efficient, user-friendly, and integrated with the core banking system for real-time processing.",
+      "title": "Account Opening Workflow",
+      "summary": "Implement the account opening workflow.",
+      "description": "Develop the streamlined workflow for users to submit account opening requests with minimal clicks. Backend validation and processing through FastAPI.",
       "dependencies": [
         "EPIC-2",
-        "EPIC-3"
+        "EPIC-4"
       ],
-      "jira_epic_key": "ADAM-3055"
+      "jira_epic_key": "ADAM-3241"
     },
     {
       "id": "EPIC-7",
-      "title": "Integration with Core Banking System",
-      "summary": "Seamlessly integrate the portal with the bank's core banking system.",
-      "description": "Develop connectors and APIs to integrate the self-service portal with the core banking system. Ensure data synchronization between the systems, providing real-time updates and maintaining data consistency.",
+      "title": "Service Modifications Workflow",
+      "summary": "Implement the service modifications workflow.",
+      "description": "Develop the streamlined workflow for users to submit service modification requests. Backend validation and processing through FastAPI.",
       "dependencies": [
-        "EPIC-2"
+        "EPIC-2",
+        "EPIC-4"
       ],
-      "jira_epic_key": "ADAM-3058"
+      "jira_epic_key": "ADAM-3240"
     },
     {
       "id": "EPIC-8",
       "title": "Real-time Status Updates",
-      "summary": "Implement real-time status updates for submitted requests.",
-      "description": "Develop a system to provide users with real-time status updates for their submitted account opening and service modification requests. Utilize WebSockets or polling mechanisms to ensure timely updates.",
+      "summary": "Enable real-time status updates for user requests.",
+      "description": "Implement functionality to provide real-time status updates for submitted requests, using WebSockets for real-time communication between frontend and backend.",
       "dependencies": [
-        "EPIC-5",
+        "EPIC-4",
         "EPIC-6",
         "EPIC-7"
       ],
-      "jira_epic_key": "ADAM-3060"
+      "jira_epic_key": "ADAM-3243"
     },
     {
       "id": "EPIC-9",
-      "title": "Email Notification System",
-      "summary": "Set up an email notification system for user updates.",
-      "description": "Implement an email notification system using FastAPI and Redis, informing users about the status of their requests, incomplete applications, and other important updates.",
+      "title": "Email Notifications",
+      "summary": "Implement the email notification system.",
+      "description": "Develop the email notification system to send users updates regarding their submitted requests. Ensure secure and reliable email delivery.",
       "dependencies": [
-        "EPIC-8"
+        "EPIC-6",
+        "EPIC-7"
       ],
-      "jira_epic_key": "ADAM-3063"
+      "jira_epic_key": "ADAM-3244"
     },
     {
       "id": "EPIC-10",
-      "title": "Comprehensive Interaction History",
-      "summary": "Maintain a comprehensive history of all user interactions.",
-      "description": "Build a system to log and display a comprehensive history of user interactions on the portal. Ensure that the data is securely stored and easily accessible to users through their dashboards.",
+      "title": "Responsive Design",
+      "summary": "Ensure the portal is responsive across devices.",
+      "description": "Implement responsive design principles using React to ensure the portal works seamlessly across desktop, tablet, and mobile devices.",
       "dependencies": [
-        "EPIC-6",
-        "EPIC-8"
+        "EPIC-3"
       ],
-      "jira_epic_key": "ADAM-3057"
+      "jira_epic_key": "ADAM-3238"
     },
     {
       "id": "EPIC-11",
-      "title": "Save and Resume Incomplete Applications",
-      "summary": "Enable users to save incomplete applications and resume later.",
-      "description": "Develop functionality allowing users to save their progress on incomplete applications and resume them at a later time. Ensure that the saved data is securely stored and easily retrievable.",
+      "title": "Interaction History",
+      "summary": "Track and display user interaction history.",
+      "description": "Develop functionality to track and display a comprehensive history of user interactions within the portal. Provide detailed records for user review.",
       "dependencies": [
-        "EPIC-5"
+        "EPIC-2",
+        "EPIC-4"
       ],
-      "jira_epic_key": "ADAM-3062"
+      "jira_epic_key": "ADAM-3248"
     },
     {
       "id": "EPIC-12",
-      "title": "Role-based Access Control",
-      "summary": "Implement role-based access control for user authorization.",
-      "description": "Enhance the security framework by implementing role-based access control, ensuring that users can only view and access services appropriate to their profiles and authorization levels.",
+      "title": "Role-Based Access Control",
+      "summary": "Implement role-based access control.",
+      "description": "Develop and enforce role-based access controls to ensure users can only access services appropriate to their profile and authorization level.",
       "dependencies": [
-        "EPIC-1",
-        "EPIC-2"
+        "EPIC-4"
       ],
-      "jira_epic_key": "ADAM-3061"
+      "jira_epic_key": "ADAM-3246"
+    },
+    {
+      "id": "EPIC-13",
+      "title": "Performance Optimization",
+      "summary": "Optimize performance of the portal.",
+      "description": "Conduct performance tuning and optimization for both frontend and backend systems to ensure smooth and efficient operation of the portal under load.",
+      "dependencies": [
+        "EPIC-5",
+        "EPIC-10"
+      ],
+      "jira_epic_key": "ADAM-3245"
     }
   ],
   "jira_url": "https://brillio.atlassian.net/jira/software/c/projects/ADAM/boards/2056/backlog",
